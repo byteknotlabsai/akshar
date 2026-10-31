@@ -1,0 +1,19 @@
+akshar
+Copyright 2026 the akshar authors
+
+This project builds on the following works:
+
+Cactus Whistle
+  Copyright Cactus Compute, Inc.
+  Licensed under the Apache License, Version 2.0
+  https://huggingface.co/Cactus-Compute/whistle
+
+Shruti
+  Udgam Labs
+  Licensed under the Apache License, Version 2.0
+  https://huggingface.co/udgamlabs/Shruti
+  (Track A models start from these weights.)
+
+This repository does not distribute model weights or datasets. Before any
+weights are released, add attribution here for every dataset used to train
+them, as recorded in data/LICENSES.md.

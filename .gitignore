@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Model weights and checkpoints: large, never committed
+models/
+checkpoints/
+*.cact
+*.safetensors
+
+# Audio and manifests live outside git; only the licence ledger is tracked
+data/*
+!data/LICENSES.md
+
+# Experiment outputs
+runs/
+wandb/
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

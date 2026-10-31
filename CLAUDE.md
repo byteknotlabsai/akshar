@@ -1,0 +1,30 @@
+# akshar: notes for Claude
+
+akshar is an offline Hindi/English/Hinglish speech-to-text model for CPUs and phones. The goal is to beat Shruti's accuracy with a commercially clean model in two variants: akshar (4-bit, file ≤ 30 MB, hard cap 40 MB) and akshar-lite (2-bit, about 17 MB, accuracy published per test set). Before proposing work, read `README.md`, `docs/decisions.md` and the current phase in `docs/roadmap.md`. Verified facts and sources are in `docs/research/`.
+
+## Ground rules
+
+- **Where work happens:**
+  - Docs may be edited on Windows.
+  - Building, training and evaluation happen on Ubuntu, because JAX's CUDA builds are Linux-only.
+  - Running the finished model needs no Linux: it ships in Windows and Mac (Apple silicon) apps and on phones through the Needle engine (D12).
+  - Keep the text layer portable; don't make it Python-only.
+- **Compute:** free only.
+  - Laptop RTX 3050 Laptop 4 GB.
+  - Kaggle and Colab free tiers.
+  - A 32 GB RTX machine from 2026-11-02.
+  - Never plan around paid GPUs.
+- **Telemetry:** export `NEEDLE_TELEMETRY=0` and `DO_NOT_TRACK=1` before any needle command, because the package reports usage by default.
+- **Licences:**
+  - No dataset enters training without a row in `data/LICENSES.md` marked `admit` or `admit, caveat`.
+  - Track A weights (built from Shruti) are research-only (D9). Never present them as releasable.
+- **Contamination:** remove every eval clip from training data by normalised-text hash and audio hash, including data added later.
+- **Output convention:**
+  - The core model writes the `mixed` style: Hindi in Devanagari, English words in lowercase Latin, numbers as words, no punctuation.
+  - The product offers three styles (`roman`, `devanagari`, `mixed`; D11), all rendered by the text layer from that one output.
+  - Other scripts and formatting never go into the acoustic model's training targets.
+- **Reporting:**
+  - Never quote a WER without its test set, normaliser and decoding settings (beam size, language flag).
+  - Never claim akshar beats or matches Shruti unless our harness scored both on the same clips.
+- **Big files:** datasets live outside the repo (e.g. `~/akshar-data`). `models/`, `*.cact` and `*.safetensors` are never committed.
+- **Decisions:** record a new decision as a new entry at the bottom of `docs/decisions.md`; don't rewrite old entries.
