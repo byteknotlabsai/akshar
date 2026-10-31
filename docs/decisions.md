@@ -173,6 +173,22 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
 - **Amends:** D7.
 - **Open:** the 32 GB machine's free disk, RAM, CPU and network speed, and whether it can run multi-day jobs unattended. The owner will confirm them.
 
+## D15 (2026-10-31): Train and export with akshar's own quantiser and exporter
+
+- **Decision:**
+  - Full-weight training and `.cact` export go through `akshar.model` and `akshar.train`, built on needle 3.2.8's code ([toolchain.md](toolchain.md)).
+  - The quantiser's Hadamard rotations run at HIGHEST precision, so training sees the codes the exporter writes.
+  - Each weight matrix gets its own CQ width from a recipe. Phase 2 starts from Cactus's mixed recipe: the token embedding and the `mhc_phi_*` matrices at 4 bits, everything else at 2 bits.
+  - needle's LoRA smoke test is skipped.
+- **Why:**
+  - needle's writer refuses widths other than 4, although the format and engine accept 1 to 4, and Cactus's own `whistle.cact` is mixed 2/4-bit.
+  - At JAX's default precision on our GPU (TF32), training and export disagree on about 680 codes per million at 4 bits. At HIGHEST, under 1 per million.
+  - Rebuilding `shruti.cact` from its checkpoint matched to about 2 codes per million. That proves the export path more strongly than a LoRA run would, and LoRA has no place in our plan.
+- **Consequences:**
+  - `akshar.model` calls private functions of needle's exporter. Before bumping `cactus-needle`, `tests/test_quant_export.py` must pass on the new version.
+  - In the x86 engine, 2-bit files decode about 2.6 times slower than 4-bit (FLEURS: 17 against 46 times real time). akshar-lite's speed must be measured on every Phase 4 device, not assumed from its size.
+- **Revisit if:** a needle release supports per-matrix widths itself, or changes the functions we wrap.
+
 ## Superseded from the earlier ChatGPT plan
 
 - The project name BharatSTT is now **akshar**.

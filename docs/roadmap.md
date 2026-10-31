@@ -16,6 +16,8 @@ Every later claim ("beats Shruti", "2 bits costs this much") is a number from th
 
 ## Phase 1: Prove the toolchain end to end
 
+**Status (2026-10-31):** done. The exit check passes; details and numbers in [toolchain.md](toolchain.md).
+
 - Read `cactus-needle`'s training and export code (Apache-2.0). Find:
   - where LoRA attaches;
   - the 4-bit fake-quant used in training;

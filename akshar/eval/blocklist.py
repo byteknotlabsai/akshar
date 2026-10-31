@@ -52,3 +52,26 @@ def build(names: list[str] | None = None) -> Path:
     (EVAL_ROOT / "blocklist.json").write_text(json.dumps(summary, indent=1) + "\n", encoding="utf-8")
     print(f"blocklist: {sum(per_set.values())} clips, {len(texts)} text hashes, {len(audios)} audio hashes -> {out}")
     return out
+
+
+class Blocklist:
+    """Membership test against the built blocklist: a clip is blocked if its text or its audio matches a test clip."""
+
+    def __init__(self, path: Path | None = None):
+        path = path or EVAL_ROOT / "blocklist.jsonl"
+        if not path.exists():
+            raise SystemExit(f"{path} does not exist; run: python -m akshar.eval blocklist")
+        self.texts, self.audios = set(), set()
+        with open(path, encoding="utf-8") as handle:
+            for line in handle:
+                row = json.loads(line)
+                self.texts.update(row["text_sha256"])
+                self.audios.add(row["audio_sha256"])
+
+    def blocks(self, text: str, samples) -> str | None:
+        """Why the clip is blocked ("text" or "audio"), or None. `samples` is 16 kHz mono float audio."""
+        if text_sha256(text) in self.texts:
+            return "text"
+        if audio.audio_sha256(samples) in self.audios:
+            return "audio"
+        return None

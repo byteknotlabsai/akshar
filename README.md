@@ -2,7 +2,7 @@
 
 An open-source, offline speech-to-text model for Hindi, English and Hinglish, small enough for phones and ordinary CPUs.
 
-**Status (2026-10-31):** the evaluation harness (Phase 0) is built. Scored by it, Shruti lands within 0.22 WER of Udgam Labs' numbers for the same engine build on all seven test sets, so Phase 0 is done ([docs/eval.md](docs/eval.md)). Nothing is trained yet. Any number in this repo is someone else's measurement unless a table says it is ours.
+**Status (2026-10-31):** Phases 0 and 1 are done. The evaluation harness reproduces Shruti's published numbers to within 0.22 WER on all seven test sets ([docs/eval.md](docs/eval.md)). We can train all of Whistle's weights and export 4-bit and 2-bit models ([docs/toolchain.md](docs/toolchain.md)). No akshar model is trained yet. Any number in this repo is someone else's measurement unless a table says it is ours.
 
 ## Goal
 
@@ -59,6 +59,8 @@ The model itself always writes `mixed`: Hindi in Devanagari, English words in La
 | [docs/roadmap.md](docs/roadmap.md) | Phases, exit checks, evaluation protocol, compute plan, risks |
 | [docs/eval.md](docs/eval.md) | How to run the evaluation harness, the protocol's details, and Shruti's scores through it |
 | [akshar/eval/](akshar/eval/) | The evaluation harness: test-set download, decoding in the needle engine, scoring |
+| [docs/toolchain.md](docs/toolchain.md) | How training and export work, and what Phase 1 measured |
+| [akshar/model/](akshar/model/), [akshar/train/](akshar/train/), [akshar/data/](akshar/data/) | Checkpoints, quantisation and `.cact` export; full-weight training; training manifests |
 | [docs/decisions.md](docs/decisions.md) | Decision log |
 | [docs/setup-ubuntu.md](docs/setup-ubuntu.md) | First-time setup on Ubuntu (where all building happens) |
 | [data/LICENSES.md](data/LICENSES.md) | Dataset licence ledger. No dataset is used for training without an entry. |

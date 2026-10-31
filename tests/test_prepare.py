@@ -55,3 +55,17 @@ def test_svarah_ids_come_from_the_audio_file_name(roots, monkeypatch):
     })
     assert [r["id"] for r in rows] == ["utt_0001", "svarah-00001"]
     assert rows[1]["text"] == "order my groceries"
+
+
+def test_blocklist_blocks_by_text_or_audio(tmp_path):
+    from akshar.eval import blocklist
+    from akshar.eval.audio import audio_sha256
+
+    samples = np.zeros(1600, np.float32)
+    path = tmp_path / "blocklist.jsonl"
+    path.write_text(json.dumps({"set": "x", "id": "1", "text_sha256": [blocklist.text_sha256("नमस्ते दुनिया")],
+                                "audio_sha256": audio_sha256(samples)}) + "\n", encoding="utf-8")
+    bl = blocklist.Blocklist(path)
+    assert bl.blocks("नमस्ते, दुनिया!", np.ones(1600, np.float32)) == "text"
+    assert bl.blocks("कुछ और", samples) == "audio"
+    assert bl.blocks("कुछ और", np.ones(1600, np.float32)) is None
