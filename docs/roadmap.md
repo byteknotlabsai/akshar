@@ -4,6 +4,8 @@ A phase is done when its exit check passes, not when its task list is ticked. Fa
 
 ## Phase 0: Eval harness (first week on Ubuntu)
 
+**Status (2026-10-31):** done. The exit check passes on all seven test sets. Details and numbers: [eval.md](eval.md).
+
 Every later claim ("beats Shruti", "2 bits costs this much") is a number from this harness, so it comes first.
 
 - Set up Ubuntu ([setup-ubuntu.md](setup-ubuntu.md)).
@@ -128,11 +130,16 @@ Fixed now so that akshar and Shruti are always scored the same way.
 
 | Resource | When | Use |
 |---|---|---|
-| Laptop RTX 3050 4 GB (Ubuntu) | now | harness, data prep, smoke tests, small QAT experiments |
+| Laptop RTX 3050 4 GB (Ubuntu) | now | harness, data prep, Phase 1 (toolchain), Phase 2 (2-bit recipe), Phase 5 (text layer) |
+| 32 GB VRAM machine (Ubuntu, reached over SSH from the laptop) | from 2026-11-02; specs to confirm | Phase 3: pseudo-labelling, training akshar and akshar-lite |
 | Kaggle and Colab free tiers | now | overflow (JAX also runs on their TPUs) |
-| 32 GB RTX machine | from 2026-11-02 | Track A and Track B training (needs Linux or WSL2 for JAX on CUDA) |
+| Google Drive, 5 TB (the owner's plan) | now | pseudo-labels, packed training shards, checkpoints, backups. Training never reads from it directly. |
+| Devices from the owner | by Phase 4 | low-end and mid-range Android phones, a Windows PC, an Apple-silicon Mac |
 
-A 55M-parameter model is small; storage and audio loading will limit us before GPU maths does. 2,732 h of 16 kHz 16-bit audio is about 315 GB as raw PCM and roughly half that as FLAC. Check free disk on the Ubuntu partition and the 32 GB machine before Phase 2.
+A 55M-parameter model is small; storage and audio loading will limit us before GPU maths does (D14).
+- 2,732 h of 16 kHz 16-bit audio is about 315 GB as raw PCM and roughly half that as FLAC.
+- The internet link is 100 Mbps, so moving 1 TB takes about a day. Each machine downloads source datasets itself, from Hugging Face at pinned revisions, instead of copying them between machines.
+- Check the 32 GB machine's free disk before Phase 3.
 
 ## Risks
 

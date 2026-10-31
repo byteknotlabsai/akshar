@@ -48,6 +48,7 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
 
 ## D7 (2026-10-31): Free compute only; build on Ubuntu
 
+- **Status:** amended by D14 (which machine runs which phase, and where data is stored).
 - **Decision:**
   - No paid GPUs.
   - Resources: laptop RTX 3050 4 GB, Kaggle and Colab free tiers, and a 32 GB RTX machine from 2026-11-02.
@@ -134,6 +135,43 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
 - **Open:**
   - Intel Mac support: this needs a build from Cactus, or the engine source if github.com/cactus-compute/needle includes it.
   - The app stack, which decides the integration path.
+
+## D13 (2026-10-31): Evaluation harness details, settled by reproducing Shruti
+
+- **Decision:** every model is scored by the harness in `akshar/eval/` ([eval.md](eval.md)). It fixes the details D4 left open:
+  - **Normaliser:** Unicode NFC, lowercase, then every punctuation character (Unicode category P, including the danda) becomes a space. Digits and symbols stay.
+  - **FLEURS references:** `raw_transcription`, not FLEURS' pre-normalised `transcription`.
+  - **Lahaja references:** `text`, the clean Devanagari transcript, not `verbatim` or `normalized`.
+  - **Monsoon:** `voi-oiwer` 0.1.4 on the raw transcript, reported as the corpus total.
+  - **Romanised WER for Hinglish sets:** normalise, convert Devanagari to ITRANS (`indic-transliteration` 2.3.82), then lowercase.
+  - **Silence:** 50 clips of 4 s digital silence and 50 of Gaussian noise (standard deviation 0.003, seed 20261031), decoded with `hi`.
+  - **Pins:** `cactus-needle` 3.2.8 (engine 3.3.3) and every other package in `uv.lock`; each dataset at a commit in `akshar/eval/sets.py`.
+  - **Sources:** LibriSpeech from the Hugging Face copy (openslr/librispeech_asr), not the OpenSLR tarball. MUCS from dianavdavidson/MUCS-Hinglish, the copy Shruti used. It is used only as a test set, never for training (`eval only` in the licence ledger).
+- **Why:**
+  - Scored this way, Shruti lands within 0.22 WER of Udgam Labs' numbers for the same engine build on all seven sets, and reproduces their romanised MUCS score exactly (34.79).
+  - A space reproduces LibriSpeech exactly (5.95); deleting punctuation gives 7.47.
+  - FLEURS' `transcription` column also maps chandrabindu to anusvara, for references only. That breaks D4's rule of one normaliser for both sides. With it Shruti would score 20.07 instead of 20.36.
+- **Consequences:**
+  - The remaining gaps come from the platform: Udgam Labs measured on Apple silicon, we run on x86, and the two October engine builds give identical transcripts here. So claims about akshar against Shruti use our own Shruti runs on the same machine, never Udgam Labs' numbers.
+  - Changing the normaliser, a scorer, the engine build or a dataset revision needs a new decision, and Shruti must be re-scored with it.
+  - The Phase 0 exit check passes on all seven sets.
+- **Revisit if:** a new engine build changes Shruti's transcripts.
+
+## D14 (2026-10-31): Which machine does what, and where data lives
+
+- **Decision:**
+  - The laptop (RTX 3050, 4 GB) runs Phases 1 and 2 and the text layer (Phase 5).
+  - The 32 GB VRAM Ubuntu machine, reached over SSH from the laptop, runs Phase 3: pseudo-labelling, and training akshar and akshar-lite.
+  - Training reads its data from the training machine's own disk, never from a network mount.
+  - Google Drive (the owner's 5 TB plan) stores what we create: pseudo-labels, packed training shards, checkpoints and backups. Files go up as large packs, because Drive is slow per file and caps uploads at 750 GB a day.
+  - Source datasets are downloaded from Hugging Face, at pinned revisions, on the machine that uses them. They are not copied between machines.
+  - Phase 4 uses devices the owner provides: low-end and mid-range Android phones, a Windows PC and an Apple-silicon Mac.
+- **Why:**
+  - The model is small. Training all 55M weights, with optimiser state and a frozen teacher for distillation, takes about 1 GB of GPU memory before activations, so the 4 GB laptop GPU handles Phases 1 and 2 with small batches and gradient accumulation. The earlier plan gave Track A to the 32 GB machine without needing to.
+  - Phase 3 processes thousands of hours, several times over. That would take days per run on the laptop, and its audio would not fit on the laptop's disk.
+  - The internet link is 100 Mbps, so 1 TB takes about a day to move. Large data should travel once, straight from its source.
+- **Amends:** D7.
+- **Open:** the 32 GB machine's free disk, RAM, CPU and network speed, and whether it can run multi-day jobs unattended. The owner will confirm them.
 
 ## Superseded from the earlier ChatGPT plan
 

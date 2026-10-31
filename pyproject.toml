@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "akshar"
+version = "0.0.0"
+description = "Training and evaluation code for akshar, an offline Hindi/English/Hinglish speech-to-text model"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = "==3.12.*"
+dependencies = [
+    # cactus-needle 3.2.8 loads engine build 3.3.3. Engine builds move WER slightly (Shruti's numbers moved by up to
+    # 0.22 points between two builds), so this is pinned exactly. Bump it on purpose and re-score Shruti when you do.
+    "cactus-needle[train]==3.2.8",
+    "huggingface-hub>=1.0",
+    # Romanised (script-agnostic) WER for Hinglish sets. Pinned: it defines a reported metric.
+    "indic-transliteration==2.3.82",
+    "numpy>=2",
+    "psutil>=6",
+    "pyarrow>=18",
+    "rapidfuzz>=3",
+    "soundfile>=0.13",
+    "soxr>=0.5",
+    # The official Monsoon scorer (Open ASR leaderboard). Pinned: a scorer change changes every Monsoon number.
+    "voi-oiwer==0.1.4",
+]
+
+[project.optional-dependencies]
+gpu = ["cactus-needle[gpu]==3.2.8"]
+
+[project.scripts]
+akshar-eval = "akshar.eval.cli:main"
+
+[dependency-groups]
+dev = ["jiwer>=4", "pytest>=8"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["akshar"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
