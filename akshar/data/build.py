@@ -29,7 +29,7 @@ import numpy as np
 import soundfile as sf
 
 from ..eval.audio import SAMPLE_RATE, audio_sha256
-from ..eval.blocklist import Blocklist, text_sha256
+from ..eval.blocklist import Blocklist
 from ..eval.normalise import normalise
 from ..eval.paths import DATA_ROOT
 from ..files import repair_jsonl
@@ -118,7 +118,7 @@ def build(name: str, hours: float, out: Path | None = None, fraction: float = 1.
                         progress["too_short" if seconds < MIN_SECONDS else "too_long"] += 1
                         continue
                     text = row[src.text] or ""
-                    reason = ("text" if text_sha256(text) in blocklist.texts else
+                    reason = ("text" if blocklist.text_blocked(text) else
                               "audio" if audio_sha256(samples) in blocklist.audios else None)
                     if reason:
                         progress[f"blocked_{reason}"] += 1

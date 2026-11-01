@@ -18,7 +18,7 @@ akshar is an offline Hindi/English/Hinglish speech-to-text model for CPUs and ph
 - **Licences:**
   - No dataset enters training without a row in `data/LICENSES.md` marked `admit` or `admit, caveat`.
   - Track A weights (built from Shruti) are research-only (D9). Never present them as releasable.
-- **Contamination:** remove every eval clip from training data by normalised-text hash and audio hash, including data added later.
+- **Contamination:** remove every eval clip from training data, including data added later: by audio hash always, and by normalised-text hash when the text has three or more words (D17).
 - **Output convention:**
   - The core model writes the `mixed` style: Hindi in Devanagari, English words in lowercase Latin, numbers as words, no punctuation.
   - The product offers three styles (`roman`, `devanagari`, `mixed`; D11), all rendered by the text layer from that one output.

@@ -19,6 +19,10 @@ from .normalise import normalise
 from .paths import EVAL_ROOT
 from .prepare import load_manifest
 
+# D17: a text match blocks a clip only from this many words up. One- and two-word utterances (हाँ, नौ) are common
+# speech, not leaked test clips; a real copy of a test clip is caught by its audio hash.
+MIN_TEXT_WORDS = 3
+
 EXTRA_TEXT_FIELDS = ("fleurs_transcription", "lahaja_verbatim", "lahaja_normalized")  # other reference columns; hashed too
 
 
@@ -68,9 +72,12 @@ class Blocklist:
                 self.texts.update(row["text_sha256"])
                 self.audios.add(row["audio_sha256"])
 
+    def text_blocked(self, text: str) -> bool:
+        return len(normalise(text).split()) >= MIN_TEXT_WORDS and text_sha256(text) in self.texts
+
     def blocks(self, text: str, samples) -> str | None:
         """Why the clip is blocked ("text" or "audio"), or None. `samples` is 16 kHz mono float audio."""
-        if text_sha256(text) in self.texts:
+        if self.text_blocked(text):
             return "text"
         if audio.audio_sha256(samples) in self.audios:
             return "audio"

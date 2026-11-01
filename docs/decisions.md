@@ -206,6 +206,21 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - Measuring phone RAM moves to Phase 4, when the devices arrive.
 - **Amends:** the Method and Data lines of the roadmap's Phase 2.
 
+## D17 (2026-11-01): A text match removes a training clip only from three words up
+
+- **Decision:**
+  - A training clip whose audio matches a test clip's (the 16 kHz 16-bit PCM hash) is always removed.
+  - A clip is removed for its text only when its normalised transcript has three or more words and matches a test clip's normalised text.
+  - This applies from Phase 3 on. Phase 2's data was built under the old rule and is not rebuilt.
+- **Why:**
+  - In Phase 2 the text rule removed 1,251 IndicVoices clips. In the shard checked, every match was a one- or two-word utterance such as हाँ, नौ or सात that also occurs as a Lahaja reference. These are common words, not leaked test clips.
+  - Short utterances are data akshar needs, for voice commands and answers.
+  - A copy of a test clip is still caught by its audio, and a re-recording of a test sentence by its text.
+- **Consequences:**
+  - CLAUDE.md's contamination rule states the three-word floor.
+  - A re-encoded copy of a one- or two-word test clip would get through. The risk is small, and its effect on a score is at most a word or two.
+- **Revisit if:** a test set with many short references, such as a voice-command benchmark, joins the protocol.
+
 ## Superseded from the earlier ChatGPT plan
 
 - The project name BharatSTT is now **akshar**.
