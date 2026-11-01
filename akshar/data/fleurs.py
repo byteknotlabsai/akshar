@@ -52,14 +52,19 @@ def build(hours: float, out: Path) -> dict:
             path = out / "clips" / name
             path.write_bytes(blob)
             samples = audio.load(path)
+            if len(samples) > 30 * audio.SAMPLE_RATE:  # longer than the model's window
+                counts["over_30s"] = counts.get("over_30s", 0) + 1
+                path.unlink()
+                continue
             reason = blocklist.blocks(text, samples)
             if reason:
                 counts[f"blocked_{reason}"] += 1
                 path.unlink()
                 continue
             duration = len(samples) / audio.SAMPLE_RATE
-            manifest.write(json.dumps({"audio": f"clips/{name}", "text": text, "language": "hi",
-                                       "duration": round(duration, 3)}, ensure_ascii=False) + "\n")
+            manifest.write(json.dumps({"id": f"fleurs_hi_train/{Path(name).stem}", "audio": f"clips/{name}",
+                                       "duration": round(duration, 3), "text": text, "language": "hi",
+                                       "source": "fleurs_hi_train"}, ensure_ascii=False) + "\n")
             counts["kept"] += 1
             seconds += duration
             if seconds >= hours * 3600:

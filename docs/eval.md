@@ -27,6 +27,8 @@ uv run python -m akshar.eval report
 | `score <run folder>... [--first N]` | Re-scores saved transcripts. `--first N` scores only the first N clips, as in Udgam Labs' subsets. |
 | `report` | Every complete run in one table, beside Udgam Labs' number for the same engine build. |
 | `blocklist` | Text and audio hashes of every test clip, for removing them from training data. |
+| `dev <file.cact> --name <label>` | Decodes the dev subsets: the first 200 to 300 clips of each set and all 100 silence clips. About twelve minutes for a 2-bit model, against two hours for the full sets. |
+| `dev-table <label>...` | Dev-subset scores of the named models beside Shruti's, which are re-scored from its full runs without decoding again. For choosing between training runs; final numbers come from full sets. |
 
 More `run` options:
 - `--language auto` lets the engine detect the language.

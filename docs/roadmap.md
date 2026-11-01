@@ -31,6 +31,8 @@ Every later claim ("beats Shruti", "2 bits costs this much") is a number from th
 
 ## Phase 2: Track A, the 2-bit recipe (for akshar-lite)
 
+**Status (2026-11-01):** in progress; method, data and results in [two-bit.md](two-bit.md). Decision D16 amends the Method and Data lines below.
+
 - **Start:** Shruti's fp32 weights (Apache-2.0, credited in NOTICE). The output is research-only (decision D9), because Shruti was trained on sources our licence gate holds.
 - **Method:**
   - 2-bit QAT on all weights.

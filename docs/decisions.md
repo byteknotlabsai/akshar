@@ -189,6 +189,23 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - In the x86 engine, 2-bit files decode about 2.6 times slower than 4-bit (FLEURS: 17 against 46 times real time). akshar-lite's speed must be measured on every Phase 4 device, not assumed from its size.
 - **Revisit if:** a needle release supports per-matrix widths itself, or changes the functions we wrap.
 
+## D16 (2026-10-31): Track A trains on Shruti's own transcripts, distilled from Shruti as deployed
+
+- **Decision:**
+  - Track A's training targets are Shruti's own transcripts of the training audio, decoded by the engine with 5 beams and each source's language flag (`akshar.data.label`). Each dataset's own transcripts are kept only for the blocklist check.
+  - The teacher runs as deployed: 4-bit weights and 8-bit activations, not full precision as the roadmap planned.
+  - Data: IndicVoices Hindi (40 h), Rural Women ASR v2 Hindi (40 h), Kathbath Hindi (20 h), FLEURS Hindi train (3 h) and LibriSpeech train-clean-100 (22 h). All are `admit` or `admit, caveat` in the ledger, and every clip is checked against the test-set blocklist.
+  - Models are compared on dev subsets (the first 200 to 300 clips of each test set, `python -m akshar.eval dev`). Final numbers come from full test sets.
+- **Why:**
+  - Track A's job is a 2-bit copy of Shruti. Shruti's output already follows our `mixed` style, while the datasets' transcripts follow other conventions: IndicVoices writes English words in Devanagari, Rural Women's carry noise tags, and some use digits. Only Phase 3's converters fix those.
+  - On 368 LibriSpeech clips, the 4-bit teacher reproduces the engine's transcripts on 99.5% of tokens under teacher forcing, against 99.1% in full precision, with lower cross-entropy (0.034 against 0.037).
+  - A 2-bit file decodes at about 17 times real time on the laptop, so a full seven-set evaluation takes about two hours per model. The dev subsets take about twelve minutes.
+- **Consequences:**
+  - The roadmap's "without distillation" arm is quantisation-aware training on Shruti's transcripts (alpha 0); "with distillation" adds the token-level KL term (alpha 0.5).
+  - Track A models inherit Shruti's mistakes by design. They measure what 2 bits costs relative to Shruti, nothing more, and stay research-only (D9).
+  - Measuring phone RAM moves to Phase 4, when the devices arrive.
+- **Amends:** the Method and Data lines of the roadmap's Phase 2.
+
 ## Superseded from the earlier ChatGPT plan
 
 - The project name BharatSTT is now **akshar**.

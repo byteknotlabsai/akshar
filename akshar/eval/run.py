@@ -23,6 +23,7 @@ from .normalise import VERSION as NORMALISER_VERSION
 from .paths import EVAL_ROOT, RUNS_ROOT
 from .prepare import git_commit, load_manifest
 from .score import score_clips
+from ..files import repair_jsonl
 
 # D6: the cactus-needle package reports usage unless this is set before it is imported.
 os.environ.setdefault("NEEDLE_TELEMETRY", "0")
@@ -90,6 +91,7 @@ def run(model: str, set_name: str, language: str | None = None, limit: int | Non
     run_dir.mkdir(parents=True, exist_ok=True)
     hyps_path = run_dir / "hyps.jsonl"
     done = set()
+    repair_jsonl(hyps_path)  # a killed run can leave half a line
     if hyps_path.exists():
         with open(hyps_path, encoding="utf-8") as handle:
             done = {json.loads(line)["id"] for line in handle}
