@@ -221,6 +221,18 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - A re-encoded copy of a one- or two-word test clip would get through. The risk is small, and its effect on a score is at most a word or two.
 - **Revisit if:** a test set with many short references, such as a voice-command benchmark, joins the protocol.
 
+## D18 (2026-11-01): Phase 2's training runs move to the 32 GB machine
+
+- **Decision:** Phase 2's training runs (a1 to a4 in `scripts/phase2_track_a.sh`) restart on the 32 GB VRAM machine once its SSH access arrives. The laptop keeps the data, the teacher labels and the evaluation.
+- **Why:**
+  - On the laptop's 4 GB GPU, both full runs ran out of memory after 100 to 150 updates, when a 631 MB allocation failed. The full data mix has longer transcripts than the smoke tests did, so each batch shape needs more memory, and the card also drives the desktop.
+  - Smaller batches would probably fit, but the 32 GB machine runs the same schedule faster with room to spare.
+- **Consequences:**
+  - Amends D14, which gave Phase 2 to the laptop.
+  - Per D14, the GPU machine downloads the sources itself (`akshar.data.build` with the same hours and fractions), and the teacher labels travel as small files.
+  - Nothing trained on the laptop is lost: the runs failed before writing a model, and Phase 2's data and labels are complete.
+- **Revisit if:** the 32 GB machine is not available; then run Phase 2 on the laptop with about 60 s of audio per batch.
+
 ## Superseded from the earlier ChatGPT plan
 
 - The project name BharatSTT is now **akshar**.
