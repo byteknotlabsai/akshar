@@ -9,6 +9,7 @@ A recipe is a function (tensor name, default bits) -> bits. With `uniform(4)` th
 """
 from __future__ import annotations
 
+import re
 from contextlib import contextmanager
 
 import numpy as np
@@ -28,6 +29,36 @@ def cactus_mixed(name: str, default: int) -> int:
     """Cactus's recipe for its own 2-bit whistle.cact: the token embedding and the mHC routing matrices
     (mhc_phi_*) at 4 bits, every other matrix at 2 bits. Read from the published file's tensor directory."""
     return 4 if name == "embedding" or name.rsplit(".", 1)[-1].startswith("mhc_phi") else 2
+
+
+# Parts of the model, recognised by .cact tensor name and by training leaf path (akshar.model.quant.train_recipe
+# passes training paths through for everything except the token embedding and the mhc_phi matrices).
+def _decoder_layer(name: str) -> bool:  # "layer3.cross.q_proj" / "stack/layers/..."
+    return name.startswith("layer") or name.startswith("stack/layers")
+
+
+def _encoder_layer(name: str) -> bool:  # "encoder3.pw1" / "encoder/layers/..."
+    return re.match(r"encoder\d", name) is not None or name.startswith("encoder/layers")
+
+
+def _engram_table(name: str) -> bool:  # "engram0.tables" / "engrams_0/embedding"
+    return (name.startswith("engram") and name.endswith(".tables")) or (
+        name.startswith("engrams_") and name.endswith("/embedding"))
+
+
+PARTS = {"decoder": _decoder_layer, "encoder": _encoder_layer, "engram": _engram_table}
+
+
+def cactus_mixed_plus(part: str, bits: int = 4):
+    """Cactus's mixed recipe with one more part of the model (decoder layers, encoder layers or engram tables) at
+    `bits`, for trading file size against accuracy."""
+    in_part = PARTS[part]
+    return lambda name, default: bits if in_part(name) else cactus_mixed(name, default)
+
+
+def cactus_mixed_at(bits: int):
+    """Cactus's mixed recipe with every matrix it puts at 2 bits at `bits` instead."""
+    return lambda name, default: 4 if cactus_mixed(name, default) == 4 else bits
 
 
 def cq_pack(w: np.ndarray, bits: int, group: int = CQ_GROUP):

@@ -26,7 +26,9 @@ from pathlib import Path
 from ..eval.paths import DATA_ROOT
 from ..model import checkpoint, export
 
-RECIPES = {"w4": export.uniform(4), "w2": export.uniform(2), "mixed2": export.cactus_mixed}
+RECIPES = {"w4": export.uniform(4), "w2": export.uniform(2), "mixed2": export.cactus_mixed,
+           "mixed3": export.cactus_mixed_at(3), "mixed2-dec4": export.cactus_mixed_plus("decoder"),
+           "mixed2-enc4": export.cactus_mixed_plus("encoder"), "mixed2-engram4": export.cactus_mixed_plus("engram")}
 
 
 def _is_validation(clip_id: str, fraction: float) -> bool:
