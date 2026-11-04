@@ -11,7 +11,8 @@ Checked 2026-10-31 from web pages only (dataset cards, licence pages, papers). T
   - AI4Bharat NPTEL: NPTEL's own licence may be non-commercial.
   - MUCS 2021: share-alike.
   - Common Voice: new Mozilla Data Collective terms.
-  - **So Track A models, which start from Shruti's weights, are research-only until these are resolved (decision D9).** Track B is the path to a commercially clean akshar.
+  - **So Track A models, which start from Shruti's weights, are research-only until these are resolved (decision D9).**
+  - **Since D19 (2026-11-04), akshar may train on these four too.** Any model trained on them waits for a lawyer's review before release.
 - **Clean, transcribed Hindi pool:** about 2,000 h before IndicVoices and Rural Women (hours not published).
   - Vaani: 1,004 h.
   - SPRING-INX: ~351 h.
@@ -39,10 +40,10 @@ Hours are as published; n/s means not stated.
 | FLEURS (hi train) | CC-BY-4.0; sentences from CC-BY-SA-4.0 FLoRes | admit, caveat | hi ~10 | read | open | yes |
 | People's Speech (CC-BY configs only) | CC-BY | admit, caveat | en 30k+, mostly US | mixed archive.org | open | no |
 | IndicVoices-R | CC-BY-4.0 | admit, low value | overlaps IndicVoices | TTS-enhanced extempore | HF gate (auto) | no |
-| Shrutilipi (hi) | CC-BY-4.0 label, but audio is All India Radio | **hold** | hi 1,620 | news broadcast | HF gate (auto) | yes |
-| AI4Bharat NPTEL / NPTEL2020 | CC-BY-4.0 label; NPTEL shows BY-SA or BY-NC-SA | **hold** | en up to 15,700; hi audio 1,434 | lectures | HF / GitHub | yes |
-| MUCS 2021 Hindi-English (OpenSLR 104) | CC-BY-SA-4.0; the HF mirror mislabels it BY | **hold** | mixed ~90 train | tech tutorials | open | yes |
-| Common Voice 17 / 27 (hi, en) | CC0 plus Mozilla Data Collective terms (updated 2026-10-28) | **hold** | hi 15.7; en 2,827 (5.9% Indian accent) | read | MDC account | yes (en) |
+| Shrutilipi (hi) | CC-BY-4.0 label, but audio is All India Radio | **hold, train (D19)** | hi 1,620 | news broadcast | HF gate (auto) | yes |
+| AI4Bharat NPTEL / NPTEL2020 | CC-BY-4.0 label; NPTEL shows BY-SA or BY-NC-SA | **hold, train (D19)** | en up to 15,700; hi audio 1,434 | lectures | HF / GitHub | yes |
+| MUCS 2021 Hindi-English (OpenSLR 104) | CC-BY-SA-4.0; the HF mirror mislabels it BY | **hold, train (D19)** | mixed ~90 train | tech tutorials | open | yes |
+| Common Voice 17 / 27 (hi, en) | CC0 plus Mozilla Data Collective terms (updated 2026-10-28) | **hold, train (D19)** | hi 15.7; en 2,827 (5.9% Indian accent) | read | MDC account | yes (en) |
 | MUCS Hindi (OpenSLR 103) | licence link dead (Microsoft) | **hold** | hi ~95 | read, 8 kHz | open | no |
 | Bhashini / ULCA | set per dataset (NC and ND allowed) | **hold** | varies | varies | login | no |
 | Gramvaani (OpenSLR 118) | free for academic use only | exclude | hi 108 labelled, ~1,000 unlabelled | telephone | open | no |
@@ -60,7 +61,8 @@ Hours are as published; n/s means not stated.
 **Status meanings:**
 - `admit`: verified permissive licence, no known conflict.
 - `admit, caveat`: permissive, with a documented caveat for legal review before release.
-- `hold`: commercial use unclear; not used for Track B training until resolved.
+- `hold, train (D19)`: commercial use unclear, but used for training by the project owner's decision D19. These are the four held sources Shruti trained on. No model trained on one may be released until a lawyer has cleared it.
+- `hold`: commercial use unclear; not used for training until resolved.
 - `exclude`: non-commercial or no permission.
 - `eval only`: a test set, never trained on.
 

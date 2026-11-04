@@ -37,6 +37,7 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
 
 ## D5 (2026-10-31): No data enters training without a ledger entry
 
+- **Status:** amended by D19 (Shruti's four held sources may be trained on; release waits for legal review).
 - **Decision:** every dataset needs a row in [`../data/LICENSES.md`](../data/LICENSES.md) with a verified licence and commercial-use status before any of its audio is used for training.
 - **Unresolved cases stay out:** MUCS 2021 is CC-BY-SA-4.0 upstream, and whether share-alike reaches trained weights is an open legal question.
 - **Consequence:** Track A starts from Shruti's weights, which were trained on MUCS. Releasing Track A weights inherits that question, and the ledger records it.
@@ -69,6 +70,7 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
 
 ## D9 (2026-10-31): Track A models are research-only; the commercial release comes from Track B
 
+- **Status:** amended by D19 (Track B may train on Shruti's four held sources; release waits for legal review).
 - **Decision:**
   - Weights produced in Track A (which start from Shruti) are for research and internal comparison only.
   - The commercially released akshar comes from Track B, trained only on `admit` and `admit, caveat` sources.
@@ -232,6 +234,23 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - Per D14, the GPU machine downloads the sources itself (`akshar.data.build` with the same hours and fractions), and the teacher labels travel as small files.
   - Nothing trained on the laptop is lost: the runs failed before writing a model, and Phase 2's data and labels are complete.
 - **Revisit if:** the 32 GB machine is not available; then run Phase 2 on the laptop with about 60 s of audio per batch.
+
+## D19 (2026-11-04): Shruti's four held sources join training; release waits for legal review
+
+- **Decision:**
+  - Phase 3 may train on the four sources Shruti used that the ledger holds: Shrutilipi, AI4Bharat NPTEL, MUCS 2021 Hindi-English and Common Voice's Indian-accented English. Their ledger status becomes `hold, train (D19)`.
+  - No model trained on them is released until a lawyer has reviewed them. The project owner will arrange that review.
+  - Every training clip keeps its source, so any one source can be dropped and the model retrained without it.
+- **Why:**
+  - They fill akshar's weakest spots: Indian-accented English (NPTEL, Common Voice), natural Hinglish (MUCS) and Hindi volume (Shrutilipi, 1,620 h). Without them akshar could trail Shruti on Svarah and MUCS.
+- **Consequences:**
+  - Amends D5 and D9. akshar is no longer commercially clean by construction; it becomes releasable only after the review.
+  - If the review rejects a source, every model trained on it must be retrained without it.
+  - Recommended, still open: also train a clean model without these sources. It is the fallback if a source is rejected, and it measures what the held sources are worth.
+  - Common Voice downloads need the owner's Mozilla Data Collective account and acceptance of its terms.
+  - They add roughly 150 to 200 GB of audio to Phase 3's storage needs.
+  - Phase 2 (Track A) is unchanged.
+- **Revisit after:** the legal review.
 
 ## Superseded from the earlier ChatGPT plan
 
