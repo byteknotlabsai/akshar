@@ -7,11 +7,12 @@
 set -euo pipefail
 export NEEDLE_TELEMETRY=0 DO_NOT_TRACK=1 HF_HUB_DISABLE_TELEMETRY=1 XLA_PYTHON_CLIENT_PREALLOCATE=false
 PY=.venv/bin/python
-SOURCES="librispeech_100 rural_women_hi fleurs_hi_train indicvoices_hi kathbath_hi"
+SOURCES="librispeech_100 rural_women_hi fleurs_hi_train indicvoices_hi kathbath_hi nonspeech"  # nonspeech: D22
 COMMON="--sources $SOURCES --recipe mixed2 --steps 1200 --budget 120 --accum 4 --lr 5e-5"
 
 echo "$(date -Is) waiting for teacher labels"
 while systemctl --user is-active --quiet akshar-labels akshar-build-indicvoices_hi akshar-build-kathbath_hi; do sleep 60; done
+[ -f ~/akshar-data/train/nonspeech/manifest.jsonl ] || $PY -m akshar.data.nonspeech  # silence and noise (D22)
 for s in $SOURCES; do  # every clip must be labelled before training starts
   m=$(wc -l < ~/akshar-data/train/$s/manifest.jsonl); l=$(wc -l < ~/akshar-data/train/$s/labels-shruti.jsonl)
   echo "$s: $l of $m clips labelled"; [ "$l" -eq "$m" ] || { echo "labelling incomplete for $s"; exit 1; }

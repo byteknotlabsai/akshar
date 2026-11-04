@@ -10,7 +10,7 @@ nice -n 15 .venv/bin/python - <<'PY'
 from akshar.model import checkpoint
 from akshar.train.distill import load_clips
 ck = checkpoint.load("models/shruti/shruti.safetensors")
-sources = ["librispeech_100", "rural_women_hi", "fleurs_hi_train", "indicvoices_hi", "kathbath_hi"]
+sources = ["librispeech_100", "rural_women_hi", "fleurs_hi_train", "indicvoices_hi", "kathbath_hi", "nonspeech"]
 train, val, stats = load_clips(sources, "shruti", ck.tokenizer(), ck.cfg, 0.01)
 print(f"{len(train)} training clips, {sum(c.seconds for c in train) / 3600:.1f} h; {len(val)} validation; {stats}")
 missing = [c.path for c in train + val if not c.path.exists()]

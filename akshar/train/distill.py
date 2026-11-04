@@ -1,7 +1,8 @@
 """Quantisation-aware training of a Whistle student against a frozen teacher (roadmap Phase 2, Track A).
 
 The student starts from a full-precision checkpoint and trains every weight, fake-quantised at its recipe's widths.
-Its targets are the teacher's own transcripts (akshar.data.label). The loss on each token is
+Its targets are the teacher's own transcripts (akshar.data.label); silence and noise clips (akshar.data.nonspeech)
+have empty targets, so the model learns to write nothing on them. The loss on each token is
 
     (1 - alpha) * cross-entropy(teacher's transcript)  +  alpha * T^2 * KL(teacher || student at temperature T)
 
@@ -40,7 +41,7 @@ def load_clips(sources: list[str], labels: str, tokenizer, cfg, val_fraction: fl
         folder = DATA_ROOT / "train" / name
         with open(folder / f"labels-{labels}.jsonl", encoding="utf-8") as handle:
             teacher = {row["id"]: row for row in map(json.loads, handle)}
-        kept = empty = unlabelled = too_long = 0
+        kept = empty = unlabelled = too_long = other_language = 0
         with open(folder / "manifest.jsonl", encoding="utf-8") as handle:
             for row in map(json.loads, handle):
                 label = teacher.get(row["id"])
@@ -51,16 +52,19 @@ def load_clips(sources: list[str], labels: str, tokenizer, cfg, val_fraction: fl
                     unlabelled += 1
                     continue
                 text, language = label["teacher"].strip(), label["language"] or row["language"]
-                if not text or language not in cfg.languages:
-                    empty += 1  # the engine returns nothing for silence or noise; there is no sequence to learn
+                if language not in cfg.languages:
+                    other_language += 1
                     continue
+                # An empty target is kept: on silence and noise the model must learn to write nothing and stop (D22).
                 ids = (cfg.bos, cfg.tag(language), *tokenizer.encode(text), cfg.eos)
                 if len(ids) > cfg.max_tokens + 1:
                     continue
                 clip = Clip(folder / row["audio"], row["duration"], ids)
                 (val if _is_validation(row["id"], val_fraction) else train).append(clip)
                 kept += 1
-        stats[name] = {"clips": kept, "empty_teacher": empty, "unlabelled": unlabelled, "over_30s": too_long}
+                empty += not text
+        stats[name] = {"clips": kept, "empty_target": empty, "unlabelled": unlabelled, "over_30s": too_long,
+                       "other_language": other_language}
     return train, val, stats
 
 

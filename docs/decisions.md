@@ -279,6 +279,24 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - A model trained without MUCS 2021 and Common Voice needs no further licence review under this ledger.
   - Track A stays research-only while MUCS 2021 and Common Voice are unresolved (D9).
 
+## D22 (2026-11-04): Phase 2 trains on silence and noise with empty targets
+
+- **Decision:**
+  - Phase 2's runs add a sixth training set, `nonspeech`: 600 synthetic clips, about 1.8 h, made by `akshar.data.nonspeech` from a fixed seed.
+  - A quarter each are digital silence, white noise, pink noise and 50 Hz mains hum. Noise is at -70 to -40 dB RMS relative to full scale, and clips are 1 to 20 s long.
+  - Their target is empty: the model writes nothing and stops. The trainer now keeps clips with empty targets instead of skipping them.
+- **Why:**
+  - Shruti trained with silence and synthetic-noise clips that have empty transcripts, and it writes nothing on the harness's 100 silent clips.
+  - Our five speech sets have no such clips: all 57,564 training clips had text. Two-bit training on speech alone could drift into inventing words on silence.
+  - Shruti rounded to 2 bits with no training still writes nothing on the silent clips, so these clips keep a behaviour rather than teach a new one.
+- **Consequences:**
+  - Speech clips keep Shruti's transcripts as targets (D16). Shruti also writes nothing on silence, so the empty targets agree with it.
+  - The harness's silence set, digital silence and faint noise, now resembles the training data, as it did for Shruti.
+  - Every silence test clip is 4 s long and no training clip is, so no training clip can share a test clip's audio hash. A check against the blocklist's 19,735 audio hashes found no overlap either.
+  - The clips contain no third-party audio. The ledger lists them as `admit`.
+  - Phase 3 keeps them; its roadmap already plans silence and noise clips with empty targets.
+- **Revisit if:** the dev silence test shows invented words, or a later noise test shows quiet speech being dropped.
+
 ## Superseded from the earlier ChatGPT plan
 
 - The project name BharatSTT is now **akshar**.
