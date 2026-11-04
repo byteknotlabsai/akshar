@@ -53,11 +53,23 @@ def _cross_attention(name: str) -> bool:  # "layer3.cross.q_proj" / "stack/layer
 PARTS = {"decoder": _decoder_layer, "encoder": _encoder_layer, "engram": _engram_table, "cross": _cross_attention}
 
 
+def cactus_mixed_with(widths: dict[str, int]):
+    """Cactus's mixed recipe with some parts of the model (keys of PARTS: decoder layers, their cross-attention,
+    encoder layers, engram tables) at other widths, for trading file size against accuracy."""
+    tests = [(PARTS[part], bits) for part, bits in widths.items()]
+
+    def recipe(name: str, default: int) -> int:
+        for in_part, bits in tests:
+            if in_part(name):
+                return bits
+        return cactus_mixed(name, default)
+
+    return recipe
+
+
 def cactus_mixed_plus(part: str, bits: int = 4):
-    """Cactus's mixed recipe with one more part of the model (decoder layers, their cross-attention, encoder layers or
-    engram tables) at `bits`, for trading file size against accuracy."""
-    in_part = PARTS[part]
-    return lambda name, default: bits if in_part(name) else cactus_mixed(name, default)
+    """Cactus's mixed recipe with one more part of the model at `bits`."""
+    return cactus_mixed_with({part: bits})
 
 
 def cactus_mixed_at(bits: int):
