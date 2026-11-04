@@ -135,7 +135,7 @@ Fixed now so that akshar and Shruti are always scored the same way.
 | Resource | When | Use |
 |---|---|---|
 | Laptop RTX 3050 4 GB (Ubuntu) | now | harness, data prep, Phase 1 (toolchain), Phase 2 (2-bit recipe), Phase 5 (text layer) |
-| 32 GB VRAM machine (Ubuntu, reached over SSH from the laptop) | from 2026-11-02; specs to confirm | Phase 3: pseudo-labelling, training akshar and akshar-lite |
+| RTX 5080, 16 GB, on the owner's server (Ubuntu, SSH over Tailscale) | evenings, once its llama.cpp service is stopped (D20) | Phase 2 and Phase 3 training |
 | Kaggle and Colab free tiers | now | overflow (JAX also runs on their TPUs) |
 | Google Drive, 5 TB (the owner's plan) | now | pseudo-labels, packed training shards, checkpoints, backups. Training never reads from it directly. |
 | Devices from the owner | by Phase 4 | low-end and mid-range Android phones, a Windows PC, an Apple-silicon Mac |
@@ -143,7 +143,7 @@ Fixed now so that akshar and Shruti are always scored the same way.
 A 55M-parameter model is small; storage and audio loading will limit us before GPU maths does (D14).
 - 2,732 h of 16 kHz 16-bit audio is about 315 GB as raw PCM and roughly half that as FLAC.
 - The internet link is 100 Mbps, so moving 1 TB takes about a day. Each machine downloads source datasets itself, from Hugging Face at pinned revisions, instead of copying them between machines.
-- Check the 32 GB machine's free disk before Phase 3.
+- The GPU server has about 45 GB free, so Phase 3's few hundred GB of audio needs another home before Phase 3 starts (D20).
 
 ## Risks
 

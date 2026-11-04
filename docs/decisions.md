@@ -252,6 +252,16 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - Phase 2 (Track A) is unchanged.
 - **Revisit after:** the legal review.
 
+## D20 (2026-11-04): The GPU machine is an RTX 5080 with 16 GB, used in the evenings
+
+- **Decision:** training runs on the RTX 5080 (16 GB) in the owner's server `codeacius-servo`, after 9 PM once its llama.cpp service is stopped. Work lives in `~/user1` there, and training starts only when no other process uses the GPU (`scripts/server_train.sh` checks).
+- **Why:** the machine D14 described as a free 32 GB GPU has a 16 GB GPU that a llama.cpp service uses during the day. 16 GB is ample for Phase 2, which peaked at 2.5 GB.
+- **Consequences:**
+  - Amends D14 and D18.
+  - The laptop reaches the server only through a Tailscale relay, at about 0.4 MB/s. Big files are fetched by the server itself from Hugging Face, at about 14 MB/s (`scripts/server_fetch.sh`).
+  - The server's disk has about 45 GB free. Phase 3's audio, a few hundred GB with D19's sources, needs another home; still open.
+- **Revisit if:** the server's GPU, disk or evening window changes.
+
 ## Superseded from the earlier ChatGPT plan
 
 - The project name BharatSTT is now **akshar**.

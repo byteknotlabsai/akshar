@@ -12,7 +12,7 @@ akshar is an offline Hindi/English/Hinglish speech-to-text model for CPUs and ph
 - **Compute:** free only.
   - Laptop RTX 3050 Laptop 4 GB.
   - Kaggle and Colab free tiers.
-  - A 32 GB VRAM Ubuntu machine from 2026-11-02, reached over SSH from the laptop, for Phase 3 (D14).
+  - An RTX 5080 (16 GB) on the owner's Ubuntu server, evenings only, after its llama.cpp service is stopped; reached over SSH via Tailscale, working in `~/user1` (D20). Never start on its GPU while another process uses it.
   - Never plan around paid GPUs.
 - **Telemetry:** export `NEEDLE_TELEMETRY=0` and `DO_NOT_TRACK=1` before any needle command, because the package reports usage by default.
 - **Licences:**
