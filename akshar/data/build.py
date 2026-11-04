@@ -149,13 +149,68 @@ def build(name: str, hours: float, out: Path | None = None, fraction: float = 1.
     return {k: v for k, v in progress.items() if k != "done"} | {"shards": len(progress["done"])}
 
 
+def rebuild(name: str, manifest: Path, out: Path | None = None) -> dict:
+    """Re-create exactly the clips another machine's manifest lists, from the same pinned source shards.
+
+    A manifest and its labels are small enough to copy between machines; the audio is not, so it is fetched again
+    from the source, as D14 asks, and written to the same relative paths. The clips were checked against the
+    blocklist when first built, so no check runs here. Resumable: finished shards are skipped.
+    """
+    import pyarrow.parquet as pq
+
+    src = sources.get(name)
+    out = out or DATA_ROOT / "train" / name
+    with open(manifest, encoding="utf-8") as handle:
+        lines = [line for line in handle if line.strip()]
+    wanted = {json.loads(line)["id"]: json.loads(line) for line in lines}
+    by_shard: dict[str, set[str]] = {}
+    for clip_id, row in wanted.items():
+        by_shard.setdefault(row["audio"].split("/")[1], set()).add(clip_id)
+    shard_files = {Path(s).stem: s for s in src.shards}
+    progress_path = out / "rebuild-progress.json"
+    progress = json.loads(progress_path.read_text()) if progress_path.exists() else {"done": [], "found": 0}
+    order = [s for s in sorted(by_shard) if s not in progress["done"]]
+    columns = [c for c in (src.audio, src.id) if c]
+    with ThreadPoolExecutor(max_workers=1) as prefetch:
+        pending = prefetch.submit(_download, src, shard_files[order[0]]) if order else None
+        for k, stem in enumerate(order):
+            path = pending.result()
+            pending = prefetch.submit(_download, src, shard_files[order[k + 1]]) if k + 1 < len(order) else None
+            (out / "clips" / stem).mkdir(parents=True, exist_ok=True)
+            found = 0
+            for batch in pq.ParquetFile(path).iter_batches(batch_size=64, columns=columns):
+                for row in batch.to_pylist():
+                    record = row[src.audio] or {}
+                    clip_id = f"{name}/{row[src.id] if src.id else Path(record.get('path') or '').stem}"
+                    if clip_id in by_shard[stem]:
+                        sf.write(out / wanted[clip_id]["audio"], _decode(record["bytes"]), SAMPLE_RATE,
+                                 format="FLAC", subtype="PCM_16")
+                        found += 1
+            if found != len(by_shard[stem]):
+                raise SystemExit(f"{name}: {shard_files[stem]} has {found} of the {len(by_shard[stem])} clips listed")
+            progress["done"].append(stem)
+            progress["found"] += found
+            progress_path.write_text(json.dumps(progress, indent=1) + "\n")
+            os.remove(path)
+            print(f"{name}: {shard_files[stem]} done, {progress['found']} of {len(wanted)} clips", flush=True)
+    if Path(manifest).resolve() != (out / "manifest.jsonl").resolve():
+        (out / "manifest.jsonl").write_text("".join(lines), encoding="utf-8")
+    return {"source": name, "clips": progress["found"], "listed": len(wanted)}
+
+
 def main(argv=None) -> None:
     parser = argparse.ArgumentParser(prog="python -m akshar.data.build", description=__doc__.split("\n\n")[0])
     parser.add_argument("source", choices=list(sources.SOURCES))
-    parser.add_argument("--hours", type=float, required=True, help="stop after the shard that reaches this")
+    parser.add_argument("--hours", type=float, help="stop after the shard that reaches this")
     parser.add_argument("--fraction", type=float, default=1.0, help="share of each shard's clips to keep")
+    parser.add_argument("--from-manifest", type=Path, help="re-create exactly the clips this manifest lists")
     args = parser.parse_args(argv)
-    print(json.dumps(build(args.source, args.hours, fraction=args.fraction)))
+    if args.from_manifest:
+        print(json.dumps(rebuild(args.source, args.from_manifest)))
+    elif args.hours is None:
+        parser.error("give --hours, or --from-manifest")
+    else:
+        print(json.dumps(build(args.source, args.hours, fraction=args.fraction)))
 
 
 if __name__ == "__main__":
