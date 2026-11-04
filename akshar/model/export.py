@@ -46,12 +46,16 @@ def _engram_table(name: str) -> bool:  # "engram0.tables" / "engrams_0/embedding
         name.startswith("engrams_") and name.endswith("/embedding"))
 
 
-PARTS = {"decoder": _decoder_layer, "encoder": _encoder_layer, "engram": _engram_table}
+def _cross_attention(name: str) -> bool:  # "layer3.cross.q_proj" / "stack/layers/block/cross_attn/..."
+    return (name.startswith("layer") and ".cross." in name) or name.startswith("stack/layers/block/cross_attn")
+
+
+PARTS = {"decoder": _decoder_layer, "encoder": _encoder_layer, "engram": _engram_table, "cross": _cross_attention}
 
 
 def cactus_mixed_plus(part: str, bits: int = 4):
-    """Cactus's mixed recipe with one more part of the model (decoder layers, encoder layers or engram tables) at
-    `bits`, for trading file size against accuracy."""
+    """Cactus's mixed recipe with one more part of the model (decoder layers, their cross-attention, encoder layers or
+    engram tables) at `bits`, for trading file size against accuracy."""
     in_part = PARTS[part]
     return lambda name, default: bits if in_part(name) else cactus_mixed(name, default)
 
