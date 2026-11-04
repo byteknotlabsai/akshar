@@ -237,6 +237,7 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
 
 ## D19 (2026-11-04): Shruti's four held sources join training; release waits for legal review
 
+- **Status:** amended by D21 (Shrutilipi and AI4Bharat NPTEL admitted; MUCS 2021 and Common Voice still held).
 - **Decision:**
   - Phase 3 may train on the four sources Shruti used that the ledger holds: Shrutilipi, AI4Bharat NPTEL, MUCS 2021 Hindi-English and Common Voice's Indian-accented English. Their ledger status becomes `hold, train (D19)`.
   - No model trained on them is released until a lawyer has reviewed them. The project owner will arrange that review.
@@ -261,6 +262,22 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - The laptop reaches the server only through a Tailscale relay, at about 0.4 MB/s. Big files are fetched by the server itself from Hugging Face, at about 14 MB/s (`scripts/server_fetch.sh`).
   - The server's disk has about 45 GB free. Phase 3's audio, a few hundred GB with D19's sources, needs another home; still open.
 - **Revisit if:** the server's GPU, disk or evening window changes.
+
+## D21 (2026-11-04): CC-BY-4.0 datasets are admitted on the project owner's confirmation
+
+- **Decision:**
+  - The project owner has confirmed that the ledger's CC-BY-4.0 datasets can be used and distributed commercially.
+  - Every training source labelled CC-BY-4.0 is admitted. That moves Shrutilipi and AI4Bharat NPTEL out of hold, and removes the caveats from Kathbath, Rural Women ASR v2, FLEURS and People's Speech's CC-BY configs.
+  - Not covered, because they aren't CC-BY-4.0:
+    - MUCS 2021, which is CC-BY-SA-4.0 at its source, and Common Voice, CC0 under Mozilla Data Collective terms, stay `hold, train (D19)`.
+    - MUCS Hindi (OpenSLR 103) and Bhashini stay `hold`.
+    - Non-commercial sources stay excluded.
+  - Test sets stay test-only whatever their licence.
+- **Why:** the owner's confirmation. The conflicts the ledger found stay in its notes for the record: All India Radio's terms for Shrutilipi's audio, and NPTEL's own licence badge.
+- **Consequences:**
+  - Amends D5 and D19.
+  - A model trained without MUCS 2021 and Common Voice needs no further licence review under this ledger.
+  - Track A stays research-only while MUCS 2021 and Common Voice are unresolved (D9).
 
 ## Superseded from the earlier ChatGPT plan
 

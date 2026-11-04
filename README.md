@@ -32,7 +32,7 @@ We score both models with the same harness and protocol ([roadmap](docs/roadmap.
 
 1. **Eval harness first.** Our harness must reproduce Shruti's numbers before we trust it with ours.
 2. **Track A:** compress Shruti (Apache-2.0) to 2 bits, using quantisation-aware training with distillation from its full-precision weights. This develops the 2-bit recipe and measures what 2 bits costs, early and cheaply. The result is research-only, because some of Shruti's training data fails our commercial licence check ([data/LICENSES.md](data/LICENSES.md)).
-3. **Track B:** train akshar from Cactus Whistle at 4 bits, on licence-checked data. Since decision D19 that includes Shruti's four held sources, so a lawyer must clear them before release. Then make akshar-lite from it with Track A's 2-bit recipe. Shruti is the benchmark. These are the models we release.
+3. **Track B:** train akshar from Cactus Whistle at 4 bits, on licence-checked data. That includes MUCS 2021 and Common Voice, which a lawyer must clear before release (D19, D21). Then make akshar-lite from it with Track A's 2-bit recipe. Shruti is the benchmark. These are the models we release.
 4. **Output styles:** the text layer that renders `roman` and `devanagari` is built in parallel with training. Then come **phones** and **release**.
 
 Details and exit checks: [docs/roadmap.md](docs/roadmap.md).

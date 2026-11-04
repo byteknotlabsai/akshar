@@ -16,8 +16,8 @@ akshar is an offline Hindi/English/Hinglish speech-to-text model for CPUs and ph
   - Never plan around paid GPUs.
 - **Telemetry:** export `NEEDLE_TELEMETRY=0` and `DO_NOT_TRACK=1` before any needle command, because the package reports usage by default.
 - **Licences:**
-  - No dataset enters training without a row in `data/LICENSES.md` marked `admit`, `admit, caveat` or `hold, train (D19)`.
-  - A model trained on a `hold, train` source (Shruti's four held sources) must not be released until a lawyer has cleared that source (D19). Keep every clip tagged with its source so one can be dropped.
+  - No dataset enters training without a row in `data/LICENSES.md` marked `admit`, `admit (D21)`, `admit, caveat` or `hold, train (D19)`.
+  - A model trained on a `hold, train` source (MUCS 2021, Common Voice) must not be released until a lawyer has cleared that source (D19, D21). Keep every clip tagged with its source so one can be dropped.
   - Track A weights (built from Shruti) are research-only (D9). Never present them as releasable.
 - **Contamination:** remove every eval clip from training data, including data added later: by audio hash always, and by normalised-text hash when the text has three or more words (D17).
 - **Output convention:**
