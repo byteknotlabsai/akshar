@@ -7,6 +7,10 @@
 # A stream ends at the cutoff, or when its queue is empty and DIR/night/finish exists.
 # When both streams have ended, for whatever reason, it starts coot-moe again; nothing else on the server is touched.
 # It refuses to start while anything uses the GPU, and a run starts only while no other program holds the GPU.
+# WARNING: the owner's crontab runs scripts/cleanup_node.sh at 03:00, which does `docker system prune -af --volumes`.
+# A stopped coot-moe is deleted by it, with its image (this happened on 5 November). Keep the window clear of 03:00,
+# or have the owner protect coot-moe first. Recreating it needs the owner's choice of env file for
+# ~/Services/CootAI/deploy/run-coot.sh.
 set -uo pipefail
 dir=$(cd "$1" && pwd)
 cutoff_s=$(date -d "$2" +%s)
@@ -71,11 +75,19 @@ finish() {
   pkill -u "$me" -f "akshar.train.distill" && log "stopped the runs still going"
   for _ in $(seq 24); do [ "$(nvidia-smi --query-compute-apps=pid --format=csv,noheader | wc -l)" -eq 0 ] && break; sleep 5; done
   log "starting coot-moe"
-  docker start coot-moe >/dev/null && log "coot-moe: $(docker ps -a --filter name=coot-moe --format '{{.Status}}')"
-  log "NIGHT DONE: the GPU is back with coot-moe"
+  if docker start coot-moe >/dev/null; then
+    log "NIGHT DONE: the GPU is back with coot-moe ($(docker ps -a --filter name=^coot-moe$ --format '{{.Status}}'))"
+  else
+    log "NIGHT DONE, BUT coot-moe DID NOT START: the owner must bring it back (see the header of this script)"
+  fi
 }
 
 log "night starts; cutoff $(date -d "@$cutoff_s" '+%F %R'), deadline $(date -d "@$deadline_s" '+%F %R')"
+prune_s=$(date -d "today 03:00" +%s); [ "$prune_s" -lt "$(date +%s)" ] && prune_s=$(date -d "tomorrow 03:00" +%s)
+if [ "$deadline_s" -gt "$prune_s" ] && crontab -l 2>/dev/null | grep -q "cleanup_node.sh"; then
+  log "WARNING: the window crosses 03:00, when the owner's cleanup prunes stopped containers; coot-moe would be deleted"
+  [ "${ALLOW_PRUNE_RISK:-0}" = 1 ] || { log "not starting; set ALLOW_PRUNE_RISK=1 only once coot-moe is protected"; exit 1; }
+fi
 if [ "$(nvidia-smi --query-compute-apps=pid --format=csv,noheader | wc -l)" -gt 0 ]; then
   log "not starting: something is using the GPU"; exit 1
 fi
