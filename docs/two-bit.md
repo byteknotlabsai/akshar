@@ -2,7 +2,7 @@
 
 Phase 2 of the [roadmap](roadmap.md): find out what 2 bits costs and how to win it back, by training 2-bit versions of Shruti. The weights are research-only (D9); the recipe is what carries over to akshar-lite. Decisions D15, D16 and D22 record the method. Code: [`akshar/data/`](../akshar/data/) builds and labels the data, [`akshar/train/distill.py`](../akshar/train/distill.py) trains, and [`scripts/server_train.sh`](../scripts/server_train.sh) is the exact schedule, run on the RTX 5080 server (D20). [`scripts/phase2_track_a.sh`](../scripts/phase2_track_a.sh) is the laptop's version.
 
-**Status (2026-11-01):** in progress. The data is built and labelled, and the training runs in `scripts/phase2_track_a.sh` started on 1 November.
+**Status (2026-11-04):** in progress. The laptop's 4 GB card ran out of memory on 1 November (D18), so the four runs started on the RTX 5080 server at 23:52 on 4 November (`scripts/server_train.sh`, D20). A 50-update test there peaked at 3.6 GB of GPU memory and trained on about 1,670 s of audio per second. The laptop copies back and scores each model (`scripts/pull_and_eval.sh`).
 
 ## Method
 
