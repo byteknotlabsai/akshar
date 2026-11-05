@@ -38,7 +38,8 @@ foreign_gpu() {  # how many GPU processes are not our own training
 train() {  # stream, run name, extra arguments
   local s=$1 name=$2; shift 2
   local out=$dir/runs/train/$name
-  if ls "$out"/model-*.cact >/dev/null 2>&1; then log "[$s] DONE $name (finished earlier)"; return 0; fi
+  # a finished run has its final export; model-latest-* is only akshar.train.export_state's interim copy
+  if ls "$out"/model-*.cact 2>/dev/null | grep -qv "/model-latest-"; then log "[$s] DONE $name (finished earlier)"; return 0; fi
   while [ "$(foreign_gpu)" -gt 0 ]; do
     if [ "$(date +%s)" -ge "$cutoff_s" ]; then log "[$s] another program holds the GPU past the cutoff; skipping $name"; return 0; fi
     log "[$s] another program holds the GPU; waiting"; sleep 60
