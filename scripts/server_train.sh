@@ -13,6 +13,7 @@ if [ "$others" -gt 0 ] || [ "$used" -gt 1024 ]; then
 fi
 export HF_HOME=$dir/hf XDG_CACHE_HOME=$dir/cache NEEDLE_TELEMETRY=0 DO_NOT_TRACK=1 HF_HUB_DISABLE_TELEMETRY=1
 export AKSHAR_DATA=$dir/data AKSHAR_RUNS=$dir/runs XLA_PYTHON_CLIENT_PREALLOCATE=false
+unset JAX_PLATFORMS CUDA_VISIBLE_DEVICES  # training must see the GPU, whatever the caller set
 cd "$dir/repo"
 SOURCES="librispeech_100 rural_women_hi fleurs_hi_train indicvoices_hi kathbath_hi nonspeech"  # nonspeech: D22
 # 240 s of padded audio per batch and 2 batches per update: the laptop's 120 x 4, in fewer, larger steps.
