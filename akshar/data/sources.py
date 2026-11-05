@@ -1,7 +1,9 @@
 """Training sources, each pinned to an exact revision and checked against the licence ledger (data/LICENSES.md).
 
-Every source here is `admit` or `admit, caveat` in the ledger (decision D5). Adding one means adding its ledger row
-first. Column names are as each dataset stores them at the pinned revision.
+Every source here has a ledger row marked `admit`, `admit (D21)`, `admit, caveat` or `hold, train (D19)` (CLAUDE.md).
+Adding one means adding its ledger row first. A model trained on a `hold, train` source is not released until a lawyer
+has cleared it (D19), so every clip keeps its source name. Column names are as each dataset stores them at the pinned
+revision.
 """
 from __future__ import annotations
 
@@ -38,6 +40,10 @@ SOURCES: dict[str, Source] = {
         Source("kathbath_hi", "ai4bharat/Kathbath", "5b9e92849222026d9141acba4e8434fe816396bf",
                tuple(f"hindi/train-{i:05d}-of-00032.parquet" for i in range(32)),
                audio="audio_filepath", text="text", language="hi", ledger="admit, caveat", gated=True),
+        # MUCS 2021 Hindi-English, training split; the same pinned copy as the MUCS test set (CC-BY-SA-4.0 at source).
+        Source("mucs_train", "dianavdavidson/MUCS-Hinglish", "3c66ee127a7b0e0a746d4df1002858567135edc1",
+               tuple(f"data/train-{i:05d}-of-00023.parquet" for i in range(23)),
+               audio="audio", text="transcript", language="hi", ledger="hold, train (D19)", id="segment_id"),
         # AI4Bharat NPTEL (BhasaAnuvaad): lecture audio with source-language transcripts. The English part is
         # Indian-accented English; the Hindi part is Hindi lectures full of English technical terms.
         Source("nptel_en", "ai4bharat/NPTEL", "9e488c74c2285cceaf5cd1e3605e56b1a8584783",
