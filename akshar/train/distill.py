@@ -154,10 +154,14 @@ def main(argv=None) -> None:
     opt_state = optimizer.init(params)
     state_path, micro_done, log = args.out / "state.msgpack", 0, []
     if args.resume and state_path.exists():
-        restored = serialization.from_bytes({"params": params, "opt_state": opt_state, "micro": 0, "log": []},
-                                            state_path.read_bytes())
-        params, opt_state, micro_done = restored["params"], restored["opt_state"], int(restored["micro"])
-        log = list(restored["log"]) if restored["log"] else []
+        # Restore the arrays into their templates, and take the validation log as saved: flax stores a list as a dict
+        # keyed "0", "1", ..., and an empty template list would not match it.
+        raw = serialization.msgpack_restore(state_path.read_bytes())
+        params = serialization.from_state_dict(params, raw["params"])
+        opt_state = serialization.from_state_dict(opt_state, raw["opt_state"])
+        micro_done = int(raw["micro"])
+        saved_log = raw.get("log") or {}
+        log = [saved_log[k] for k in sorted(saved_log, key=int)] if isinstance(saved_log, dict) else list(saved_log)
         print(f"resumed   at update {micro_done // args.accum}", flush=True)
 
     @jax.jit
