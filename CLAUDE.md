@@ -1,6 +1,6 @@
 # akshar: notes for Claude
 
-akshar is an offline Hindi/English/Hinglish speech-to-text model for CPUs and phones. The goal is to beat Shruti's accuracy with a model cleared for commercial use, in two variants: akshar (4-bit, file ≤ 30 MB, hard cap 40 MB) and akshar-lite (2-bit, about 17 MB, accuracy published per test set). Before proposing work, read `README.md`, `docs/decisions.md` and the current phase in `docs/roadmap.md`. Verified facts and sources are in `docs/research/`.
+akshar is an offline Hindi/English/Hinglish speech-to-text model for CPUs and phones. The goal is to beat Shruti's accuracy with a model cleared for commercial use, in two variants: akshar (4-bit, file ≤ 30 MB, hard cap 40 MB) and akshar-lite (2-bit with a 4-bit encoder, about 20 MB, accuracy published per test set; D24). Before proposing work, read `README.md`, `docs/decisions.md` and the current phase in `docs/roadmap.md`. Verified facts and sources are in `docs/research/`.
 
 ## Ground rules
 

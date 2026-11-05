@@ -10,7 +10,7 @@ Beat [Shruti](https://huggingface.co/udgamlabs/Shruti)'s accuracy with a model c
 
 | | Shruti today | akshar (4-bit) | akshar-lite (2-bit) |
 |---|---|---|---|
-| Model file | 29.5 MB | ≤ 30 MB, hard cap 40 MB | about 17 MB |
+| Model file | 29.5 MB | ≤ 30 MB, hard cap 40 MB | about 20 MB, with a 4-bit encoder (D24) |
 | Accuracy | table below | no test set more than 0.5 WER worse than Shruti, and a lower average WER | published for every test set; provisional bar: average within 2 WER of akshar |
 | Invented words on 100 silent clips | 0 | 0 | 0 |
 | Peak RAM on an Android phone | 80 MB (measured) | ≤ 90 MB | about 65–70 MB (estimate) |

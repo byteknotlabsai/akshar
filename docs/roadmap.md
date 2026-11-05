@@ -76,7 +76,7 @@ Every later claim ("beats Shruti", "2 bits costs this much") is a number from th
     - lower average WER than Shruti;
     - 0 invented words on silence.
   - **akshar-lite:**
-    - about 17 MB;
+    - about 20 MB, with the encoder at 4 bits (D24);
     - 0 invented words on silence;
     - WER published for every test set.
     - Provisional bar: average WER within 2 points of akshar. If it misses, ship akshar alone until it passes.

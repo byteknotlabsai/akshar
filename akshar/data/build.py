@@ -89,7 +89,8 @@ def build(name: str, hours: float, out: Path | None = None, fraction: float = 1.
     _repair_manifest(out, progress["done"])
     blocklist = Blocklist()
     order = [src.shards[i] for i in sources.spread(len(src.shards)) if src.shards[i] not in progress["done"]]
-    columns = [c for c in (src.audio, src.text, src.id) if c]
+    id_columns = (src.id,) if isinstance(src.id, str) else tuple(src.id or ())
+    columns = [src.audio, src.text, *id_columns]
     blocked_log = open(out / "blocked.jsonl", "a", encoding="utf-8")
     with ThreadPoolExecutor(max_workers=1) as prefetch, open(out / "manifest.jsonl", "a", encoding="utf-8") as manifest:
         pending = prefetch.submit(_download, src, order[0]) if order and progress["seconds"] < hours * 3600 else None
@@ -105,7 +106,8 @@ def build(name: str, hours: float, out: Path | None = None, fraction: float = 1.
             for batch in pq.ParquetFile(path).iter_batches(batch_size=64, columns=columns):
                 for row in batch.to_pylist():
                     record = row[src.audio] or {}
-                    key = str(row[src.id]) if src.id else str(record.get("path") or "")
+                    row_id = "_".join(str(row[c]) for c in id_columns) if id_columns else None
+                    key = row_id if row_id is not None else str(record.get("path") or "")
                     if not _sampled(key, fraction):
                         continue
                     try:
@@ -125,7 +127,7 @@ def build(name: str, hours: float, out: Path | None = None, fraction: float = 1.
                         blocked_log.write(json.dumps({"key": key, "reason": reason, "text": normalise(text)},
                                                      ensure_ascii=False) + "\n")
                         continue
-                    clip_id = str(row[src.id]) if src.id else Path(record.get("path") or "").stem
+                    clip_id = row_id if row_id is not None else Path(record.get("path") or "").stem
                     if not clip_id:
                         clip_id = f"{shard_id}-{progress['kept']}"
                     relative = f"clips/{shard_id}/{clip_id}.flac"
@@ -170,7 +172,8 @@ def rebuild(name: str, manifest: Path, out: Path | None = None) -> dict:
     progress_path = out / "rebuild-progress.json"
     progress = json.loads(progress_path.read_text()) if progress_path.exists() else {"done": [], "found": 0}
     order = [s for s in sorted(by_shard) if s not in progress["done"]]
-    columns = [c for c in (src.audio, src.id) if c]
+    id_columns = (src.id,) if isinstance(src.id, str) else tuple(src.id or ())
+    columns = [src.audio, *id_columns]
     with ThreadPoolExecutor(max_workers=1) as prefetch:
         pending = prefetch.submit(_download, src, shard_files[order[0]]) if order else None
         for k, stem in enumerate(order):
@@ -181,7 +184,8 @@ def rebuild(name: str, manifest: Path, out: Path | None = None) -> dict:
             for batch in pq.ParquetFile(path).iter_batches(batch_size=64, columns=columns):
                 for row in batch.to_pylist():
                     record = row[src.audio] or {}
-                    clip_id = f"{name}/{row[src.id] if src.id else Path(record.get('path') or '').stem}"
+                    row_id = "_".join(str(row[c]) for c in id_columns) if id_columns else None
+                    clip_id = f"{name}/{row_id if row_id is not None else Path(record.get('path') or '').stem}"
                     if clip_id in by_shard[stem]:
                         sf.write(out / wanted[clip_id]["audio"], _decode(record["bytes"]), SAMPLE_RATE,
                                  format="FLAC", subtype="PCM_16")

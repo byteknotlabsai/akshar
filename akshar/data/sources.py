@@ -18,7 +18,7 @@ class Source:
     text: str  # reference transcript, used for the blocklist check and kept for the record
     language: str  # "hi" or "en": the language flag Shruti is decoded with when labelling
     ledger: str  # status in data/LICENSES.md
-    id: str | None = None  # id column; None means the audio file's name
+    id: str | tuple[str, ...] | None = None  # id column, or columns joined with '_'; None means the audio file's name
     gated: bool = False
 
 
@@ -38,6 +38,16 @@ SOURCES: dict[str, Source] = {
         Source("kathbath_hi", "ai4bharat/Kathbath", "5b9e92849222026d9141acba4e8434fe816396bf",
                tuple(f"hindi/train-{i:05d}-of-00032.parquet" for i in range(32)),
                audio="audio_filepath", text="text", language="hi", ledger="admit, caveat", gated=True),
+        # AI4Bharat NPTEL (BhasaAnuvaad): lecture audio with source-language transcripts. The English part is
+        # Indian-accented English; the Hindi part is Hindi lectures full of English technical terms.
+        Source("nptel_en", "ai4bharat/NPTEL", "9e488c74c2285cceaf5cd1e3605e56b1a8584783",
+               tuple(f"En-Indic/train-{i:05d}-of-00028.parquet" for i in range(28)),
+               audio="chunked_audio_filepath", text="text", language="en", ledger="admit (D21)",
+               id=("video_id", "start_time"), gated=True),
+        Source("nptel_hi", "ai4bharat/NPTEL", "9e488c74c2285cceaf5cd1e3605e56b1a8584783",
+               tuple(f"Indic-En/hin/train-{i:05d}-of-00009.parquet" for i in range(9)),
+               audio="chunked_audio_filepath", text="text", language="hi", ledger="admit (D21)",
+               id=("video_id", "start_time"), gated=True),
     ]
 }
 

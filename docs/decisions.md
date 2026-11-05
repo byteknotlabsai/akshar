@@ -311,6 +311,20 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - A night of training on the server lasts about 9 PM to 3 AM, roughly five hours of GPU time after compile overheads, unless the owner protects coot-moe.
 - **Revisit if:** the owner changes the cleanup to leave coot-moe alone, for example by skipping the prune while it is stopped or by filtering the prune on a label that coot-moe carries.
 
+## D24 (2026-11-05): akshar-lite is about 20 MB, and Phase 2's mix adds NPTEL
+
+- **Decision (the project owner's):**
+  - akshar-lite keeps the encoder at 4 bits on top of Cactus's mix (recipe `mixed2-enc4`, 20.4 MB) instead of the 17.1 MB all-2-bit mix.
+  - Phase 2's training mix adds about 30 h each of AI4Bharat NPTEL's English and Hindi lectures (`nptel_en`, `nptel_hi`), labelled by Shruti like the other sets.
+- **Why:**
+  - On the full test sets, the 20.4 MB model trails 4-bit Shruti by 1.4 points of mean WER, inside the roadmap's provisional 2-point bar. The 17.1 MB model trails by 2.3. The 20.4 MB model also decodes about twice as fast on x86.
+  - Most of the remaining gap is on MUCS (Hinglish tech tutorials) and Svarah (Indian English), which the mix lacked. NPTEL's lectures cover Indian-accented English and Hindi full of English technical terms, and NPTEL is admitted (D21).
+- **Consequences:**
+  - Amends D10 (akshar-lite about 17 MB) and the data line of D16.
+  - The release variants become about 20 MB (akshar-lite) and at most 30 MB (akshar).
+  - NPTEL comes from the gated Hugging Face set `ai4bharat/NPTEL` at revision 9e488c7, so the server's account needs access.
+- **Revisit if:** phones show the 4-bit encoder is not faster there, or a 17 MB model trained with NPTEL comes within 2 points of akshar.
+
 ## Superseded from the earlier ChatGPT plan
 
 - The project name BharatSTT is now **akshar**.
