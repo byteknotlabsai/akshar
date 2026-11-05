@@ -31,7 +31,7 @@ Every later claim ("beats Shruti", "2 bits costs this much") is a number from th
 
 ## Phase 2: Track A, the 2-bit recipe (for akshar-lite)
 
-**Status (2026-11-05):** exit check met. The best 17.1 MB model trails 4-bit Shruti by 2.3 points of mean WER on the full test sets, and a 20.4 MB variant by 1.4. Open: Hinglish and Indian-English data, and akshar-lite's size. Method, data and results in [two-bit.md](two-bit.md). Decisions D16 and D22 amend the Method and Data lines below.
+**Status (2026-11-05):** exit check met. On the full test sets, the best 17.1 MB model trails 4-bit Shruti by 2.3 points of mean WER. akshar-lite's 20.4 MB recipe (D24) trails by 1.4, and by 1.1 once NPTEL joins the mix. Method, data and results in [two-bit.md](two-bit.md). Decisions D16 and D22 amend the Method and Data lines below.
 
 - **Start:** Shruti's fp32 weights (Apache-2.0, credited in NOTICE). The output is research-only (decision D9), because Shruti was trained on sources our licence gate holds.
 - **Method:**

@@ -140,6 +140,23 @@ On the server:
 - Shruti scores 21.81 on the laptop and 21.78 on the server, so the two machines agree on full sets to within 0.15 points per set.
 - No model writes anything on silence.
 
+### NPTEL in the mix (5 November, morning)
+
+D24 added AI4Bharat NPTEL to the mix: 24.3 h of its English lectures and 29.7 h of its Hindi lectures, the first shard of each part of `ai4bharat/NPTEL` at revision 9e488c7, labelled by Shruti like the other sets. The builder had taken a second shard of each, because the first came in under 30 h; those clips stay listed in `manifest-full.jsonl` and were not used. The mix grew to 184.2 h. g1 repeats f4's recipe on it: encoder at 4 bits, learning rate 4e-4, 3,600 updates. Only the data differs.
+
+Full test sets on the server, scored as above (normaliser `nfc-lower-punct2space-v1`, needle engine 3.3.3 with 5 beams, language `hi` for Monsoon, FLEURS, Lahaja and MUCS, `en` for Svarah and LibriSpeech):
+
+| Model | File | Monsoon | FLEURS Hindi | Lahaja | MUCS | Svarah | LibriSpeech clean | Silence | Mean WER |
+|---|---|---|---|---|---|---|---|---|---|
+| Shruti, 4-bit as released | 29.5 MB | 20.54 | 20.21 | 26.29 | 35.26 | 22.45 | 5.95 | 0 | 21.78 |
+| f4: encoder at 4 bits, without NPTEL | 20.4 MB | 21.63 | 21.84 | 26.94 | 37.84 | 24.48 | 6.51 | 0 | 23.21 |
+| g1: the same with NPTEL | 20.4 MB | 21.85 | 21.49 | 26.94 | 36.44 | 24.08 | 6.49 | 0 | 22.88 |
+
+- NPTEL helped where it was meant to. MUCS improved by 1.4 points, so the Hinglish gap to Shruti fell from 2.6 to 1.2, and Svarah, the Indian-English set, improved by 0.4.
+- The other sets moved by at most 0.35 points. Monsoon got 0.2 worse.
+- On the mean, g1 trails Shruti by 1.1 points, against 1.4 for f4. It still writes nothing on silence.
+- Two runs did not fit the morning's GPU window and are still to do: the same mix with 7,200 updates, and the 17.1 MB recipe with NPTEL.
+
 ### What this means for akshar-lite
 
 - **The 2-bit recipe:** Cactus's mix, distillation at weight 0.5 from Shruti as deployed, learning rate 4e-4, and a few thousand updates. At 17.1 MB it trails 4-bit Shruti by 2.3 points on the full sets, just outside the roadmap's provisional 2-point bar.
