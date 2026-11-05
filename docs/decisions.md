@@ -297,6 +297,20 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - Phase 3 keeps them; its roadmap already plans silence and noise clips with empty targets.
 - **Revisit if:** the dev silence test shows invented words, or a later noise test shows quiet speech being dropped.
 
+## D23 (2026-11-05): GPU windows on the server end before 03:00
+
+- **Decision:**
+  - A training window that stops coot-moe ends, with coot-moe started again, before 03:00.
+  - A window may cross 03:00 only once the owner has protected coot-moe from the nightly cleanup. `scripts/server_night.sh` refuses such a window unless `ALLOW_PRUNE_RISK=1` is set.
+- **Why:**
+  - The owner's crontab runs `~/scripts/cleanup_node.sh` at 03:00, which runs `docker system prune -af --volumes`. It deletes every stopped container, the images they used and unused networks.
+  - On 5 November coot-moe was stopped at 01:00 for an overnight search. The 03:00 cleanup deleted it, its llama.cpp image and the `vllm_default` network, so it could not be started again at 04:58.
+  - The image (by its recorded digest) and the network were restored. Recreating the container needs `~/Services/CootAI/deploy/run-coot.sh` with one of three env files, and only the owner knows which one is live.
+- **Consequences:**
+  - Amends D20, whose evening window had no end time.
+  - A night of training on the server lasts about 9 PM to 3 AM, roughly five hours of GPU time after compile overheads, unless the owner protects coot-moe.
+- **Revisit if:** the owner changes the cleanup to leave coot-moe alone, for example by skipping the prune while it is stopped or by filtering the prune on a label that coot-moe carries.
+
 ## Superseded from the earlier ChatGPT plan
 
 - The project name BharatSTT is now **akshar**.
