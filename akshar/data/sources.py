@@ -54,6 +54,12 @@ SOURCES: dict[str, Source] = {
                tuple(f"Indic-En/hin/train-{i:05d}-of-00009.parquet" for i in range(9)),
                audio="chunked_audio_filepath", text="text", language="hi", ledger="admit (D21)",
                id=("video_id", "start_time"), gated=True),
+        # Shrutilipi: All India Radio news bulletins cut into clips, with the bulletin scripts (read off PDFs, not
+        # verbatim) as text. Shruti's largest Hindi source. Clip ids are the file names, e.g.
+        # Regional-Shimla-Hindi-0915-2021228114616_chunk_2.
+        Source("shrutilipi_hi", "ai4bharat/Shrutilipi", "f4beb2f2cfaeae5a8fc28808f85165fec1cb19b3",
+               tuple(f"hindi/train-{i:05d}-of-00196.parquet" for i in range(196)),
+               audio="audio_filepath", text="text", language="hi", ledger="admit (D21)", gated=True),
     ]
 }
 

@@ -22,6 +22,8 @@ import hashlib
 import io
 import json
 import os
+import shutil
+import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -36,6 +38,8 @@ from ..files import repair_jsonl
 from . import sources
 
 MIN_SECONDS, MAX_SECONDS = 0.5, 30.0
+# A shared disk: no shard is downloaded while less than this much space is free (the build waits instead).
+MIN_FREE_GB = float(os.environ.get("AKSHAR_MIN_FREE_GB", "0"))
 
 
 def _decode(blob: bytes) -> np.ndarray:
@@ -51,6 +55,8 @@ def _decode(blob: bytes) -> np.ndarray:
 def _download(src: sources.Source, shard: str) -> Path:
     from huggingface_hub import hf_hub_download
 
+    while shutil.disk_usage(DATA_ROOT).free / 1e9 < MIN_FREE_GB:
+        time.sleep(60)
     return Path(hf_hub_download(src.repo, shard, repo_type="dataset", revision=src.revision,
                                 local_dir=DATA_ROOT / "raw" / src.name))
 
