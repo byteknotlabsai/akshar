@@ -40,6 +40,7 @@ Full test sets, scored on the server (normaliser `nfc-lower-punct2space-v1`, nee
 |---|---|---|---|---|---|---|---|---|---|
 | Shruti, 4-bit as released | 29.5 MB | 20.54 | 20.21 | 26.29 | 35.26 | 22.45 | 5.95 | 0 | 21.78 |
 | akshar v0 | 29.5 MB | 23.53 | 20.92 | 27.70 | 34.75 | 24.81 | 6.98 | 0 | 23.11 |
+| akshar-lite v0 | 20.4 MB | 24.79 | 21.78 | 28.18 | 35.06 | 26.45 | 7.91 | 0 | 24.03 |
 
 - akshar v0 trails Shruti by 1.3 points on the mean. It already beats Shruti on MUCS, the Hinglish set, by 0.5.
 - The largest gaps are Monsoon's phone conversations (3.0) and Svarah's Indian English (2.4).
@@ -57,7 +58,7 @@ Dev subsets, also on the server, for comparison with the Phase 2 models:
 
 ## akshar-lite v0
 
-D24's recipe made from akshar: Cactus's 2-bit mix with the encoder at 4 bits (20.4 MB), starting from akshar v0's full-precision weights and distilled from akshar v0 as deployed, learning rate 4e-4, 3,600 updates on the same 363.8 h. On the dev subsets it trails akshar v0 by 0.9 points, inside the roadmap's provisional 2-point bar. Its full test scores go here when they finish.
+D24's recipe made from akshar: Cactus's 2-bit mix with the encoder at 4 bits (20.4 MB), starting from akshar v0's full-precision weights and distilled from akshar v0 as deployed, learning rate 4e-4, 3,600 updates on the same 363.8 h. On the full test sets it trails akshar v0 by 0.9 points of mean WER, inside the roadmap's provisional 2-point bar, and it too edges Shruti on MUCS (35.06 against 35.26). It writes nothing on silence.
 
 ## Running it
 
