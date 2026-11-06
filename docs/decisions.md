@@ -70,7 +70,7 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
 
 ## D9 (2026-10-31): Track A models are research-only; the commercial release comes from Track B
 
-- **Status:** amended by D19 (Track B may train on Shruti's four held sources; release waits for legal review).
+- **Status:** amended by D19 (Track B may train on Shruti's four held sources; release waits for legal review). D21 and D26 cleared all four sources; see D26.
 - **Decision:**
   - Weights produced in Track A (which start from Shruti) are for research and internal comparison only.
   - The commercially released akshar comes from Track B, trained only on `admit` and `admit, caveat` sources.
@@ -237,7 +237,7 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
 
 ## D19 (2026-11-04): Shruti's four held sources join training; release waits for legal review
 
-- **Status:** amended by D21 (Shrutilipi and AI4Bharat NPTEL admitted; MUCS 2021 and Common Voice still held).
+- **Status:** amended by D21 (Shrutilipi and AI4Bharat NPTEL admitted) and closed by D26 (MUCS 2021 and Common Voice admitted after legal guidance).
 - **Decision:**
   - Phase 3 may train on the four sources Shruti used that the ledger holds: Shrutilipi, AI4Bharat NPTEL, MUCS 2021 Hindi-English and Common Voice's Indian-accented English. Their ledger status becomes `hold, train (D19)`.
   - No model trained on them is released until a lawyer has reviewed them. The project owner will arrange that review.
@@ -338,6 +338,20 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - Like MUCS 2021, Shruti as a teacher falls under D19's legal review, because Shruti was trained on MUCS 2021 and Common Voice. akshar v0 is not released before that review.
   - Every clip keeps its source and its teacher, so either can be dropped and the model retrained from Whistle.
 - **Revisit if:** the review rejects MUCS 2021 or Shruti as a teacher, or converted dataset transcripts are ready to train on.
+- **Status:** amended by D26: the legal review cleared MUCS 2021 and Common Voice.
+
+## D26 (2026-11-07): MUCS 2021 and Common Voice are cleared for commercial use
+
+- **Decision:**
+  - The project owner has received legal guidance that MUCS 2021 Hindi-English and Common Voice can be used commercially, and reported it on 7 November.
+  - Both move from `hold, train (D19)` to `admit (D26)`. No training source in the ledger is `hold, train` any more.
+  - Phase 3 trains on both, as Shruti did: MUCS 2021's training split (already in akshar v0) and Common Voice's Indian-accented English.
+- **Why:** this is the legal review D19 asked for. The ledger keeps its notes on MUCS's share-alike licence and Mozilla Data Collective's terms as the record of what was checked.
+- **Consequences:**
+  - Amends D19, D21 and D25. akshar v0 and later versions are no longer held back by their data or by Shruti as their teacher. Shruti's weights are Apache-2.0, and both sources it was trained on that the ledger held are now admitted.
+  - D9's stated reason, the four held sources inside Shruti's weights, no longer applies. Track A stays research-only until the owner decides otherwise.
+  - Common Voice still has to be fetched. Its Hugging Face repository (`mozilla-foundation/common_voice_17_0`) accepts the server's account; Mozilla Data Collective's terms (no re-hosting, no re-identification) still apply to the files.
+  - Test sets stay test-only whatever their licence, including MUCS 2021's test split.
 
 ## Superseded from the earlier ChatGPT plan
 

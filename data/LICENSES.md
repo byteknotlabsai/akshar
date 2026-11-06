@@ -1,6 +1,6 @@
 # Dataset licence ledger
 
-Rule (decisions D5, D19, D21): **no dataset is used for training unless it is listed here with status `admit`, `admit (D21)`, `admit, caveat` or `hold, train (D19)`.** Test sets are `eval only` and must also be blocked from training by text and audio hash.
+Rule (decisions D5, D19, D21, D26): **no dataset is used for training unless it is listed here with status `admit`, `admit (D21)`, `admit (D26)`, `admit, caveat` or `hold, train (D19)`.** Test sets are `eval only` and must also be blocked from training by text and audio hash.
 
 Checked 2026-10-31 from web pages only (dataset cards, licence pages, papers). This is a research record, not legal advice. Before any weights are released, a person with legal training should review every `hold` line. `admit (D21)` rows rest on the project owner's confirmation that CC-BY-4.0 data is cleared for commercial use.
 
@@ -8,7 +8,7 @@ Checked 2026-10-31 from web pages only (dataset cards, licence pages, papers). T
 
 - **Shruti's ten training sources (status on 2026-11-04):**
   - Eight are admitted. Shrutilipi and AI4Bharat NPTEL were held at first, over All India Radio's terms and NPTEL's own licence badge, and were admitted on the project owner's confirmation (D21).
-  - Two stay held but trainable (D19): MUCS 2021, which is share-alike at its source, and Common Voice, under Mozilla Data Collective terms. Any model trained on them waits for a lawyer's review before release.
+  - Two were held but trainable (D19): MUCS 2021, which is share-alike at its source, and Common Voice, under Mozilla Data Collective terms. Both were admitted on 2026-11-07 after the project owner's legal guidance (D26).
   - **Track A models, which start from Shruti's weights, stay research-only while those two are unresolved (decision D9).**
 - **Clean, transcribed Hindi pool:** about 2,000 h before IndicVoices and Rural Women (hours not published).
   - Vaani: 1,004 h.
@@ -18,8 +18,8 @@ Checked 2026-10-31 from web pages only (dataset cards, licence pages, papers). T
   - IndicVoices.
   - Rural Women ASR v2.
 - **Pseudo-labelling pool:** about 14,900 h of untranscribed Vaani Hindi audio (CC-BY-4.0). This is the biggest single lever for Track B.
-- **English:** plenty of clean data (LibriSpeech, MLS English, People's Speech CC-BY configs), but almost none of it is Indian-accented. **AI4Bharat NPTEL, admitted under D21, now covers most of the Indian-English gap.** Common Voice's Indian-accent clips are trainable but held for release (D19).
-- **Natural Hinglish:** no large permissive corpus exists apart from MUCS (share-alike; trainable under D19, release pending review). Code-mixed speech exists inside IndicVoices, Vaani and SPRING-INX (which targeted about 10% code-mixing). We will have to mine it from those.
+- **English:** plenty of clean data (LibriSpeech, MLS English, People's Speech CC-BY configs), but almost none of it is Indian-accented. **AI4Bharat NPTEL, admitted under D21, now covers most of the Indian-English gap.** Common Voice's Indian-accent clips are admitted (D26).
+- **Natural Hinglish:** no large permissive corpus exists apart from MUCS (share-alike at its source; admitted under D26). Code-mixed speech exists inside IndicVoices, Vaani and SPRING-INX (which targeted about 10% code-mixing). We will have to mine it from those.
 
 ## Ledger
 
@@ -40,8 +40,8 @@ Hours are as published; n/s means not stated.
 | IndicVoices-R | CC-BY-4.0 | admit, low value | overlaps IndicVoices | TTS-enhanced extempore | HF gate (auto) | no |
 | Shrutilipi (hi) | CC-BY-4.0 label, but audio is All India Radio | admit (D21) | hi 1,620 | news broadcast | HF gate (auto) | yes |
 | AI4Bharat NPTEL / NPTEL2020 | CC-BY-4.0 label; NPTEL shows BY-SA or BY-NC-SA | admit (D21) | en up to 15,700; hi audio 1,434 | lectures | HF / GitHub | yes |
-| MUCS 2021 Hindi-English (OpenSLR 104) | CC-BY-SA-4.0; the HF mirror mislabels it BY | **hold, train (D19)** | mixed ~90 train | tech tutorials | open | yes |
-| Common Voice 17 / 27 (hi, en) | CC0 plus Mozilla Data Collective terms (updated 2026-10-28) | **hold, train (D19)** | hi 15.7; en 2,827 (5.9% Indian accent) | read | MDC account | yes (en) |
+| MUCS 2021 Hindi-English (OpenSLR 104) | CC-BY-SA-4.0; the HF mirror mislabels it BY | admit (D26) | mixed ~90 train | tech tutorials | open | yes |
+| Common Voice 17 / 27 (hi, en) | CC0 plus Mozilla Data Collective terms (updated 2026-10-28) | admit (D26) | hi 15.7; en 2,827 (5.9% Indian accent) | read | MDC account | yes (en) |
 | MUCS Hindi (OpenSLR 103) | licence link dead (Microsoft) | **hold** | hi ~95 | read, 8 kHz | open | no |
 | Bhashini / ULCA | set per dataset (NC and ND allowed) | **hold** | varies | varies | login | no |
 | Gramvaani (OpenSLR 118) | free for academic use only | exclude | hi 108 labelled, ~1,000 unlabelled | telephone | open | no |
@@ -60,7 +60,8 @@ Hours are as published; n/s means not stated.
 - `admit`: verified permissive licence, no known conflict.
 - `admit (D21)`: labelled CC-BY-4.0 with a conflict or caveat noted below, admitted on the project owner's confirmation that it is cleared for commercial use (D21).
 - `admit, caveat`: permissive, with a documented caveat for legal review before release.
-- `hold, train (D19)`: commercial use unclear, but used for training by the project owner's decision D19. Since D21 these are MUCS 2021 and Common Voice. No model trained on one may be released until a lawyer has cleared it.
+- `admit (D26)`: was `hold, train (D19)`; admitted on the project owner's legal guidance that it can be used commercially (D26). These are MUCS 2021 and Common Voice; their notes below stay as the record of what was checked.
+- `hold, train (D19)`: commercial use unclear, but used for training by the project owner's decision D19. No model trained on one may be released until a lawyer has cleared it. Since D26 no source has this status.
 - `hold`: commercial use unclear; not used for training until resolved.
 - `exclude`: non-commercial or no permission.
 - `eval only`: a test set, never trained on.
@@ -109,10 +110,10 @@ A teacher's licence covers its outputs, but some teachers were trained on source
 
 | Teacher | Weights licence | Trained on held or excluded sources? |
 |---|---|---|
-| [Koyal-hi-120M](https://huggingface.co/adalat-ai/koyal-hi-120m-1.0) | CC-BY-4.0, gated | Yes: Common Voice (hold, train), OpenSLR 118 Gramvaani (exclude) |
+| [Koyal-hi-120M](https://huggingface.co/adalat-ai/koyal-hi-120m-1.0) | CC-BY-4.0, gated | Yes: OpenSLR 118 Gramvaani (exclude); also Common Voice (admitted, D26) |
 | [IndicConformer-600M](https://huggingface.co/ai4bharat/indic-conformer-600m-multilingual) | MIT, gated | Unknown; the card lists no training data |
 | Whisper large-v3 | MIT | Unknown; training data undisclosed |
-| [Shruti](https://huggingface.co/udgamlabs/Shruti) | Apache-2.0 | Yes: MUCS and Common Voice (hold, train) |
+| [Shruti](https://huggingface.co/udgamlabs/Shruti) | Apache-2.0 | MUCS and Common Voice, both admitted since D26 |
 
 Rule: record which teacher labelled every pseudo-labelled clip, so that one teacher's labels can be dropped and the model retrained if legal review requires it.
 
