@@ -7,6 +7,7 @@
 # A stream ends at the cutoff, or when its queue is empty and DIR/night/finish exists.
 # When both streams have ended, for whatever reason, it starts coot-moe again; nothing else on the server is touched.
 # It refuses to start while anything uses the GPU, and a run starts only while no other program holds the GPU.
+# Runs train on CPUs TRAIN_CPUS (default 12-23); 12-15 is enough, and leaves the rest for labelling or staging.
 # WARNING: the owner's crontab runs scripts/cleanup_node.sh at 03:00, which does `docker system prune -af --volumes`.
 # A stopped coot-moe is deleted by it, with its image (this happened on 5 November). Keep the window clear of 03:00,
 # or have the owner protect coot-moe first. Recreating it needs the owner's choice of env file for
@@ -45,7 +46,7 @@ train() {  # stream, run name, extra arguments
     log "[$s] another program holds the GPU; waiting"; sleep 60
   done
   log "[$s] training $name: $*"
-  if nice -n 10 taskset -c 12-23 .venv/bin/python -m akshar.train.distill $COMMON "$@" --out "$out" \
+  if nice -n 10 taskset -c "${TRAIN_CPUS:-12-23}" .venv/bin/python -m akshar.train.distill $COMMON "$@" --out "$out" \
        $([ -f "$out/state.msgpack" ] && echo --resume) > "$night/$name.log" 2>&1; then
     rm -f "$out/state.msgpack"
     log "[$s] DONE $name: $(grep -E '^val ' "$night/$name.log" | tail -1)"

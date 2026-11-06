@@ -95,6 +95,9 @@ def main(argv=None) -> None:
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--out", required=True, type=Path)
     parser.add_argument("--resume", action="store_true", help="continue from <out>/state.msgpack")
+    parser.add_argument("--track", choices=["A", "B"],
+                        help="A: weights descend from Shruti's (research-only, D9); B: from Whistle's. "
+                             "Default: the student's own record, else A")
     args = parser.parse_args(argv)
     args.out.mkdir(parents=True, exist_ok=True)
 
@@ -217,8 +220,11 @@ def main(argv=None) -> None:
             save_state(micro + 1)
     batches.close()
 
+    # The track follows the weights' lineage, which the student's checkpoint records (akshar.model.track_b writes B).
+    track = args.track or (student_ck.run.get("akshar") or {}).get("track", "A")
+    lineage = {"phase": 2, "track": "A", "research_only": "D9"} if track == "A" else {"phase": 3, "track": "B"}
     run = {**student_ck.run, "mode": "full", "akshar": {
-        "phase": 2, "track": "A", "research_only": "D9", "student": args.student, "teacher": args.teacher,
+        **lineage, "student": args.student, "teacher": args.teacher,
         "teacher_quant": args.teacher_quant, "sources": args.sources, "labels": args.labels, "recipe": args.recipe,
         "layers": cfg.dec_layers, "alpha": alpha, "temperature": temp, "steps": args.steps, "budget": args.budget,
         "accum": args.accum, "lr": args.lr, "seed": args.seed}}
