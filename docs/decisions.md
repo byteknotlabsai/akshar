@@ -325,6 +325,20 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - NPTEL comes from the gated Hugging Face set `ai4bharat/NPTEL` at revision 9e488c7, so the server's account needs access.
 - **Revisit if:** phones show the 4-bit encoder is not faster there, or a 17 MB model trained with NPTEL comes within 2 points of akshar.
 
+## D25 (2026-11-06): akshar v0 is Whistle distilled from Shruti
+
+- **Decision:**
+  - The first akshar starts from Whistle's full-precision weights with Shruti's tokenizer (714 Devanagari pieces and `hi`), initialised as Shruti's report describes, and learns from Shruti: its transcripts as targets plus distillation from its token distributions.
+  - It trains with 4-bit quantisation-aware training on Shruti-labelled audio from admitted sources and MUCS 2021. akshar-lite v0 is made from it with D24's recipe.
+- **Why:**
+  - The owner needed a working akshar by the morning of 6 November. Teacher labels need no transcript converters, and the Phase 2 trainer and data were ready.
+  - The roadmap already lists Shruti as a teacher for pseudo-labels in Phase 3.
+- **Consequences:**
+  - akshar v0 trails Shruti by 1.3 points of mean WER on the full test sets and beats it on MUCS (akshar.md).
+  - Like MUCS 2021, Shruti as a teacher falls under D19's legal review, because Shruti was trained on MUCS 2021 and Common Voice. akshar v0 is not released before that review.
+  - Every clip keeps its source and its teacher, so either can be dropped and the model retrained from Whistle.
+- **Revisit if:** the review rejects MUCS 2021 or Shruti as a teacher, or converted dataset transcripts are ready to train on.
+
 ## Superseded from the earlier ChatGPT plan
 
 - The project name BharatSTT is now **akshar**.

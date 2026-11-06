@@ -45,6 +45,8 @@ Every later claim ("beats Shruti", "2 bits costs this much") is a number from th
 
 ## Phase 3: Track B, akshar from Whistle
 
+**Status (2026-11-06):** akshar v0 and akshar-lite v0 trained overnight (D25). On the full test sets akshar v0 trails Shruti by 1.3 points of mean WER and beats it on MUCS; details in [akshar.md](akshar.md). Not releasable until the D19 review.
+
 - **Reproduce Shruti's recipe:**
   - Devanagari pieces in word-start and word-internal forms, with rows initialised from the mean of the byte pieces they replace.
   - A `hi` tag initialised from the mean of the existing tags.
