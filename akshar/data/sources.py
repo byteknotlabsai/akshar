@@ -61,6 +61,12 @@ SOURCES: dict[str, Source] = {
         Source("shrutilipi_hi", "ai4bharat/Shrutilipi", "f4beb2f2cfaeae5a8fc28808f85165fec1cb19b3",
                tuple(f"hindi/train-{i:05d}-of-00196.parquet" for i in range(196)),
                audio="audio_filepath", text="text", language="hi", ledger="admit (D21)", gated=True),
+        # Vaani's transcribed part, Hindi, train split only (test and validation stay out, as a possible benchmark):
+        # image-prompted spontaneous speech recorded on phones across districts. Transcripts carry noise tags and
+        # English words in braces after their Devanagari form, e.g. "फोटो {photo}".
+        Source("vaani_hi", "ARTPARK-IISc/Vaani-transcription-part", "418f8f160c6effbb9fd15d3bf54c9d39508e81bc",
+               tuple(f"audio/Hindi/train-{i:05d}-of-00177.parquet" for i in range(177)),
+               audio="audio", text="transcript", language="hi", ledger="admit", gated=True),
     ]
 }
 
