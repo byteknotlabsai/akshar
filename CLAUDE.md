@@ -1,6 +1,6 @@
 # akshar: notes for Claude
 
-akshar is an offline Hindi/English/Hinglish speech-to-text model for CPUs and phones. The goal is to beat Shruti's accuracy with a commercially clean model in two variants: akshar (4-bit, file ≤ 30 MB, hard cap 40 MB) and akshar-lite (2-bit, about 17 MB, accuracy published per test set). Before proposing work, read `README.md`, `docs/decisions.md` and the current phase in `docs/roadmap.md`. Verified facts and sources are in `docs/research/`.
+akshar is an offline Hindi/English/Hinglish speech-to-text model for CPUs and phones. The goal is to beat Shruti's accuracy with a model cleared for commercial use, in two variants: akshar (4-bit, file ≤ 30 MB, hard cap 40 MB) and akshar-lite (2-bit with a 4-bit encoder, about 20 MB, accuracy published per test set; D24). Before proposing work, read `README.md`, `docs/decisions.md` and the current phase in `docs/roadmap.md`. Verified facts and sources are in `docs/research/`.
 
 ## Ground rules
 
@@ -12,13 +12,14 @@ akshar is an offline Hindi/English/Hinglish speech-to-text model for CPUs and ph
 - **Compute:** free only.
   - Laptop RTX 3050 Laptop 4 GB.
   - Kaggle and Colab free tiers.
-  - A 32 GB VRAM Ubuntu machine from 2026-11-02, reached over SSH from the laptop, for Phase 3 (D14).
+  - An RTX 5080 (16 GB) on the owner's Ubuntu server, evenings only, after its llama.cpp service is stopped; reached over SSH via Tailscale, working in `~/user1` (D20). Never start on its GPU while another process uses it. A window that stops coot-moe must end before 03:00, when the owner's cleanup deletes stopped containers (D23).
   - Never plan around paid GPUs.
 - **Telemetry:** export `NEEDLE_TELEMETRY=0` and `DO_NOT_TRACK=1` before any needle command, because the package reports usage by default.
 - **Licences:**
-  - No dataset enters training without a row in `data/LICENSES.md` marked `admit` or `admit, caveat`.
+  - No dataset enters training without a row in `data/LICENSES.md` marked `admit`, `admit (D21)`, `admit (D26)`, `admit, caveat` or `hold, train (D19)`.
+  - A model trained on a `hold, train` source must not be released until a lawyer has cleared that source (D19). MUCS 2021 and Common Voice, the last two, were cleared by the owner's legal guidance (D26). Keep every clip tagged with its source so one can be dropped.
   - Track A weights (built from Shruti) are research-only (D9). Never present them as releasable.
-- **Contamination:** remove every eval clip from training data by normalised-text hash and audio hash, including data added later.
+- **Contamination:** remove every eval clip from training data, including data added later: by audio hash always, and by normalised-text hash when the text has three or more words (D17).
 - **Output convention:**
   - The core model writes the `mixed` style: Hindi in Devanagari, English words in lowercase Latin, numbers as words, no punctuation.
   - The product offers three styles (`roman`, `devanagari`, `mixed`; D11), all rendered by the text layer from that one output.

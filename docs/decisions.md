@@ -37,6 +37,7 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
 
 ## D5 (2026-10-31): No data enters training without a ledger entry
 
+- **Status:** amended by D19 (Shruti's four held sources may be trained on; release waits for legal review).
 - **Decision:** every dataset needs a row in [`../data/LICENSES.md`](../data/LICENSES.md) with a verified licence and commercial-use status before any of its audio is used for training.
 - **Unresolved cases stay out:** MUCS 2021 is CC-BY-SA-4.0 upstream, and whether share-alike reaches trained weights is an open legal question.
 - **Consequence:** Track A starts from Shruti's weights, which were trained on MUCS. Releasing Track A weights inherits that question, and the ledger records it.
@@ -69,6 +70,7 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
 
 ## D9 (2026-10-31): Track A models are research-only; the commercial release comes from Track B
 
+- **Status:** amended by D19 (Track B may train on Shruti's four held sources; release waits for legal review). D21 and D26 cleared all four sources; see D26.
 - **Decision:**
   - Weights produced in Track A (which start from Shruti) are for research and internal comparison only.
   - The commercially released akshar comes from Track B, trained only on `admit` and `admit, caveat` sources.
@@ -188,6 +190,183 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - `akshar.model` calls private functions of needle's exporter. Before bumping `cactus-needle`, `tests/test_quant_export.py` must pass on the new version.
   - In the x86 engine, 2-bit files decode about 2.6 times slower than 4-bit (FLEURS: 17 against 46 times real time). akshar-lite's speed must be measured on every Phase 4 device, not assumed from its size.
 - **Revisit if:** a needle release supports per-matrix widths itself, or changes the functions we wrap.
+
+## D16 (2026-10-31): Track A trains on Shruti's own transcripts, distilled from Shruti as deployed
+
+- **Decision:**
+  - Track A's training targets are Shruti's own transcripts of the training audio, decoded by the engine with 5 beams and each source's language flag (`akshar.data.label`). Each dataset's own transcripts are kept only for the blocklist check.
+  - The teacher runs as deployed: 4-bit weights and 8-bit activations, not full precision as the roadmap planned.
+  - Data: IndicVoices Hindi (40 h), Rural Women ASR v2 Hindi (40 h), Kathbath Hindi (20 h), FLEURS Hindi train (3 h) and LibriSpeech train-clean-100 (22 h). All are `admit` or `admit, caveat` in the ledger, and every clip is checked against the test-set blocklist.
+  - Models are compared on dev subsets (the first 200 to 300 clips of each test set, `python -m akshar.eval dev`). Final numbers come from full test sets.
+- **Why:**
+  - Track A's job is a 2-bit copy of Shruti. Shruti's output already follows our `mixed` style, while the datasets' transcripts follow other conventions: IndicVoices writes English words in Devanagari, Rural Women's carry noise tags, and some use digits. Only Phase 3's converters fix those.
+  - On 368 LibriSpeech clips, the 4-bit teacher reproduces the engine's transcripts on 99.5% of tokens under teacher forcing, against 99.1% in full precision, with lower cross-entropy (0.034 against 0.037).
+  - A 2-bit file decodes at about 17 times real time on the laptop, so a full seven-set evaluation takes about two hours per model. The dev subsets take about twelve minutes.
+- **Consequences:**
+  - The roadmap's "without distillation" arm is quantisation-aware training on Shruti's transcripts (alpha 0); "with distillation" adds the token-level KL term (alpha 0.5).
+  - Track A models inherit Shruti's mistakes by design. They measure what 2 bits costs relative to Shruti, nothing more, and stay research-only (D9).
+  - Measuring phone RAM moves to Phase 4, when the devices arrive.
+- **Amends:** the Method and Data lines of the roadmap's Phase 2.
+
+## D17 (2026-11-01): A text match removes a training clip only from three words up
+
+- **Decision:**
+  - A training clip whose audio matches a test clip's (the 16 kHz 16-bit PCM hash) is always removed.
+  - A clip is removed for its text only when its normalised transcript has three or more words and matches a test clip's normalised text.
+  - This applies from Phase 3 on. Phase 2's data was built under the old rule and is not rebuilt.
+- **Why:**
+  - In Phase 2 the text rule removed 1,251 IndicVoices clips. In the shard checked, every match was a one- or two-word utterance such as हाँ, नौ or सात that also occurs as a Lahaja reference. These are common words, not leaked test clips.
+  - Short utterances are data akshar needs, for voice commands and answers.
+  - A copy of a test clip is still caught by its audio, and a re-recording of a test sentence by its text.
+- **Consequences:**
+  - CLAUDE.md's contamination rule states the three-word floor.
+  - A re-encoded copy of a one- or two-word test clip would get through. The risk is small, and its effect on a score is at most a word or two.
+- **Revisit if:** a test set with many short references, such as a voice-command benchmark, joins the protocol.
+
+## D18 (2026-11-01): Phase 2's training runs move to the 32 GB machine
+
+- **Decision:** Phase 2's training runs (a1 to a4 in `scripts/phase2_track_a.sh`) restart on the 32 GB VRAM machine once its SSH access arrives. The laptop keeps the data, the teacher labels and the evaluation.
+- **Why:**
+  - On the laptop's 4 GB GPU, both full runs ran out of memory after 100 to 150 updates, when a 631 MB allocation failed. The full data mix has longer transcripts than the smoke tests did, so each batch shape needs more memory, and the card also drives the desktop.
+  - Smaller batches would probably fit, but the 32 GB machine runs the same schedule faster with room to spare.
+- **Consequences:**
+  - Amends D14, which gave Phase 2 to the laptop.
+  - Per D14, the GPU machine downloads the sources itself (`akshar.data.build` with the same hours and fractions), and the teacher labels travel as small files.
+  - Nothing trained on the laptop is lost: the runs failed before writing a model, and Phase 2's data and labels are complete.
+- **Revisit if:** the 32 GB machine is not available; then run Phase 2 on the laptop with about 60 s of audio per batch.
+
+## D19 (2026-11-04): Shruti's four held sources join training; release waits for legal review
+
+- **Status:** amended by D21 (Shrutilipi and AI4Bharat NPTEL admitted) and closed by D26 (MUCS 2021 and Common Voice admitted after legal guidance).
+- **Decision:**
+  - Phase 3 may train on the four sources Shruti used that the ledger holds: Shrutilipi, AI4Bharat NPTEL, MUCS 2021 Hindi-English and Common Voice's Indian-accented English. Their ledger status becomes `hold, train (D19)`.
+  - No model trained on them is released until a lawyer has reviewed them. The project owner will arrange that review.
+  - Every training clip keeps its source, so any one source can be dropped and the model retrained without it.
+- **Why:**
+  - They fill akshar's weakest spots: Indian-accented English (NPTEL, Common Voice), natural Hinglish (MUCS) and Hindi volume (Shrutilipi, 1,620 h). Without them akshar could trail Shruti on Svarah and MUCS.
+- **Consequences:**
+  - Amends D5 and D9. akshar is no longer commercially clean by construction; it becomes releasable only after the review.
+  - If the review rejects a source, every model trained on it must be retrained without it.
+  - Recommended, still open: also train a clean model without these sources. It is the fallback if a source is rejected, and it measures what the held sources are worth.
+  - Common Voice downloads need the owner's Mozilla Data Collective account and acceptance of its terms.
+  - They add roughly 150 to 200 GB of audio to Phase 3's storage needs.
+  - Phase 2 (Track A) is unchanged.
+- **Revisit after:** the legal review.
+
+## D20 (2026-11-04): The GPU machine is an RTX 5080 with 16 GB, used in the evenings
+
+- **Decision:** training runs on the RTX 5080 (16 GB) in the owner's server `codeacius-servo`, after 9 PM once its llama.cpp service is stopped. Work lives in `~/user1` there, and training starts only when no other process uses the GPU (`scripts/server_train.sh` checks).
+- **Why:** the machine D14 described as a free 32 GB GPU has a 16 GB GPU that a llama.cpp service uses during the day. 16 GB is ample for Phase 2, which peaked at 2.5 GB.
+- **Consequences:**
+  - Amends D14 and D18.
+  - The laptop reaches the server only through a Tailscale relay, at about 0.4 MB/s. Big files are fetched by the server itself from Hugging Face, at about 14 MB/s (`scripts/server_fetch.sh`).
+  - The server's disk has about 45 GB free. Phase 3's audio, a few hundred GB with D19's sources, needs another home; still open.
+- **Revisit if:** the server's GPU, disk or evening window changes.
+
+## D21 (2026-11-04): CC-BY-4.0 datasets are admitted on the project owner's confirmation
+
+- **Decision:**
+  - The project owner has confirmed that the ledger's CC-BY-4.0 datasets can be used and distributed commercially.
+  - Every training source labelled CC-BY-4.0 is admitted. That moves Shrutilipi and AI4Bharat NPTEL out of hold, and removes the caveats from Kathbath, Rural Women ASR v2, FLEURS and People's Speech's CC-BY configs.
+  - Not covered, because they aren't CC-BY-4.0:
+    - MUCS 2021, which is CC-BY-SA-4.0 at its source, and Common Voice, CC0 under Mozilla Data Collective terms, stay `hold, train (D19)`.
+    - MUCS Hindi (OpenSLR 103) and Bhashini stay `hold`.
+    - Non-commercial sources stay excluded.
+  - Test sets stay test-only whatever their licence.
+- **Why:** the owner's confirmation. The conflicts the ledger found stay in its notes for the record: All India Radio's terms for Shrutilipi's audio, and NPTEL's own licence badge.
+- **Consequences:**
+  - Amends D5 and D19.
+  - A model trained without MUCS 2021 and Common Voice needs no further licence review under this ledger.
+  - Track A stays research-only while MUCS 2021 and Common Voice are unresolved (D9).
+
+## D22 (2026-11-04): Phase 2 trains on silence and noise with empty targets
+
+- **Decision:**
+  - Phase 2's runs add a sixth training set, `nonspeech`: 600 synthetic clips, about 1.8 h, made by `akshar.data.nonspeech` from a fixed seed.
+  - A quarter each are digital silence, white noise, pink noise and 50 Hz mains hum. Noise is at -70 to -40 dB RMS relative to full scale, and clips are 1 to 20 s long.
+  - Their target is empty: the model writes nothing and stops. The trainer now keeps clips with empty targets instead of skipping them.
+- **Why:**
+  - Shruti trained with silence and synthetic-noise clips that have empty transcripts, and it writes nothing on the harness's 100 silent clips.
+  - Our five speech sets have no such clips: all 57,564 training clips had text. Two-bit training on speech alone could drift into inventing words on silence.
+  - Shruti rounded to 2 bits with no training still writes nothing on the silent clips, so these clips keep a behaviour rather than teach a new one.
+- **Consequences:**
+  - Speech clips keep Shruti's transcripts as targets (D16). Shruti also writes nothing on silence, so the empty targets agree with it.
+  - The harness's silence set, digital silence and faint noise, now resembles the training data, as it did for Shruti.
+  - Every silence test clip is 4 s long and no training clip is, so no training clip can share a test clip's audio hash. A check against the blocklist's 19,735 audio hashes found no overlap either.
+  - The clips contain no third-party audio. The ledger lists them as `admit`.
+  - Phase 3 keeps them; its roadmap already plans silence and noise clips with empty targets.
+- **Revisit if:** the dev silence test shows invented words, or a later noise test shows quiet speech being dropped.
+
+## D23 (2026-11-05): GPU windows on the server end before 03:00
+
+- **Decision:**
+  - A training window that stops coot-moe ends, with coot-moe started again, before 03:00.
+  - A window may cross 03:00 only once the owner has protected coot-moe from the nightly cleanup. `scripts/server_night.sh` refuses such a window unless `ALLOW_PRUNE_RISK=1` is set.
+- **Why:**
+  - The owner's crontab runs `~/scripts/cleanup_node.sh` at 03:00, which runs `docker system prune -af --volumes`. It deletes every stopped container, the images they used and unused networks.
+  - On 5 November coot-moe was stopped at 01:00 for an overnight search. The 03:00 cleanup deleted it, its llama.cpp image and the `vllm_default` network, so it could not be started again at 04:58.
+  - The image (by its recorded digest) and the network were restored. Recreating the container needs `~/Services/CootAI/deploy/run-coot.sh` with one of three env files, and only the owner knows which one is live.
+- **Consequences:**
+  - Amends D20, whose evening window had no end time.
+  - A night of training on the server lasts about 9 PM to 3 AM, roughly five hours of GPU time after compile overheads, unless the owner protects coot-moe.
+- **Revisit if:** the owner changes the cleanup to leave coot-moe alone, for example by skipping the prune while it is stopped or by filtering the prune on a label that coot-moe carries.
+
+## D24 (2026-11-05): akshar-lite is about 20 MB, and Phase 2's mix adds NPTEL
+
+- **Decision (the project owner's):**
+  - akshar-lite keeps the encoder at 4 bits on top of Cactus's mix (recipe `mixed2-enc4`, 20.4 MB) instead of the 17.1 MB all-2-bit mix.
+  - Phase 2's training mix adds about 30 h each of AI4Bharat NPTEL's English and Hindi lectures (`nptel_en`, `nptel_hi`), labelled by Shruti like the other sets.
+- **Why:**
+  - On the full test sets, the 20.4 MB model trails 4-bit Shruti by 1.4 points of mean WER, inside the roadmap's provisional 2-point bar. The 17.1 MB model trails by 2.3. The 20.4 MB model also decodes about twice as fast on x86.
+  - Most of the remaining gap is on MUCS (Hinglish tech tutorials) and Svarah (Indian English), which the mix lacked. NPTEL's lectures cover Indian-accented English and Hindi full of English technical terms, and NPTEL is admitted (D21).
+- **Consequences:**
+  - Amends D10 (akshar-lite about 17 MB) and the data line of D16.
+  - The release variants become about 20 MB (akshar-lite) and at most 30 MB (akshar).
+  - NPTEL comes from the gated Hugging Face set `ai4bharat/NPTEL` at revision 9e488c7, so the server's account needs access.
+- **Revisit if:** phones show the 4-bit encoder is not faster there, or a 17 MB model trained with NPTEL comes within 2 points of akshar.
+
+## D25 (2026-11-06): akshar v0 is Whistle distilled from Shruti
+
+- **Decision:**
+  - The first akshar starts from Whistle's full-precision weights with Shruti's tokenizer (714 Devanagari pieces and `hi`), initialised as Shruti's report describes, and learns from Shruti: its transcripts as targets plus distillation from its token distributions.
+  - It trains with 4-bit quantisation-aware training on Shruti-labelled audio from admitted sources and MUCS 2021. akshar-lite v0 is made from it with D24's recipe.
+- **Why:**
+  - The owner needed a working akshar by the morning of 6 November. Teacher labels need no transcript converters, and the Phase 2 trainer and data were ready.
+  - The roadmap already lists Shruti as a teacher for pseudo-labels in Phase 3.
+- **Consequences:**
+  - akshar v0 trails Shruti by 1.3 points of mean WER on the full test sets and beats it on MUCS (akshar.md).
+  - Like MUCS 2021, Shruti as a teacher falls under D19's legal review, because Shruti was trained on MUCS 2021 and Common Voice. akshar v0 is not released before that review.
+  - Every clip keeps its source and its teacher, so either can be dropped and the model retrained from Whistle.
+- **Revisit if:** the review rejects MUCS 2021 or Shruti as a teacher, or converted dataset transcripts are ready to train on.
+- **Status:** amended by D26: the legal review cleared MUCS 2021 and Common Voice.
+
+## D26 (2026-11-07): MUCS 2021 and Common Voice are cleared for commercial use
+
+- **Decision:**
+  - The project owner has received legal guidance that MUCS 2021 Hindi-English and Common Voice can be used commercially, and reported it on 7 November.
+  - Both move from `hold, train (D19)` to `admit (D26)`. No training source in the ledger is `hold, train` any more.
+  - Phase 3 trains on both, as Shruti did: MUCS 2021's training split (already in akshar v0) and Common Voice's Indian-accented English.
+- **Why:** this is the legal review D19 asked for. The ledger keeps its notes on MUCS's share-alike licence and Mozilla Data Collective's terms as the record of what was checked.
+- **Consequences:**
+  - Amends D19, D21 and D25. akshar v0 and later versions are no longer held back by their data or by Shruti as their teacher. Shruti's weights are Apache-2.0, and both sources it was trained on that the ledger held are now admitted.
+  - D9's stated reason, the four held sources inside Shruti's weights, no longer applies. Track A stays research-only until the owner decides otherwise.
+  - Common Voice still has to be fetched. Its Hugging Face repository (`mozilla-foundation/common_voice_17_0`) accepts the server's account; Mozilla Data Collective's terms (no re-hosting, no re-identification) still apply to the files.
+  - Test sets stay test-only whatever their licence, including MUCS 2021's test split.
+
+## D27 (2026-11-07): akshar learns from datasets' own transcripts where they are verbatim
+
+- **Decision:**
+  - Training targets come from each dataset's own transcript, converted to the `mixed` style by `akshar.data.convert`, for sources whose transcripts are verbatim: IndicVoices, Kathbath, Rural Women ASR, Vaani, FLEURS and LibriSpeech.
+  - MUCS 2021, NPTEL and Shrutilipi keep Shruti's transcripts as targets, because theirs are scripts or not verbatim. Silence keeps empty targets. Distillation from Shruti's token distributions stays at 0.5.
+  - English words written in Devanagari become Latin only in spontaneous speech (IndicVoices, Vaani), through a lexicon learned from where Shruti writes them in Latin. Read speech keeps them in Devanagari, as Shruti writes them there and as the FLEURS and Lahaja references do.
+- **Why:**
+  - A student that learns only from Shruti's transcripts learns Shruti's mistakes. On IndicVoices and Rural Women the human transcripts are often more accurate than Shruti's.
+  - Training akshar v1 on the converted transcripts for 2,400 updates lowered its mean WER on the full test sets from 22.45 to 22.28, most on the Hindi sets (akshar.md).
+- **Consequences:**
+  - Amends D25, whose targets were only Shruti's transcripts.
+  - Sources with verbatim transcripts need no Shruti labelling, which removes the CPU labelling bottleneck for IndicVoices and Vaani. Shrutilipi still needs labels.
+  - Every target records where it came from (`by` in labels-mix.jsonl), so either kind can be dropped.
+- **Revisit if:** a longer run with a matching control shows no gain, or a test set regresses.
 
 ## Superseded from the earlier ChatGPT plan
 

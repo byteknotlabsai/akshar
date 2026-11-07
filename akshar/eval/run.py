@@ -9,7 +9,6 @@ A run that stops part-way can be resumed with --out <run folder>; finished clips
 from __future__ import annotations
 
 import collections
-import hashlib
 import json
 import os
 import platform
@@ -18,55 +17,15 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+# engine sets the telemetry opt-out (D6), so it comes before anything that imports needle.
+from .engine import KNOWN_ENGINES, engine_info  # noqa: F401 (KNOWN_ENGINES is imported from here by report.py)
+from .engine import cpu_name as _cpu_name, sha256 as _sha256
 from . import audio, sets
 from .normalise import VERSION as NORMALISER_VERSION
 from .paths import EVAL_ROOT, RUNS_ROOT
 from .prepare import git_commit, load_manifest
 from .score import score_clips
-
-# D6: the cactus-needle package reports usage unless this is set before it is imported.
-os.environ.setdefault("NEEDLE_TELEMETRY", "0")
-os.environ.setdefault("DO_NOT_TRACK", "1")
-
-
-def _sha256(path) -> str:
-    digest = hashlib.sha256()
-    with open(path, "rb") as handle:
-        for block in iter(lambda: handle.read(1 << 20), b""):
-            digest.update(block)
-    return digest.hexdigest()
-
-
-def _cpu_name() -> str:
-    try:
-        with open("/proc/cpuinfo", encoding="utf-8") as handle:
-            for line in handle:
-                if line.startswith("model name"):
-                    return line.split(":", 1)[1].strip()
-    except OSError:
-        pass
-    return platform.processor() or platform.machine()
-
-
-# Engine libraries we have run, by SHA-256 (Linux x86_64). Udgam Labs' main table used the build of 18 October 2026,
-# and their "newest build" numbers came from the build of 19 October (technical report, section 7.5).
-KNOWN_ENGINES = {
-    "87476ff70e80334d7c766dbf236b72f42876072df22014c6ec8a9b087b82b260": "3.3.3, needle3@d6c7d6a (2026-10-19)",
-    "0c8f3970fab6ca96f59ba989377c7e61def64ee0e3b3970d7a06cdf93271d454": "3.3.2, needle3@3391a10 (2026-10-18)",
-}
-
-
-def engine_info() -> dict:
-    """The engine library actually loaded. NEEDLE3_LIB_PATH overrides the build the package pins."""
-    import needle
-    from needle import _library_path
-    from needle.agent import fetch
-
-    library = _library_path(3)
-    digest = _sha256(library)
-    return {"package": needle.__version__, "pinned_engine": fetch.engine_version(3),
-            "override": os.environ.get(fetch.lib_path_env(3)), "library_sha256": digest,
-            "build": KNOWN_ENGINES.get(digest, "unknown")}
+from ..files import repair_jsonl
 
 
 def run(model: str, set_name: str, language: str | None = None, limit: int | None = None, out: str | None = None,
@@ -90,6 +49,7 @@ def run(model: str, set_name: str, language: str | None = None, limit: int | Non
     run_dir.mkdir(parents=True, exist_ok=True)
     hyps_path = run_dir / "hyps.jsonl"
     done = set()
+    repair_jsonl(hyps_path)  # a killed run can leave half a line
     if hyps_path.exists():
         with open(hyps_path, encoding="utf-8") as handle:
             done = {json.loads(line)["id"] for line in handle}

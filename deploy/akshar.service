@@ -1,0 +1,20 @@
+# A systemd service that keeps the akshar server running and starts it when the machine boots.
+#  1. Run ./run.sh --setup once by hand, as the user below, so that the packages are installed.
+#  2. Set User, WorkingDirectory and ExecStart to that user and to where the folder was unzipped.
+#  3. sudo cp akshar.service /etc/systemd/system/ && sudo systemctl daemon-reload
+#  4. sudo systemctl enable --now akshar        (logs: journalctl -u akshar -f)
+# The server's settings stay in settings.env; restart it after changing them: sudo systemctl restart akshar
+[Unit]
+Description=akshar speech-to-text server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=akshar
+WorkingDirectory=/opt/akshar-deploy
+ExecStart=/opt/akshar-deploy/run.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

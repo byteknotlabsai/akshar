@@ -31,6 +31,13 @@ def main(argv=None) -> None:
     p = commands.add_parser("blocklist", help="text and audio hashes of every prepared test clip")
     p.add_argument("sets", nargs="*", help="default: every prepared set except silence")
 
+    p = commands.add_parser("dev", help="decode the dev subsets (first clips of every set) with a model")
+    p.add_argument("model", help="path to a .cact file")
+    p.add_argument("--name", required=True, help="label for this model in dev tables")
+
+    p = commands.add_parser("dev-table", help="dev-subset scores of named models beside Shruti's")
+    p.add_argument("names", nargs="*")
+
     args = parser.parse_args(argv)
     if args.command == "prepare":
         from .prepare import prepare
@@ -57,3 +64,11 @@ def main(argv=None) -> None:
         from .blocklist import build
 
         build(args.sets or None)
+    elif args.command == "dev":
+        from .dev import run_dev
+
+        run_dev(args.model, args.name)
+    elif args.command == "dev-table":
+        from .dev import table
+
+        print(table(args.names))

@@ -1,0 +1,926 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>akshar</title>
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f5f5f2;
+  --panel: #ffffff;
+  --sunken: #efefea;
+  --ink: #1b1b1d;
+  --muted: #66666d;
+  --line: #e0e0d9;
+  --accent: #2c50c8;
+  --accent-ink: #ffffff;
+  --accent-soft: #e7ecff;
+  --better: #1e7b3a;
+  --worse: #b3261e;
+  --wrong-bg: #fde3df;
+  --wrong-ink: #7f1d15;
+  --low-1: #fff0bf;
+  --low-2: #ffd27a;
+  --rec: #d92d20;
+  --radius: 10px;
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #111113;
+    --panel: #19191c;
+    --sunken: #232327;
+    --ink: #ececef;
+    --muted: #9d9da6;
+    --line: #2e2e34;
+    --accent: #8ba4ff;
+    --accent-ink: #0c1024;
+    --accent-soft: #232b4a;
+    --better: #6fd795;
+    --worse: #ff8f80;
+    --wrong-bg: #4b1e19;
+    --wrong-ink: #ffd5ce;
+    --low-1: #3a3217;
+    --low-2: #5c4511;
+    --rec: #ff6b5e;
+  }
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Noto Sans Devanagari", "Nirmala UI", sans-serif; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.top { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 8px 20px; flex-wrap: wrap;
+  padding: 10px 20px; background: var(--panel); border-bottom: 1px solid var(--line); }
+.brand { font-weight: 700; font-size: 18px; letter-spacing: -.01em; }
+.tabs { display: flex; gap: 4px; }
+.tabs button { border: 0; background: none; padding: 6px 12px; border-radius: 8px; cursor: pointer; color: var(--muted); font-weight: 500; }
+.tabs button[aria-selected="true"] { background: var(--accent-soft); color: var(--accent); }
+.engine { margin-left: auto; font-size: 12.5px; }
+main { max-width: 1120px; margin: 0 auto; padding: 20px 16px 40px; }
+footer { max-width: 1120px; margin: 0 auto; padding: 0 16px 24px; font-size: 12.5px; }
+.muted { color: var(--muted); }
+.better { color: var(--better); }
+.worse { color: var(--worse); }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; min-width: 0; }
+.grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+h2 { font-size: 15px; margin: 0 0 12px; }
+h3 { font-size: 12px; margin: 18px 0 6px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+.row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); background: var(--panel);
+  padding: 7px 14px; border-radius: 8px; cursor: pointer; font-weight: 500; }
+.btn:hover:not(:disabled) { border-color: var(--muted); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn.small { padding: 3px 10px; font-size: 13px; }
+.btn:disabled { opacity: .45; cursor: default; }
+.btn.recording { background: var(--rec); border-color: var(--rec); color: #fff; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: var(--rec); }
+.recording .dot { background: #fff; animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: .35; } }
+.drop { border: 1.5px dashed var(--line); border-radius: var(--radius); padding: 12px 14px; margin-top: 12px; font-size: 13.5px; }
+.drop.over { border-color: var(--accent); background: var(--accent-soft); }
+.meter { flex: 1; min-width: 80px; height: 8px; background: var(--sunken); border-radius: 4px; overflow: hidden; }
+.meter div { height: 100%; width: 0; background: var(--better); transition: width .08s linear; }
+audio { width: 100%; margin-top: 12px; }
+.field { margin-bottom: 14px; }
+.label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: 999px;
+  padding: 4px 12px 4px 8px; cursor: pointer; font-size: 14px; }
+.chip:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.chip input { accent-color: var(--accent); margin: 0; }
+.seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg label { position: relative; padding: 5px 12px; cursor: pointer; font-size: 14px; border-left: 1px solid var(--line); }
+.seg label:first-child { border-left: 0; }
+.seg input { position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden; }
+.seg label:has(input:checked) { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.seg label:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: -2px; }
+textarea { width: 100%; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); padding: 8px 10px;
+  resize: vertical; line-height: 1.6; }
+input.text { width: 100%; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); padding: 7px 10px; }
+.note { font-size: 13px; margin: 10px 0 0; }
+.note.error { color: var(--worse); }
+#outputs { display: grid; gap: 12px; margin-top: 16px; }
+.result-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 6px; }
+.transcript { font-size: 19px; line-height: 1.85; overflow-wrap: anywhere; }
+.pulse { animation: blink 1.2s infinite; }
+.w { border-radius: 4px; padding: 1px 2px; cursor: pointer; }
+.w:hover { outline: 1px solid var(--muted); }
+.w.low1 { background: var(--low-1); }
+.w.low2 { background: var(--low-2); }
+.meta { font-size: 13px; color: var(--muted); margin-top: 4px; }
+.score { margin-top: 10px; }
+.score-head { font-size: 13.5px; font-weight: 600; }
+.diff { font-size: 16.5px; line-height: 2.05; overflow-wrap: anywhere; }
+.diff del { color: var(--worse); text-decoration: line-through; text-decoration-thickness: 1.5px; margin-right: .2em; }
+.diff ins { text-decoration: none; background: var(--wrong-bg); color: var(--wrong-ink); border-radius: 4px; padding: 1px 4px; }
+.legend { font-size: 12.5px; color: var(--muted); }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { padding: 7px 10px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+tbody tr:last-child td { border-bottom: 0; }
+th:first-child, td:first-child { text-align: left; }
+thead th { font-size: 12.5px; color: var(--muted); font-weight: 600; vertical-align: bottom; }
+th button { border: 0; background: none; padding: 0; color: var(--accent); cursor: pointer; font: inherit; font-weight: 600; }
+td.cell { cursor: pointer; }
+td.cell:hover { background: var(--sunken); }
+.delta { display: block; font-size: 11.5px; }
+.best { font-weight: 700; }
+.sub { display: block; font-size: 12px; color: var(--muted); font-weight: 400; }
+.caption { font-size: 12.5px; line-height: 1.6; margin: 10px 2px 0; }
+.controls { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: end; margin: 12px 0; }
+.controls label { font-size: 12.5px; color: var(--muted); display: grid; gap: 3px; }
+select, input[type=search] { border: 1px solid var(--line); border-radius: 8px; background: var(--panel); padding: 5px 8px; max-width: 100%; }
+#clips td.ref { text-align: left; white-space: normal; max-width: 0; width: 100%; }
+#clips td.ref span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#clips tbody tr { cursor: pointer; }
+#clips tbody tr:hover, #clips tbody tr:focus-visible { background: var(--sunken); }
+#browser { scroll-margin-top: 64px; }
+.pager { display: flex; gap: 8px; align-items: center; justify-content: flex-end; margin-top: 10px; font-size: 13px; }
+dialog { width: min(920px, calc(100vw - 24px)); max-height: calc(100vh - 32px); border: 1px solid var(--line);
+  border-radius: 12px; padding: 0; background: var(--panel); color: var(--ink); }
+dialog::backdrop { background: rgba(0, 0, 0, .45); }
+.dialog-head { position: sticky; top: 0; z-index: 1; display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  padding: 12px 16px; background: var(--panel); border-bottom: 1px solid var(--line); }
+.dialog-head strong { flex: 1; min-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dialog-head label { font-size: 13px; display: inline-flex; gap: 5px; align-items: center; }
+.dialog-body { padding: 4px 16px 20px; }
+.hyp { border-top: 1px solid var(--line); padding: 10px 0; }
+.hyp-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px 10px; font-size: 13.5px; }
+.tag { font-size: 11px; border-radius: 4px; padding: 1px 6px; background: var(--accent-soft); color: var(--accent); font-weight: 700; margin-left: 6px; }
+.lattice { font-size: 14px; line-height: 1.9; margin-top: 6px; }
+.lattice span { display: inline-block; border: 1px solid var(--line); border-radius: 6px; padding: 0 6px; margin: 2px 4px 2px 0; }
+.api h3 { margin-top: 24px; }
+.api p { margin: 6px 0; }
+.api table { font-size: 13.5px; }
+.api th, .api td { white-space: normal; text-align: left; vertical-align: top; }
+.api ul { margin: 6px 0; padding-left: 20px; }
+code { font-family: var(--mono); font-size: .9em; background: var(--sunken); border-radius: 4px; padding: 1px 5px; }
+.code { position: relative; margin-top: 6px; }
+.code pre { margin: 0; background: var(--sunken); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px;
+  overflow-x: auto; font: 13px/1.55 var(--mono); }
+.code button { position: absolute; top: 8px; right: 8px; }
+details summary { cursor: pointer; font-size: 13px; color: var(--muted); margin-top: 8px; }
+@media (max-width: 760px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .engine { margin-left: 0; width: 100%; }
+  .top { padding: 10px 16px; }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand">akshar</div>
+  <nav class="tabs" role="tablist" aria-label="Views">
+    <button role="tab" id="tab-btn-try" aria-selected="true" aria-controls="tab-try" data-tab="try">Transcribe</button>
+    <button role="tab" id="tab-btn-results" aria-selected="false" aria-controls="tab-results" data-tab="results" hidden>Test results</button>
+    <button role="tab" id="tab-btn-api" aria-selected="false" aria-controls="tab-api" data-tab="api">API</button>
+  </nav>
+  <div class="engine muted" id="engine">Connecting…</div>
+</header>
+
+<main>
+  <section id="tab-try" class="tab" role="tabpanel" aria-labelledby="tab-btn-try">
+    <div class="grid">
+      <div class="card" id="drop-zone">
+        <h2>Audio</h2>
+        <div class="row">
+          <button class="btn" id="rec" type="button"><span class="dot"></span><span id="rec-label">Record</span></button>
+          <button class="btn" id="pick" type="button">Open a file…</button>
+          <input type="file" id="file" accept="audio/*,video/*" hidden>
+          <div class="row" id="recording" hidden style="flex:1"><span id="rec-time">0:00</span><div class="meter" aria-hidden="true"><div id="level"></div></div></div>
+        </div>
+        <div class="drop muted" id="drop">Or drop an audio file here. WAV, FLAC, MP3 and OGG are read exactly as the test harness reads them; the browser converts other formats first.</div>
+        <div id="clip" hidden>
+          <audio id="player" controls></audio>
+          <div id="clip-info" class="muted note"></div>
+        </div>
+        <p class="note" id="note" hidden></p>
+      </div>
+      <div class="card">
+        <h2>Settings</h2>
+        <div class="field"><span class="label">Models</span><div class="chips" id="model-list"></div></div>
+        <div class="field"><span class="label" id="lang-label">Language flag</span>
+          <div class="seg" id="lang" role="radiogroup" aria-labelledby="lang-label">
+            <label><input type="radio" name="lang" value="hi">Hindi, Hinglish <span class="muted">hi</span></label>
+            <label><input type="radio" name="lang" value="en">English <span class="muted">en</span></label>
+            <label><input type="radio" name="lang" value="auto">Detect</label>
+          </div>
+        </div>
+        <div class="field" id="key-field" hidden><label class="label" for="key">API key <span class="muted">(this server needs one; it is kept in this browser)</span></label>
+          <input type="password" id="key" class="text" autocomplete="off"></div>
+        <div class="field"><label class="label" for="ref">What was said <span class="muted">(optional: paste it to get a word error rate)</span></label>
+          <textarea id="ref" rows="3" placeholder="तुम्हारा laptop अच्छा लग रहा है"></textarea></div>
+        <div class="row"><button class="btn primary" id="go" type="button" disabled>Transcribe</button><span class="muted" id="go-hint" style="font-size:13px">Add audio first.</span></div>
+      </div>
+    </div>
+    <div id="outputs" aria-live="polite"></div>
+  </section>
+
+  <section id="tab-results" class="tab" role="tabpanel" aria-labelledby="tab-btn-results" hidden>
+    <div class="row" style="justify-content:space-between;margin-bottom:12px">
+      <h2 style="margin:0">Full test sets</h2>
+      <label class="row muted" style="font-size:13px;gap:6px">Scored on <select id="root"></select></label>
+    </div>
+    <div id="summary-box"><p class="muted">Loading…</p></div>
+    <section id="browser" hidden style="margin-top:28px">
+      <h2 id="browser-title"></h2>
+      <div class="controls">
+        <label>Model A <select id="pick-a"></select></label>
+        <label>Model B <select id="pick-b"></select></label>
+        <label>Show <select id="filter">
+          <option value="all">All clips</option>
+          <option value="aworse">A worse than B</option>
+          <option value="bworse">B worse than A</option>
+          <option value="differ">A and B differ</option>
+          <option value="aerr">A has errors</option>
+        </select></label>
+        <label>Sort <select id="sort">
+          <option value="gap">A minus B, largest first</option>
+          <option value="rgap">B minus A, largest first</option>
+          <option value="aerr">A's errors, most first</option>
+          <option value="order">Test-set order</option>
+          <option value="long">Longest first</option>
+        </select></label>
+        <label style="flex:1;min-width:180px">Search the references <input type="search" id="search" placeholder="a word or a clip id"></label>
+      </div>
+      <p class="note muted" id="totals"></p>
+      <div class="table-wrap"><table id="clips"></table></div>
+      <div class="pager"><button class="btn small" id="prev-page" type="button">‹ Previous</button><span id="page-info"></span><button class="btn small" id="next-page" type="button">Next ›</button></div>
+    </section>
+  </section>
+  <section id="tab-api" class="tab" role="tabpanel" aria-labelledby="tab-btn-api" hidden>
+    <div class="card api" id="api-doc"></div>
+  </section>
+</main>
+<footer class="muted" id="foot"></footer>
+
+<dialog id="detail" aria-labelledby="d-title">
+  <div class="dialog-head">
+    <strong id="d-title"></strong>
+    <span class="muted" id="d-pos"></span>
+    <label class="muted"><input type="checkbox" id="d-autoplay">Play on open</label>
+    <button class="btn small" id="d-prev" type="button" aria-label="Previous clip">‹</button>
+    <button class="btn small" id="d-next" type="button" aria-label="Next clip">›</button>
+    <button class="btn small" id="d-close" type="button">Close</button>
+  </div>
+  <div class="dialog-body" id="d-body"></div>
+</dialog>
+
+<script>
+"use strict";
+const $ = (selector, root = document) => root.querySelector(selector);
+const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+const enc = encodeURIComponent;
+
+function h(tag, props, ...kids) {
+  const el = document.createElement(tag);
+  for (const [key, value] of Object.entries(props || {})) {
+    if (value == null || value === false) continue;
+    if (key === "class") el.className = value;
+    else if (key.startsWith("on")) el.addEventListener(key.slice(2), value);
+    else el.setAttribute(key, value === true ? "" : value);
+  }
+  for (const kid of kids.flat(Infinity)) if (kid != null && kid !== false) el.append(kid);
+  return el;
+}
+
+const store = {  // remembered choices, per browser; the page works without them
+  get(key, fallback) { try { const v = localStorage.getItem("akshar." + key); return v == null ? fallback : JSON.parse(v); } catch { return fallback; } },
+  set(key, value) { try { localStorage.setItem("akshar." + key, JSON.stringify(value)); } catch { /* storage blocked */ } },
+};
+
+const authHeaders = () => { const key = store.get("key", ""); return key ? {Authorization: `Bearer ${key}`} : {}; };
+
+async function api(path, body) {
+  const headers = authHeaders();
+  const options = body === undefined ? {headers} : body instanceof Blob
+    ? {method: "POST", body, headers}
+    : {method: "POST", body: JSON.stringify(body), headers: {...headers, "Content-Type": "application/json"}};
+  const response = await fetch(path, options);
+  let data = null;
+  try { data = await response.json(); } catch { /* not JSON */ }
+  if (response.status === 401) $("#key-field").hidden = false;
+  if (!response.ok) throw Object.assign(new Error(data?.error || `${response.status} ${response.statusText}`), {status: response.status});
+  return data;
+}
+
+const secs = s => s < 60 ? `${s.toFixed(1)} s` : `${Math.floor(s / 60)} min${Math.round(s % 60) ? ` ${Math.round(s % 60)} s` : ""}`;
+const clock = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+const pct = (errors, units) => units ? `${(100 * errors / units).toFixed(2)}%` : "–";
+const plural = (n, one, many = one + "s") => `${n.toLocaleString()} ${n === 1 ? one : many}`;
+const signed = d => d > 0 ? `+${d}` : d < 0 ? `−${-d}` : "0";
+
+/* ---------- Transcribe ---------- */
+
+const S = {info: null, lang: store.get("lang", "hi"), picked: new Set(), audio: null, cards: new Map(), run: 0};
+
+async function init() {
+  for (const tab of $$("[role=tab]")) tab.addEventListener("click", () => showTab(tab.dataset.tab));
+  try { S.info = await api("api/models"); }
+  catch (e) { $("#engine").textContent = `The server did not answer: ${e.message}`; return; }
+  const info = S.info;
+  $("#engine").textContent = `needle ${info.engine} · ${info.machine}`;
+  $("#foot").textContent = `Transcription runs on the server's CPU (${info.machine}, ${info.threads} threads); audio is decoded in memory and not saved. ` +
+    `Decoding uses the engine's defaults (5 beams). Word error rates use the test harness's normaliser, ${info.normaliser}.`;
+  $("#tab-btn-results").hidden = !info.features.results;
+  $("#key-field").hidden = !info.auth;
+  $("#key").value = store.get("key", "");
+  $("#key").addEventListener("change", e => store.set("key", e.target.value.trim()));
+  renderApi();
+  const names = info.models.map(m => m.name);
+  S.picked = new Set((store.get("models", null) || names).filter(n => names.includes(n)));
+  if (!S.picked.size) names.forEach(n => S.picked.add(n));
+  renderModels();
+  for (const input of $$("#lang input")) {
+    input.checked = input.value === S.lang;
+    input.addEventListener("change", () => { S.lang = input.value; store.set("lang", S.lang); });
+  }
+  setupInput();
+  setupBrowser();
+  showTab(store.get("tab", "try"));
+}
+
+function showTab(name) {
+  if (name === "results" ? !S.info?.features.results : !["try", "api"].includes(name)) name = "try";
+  for (const tab of $$("[role=tab]")) tab.setAttribute("aria-selected", String(tab.dataset.tab === name));
+  for (const panel of $$(".tab")) panel.hidden = panel.id !== `tab-${name}`;
+  store.set("tab", name);
+  if (name === "results" && !T.loaded) loadRoots();
+}
+
+function renderModels() {
+  const box = $("#model-list");
+  if (!S.info.models.length) return box.replaceChildren(h("span", {class: "muted"}, "No .cact files under models/."));
+  box.replaceChildren(...S.info.models.map(m => h("label", {class: "chip", title: [m.file, m.about].filter(Boolean).join("\n")},
+    h("input", {type: "checkbox", checked: S.picked.has(m.name), onchange: e => {
+      if (e.target.checked) S.picked.add(m.name); else S.picked.delete(m.name);
+      store.set("models", [...S.picked]);
+    }}),
+    m.name, h("span", {class: "muted"}, `${m.mb} MB`))));
+}
+
+function note(text, isError = false) {
+  const el = $("#note");
+  el.hidden = !text;
+  el.textContent = text || "";
+  el.classList.toggle("error", isError);
+}
+
+function setupInput() {
+  $("#rec").addEventListener("click", toggleRecording);
+  $("#pick").addEventListener("click", () => $("#file").click());
+  $("#file").addEventListener("change", e => {
+    const file = e.target.files[0];
+    if (file) addAudio(file, file.name);
+    e.target.value = "";
+  });
+  const zone = $("#drop-zone");
+  zone.addEventListener("dragover", e => { e.preventDefault(); $("#drop").classList.add("over"); });
+  zone.addEventListener("dragleave", () => $("#drop").classList.remove("over"));
+  zone.addEventListener("drop", e => {
+    e.preventDefault();
+    $("#drop").classList.remove("over");
+    const file = e.dataTransfer.files[0];
+    if (file) addAudio(file, file.name);
+  });
+  $("#go").addEventListener("click", runModels);
+  let timer;
+  $("#ref").addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(rescore, 350); });
+}
+
+const mic = {recorder: null, context: null, frame: 0};
+
+async function toggleRecording() {
+  if (mic.recorder) { mic.recorder.stop(); return; }
+  if (!window.isSecureContext) return note("Browsers allow the microphone only on https:// pages (or on localhost). Open this page over HTTPS, or use “Open a file…”.", true);
+  if (!navigator.mediaDevices?.getUserMedia) return note("This browser offers no microphone.", true);
+  let stream;
+  try {  // raw microphone signal, as an app using the engine would get it
+    stream = await navigator.mediaDevices.getUserMedia({audio: {echoCancellation: false, noiseSuppression: false, autoGainControl: false}});
+  } catch (e) { return note(`No microphone: ${e.message}`, true); }
+  note("");
+  const chunks = [];
+  const recorder = new MediaRecorder(stream);
+  recorder.addEventListener("dataavailable", e => { if (e.data.size) chunks.push(e.data); });
+  recorder.addEventListener("stop", () => {
+    stream.getTracks().forEach(track => track.stop());
+    cancelAnimationFrame(mic.frame);
+    mic.context?.close();
+    mic.context = mic.recorder = null;
+    $("#rec").classList.remove("recording");
+    $("#rec-label").textContent = "Record";
+    $("#recording").hidden = true;
+    const blob = new Blob(chunks, {type: recorder.mimeType || "audio/webm"});
+    if (blob.size) addAudio(blob, `Recording at ${new Date().toLocaleTimeString()}`);
+  });
+  mic.recorder = recorder;
+  recorder.start();
+  $("#rec").classList.add("recording");
+  $("#rec-label").textContent = "Stop";
+  $("#recording").hidden = false;
+  const context = mic.context = new AudioContext();
+  const analyser = context.createAnalyser();
+  analyser.fftSize = 2048;
+  context.createMediaStreamSource(stream).connect(analyser);
+  const data = new Float32Array(analyser.fftSize);
+  const started = performance.now();
+  const tick = () => {
+    analyser.getFloatTimeDomainData(data);
+    let power = 0;
+    for (const v of data) power += v * v;
+    const db = 10 * Math.log10(power / data.length + 1e-10);
+    $("#level").style.width = `${Math.max(0, Math.min(100, (db + 60) / 60 * 100))}%`;
+    $("#rec-time").textContent = clock((performance.now() - started) / 1000);
+    mic.frame = requestAnimationFrame(tick);
+  };
+  tick();
+}
+
+async function addAudio(blob, name) {
+  note("Reading the audio…");
+  let info;
+  try {
+    if (/webm|mp4|m4a|aac/.test(blob.type)) info = await api("api/audio", await toWav(blob));  // recordings, and formats libsndfile cannot read
+    else {
+      try { info = await api("api/audio", blob); }
+      catch (e) {
+        if (e.status !== 415) throw e;
+        info = await api("api/audio", await toWav(blob));
+      }
+    }
+  } catch (e) { return note(`Could not read that audio: ${e.message}`, true); }
+  note("");
+  if (S.audio) URL.revokeObjectURL(S.audio.url);
+  S.audio = {...info, name, url: URL.createObjectURL(blob)};
+  $("#player").src = S.audio.url;
+  $("#clip").hidden = false;
+  $("#clip-info").textContent = `${name} · ${secs(info.seconds)}`;
+  $("#go").disabled = false;
+  $("#go-hint").textContent = "";
+  runModels();
+}
+
+async function toWav(blob) {
+  const context = new AudioContext();
+  let buffer;
+  try { buffer = await context.decodeAudioData(await blob.arrayBuffer()); }
+  catch { throw new Error("neither the server nor this browser can decode this format"); }
+  finally { context.close(); }
+  const n = buffer.length, channels = buffer.numberOfChannels, mono = new Float32Array(n);
+  for (let c = 0; c < channels; c++) {  // channels averaged, as the harness does
+    const samples = buffer.getChannelData(c);
+    for (let i = 0; i < n; i++) mono[i] += samples[i] / channels;
+  }
+  const view = new DataView(new ArrayBuffer(44 + 2 * n));
+  const text = (at, s) => { for (let i = 0; i < s.length; i++) view.setUint8(at + i, s.charCodeAt(i)); };
+  text(0, "RIFF"); view.setUint32(4, 36 + 2 * n, true); text(8, "WAVE"); text(12, "fmt ");
+  view.setUint32(16, 16, true); view.setUint16(20, 1, true); view.setUint16(22, 1, true);
+  view.setUint32(24, buffer.sampleRate, true); view.setUint32(28, 2 * buffer.sampleRate, true);
+  view.setUint16(32, 2, true); view.setUint16(34, 16, true); text(36, "data"); view.setUint32(40, 2 * n, true);
+  for (let i = 0; i < n; i++) {
+    const s = Math.max(-1, Math.min(1, mono[i]));
+    view.setInt16(44 + 2 * i, Math.round(s < 0 ? s * 32768 : s * 32767), true);
+  }
+  return new Blob([view], {type: "audio/wav"});  // the server resamples it to 16 kHz with soxr, as for any file
+}
+
+async function runModels() {
+  if (!S.audio) return;
+  const run = ++S.run;
+  const chosen = S.info.models.filter(m => S.picked.has(m.name));
+  S.cards = new Map(chosen.map(m => [m.name, resultCard(m)]));
+  const out = $("#outputs");
+  out.replaceChildren(...[...S.cards.values()].map(card => card.el));
+  if (!chosen.length) return out.append(h("p", {class: "muted"}, "Pick at least one model."));
+  out.append(h("p", {class: "legend"}, "Shaded words: the model was less than 80% sure (light) or less than 50% sure (dark). Click a word to hear it."));
+  const reference = $("#ref").value.trim();
+  for (const model of chosen) {
+    const card = S.cards.get(model.name);
+    card.busy();
+    try {
+      const result = await api("api/transcribe", {model: model.name, language: S.lang, audio: S.audio.id, reference: reference || undefined});
+      if (run !== S.run) return;
+      card.fill(result);
+    } catch (e) {
+      if (run !== S.run) return;
+      card.fail(e.message);
+    }
+  }
+}
+
+async function rescore() {
+  const reference = $("#ref").value.trim();
+  for (const card of S.cards.values()) await card.rescore(reference);
+}
+
+function resultCard(model) {
+  let result = null;
+  const text = h("div", {class: "transcript muted"}, "Waiting…");
+  const meta = h("div", {class: "meta"});
+  const score = h("div", {class: "score"});
+  const copy = h("button", {class: "btn small", type: "button", disabled: true, onclick: () => navigator.clipboard?.writeText(result.text)}, "Copy");
+  const el = h("article", {class: "card"},
+    h("div", {class: "result-head"},
+      h("div", null, h("strong", null, model.name), h("span", {class: "muted"}, ` · ${model.mb} MB${model.about ? ` · ${model.about}` : ""}`)),
+      copy),
+    text, meta, score);
+  return {
+    el,
+    busy() { text.className = "transcript muted pulse"; text.textContent = "Transcribing…"; },
+    fill(r) {
+      result = r;
+      copy.disabled = !r.text;
+      text.className = "transcript";
+      text.replaceChildren(r.text ? wordsView(r) : h("span", {class: "muted"}, "(no words)"));
+      const detected = r.language_flag === "auto" ? `, detected ${r.language || "none"}` : "";
+      meta.textContent = `${r.decode_s.toFixed(2)} s to decode ${secs(r.audio_s)} (${r.x_real_time ?? "∞"}× real time) · language flag ${r.language_flag}${detected} · 5 beams`;
+      showScore(score, r.score);
+    },
+    fail(message) { text.className = "transcript"; text.replaceChildren(h("span", {class: "worse"}, message)); },
+    async rescore(reference) {
+      if (!result) return;
+      if (!reference) return showScore(score, null);
+      try { showScore(score, await api("api/score", {reference, hypothesis: result.text})); }
+      catch (e) { score.textContent = e.message; }
+    },
+  };
+}
+
+function wordsView(r) {
+  const words = (r.words || []).filter(w => w.word.trim());
+  if (!words.length || words.map(w => w.word.trim()).join(" ") !== r.text.trim().split(/\s+/).join(" ")) return r.text;
+  return h("span", null, words.map(w => [h("span", {
+    class: `w${w.probability < 0.5 ? " low2" : w.probability < 0.8 ? " low1" : ""}`,
+    title: `${Math.round(w.probability * 100)}% sure · ${w.start.toFixed(2)}–${w.end.toFixed(2)} s · click to play from here`,
+    onclick: () => { const player = $("#player"); player.currentTime = w.start; player.play(); },
+  }, w.word.trim()), " "]));
+}
+
+function showScore(box, s) {
+  box.replaceChildren();
+  if (!s) return;
+  const head = s.metric === "words written" ? `${plural(s.errors, "word")} written on silence`
+    : s.units ? `${s.metric} ${pct(s.errors, s.units)}: ${plural(s.errors, "error")} in ${plural(s.units, "reference word")}`
+    : "The reference has no words.";
+  box.append(h("div", {class: "score-head"}, head), diffView(s.ops), legend());
+}
+
+const legend = () => h("div", {class: "legend"}, "Struck through: a reference word the model missed or got wrong. Shaded: what the model wrote instead, or an extra word.");
+
+function diffView(ops) {  // tokens joined by real spaces, so lines break between words
+  return h("div", {class: "diff"}, ops.map(([op, ref, hyp]) => [
+    op === "c" ? h("span", null, hyp)
+    : op === "s" ? h("span", {title: `said “${ref}”, written “${hyp}”`}, h("del", null, ref), h("ins", null, hyp))
+    : op === "d" ? h("span", {title: "missed"}, h("del", null, ref))
+    : h("span", {title: "extra word"}, h("ins", null, hyp)),
+    " "]));
+}
+
+/* ---------- API ---------- */
+
+function codeBlock(text) {
+  const button = h("button", {class: "btn small", type: "button", onclick: () => {
+    navigator.clipboard?.writeText(text);
+    button.textContent = "Copied";
+    setTimeout(() => { button.textContent = "Copy"; }, 1500);
+  }}, "Copy");
+  return h("div", {class: "code"}, h("pre", null, text), button);
+}
+
+function renderApi() {
+  const info = S.info, base = new URL(".", location.href).href.replace(/\/$/, "");
+  const names = info.models.map(m => m.name);
+  const auth = info.auth ? ` \\\n  -H "Authorization: Bearer $AKSHAR_KEY"` : "";
+  const react = `// Send a recording or an uploaded file; get the transcript back.
+export async function transcribe(file, language = "hi") {
+  const form = new FormData();
+  form.append("file", file);          // a File or Blob: WAV, MP3, M4A, WebM, OGG, FLAC ...
+  form.append("language", language);  // "hi" (Hindi, Hinglish), "en" or "auto"
+  const response = await fetch("${base}/v1/transcribe", {
+    method: "POST",${info.auth ? "\n    headers: {Authorization: `Bearer ${API_KEY}`},  // see Access below" : ""}
+    body: form,
+  });
+  const result = await response.json();
+  if (!response.ok) throw new Error(result.error);
+  return result;  // result.text is the transcript
+}`;
+  const example = {
+    text: "तुम्हारा laptop अच्छा लग रहा है", model: info.default, language: "hi", language_flag: "hi",
+    audio_s: 3.12, decode_s: 0.061, x_real_time: 51.1,
+    words: [{word: "तुम्हारा", start: 0.0, end: 0.56, probability: 0.97}, {word: "laptop", start: 0.56, end: 1.04, probability: 0.93}],
+  };
+  const fields = [
+    ["file", "–", "The recording. Or send it as the whole request body instead of a form."],
+    ["model", info.default, `One of ${names.join(", ")}.`],
+    ["language", info.default_language, "hi for Hindi and Hinglish, en for English, auto to let the model decide."],
+    ["keywords", "–", "Words or phrases to favour, such as names or product terms, separated by commas."],
+    ["words", "true", "false leaves out the word timings."],
+  ];
+  const table = (head, rows) => h("table", null, h("thead", null, h("tr", null, head.map(x => h("th", null, x)))),
+    h("tbody", null, rows.map(row => h("tr", null, row.map((cell, i) => h("td", null, i === 0 ? h("code", null, cell) : cell))))));
+  const origins = info.cors.includes("*") ? "any website" : info.cors.join(", ");
+  $("#api-doc").replaceChildren(
+    h("h2", null, "Call akshar from your app"),
+    h("p", null, "Send audio, get the transcript as JSON. This server's address: ", h("code", null, base)),
+    h("h3", null, "Endpoints"),
+    table(["Request", "What it does"], [
+      ["POST /v1/transcribe", "Transcribes one recording."],
+      ["GET /v1/models", "The models on this server, and the default."],
+      ["GET /health", "Answers 200 while the server is up; needs no key."],
+    ]),
+    h("h3", null, "Request fields"),
+    h("p", {class: "muted"}, "As form fields (multipart/form-data), or as query parameters when the audio is the request body."),
+    table(["Field", "Default", "Meaning"], fields),
+    h("h3", null, "From a React app"),
+    codeBlock(react),
+    h("h3", null, "From a terminal"),
+    codeBlock(`curl ${base}/v1/transcribe${auth} \\\n  -F file=@voice-note.m4a -F language=hi`),
+    codeBlock(`curl "${base}/v1/transcribe?language=en&model=${info.default}"${auth} \\\n  --data-binary @meeting.wav`),
+    h("h3", null, "The answer"),
+    codeBlock(JSON.stringify(example, null, 2).replace(/\n {6}/g, " ").replace(/\n {4}\}/g, " }")),
+    h("ul", null,
+      h("li", null, h("code", null, "text"), ": the transcript, in the mixed style: Hindi in Devanagari, English words in Latin letters, numbers as words, no punctuation."),
+      h("li", null, h("code", null, "words"), ": each word's start and end in seconds and how sure the model was (0 to 1)."),
+      h("li", null, h("code", null, "audio_s"), " and ", h("code", null, "decode_s"), ": the audio's length and the time the model took (illustrative values above)."),
+      h("li", null, "Errors come back as ", h("code", null, `{"error": "..."}`), " with status 400 (bad request), 401 (missing key), 404 (no such model), 413 (too large or too long), 415 (unreadable audio) or 503 (busy: retry after a few seconds)."),
+    ),
+    h("h3", null, "Access and limits"),
+    h("ul", null,
+      h("li", null, info.auth
+        ? ["This server needs an API key: send ", h("code", null, "Authorization: Bearer <key>"), ". Never put a key in a public website's code; call akshar from your site's backend instead."]
+        : ["This server needs no API key, so anyone who can reach it can use it. Its operator can require keys with ", h("code", null, "AKSHAR_API_KEYS"), "."]),
+      h("li", null, `Browsers may call it from ${origins}. A page served over https:// can only call an https:// address.`),
+      h("li", null, `Up to ${info.limits.max_mb} MB and ${secs(info.limits.max_seconds)} of audio per request. Requests take turns on the CPU, one at a time.`),
+    ));
+}
+
+/* ---------- Test results ---------- */
+
+const T = {loaded: false, root: null, base: null, order: [], table: null, a: 0, b: 0, filter: "all", sort: "gap", q: "", page: 0, rows: [], pos: -1, audioUrl: null};
+const PAGE_SIZE = 50;
+
+async function loadRoots() {
+  T.loaded = true;
+  const box = $("#summary-box");
+  let roots;
+  try { roots = await api("api/roots"); }
+  catch (e) { return box.replaceChildren(h("p", {class: "worse"}, e.message)); }
+  if (!roots.length) return box.replaceChildren(h("p", {class: "muted"}, "No complete test-set runs under runs/ yet. Score a model with python -m akshar.eval run."));
+  const select = $("#root");
+  select.replaceChildren(...roots.map(r => h("option", {value: r.name}, r.label)));
+  const saved = store.get("root");
+  select.value = roots.some(r => r.name === saved) ? saved : roots[0].name;
+  select.addEventListener("change", () => { store.set("root", select.value); $("#browser").hidden = true; loadSummary(); });
+  await loadSummary();
+}
+
+async function loadSummary() {
+  T.root = $("#root").value;
+  const box = $("#summary-box");
+  box.replaceChildren(h("p", {class: "muted"}, "Loading…"));
+  let s;
+  try { s = await api(`api/summary?root=${enc(T.root)}`); }
+  catch (e) { return box.replaceChildren(h("p", {class: "worse"}, e.message)); }
+  const base = s.rows.find(r => /shruti/i.test(`${r.label} ${r.model}`));
+  T.base = base?.key;
+  const rows = [...s.rows].sort((x, y) => (!x.local - !y.local) || ((x.mean ?? 1e9) - (y.mean ?? 1e9)) || x.label.localeCompare(y.label));
+  T.order = rows.map(r => r.key);  // runnable models first, then by mean WER
+  const best = {};
+  for (const set of s.sets) {
+    const values = rows.map(r => r.cells[set.name]).filter(v => v != null);
+    best[set.name] = new Set(values).size > 1 ? Math.min(...values) : null;
+  }
+  const means = rows.map(r => r.mean).filter(v => v != null);
+  const bestMean = new Set(means).size > 1 ? Math.min(...means) : null;
+  const delta = (value, baseValue) => {
+    if (value == null || baseValue == null) return null;
+    const d = Math.round((value - baseValue) * 100) / 100;
+    return h("span", {class: `delta ${d > 0 ? "worse" : d < 0 ? "better" : "muted"}`}, `${d > 0 ? "+" : d < 0 ? "−" : "±"}${Math.abs(d).toFixed(2)}`);
+  };
+  const head = h("tr", null,
+    h("th", null, "Model"),
+    s.sets.map(set => h("th", {title: `${set.title}, language flag ${set.language}`},
+      h("button", {type: "button", onclick: () => openSet(set.name)}, set.short),
+      h("span", {class: "sub"}, set.metric === "words written" ? "words" : `${set.metric} %`))),
+    h("th", null, "Mean WER", h("span", {class: "sub"}, "six speech sets")));
+  const body = rows.map(r => h("tr", null,
+    h("td", null, r.label, h("span", {class: "sub"}, `${r.mb} MB · ${r.local ? `models: ${r.local}` : r.model}`)),
+    s.sets.map(set => {
+      const value = r.cells[set.name];
+      if (value == null) return h("td", {class: "muted"}, "–");
+      const isBase = !base || r.key === base.key;
+      return h("td", {class: `cell${value === best[set.name] ? " best" : ""}`, title: `Open ${set.short}'s clips`, onclick: () => openSet(set.name, r.key)},
+        set.metric === "words written" ? String(value) : value.toFixed(2),
+        isBase || set.metric === "words written" ? null : delta(value, base.cells[set.name]));
+    }),
+    h("td", {class: r.mean != null && r.mean === bestMean ? "best" : ""}, r.mean == null ? "–" : r.mean.toFixed(2),
+      base && r.key !== base.key ? delta(r.mean, base.mean) : null)));
+  const byLanguage = language => s.sets.filter(x => x.language === language && x.metric !== "words written").map(x => x.short).join(", ");
+  box.replaceChildren(
+    h("div", {class: "table-wrap"}, h("table", null, h("thead", null, head), h("tbody", null, body))),
+    h("p", {class: "caption muted"},
+      "Error rates on the complete test sets; lower is better. ",
+      `WER % after the normaliser ${s.normalisers.join(", ")}; OIWER % for Monsoon, whose references accept several spellings; words written on 100 silent clips for Silence. `,
+      `Decoding: ${s.decoding.join("; ")}, needle engine ${s.engines.join(" and ")}; language flag hi for ${byLanguage("hi")}, en for ${byLanguage("en")}. `,
+      `Scored on ${s.machines.join(" and ")}. `,
+      base ? `Small numbers are differences from ${base.label}. ` : "",
+      "Click a set or a number to see its clips."));
+}
+
+function setupBrowser() {
+  const rerender = () => { T.page = 0; renderClips(); };
+  $("#pick-a").addEventListener("change", e => { T.a = +e.target.value; rerender(); });
+  $("#pick-b").addEventListener("change", e => { T.b = +e.target.value; rerender(); });
+  $("#filter").addEventListener("change", e => { T.filter = e.target.value; rerender(); });
+  $("#sort").addEventListener("change", e => { T.sort = e.target.value; rerender(); });
+  let timer;
+  $("#search").addEventListener("input", e => { clearTimeout(timer); timer = setTimeout(() => { T.q = e.target.value; rerender(); }, 200); });
+  $("#prev-page").addEventListener("click", () => { T.page--; renderClips(); });
+  $("#next-page").addEventListener("click", () => { T.page++; renderClips(); });
+  $("#d-prev").addEventListener("click", () => openClip(T.pos - 1));
+  $("#d-next").addEventListener("click", () => openClip(T.pos + 1));
+  $("#d-close").addEventListener("click", () => $("#detail").close());
+  $("#d-autoplay").checked = store.get("autoplay", false);
+  $("#d-autoplay").addEventListener("change", e => store.set("autoplay", e.target.checked));
+  $("#detail").addEventListener("close", () => $("#d-body audio")?.pause());
+  $("#detail").addEventListener("keydown", e => {
+    if (e.target.matches("input, select, textarea, audio")) return;
+    if (e.key === "ArrowLeft") { e.preventDefault(); openClip(T.pos - 1); }
+    if (e.key === "ArrowRight") { e.preventDefault(); openClip(T.pos + 1); }
+  });
+}
+
+async function openSet(name, aKey) {
+  const box = $("#browser");
+  box.hidden = false;
+  $("#browser-title").textContent = "Loading…";
+  $("#totals").textContent = "";
+  $("#clips").replaceChildren();
+  let t;
+  try { t = T.table = await api(`api/set?root=${enc(T.root)}&set=${enc(name)}`); }
+  catch (e) { $("#browser-title").textContent = e.message; return; }
+  const index = key => t.runs.findIndex(r => r.key === key);
+  const rank = i => { const k = T.order.indexOf(t.runs[i].key); return k < 0 ? 1e9 : k; };
+  const preference = [...t.runs.keys()].sort((i, j) => rank(i) - rank(j));  // as the summary orders them
+  let a = aKey ? index(aKey) : -1, b = index(T.base);
+  if (a < 0) a = preference.find(i => i !== b) ?? 0;
+  if (b < 0 || b === a) b = preference.find(i => i !== a) ?? a;
+  Object.assign(T, {a, b, page: 0, q: ""});
+  $("#search").value = "";
+  for (const [id, value] of [["#pick-a", a], ["#pick-b", b]]) {
+    $(id).replaceChildren(...preference.map(i => h("option", {value: i}, t.runs[i].label)));
+    $(id).value = value;
+  }
+  $("#browser-title").textContent = `${t.title} · ${plural(t.clips.length, "clip")} · ${t.metric === "words written" ? "words written" : `${t.metric} per clip`} · language flag ${t.language}`;
+  renderClips();
+  box.scrollIntoView({behavior: "smooth", block: "start"});
+}
+
+function renderClips() {
+  const t = T.table;
+  if (!t) return;
+  const silence = t.metric === "words written";
+  const q = T.q.trim().toLowerCase();
+  const keep = {all: () => true, aworse: r => r.ea > r.eb, bworse: r => r.eb > r.ea, differ: r => r.ea !== r.eb, aerr: r => r.ea > 0}[T.filter];
+  const order = {
+    gap: (x, y) => (y.ea - y.eb) - (x.ea - x.eb) || x.i - y.i,
+    rgap: (x, y) => (y.eb - y.ea) - (x.eb - x.ea) || x.i - y.i,
+    aerr: (x, y) => y.ea - x.ea || x.i - y.i,
+    order: (x, y) => x.i - y.i,
+    long: (x, y) => y.duration - x.duration || x.i - y.i,
+  }[T.sort];
+  const rows = [];
+  t.clips.forEach((c, i) => {
+    const row = {i, id: c.id, duration: c.duration, ref: c.ref, ea: c.e[T.a], eb: c.e[T.b], ua: c.u[T.a], ub: c.u[T.b]};
+    if (row.ea == null || row.eb == null) return;
+    if (q && !c.ref.toLowerCase().includes(q) && !c.id.toLowerCase().includes(q)) return;
+    if (keep(row)) rows.push(row);
+  });
+  rows.sort(order);
+  T.rows = rows;
+  const A = t.runs[T.a].label, B = t.runs[T.b].label;
+  const total = key => rows.reduce((sum, r) => sum + r[key], 0);
+  $("#totals").textContent = !rows.length ? "No clips match." : silence
+    ? `${plural(rows.length, "clip")}. ${A} wrote ${plural(total("ea"), "word")}; ${B} wrote ${plural(total("eb"), "word")}.`
+    : `${plural(rows.length, "clip")}. On these clips, A (${A}) made ${plural(total("ea"), "error")} in ${plural(total("ua"), "reference word")}, ${pct(total("ea"), total("ua"))}; ` +
+      `B (${B}) made ${plural(total("eb"), "error")} in ${plural(total("ub"), "reference word")}, ${pct(total("eb"), total("ub"))}.`;
+  const pages = Math.max(1, Math.ceil(rows.length / PAGE_SIZE));
+  T.page = Math.min(Math.max(0, T.page), pages - 1);
+  const start = T.page * PAGE_SIZE;
+  const unit = silence ? "words" : "errors";
+  const head = h("tr", null, h("th", null, "#"), h("th", null, "Length"), h("th", {style: "text-align:left"}, silence ? "Clip" : "Reference"),
+    h("th", {title: A}, "A", h("span", {class: "sub"}, unit)), h("th", {title: B}, "B", h("span", {class: "sub"}, unit)),
+    h("th", {title: "A minus B"}, "A − B", h("span", {class: "sub"}, unit)));
+  const body = rows.slice(start, start + PAGE_SIZE).map((r, k) => {
+    const d = r.ea - r.eb;
+    return h("tr", {tabindex: 0, onclick: () => openClip(start + k), onkeydown: e => { if (e.key === "Enter") openClip(start + k); }},
+      h("td", {class: "muted"}, String(start + k + 1)),
+      h("td", null, `${r.duration.toFixed(1)} s`),
+      h("td", {class: "ref", title: r.ref || r.id}, h("span", null, r.ref || r.id)),
+      h("td", null, String(r.ea)), h("td", null, String(r.eb)),
+      h("td", {class: d > 0 ? "worse" : d < 0 ? "better" : "muted"}, signed(d)));
+  });
+  $("#clips").replaceChildren(h("thead", null, head), h("tbody", null, body));
+  $("#page-info").textContent = rows.length ? `${start + 1}–${Math.min(rows.length, start + PAGE_SIZE)} of ${rows.length.toLocaleString()}` : "";
+  $("#prev-page").disabled = T.page === 0;
+  $("#next-page").disabled = T.page >= pages - 1;
+}
+
+async function openClip(pos) {
+  if (pos < 0 || pos >= T.rows.length) return;
+  T.pos = pos;
+  if (Math.floor(pos / PAGE_SIZE) !== T.page) { T.page = Math.floor(pos / PAGE_SIZE); renderClips(); }
+  const t = T.table, row = T.rows[pos], dialog = $("#detail"), body = $("#d-body");
+  $("#d-title").textContent = `${t.short} · ${row.id}`;
+  $("#d-pos").textContent = `${pos + 1} of ${T.rows.length.toLocaleString()}`;
+  $("#d-prev").disabled = pos === 0;
+  $("#d-next").disabled = pos === T.rows.length - 1;
+  body.replaceChildren(h("p", {class: "muted"}, "Loading…"));
+  if (!dialog.open) dialog.showModal();
+  let detail, blob;
+  try {
+    [detail, blob] = await Promise.all([
+      api(`api/clip?root=${enc(T.root)}&set=${enc(t.set)}&id=${enc(row.id)}`),
+      fetch(`api/eval-audio?set=${enc(t.set)}&id=${enc(row.id)}`, {headers: authHeaders()}).then(r => r.ok ? r.blob() : null),
+    ]);
+  } catch (e) {
+    if (T.pos === pos) body.replaceChildren(h("p", {class: "worse"}, e.message));
+    return;
+  }
+  if (T.pos !== pos) return;
+  if (T.audioUrl) URL.revokeObjectURL(T.audioUrl);
+  T.audioUrl = blob ? URL.createObjectURL(blob) : null;
+  const player = T.audioUrl ? h("audio", {controls: true, src: T.audioUrl}) : h("p", {class: "worse"}, "The clip's audio file is missing.");
+  const keyA = t.runs[T.a].key, keyB = t.runs[T.b].key;
+  const rank = r => r.key === keyA ? 0 : r.key === keyB ? 1 : 2;
+  const silence = detail.metric === "words written";
+  body.replaceChildren(...[
+    player,
+    h("div", {class: "note muted"}, `${secs(detail.duration)} · ${detail.title} · language flag ${detail.language}`),
+    h("h3", null, "Reference"),
+    silence ? h("p", {class: "muted"}, "Silence or faint noise: every word written is an error.") : h("div", {class: "transcript"}, detail.ref),
+    detail.lattice ? h("details", null, h("summary", null, "Spellings the Monsoon scorer accepts"),
+      h("div", {class: "lattice"}, detail.lattice.map(slot => h("span", null, slot.join(" / "))))) : null,
+    h("h3", null, "Stored transcripts"),
+    [...detail.runs].sort((x, y) => rank(x) - rank(y)).map(r => hypBlock(r, r.key === keyA ? "A" : r.key === keyB ? "B" : null)),
+    silence ? null : legend(),
+    liveSection(detail),
+  ].flat().filter(Boolean));
+  if ($("#d-autoplay").checked && T.audioUrl) player.play().catch(() => { /* the browser wants a click first */ });
+}
+
+function hypBlock(r, tag, extra) {
+  const stat = r.metric === "words written" ? `${plural(r.errors, "word")} written`
+    : r.units ? `${r.metric} ${pct(r.errors, r.units)}: ${plural(r.errors, "error")} in ${plural(r.units, "word")}` : plural(r.errors, "error");
+  return h("div", {class: "hyp"},
+    h("div", {class: "hyp-head"},
+      h("div", null, h("strong", null, r.label), tag ? h("span", {class: "tag"}, tag) : null, extra || null),
+      h("span", {class: r.errors ? "" : "better"}, stat)),
+    r.hyp.trim() ? diffView(r.ops) : h("div", {class: "muted"}, "(no words)"));
+}
+
+function liveSection(detail) {
+  const models = S.info?.models || [];
+  if (!models.length) return null;
+  const t = T.table;
+  const picks = new Set([t.runs[T.a]?.local, t.runs[T.b]?.local].filter(Boolean));
+  if (!picks.size) models.forEach(m => picks.add(m.name));
+  const out = h("div");
+  const pos = T.pos;
+  const button = h("button", {class: "btn small primary", type: "button", onclick: async () => {
+    button.disabled = true;
+    for (const model of models.filter(m => picks.has(m.name))) {
+      const slot = h("div", {class: "hyp muted pulse"}, `${model.name}: decoding…`);
+      out.append(slot);
+      try {
+        const r = await api("api/transcribe", {model: model.name, set: detail.set, clip: detail.id});
+        if (T.pos !== pos) return;
+        slot.replaceWith(hypBlock({...r.score, label: model.name, hyp: r.text}, "live",
+          h("span", {class: "muted"}, ` ${r.decode_s.toFixed(2)} s, ${r.x_real_time}× real time`)));
+      } catch (e) {
+        slot.className = "hyp worse";
+        slot.textContent = `${model.name}: ${e.message}`;
+      }
+    }
+    button.disabled = false;
+  }}, "Decode");
+  return h("div", null,
+    h("h3", null, "Decode it again on this machine"),
+    h("div", {class: "row"},
+      h("div", {class: "chips"}, models.map(m => h("label", {class: "chip"},
+        h("input", {type: "checkbox", checked: picks.has(m.name), onchange: e => { if (e.target.checked) picks.add(m.name); else picks.delete(m.name); }}),
+        m.name))),
+      button),
+    h("p", {class: "note muted"}, `Same audio and settings as the stored runs: language flag ${detail.language}, engine defaults.` +
+      (T.root === "server" ? " The stored transcripts came from the server's CPU, so an occasional word can differ." : "")),
+    out);
+}
+
+init();
+</script>
+</body>
+</html>

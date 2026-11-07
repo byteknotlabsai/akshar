@@ -63,9 +63,11 @@ def test_blocklist_blocks_by_text_or_audio(tmp_path):
 
     samples = np.zeros(1600, np.float32)
     path = tmp_path / "blocklist.jsonl"
-    path.write_text(json.dumps({"set": "x", "id": "1", "text_sha256": [blocklist.text_sha256("नमस्ते दुनिया")],
+    texts = [blocklist.text_sha256("नमस्ते दुनिया कैसी हो"), blocklist.text_sha256("हाँ")]
+    path.write_text(json.dumps({"set": "x", "id": "1", "text_sha256": texts,
                                 "audio_sha256": audio_sha256(samples)}) + "\n", encoding="utf-8")
     bl = blocklist.Blocklist(path)
-    assert bl.blocks("नमस्ते, दुनिया!", np.ones(1600, np.float32)) == "text"
-    assert bl.blocks("कुछ और", samples) == "audio"
+    assert bl.blocks("नमस्ते, दुनिया! कैसी हो?", np.ones(1600, np.float32)) == "text"
+    assert bl.blocks("हाँ", np.ones(1600, np.float32)) is None  # D17: under three words, text alone never blocks
+    assert bl.blocks("हाँ", samples) == "audio"  # but the same recording always does
     assert bl.blocks("कुछ और", np.ones(1600, np.float32)) is None

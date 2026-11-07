@@ -52,14 +52,19 @@ def build(hours: float, out: Path) -> dict:
             path = out / "clips" / name
             path.write_bytes(blob)
             samples = audio.load(path)
+            if len(samples) > 30 * audio.SAMPLE_RATE:  # longer than the model's window
+                counts["over_30s"] = counts.get("over_30s", 0) + 1
+                path.unlink()
+                continue
             reason = blocklist.blocks(text, samples)
             if reason:
                 counts[f"blocked_{reason}"] += 1
                 path.unlink()
                 continue
             duration = len(samples) / audio.SAMPLE_RATE
-            manifest.write(json.dumps({"audio": f"clips/{name}", "text": text, "language": "hi",
-                                       "duration": round(duration, 3)}, ensure_ascii=False) + "\n")
+            manifest.write(json.dumps({"id": f"fleurs_hi_train/{Path(name).stem}", "audio": f"clips/{name}",
+                                       "duration": round(duration, 3), "text": text, "language": "hi",
+                                       "source": "fleurs_hi_train"}, ensure_ascii=False) + "\n")
             counts["kept"] += 1
             seconds += duration
             if seconds >= hours * 3600:
@@ -69,12 +74,39 @@ def build(hours: float, out: Path) -> dict:
     return summary
 
 
+def rebuild(manifest: Path, out: Path) -> dict:
+    """Re-create exactly the clips another machine's manifest lists, from the same pinned archive (as
+    akshar.data.build.rebuild does for parquet sources). The archive is deleted afterwards."""
+    from huggingface_hub import hf_hub_download
+
+    archive = Path(hf_hub_download(REPO, "data/hi_in/audio/train.tar.gz", repo_type="dataset", revision=REVISION,
+                                   local_dir=DATA_ROOT / "raw" / "fleurs_hi_train"))
+    with open(manifest, encoding="utf-8") as handle:
+        lines = [line for line in handle if line.strip()]
+    wanted = {Path(json.loads(line)["audio"]).name: json.loads(line)["audio"] for line in lines}
+    (out / "clips").mkdir(parents=True, exist_ok=True)
+    found = 0
+    with tarfile.open(archive) as tar:
+        for member in tar:
+            name = Path(member.name).name
+            if member.isfile() and name in wanted:
+                (out / wanted[name]).write_bytes(tar.extractfile(member).read())
+                found += 1
+    if found != len(wanted):
+        raise SystemExit(f"fleurs_hi_train: the archive has {found} of the {len(wanted)} clips listed")
+    if Path(manifest).resolve() != (out / "manifest.jsonl").resolve():
+        (out / "manifest.jsonl").write_text("".join(lines), encoding="utf-8")
+    archive.unlink()
+    return {"source": "fleurs_hi_train", "clips": found, "listed": len(wanted)}
+
+
 def main(argv=None) -> None:
     parser = argparse.ArgumentParser(prog="python -m akshar.data.fleurs", description=__doc__.split("\n\n")[0])
     parser.add_argument("--hours", type=float, default=3.0, help="stop after this much kept audio")
     parser.add_argument("--out", type=Path, default=DATA_ROOT / "train" / "fleurs_hi_train")
+    parser.add_argument("--from-manifest", type=Path, help="re-create exactly the clips this manifest lists")
     args = parser.parse_args(argv)
-    print(json.dumps(build(args.hours, args.out)))
+    print(json.dumps(rebuild(args.from_manifest, args.out) if args.from_manifest else build(args.hours, args.out)))
 
 
 if __name__ == "__main__":

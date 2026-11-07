@@ -1,6 +1,7 @@
 """Audio decoding to 16 kHz mono float32, done the same way for every model and every set."""
 import hashlib
 from pathlib import Path
+from typing import BinaryIO
 
 import numpy as np
 import soundfile as sf
@@ -8,13 +9,13 @@ import soundfile as sf
 SAMPLE_RATE = 16000
 
 
-def load(path: str | Path) -> np.ndarray:
-    """16 kHz mono float32 samples in [-1, 1].
+def load(path: str | Path | BinaryIO) -> np.ndarray:
+    """16 kHz mono float32 samples in [-1, 1], from a file path or an open binary file.
 
     Channels are averaged and other rates are resampled with soxr at HQ quality, as the needle package does for WAV
     files (needle/agent/whistle.py, _read_wav). Shruti's report says its website resampler matches soxr.
     """
-    data, rate = sf.read(str(path), dtype="float32", always_2d=True)
+    data, rate = sf.read(path if hasattr(path, "read") else str(path), dtype="float32", always_2d=True)
     mono = data.mean(axis=1, dtype=np.float32)
     if rate != SAMPLE_RATE and len(mono):
         import soxr

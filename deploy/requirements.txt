@@ -1,0 +1,6 @@
+# Python packages for the akshar server. run.sh installs them into .venv on the first start.
+cactus-needle==3.2.8  # the needle engine's Python package; it pins engine 3.3.3, the build akshar's scores used
+numpy>=1.26
+soundfile>=0.12       # reads WAV, FLAC, MP3 and OGG; its wheels include libsndfile
+soxr>=0.3.7           # resampling to 16 kHz, as the test harness does it
+av>=12                # every other format: browsers' WebM and MP4 recordings, phones' M4A
