@@ -154,6 +154,12 @@ D26 cleared the two sources that held akshar v0 back: MUCS 2021, in its training
 
 What stands between akshar and a release is now accuracy. The roadmap's bar is a lower mean than Shruti's with no set more than 0.5 worse, and v1 is still 0.6 to 2.0 behind on four sets.
 
+On 7 November the owner released r1 as **AksharSTT v1**, before that bar is met: [huggingface.co/byteknotlabs/AksharSTT-V1](https://huggingface.co/byteknotlabs/AksharSTT-V1), Apache-2.0.
+- **Contents:** the scored `.cact` (sha256 `51f0d3e8ca33…`), the full-precision weights, the three training stages' records (v0, v1, r1), NOTICE and the model card.
+- **Cleaned:** the server paths were removed from the weights' metadata and the records.
+- **In this repo:** the card, NOTICE and records are kept in [release/AksharSTT-V1/](../release/AksharSTT-V1/).
+- **Not released:** v1 itself (run `m1-akshar-v1`), which was r1's starting point.
+
 ## Next
 
 - **v2:** train on all the data Drive now holds, with dataset transcripts as targets (D27).
