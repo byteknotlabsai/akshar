@@ -2,7 +2,7 @@
 
 Phase 3 of the [roadmap](roadmap.md): akshar itself, trained from Whistle rather than from Shruti's weights (D9). This page records how each version was made and how it scored.
 
-**Status (2026-11-06):** akshar v0 and akshar-lite v0 exist, both trained in one night on the RTX 5080 (D25). They are working models, not release candidates; see "Release" below.
+**Status (2026-11-07):** akshar v1 trails Shruti by 0.67 points of mean WER on the full test sets, half of v0's gap, and beats it on FLEURS and MUCS. akshar v0 and akshar-lite v0 came first, each trained in one night on the RTX 5080 (D25). None is a release candidate yet; see "Release" below.
 
 ## akshar v0
 
@@ -60,25 +60,78 @@ Dev subsets, also on the server, for comparison with the Phase 2 models:
 
 D24's recipe made from akshar: Cactus's 2-bit mix with the encoder at 4 bits (20.4 MB), starting from akshar v0's full-precision weights and distilled from akshar v0 as deployed, learning rate 4e-4, 3,600 updates on the same 363.8 h. On the full test sets it trails akshar v0 by 0.9 points of mean WER, inside the roadmap's provisional 2-point bar, and it too edges Shruti on MUCS (35.06 against 35.26). It writes nothing on silence.
 
+## akshar v1
+
+### How it was made
+
+- **Start:** akshar v0's full-precision weights, trained further with v0's loss and recipe: 4-bit quantisation-aware training, Shruti's transcripts as targets plus distillation from Shruti at 0.5.
+- **Learning rate:** 4e-4, half of v0's peak, with warm-up over 3,200 updates and cosine decay over 64,000 updates (run `m1-akshar-v1`).
+- **Data:** v0's 364 h, the 126 h of Kathbath and NPTEL Hindi that v0 never reached, and 39 h of new IndicVoices clips. The IndicVoices clips came from Drive in two slices and were labelled by Shruti overnight. That made 504.6 h in the first window and 524.3 h in the second, which added a second slice.
+- **Schedule:** two GPU windows, 00:24 to 02:45 and 03:05 to 06:29, with coot-moe running through the owner's 03:00 cleanup (D23).
+  - Each window spent 12 to 15 minutes compiling before its first update, against 7.5 the night before, because the owner's k3s server was using about five cores.
+  - About 3.4 updates a second otherwise.
+- **Validation cross-entropy against Shruti's labels:** 0.1396 at the start, 0.1496 after the warm-up, 0.1233 at the end.
+
+### Results
+
+Full test sets on the server, with the same harness settings as v0 above:
+
+| Model | File | Monsoon | FLEURS Hindi | Lahaja | MUCS | Svarah | LibriSpeech clean | Silence | Mean WER |
+|---|---|---|---|---|---|---|---|---|---|
+| Shruti, 4-bit as released | 29.5 MB | 20.54 | 20.21 | 26.29 | 35.26 | 22.45 | 5.95 | 0 | 21.78 |
+| akshar v0 | 29.5 MB | 23.53 | 20.92 | 27.70 | 34.75 | 24.81 | 6.98 | 0 | 23.11 |
+| akshar v1 | 29.5 MB | 22.07 | 19.83 | 26.89 | 34.46 | 24.42 | 7.01 | 0 | 22.45 |
+
+- v1 beats Shruti on FLEURS (by 0.38) and MUCS (by 0.80).
+- It improves on v0 everywhere except LibriSpeech, which is level. Monsoon's phone conversations improve most, by 1.46.
+- The gaps left: Svarah's Indian English 1.97, LibriSpeech 1.06, Monsoon 1.53 and Lahaja 0.60.
+- It writes nothing on the silent clips.
+
+## v1 trained on dataset transcripts (r1)
+
+- **What changed:** the targets. Where a dataset's own transcript is verbatim, it replaces Shruti's, converted to the `mixed` style by `akshar.data.convert` (D27). The sources are IndicVoices, Kathbath, Rural Women, FLEURS and LibriSpeech.
+  - Noise tags are removed, and Rural Women's bracketed English spellings are kept.
+  - English words that IndicVoices writes in Devanagari become Latin, through a 917-word lexicon. It was learned from the places where Shruti writes them in Latin.
+  - Read speech (Kathbath, FLEURS) keeps its Devanagari loanwords, as Shruti and the FLEURS and Lahaja references write them.
+  - MUCS, NPTEL and silence keep their old targets. Distillation from Shruti stays at 0.5.
+- **Coverage:** converted transcripts were the targets for 96 to 100% of those sources' clips. The rest have unknown-word marks or broken markup and keep Shruti's.
+- **Training:** 2,400 updates from v1 at learning rate 1e-4 (run `r1-akshar-v1-ref`, 06:29 to 06:59).
+
+| Model | File | Monsoon | FLEURS Hindi | Lahaja | MUCS | Svarah | LibriSpeech clean | Silence | Mean WER |
+|---|---|---|---|---|---|---|---|---|---|
+| akshar v1 | 29.5 MB | 22.07 | 19.83 | 26.89 | 34.46 | 24.42 | 7.01 | 0 | 22.45 |
+| r1, v1 trained on dataset transcripts | 29.5 MB | 21.78 | 19.37 | 26.49 | 34.41 | 24.68 | 6.92 | 0 | 22.28 |
+
+- r1 beats v1 on five of the six sets. Its mean, 22.28, is 0.50 behind Shruti's.
+- The Hindi sets gain most: Monsoon by 0.29, FLEURS by 0.46 and Lahaja by 0.40. Svarah, whose English data still learns from Shruti's transcripts, is 0.26 worse.
+- Against Shruti, r1 is ahead on FLEURS (by 0.84) and MUCS (by 0.85), and Lahaja is within 0.20.
+- r1 also trained 2,400 updates longer than v1, so not all of the 0.17 comes from the targets.
+- The file is `models/akshar/akshar-v1-ref.cact`.
+
 ## Running it
 
-The files are `models/akshar/akshar-v0.cact` and `models/akshar/akshar-lite-v0.cact` on the laptop (not committed), and on Drive under `akshar/phase3-runs/`. Any needle engine runs them like Shruti:
+The files are `models/akshar/akshar-v1.cact`, `akshar-v0.cact` and `akshar-lite-v0.cact` on the laptop (not committed), and on Drive under `akshar/phase3-runs/`. Any needle engine runs them like Shruti:
 
 ```python
 from needle import Whistle
-print(Whistle("models/akshar/akshar-v0.cact").transcribe(samples, language="hi")["text"])
+print(Whistle("models/akshar/akshar-v1.cact").transcribe(samples, language="hi")["text"])
 ```
 
 ## Release
 
-akshar v0 is not releasable yet, for two reasons that the legal review of D19 covers:
-- Its training data includes MUCS 2021, which is `hold, train`.
-- Its teacher, Shruti, was trained on MUCS 2021 and Common Voice (the ledger's teacher table).
+The project owner's legal guidance cleared MUCS 2021 and Common Voice for commercial use (D26). That removed what held v0 back: MUCS 2021 in its data, and Shruti as its teacher, trained on both.
 
-A version without them would drop MUCS from the data and replace Shruti's labels with converted dataset transcripts or other teachers' labels, then retrain from Whistle.
+What stands between akshar and a release is now accuracy. The roadmap's bar is a lower mean than Shruti's with no set more than 0.5 worse, and v1 is still 0.6 to 2.0 behind on four sets.
 
 ## Next
 
-- Train longer on more data: the full Kathbath and NPTEL Hindi sets and 817 h of IndicVoices are ready on Drive; Shrutilipi and Vaani wait for their access forms.
-- Target the largest gaps, Monsoon's conversations and Svarah's Indian English.
-- Convert dataset transcripts to the `mixed` style, so akshar learns from references and not only from Shruti.
+- **v2:** train on all the data Drive now holds, with dataset transcripts as targets (D27).
+  - IndicVoices: 817 h.
+  - Vaani's transcribed Hindi: 644 h.
+  - Shrutilipi: 1,374 h, of which 267 h are labelled by Shruti so far.
+  - Everything v1 used.
+  - That is about 3,300 h, far more than the server's disk holds. v2 needs slices that rotate through the disk during a run, and a compile cache so that each restart does not cost 12 to 15 minutes.
+- **English:** Svarah (2.2 behind) and LibriSpeech (1.0 behind) are now the largest gaps.
+  - Common Voice's Indian-accented English is admitted (D26), but has to come from Mozilla Data Collective with the owner's account; Hugging Face no longer has it.
+  - NPTEL English's transcripts could become targets once digits are spelled out.
+- **akshar-lite v1:** made from the best model with D24's recipe, about 25 minutes of GPU.

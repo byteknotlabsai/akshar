@@ -353,6 +353,21 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - Common Voice still has to be fetched. Its Hugging Face repository (`mozilla-foundation/common_voice_17_0`) accepts the server's account; Mozilla Data Collective's terms (no re-hosting, no re-identification) still apply to the files.
   - Test sets stay test-only whatever their licence, including MUCS 2021's test split.
 
+## D27 (2026-11-07): akshar learns from datasets' own transcripts where they are verbatim
+
+- **Decision:**
+  - Training targets come from each dataset's own transcript, converted to the `mixed` style by `akshar.data.convert`, for sources whose transcripts are verbatim: IndicVoices, Kathbath, Rural Women ASR, Vaani, FLEURS and LibriSpeech.
+  - MUCS 2021, NPTEL and Shrutilipi keep Shruti's transcripts as targets, because theirs are scripts or not verbatim. Silence keeps empty targets. Distillation from Shruti's token distributions stays at 0.5.
+  - English words written in Devanagari become Latin only in spontaneous speech (IndicVoices, Vaani), through a lexicon learned from where Shruti writes them in Latin. Read speech keeps them in Devanagari, as Shruti writes them there and as the FLEURS and Lahaja references do.
+- **Why:**
+  - A student that learns only from Shruti's transcripts learns Shruti's mistakes. On IndicVoices and Rural Women the human transcripts are often more accurate than Shruti's.
+  - Training akshar v1 on the converted transcripts for 2,400 updates lowered its mean WER on the full test sets from 22.45 to 22.28, most on the Hindi sets (akshar.md).
+- **Consequences:**
+  - Amends D25, whose targets were only Shruti's transcripts.
+  - Sources with verbatim transcripts need no Shruti labelling, which removes the CPU labelling bottleneck for IndicVoices and Vaani. Shrutilipi still needs labels.
+  - Every target records where it came from (`by` in labels-mix.jsonl), so either kind can be dropped.
+- **Revisit if:** a longer run with a matching control shows no gain, or a test set regresses.
+
 ## Superseded from the earlier ChatGPT plan
 
 - The project name BharatSTT is now **akshar**.
