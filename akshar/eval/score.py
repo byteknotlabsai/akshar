@@ -5,6 +5,7 @@ Corpus-level rates only: all errors divided by all reference units, never an ave
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from itertools import zip_longest
 
 from rapidfuzz.distance import Levenshtein
 
@@ -61,6 +62,18 @@ def _edit_counts(ref, hyp) -> Counts:
 def word_counts(ref: str, hyp: str) -> Counts:
     """Word-level edit distance between two already-normalised strings."""
     return _edit_counts(ref.split(), hyp.split())
+
+
+def word_ops(ref: str, hyp: str) -> list[list[str]]:
+    """The word alignment behind word_counts, for display: [op, reference word, hypothesis word] per position, op one of
+    c (correct), s (substituted), d (a reference word the hypothesis lacks) and i (an extra hypothesis word)."""
+    ref_words, hyp_words = ref.split(), hyp.split()
+    ops = []
+    for block in Levenshtein.opcodes(ref_words, hyp_words):
+        pairs = zip_longest(ref_words[block.src_start:block.src_end], hyp_words[block.dest_start:block.dest_end],
+                            fillvalue="")
+        ops.extend(["c" if block.tag == "equal" else "s" if r and h else "d" if r else "i", r, h] for r, h in pairs)
+    return ops
 
 
 def char_counts(ref: str, hyp: str) -> Counts:
