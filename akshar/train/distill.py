@@ -74,7 +74,8 @@ def read_folder(folder: Path, labels: str, tokenizer, cfg):
                    "other_language": other_language}
 
 
-def load_clips(sources: list[str], labels: str, tokenizer, cfg, val_fraction: float, val_only: list[str] = ()):
+def load_clips(sources: list[str], labels: str, tokenizer, cfg, val_fraction: float, val_only: list[str] = (),
+               weights: dict[str, int] | None = None):
     train, val, stats = [], [], {}
     for name in [*sources, *val_only]:
         clips, stats[name] = read_folder(DATA_ROOT / "train" / name, labels, tokenizer, cfg)
@@ -82,7 +83,7 @@ def load_clips(sources: list[str], labels: str, tokenizer, cfg, val_fraction: fl
             if _is_validation(clip_id, val_fraction):
                 val.append(clip)
             elif name not in val_only:
-                train.append(clip)
+                train.extend([clip] * (weights or {}).get(name, 1))
         if name in val_only:
             stats[name]["validation_only"] = True
     return train, val, stats
@@ -161,6 +162,8 @@ def main(argv=None) -> None:
     parser.add_argument("--val-only", nargs="+", default=[], metavar="SOURCE",
                         help="sets under $AKSHAR_DATA/train that give only validation clips (their audio for the rest "
                              "may be gone)")
+    parser.add_argument("--weight", nargs="+", default=[], metavar="SOURCE=N",
+                        help="take a source's training clips N times as often (its validation clips stay single)")
     parser.add_argument("--pool", type=Path, help="folder that akshar.train.feed streams shard folders through")
     parser.add_argument("--pool-share", type=float, default=0.6, help="share of forward passes taken from the pool")
     parser.add_argument("--refresh", type=int, default=100, help="read the pool's list every N updates")
@@ -205,7 +208,8 @@ def main(argv=None) -> None:
         raise SystemExit("student and teacher must share a tokenizer for token-level distillation")
     tokenizer, teacher_cfg = teacher_ck.tokenizer(), teacher_ck.cfg
     student_params, cfg = rung(student_ck.params, student_ck.cfg, args.layers)
-    train, val, stats = load_clips(args.sources, args.labels, tokenizer, cfg, args.val_fraction, args.val_only)
+    weights = {name: int(n) for name, n in (w.split("=") for w in args.weight)}
+    train, val, stats = load_clips(args.sources, args.labels, tokenizer, cfg, args.val_fraction, args.val_only, weights)
     print(f"data      {len(train)} train clips ({sum(c.seconds for c in train) / 3600:.1f} h), {len(val)} validation; "
           f"{json.dumps(stats)}", flush=True)
 
@@ -334,7 +338,7 @@ def main(argv=None) -> None:
     run = {**student_ck.run, "mode": "full", "akshar": {
         **lineage, "student": args.student, "teacher": args.teacher,
         "teacher_quant": args.teacher_quant, "sources": args.sources, "labels": args.labels, "recipe": args.recipe,
-        **({"validation_only": args.val_only} if args.val_only else {}),
+        **({"validation_only": args.val_only} if args.val_only else {}), **({"weights": weights} if weights else {}),
         **({"pool": {"share": share, "folders": len(pool.used), "hours": round(sum(pool.used.values()), 1),
                      "hours_by_source": pool.by_source()}} if pool is not None else {}),
         "layers": cfg.dec_layers, "alpha": alpha, "temperature": temp, "steps": args.steps, "budget": args.budget,
