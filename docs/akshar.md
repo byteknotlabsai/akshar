@@ -117,9 +117,40 @@ from needle import Whistle
 print(Whistle("models/akshar/akshar-v1.cact").transcribe(samples, language="hi")["text"])
 ```
 
+To try them in a browser, start the local page and open http://127.0.0.1:8765:
+
+```bash
+uv run python -m akshar.ui
+```
+
+- **Transcribe:** record from the microphone or open an audio file, and every `.cact` under `models/` transcribes it, Shruti included. Each transcript shows its word timings, confidences and decoding speed. Paste what was said to get the word error rate with the harness's normaliser.
+- **Test results:** the full test-set tables from `runs/server-full/` and `runs/`, and every clip behind them. Listen to a clip, see each model's errors word by word, and decode it again on this machine.
+- **API:** how an app calls the API server below, with this machine's address.
+
+The page, the engine and the results stay on this machine; the server listens on 127.0.0.1 only.
+
+### On a server
+
+`akshar.serve` is the same engine behind an HTTP API, with no page: an app posts a recording to `/v1/transcribe` and gets the transcript as JSON. `scripts/build_deploy.py` packs it into one folder to unzip and run on another machine:
+
+```bash
+uv run python scripts/build_deploy.py --zip   # ~/Projects/akshar-deploy and akshar-deploy.zip
+```
+
+The folder holds:
+- the server;
+- the `.cact` files;
+- the engine library our scores were measured with (Linux x86-64);
+- `settings.env`: the models offered, the defaults, API keys, allowed websites and limits;
+- a `run.sh` that installs its packages on the first start.
+
+Its README is [deploy/README.md](../deploy/README.md), with the models' stored scores filled in.
+
+The package's NOTICE credits every training source, as a release of these models must.
+
 ## Release
 
-The project owner's legal guidance cleared MUCS 2021 and Common Voice for commercial use (D26). That removed what held v0 back: MUCS 2021 in its data, and Shruti as its teacher, trained on both.
+D26 cleared the two sources that held akshar v0 back: MUCS 2021, in its training data, and Common Voice, inside its teacher Shruti. Both were cleared on the owner's legal guidance. akshar v0 and akshar-lite v0 are no longer held back by their data or by their teacher. Before their weights are published, NOTICE must credit every training dataset (data/LICENSES.md).
 
 What stands between akshar and a release is now accuracy. The roadmap's bar is a lower mean than Shruti's with no set more than 0.5 worse, and v1 is still 0.6 to 2.0 behind on four sets.
 

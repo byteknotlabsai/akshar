@@ -61,6 +61,9 @@ The model itself always writes `mixed`: Hindi in Devanagari, English words in La
 | [akshar/eval/](akshar/eval/) | The evaluation harness: test-set download, decoding in the needle engine, scoring |
 | [docs/toolchain.md](docs/toolchain.md) | How training and export work, and what Phase 1 measured |
 | [akshar/model/](akshar/model/), [akshar/train/](akshar/train/), [akshar/data/](akshar/data/) | Checkpoints, quantisation and `.cact` export; full-weight training; training manifests |
+| [akshar/serve/](akshar/serve/) | The speech-to-text HTTP API for apps: `python -m akshar.serve` |
+| [deploy/](deploy/), [scripts/build_deploy.py](scripts/build_deploy.py) | The API server as one folder to unzip and run on another machine |
+| [akshar/ui/](akshar/ui/) | A local page for trying the models and browsing their test results clip by clip: `python -m akshar.ui` |
 | [docs/decisions.md](docs/decisions.md) | Decision log |
 | [docs/setup-ubuntu.md](docs/setup-ubuntu.md) | First-time setup on Ubuntu (where all building happens) |
 | [data/LICENSES.md](data/LICENSES.md) | Dataset licence ledger. No dataset is used for training without an entry. |
