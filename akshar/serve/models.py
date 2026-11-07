@@ -19,7 +19,10 @@ from ..eval.paths import REPO_ROOT
 MODELS_ROOT = REPO_ROOT / "models"
 LANGUAGES = ("hi", "en", "auto")  # the protocol's two language flags, or detection by the engine
 RECIPES = {"w4": "4-bit", "mixed2": "2-bit", "mixed2-enc4": "2-bit, encoder at 4 bits"}
-ABOUT = {"shruti": "Udgam Labs' release, 4-bit"}
+# A train.json records only a model's last training stage, so models trained in several stages are named here.
+ABOUT = {"shruti": "Udgam Labs' release, 4-bit",
+         "akshar-v1": "AksharSTT v1 as released, 4-bit: v0, then 64,000 updates on 524 h and 2,400 on human transcripts",
+         "akshar-v1-teacher": "akshar v1 before its last stage, 4-bit: v0, then 64,000 updates on 524 h"}
 
 
 @dataclass
