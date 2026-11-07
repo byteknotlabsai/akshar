@@ -12,6 +12,10 @@ teacher's full output distribution, which the roadmap's exit check compares.
     python -m akshar.train.distill --sources librispeech_100 rural_women_hi --recipe mixed2 --alpha 0.5 \
         --steps 2000 --out runs/train/a2-kd
 
+With --pool, more clips stream in during the run: akshar.train.feed keeps a few Drive shards at a time in that folder,
+and the run takes --pool-share of its batches from them (see Pool). --val-only sources give validation clips only, so a
+source can move to the stream and keep its place in the validation loss.
+
 Writes <out>/model.safetensors, <out>/model-<recipe>.cact, <out>/state.msgpack (for --resume) and <out>/train.json.
 """
 from __future__ import annotations
@@ -39,44 +43,127 @@ def _is_validation(clip_id: str, fraction: float) -> bool:
     return int(hashlib.sha256(clip_id.encode()).hexdigest()[:8], 16) / 0xFFFFFFFF < fraction
 
 
-def load_clips(sources: list[str], labels: str, tokenizer, cfg, val_fraction: float):
+def read_folder(folder: Path, labels: str, tokenizer, cfg):
+    """(clip id, Clip) for every clip in one folder that has a target and fits the model, and the folder's counts."""
     from .loader import Clip
 
+    with open(folder / f"labels-{labels}.jsonl", encoding="utf-8") as handle:
+        teacher = {row["id"]: row for row in map(json.loads, handle)}
+    clips, kept, empty, unlabelled, too_long, other_language = [], 0, 0, 0, 0, 0
+    with open(folder / "manifest.jsonl", encoding="utf-8") as handle:
+        for row in map(json.loads, handle):
+            label = teacher.get(row["id"])
+            if row["duration"] > 30.0:  # the model's window; longer clips cannot be trained on whole
+                too_long += 1
+                continue
+            if label is None:
+                unlabelled += 1
+                continue
+            text, language = label["teacher"].strip(), label["language"] or row["language"]
+            if language not in cfg.languages:
+                other_language += 1
+                continue
+            # An empty target is kept: on silence and noise the model must learn to write nothing and stop (D22).
+            ids = (cfg.bos, cfg.tag(language), *tokenizer.encode(text), cfg.eos)
+            if len(ids) > cfg.max_tokens + 1:
+                continue
+            clips.append((row["id"], Clip(folder / row["audio"], row["duration"], ids)))
+            kept += 1
+            empty += not text
+    return clips, {"clips": kept, "empty_target": empty, "unlabelled": unlabelled, "over_30s": too_long,
+                   "other_language": other_language}
+
+
+def load_clips(sources: list[str], labels: str, tokenizer, cfg, val_fraction: float, val_only: list[str] = ()):
     train, val, stats = [], [], {}
-    for name in sources:
-        folder = DATA_ROOT / "train" / name
-        with open(folder / f"labels-{labels}.jsonl", encoding="utf-8") as handle:
-            teacher = {row["id"]: row for row in map(json.loads, handle)}
-        kept = empty = unlabelled = too_long = other_language = 0
-        with open(folder / "manifest.jsonl", encoding="utf-8") as handle:
-            for row in map(json.loads, handle):
-                label = teacher.get(row["id"])
-                if row["duration"] > 30.0:  # the model's window; longer clips cannot be trained on whole
-                    too_long += 1
-                    continue
-                if label is None:
-                    unlabelled += 1
-                    continue
-                text, language = label["teacher"].strip(), label["language"] or row["language"]
-                if language not in cfg.languages:
-                    other_language += 1
-                    continue
-                # An empty target is kept: on silence and noise the model must learn to write nothing and stop (D22).
-                ids = (cfg.bos, cfg.tag(language), *tokenizer.encode(text), cfg.eos)
-                if len(ids) > cfg.max_tokens + 1:
-                    continue
-                clip = Clip(folder / row["audio"], row["duration"], ids)
-                (val if _is_validation(row["id"], val_fraction) else train).append(clip)
-                kept += 1
-                empty += not text
-        stats[name] = {"clips": kept, "empty_target": empty, "unlabelled": unlabelled, "over_30s": too_long,
-                       "other_language": other_language}
+    for name in [*sources, *val_only]:
+        clips, stats[name] = read_folder(DATA_ROOT / "train" / name, labels, tokenizer, cfg)
+        for clip_id, clip in clips:
+            if _is_validation(clip_id, val_fraction):
+                val.append(clip)
+            elif name not in val_only:
+                train.append(clip)
+        if name in val_only:
+            stats[name]["validation_only"] = True
     return train, val, stats
+
+
+class Pool:
+    """Clips streamed through a folder by akshar.train.feed while the run trains.
+
+    <folder>/pool.json lists the shard folders that are ready, each with manifest.jsonl, labels-<labels>.jsonl and
+    its clips. `refresh` reads it; when the list has changed, it builds new batches over those folders, with the fixed
+    data's bucket shapes so that nothing recompiles, lets go of the old batches, and writes <folder>/inuse.json. The
+    feeder deletes a folder only once inuse.json, written after the folder left pool.json, no longer lists it.
+    Validation clips (by id, as in load_clips) are never trained on, so a source can move from disk to the stream.
+    """
+
+    def __init__(self, folder: Path, labels: str, tokenizer, cfg, budget: float, tokens: list[int],
+                 val_fraction: float, used: dict[str, float] | None = None):
+        self.dir, self.labels, self.tokenizer, self.cfg = folder, labels, tokenizer, cfg
+        self.budget, self.tokens, self.val_fraction = budget, tokens, val_fraction
+        self.listed: list[str] = []
+        self.clips: dict[str, list] = {}
+        self.batches = None
+        self.used: dict[str, float] = dict(used or {})  # every shard folder this run has trained on: hours
+
+    def refresh(self, seed: int) -> str | None:
+        from .loader import Batches
+
+        try:
+            listed = list(json.loads((self.dir / "pool.json").read_text(encoding="utf-8"))["folders"])
+        except (OSError, ValueError, KeyError, TypeError):
+            return None
+        if listed == self.listed:
+            return None
+        for name in listed:
+            if name not in self.clips:
+                try:
+                    clips, _ = read_folder(self.dir / name, self.labels, self.tokenizer, self.cfg)
+                except OSError as error:
+                    print(f"pool      cannot read {name}: {error}", flush=True)
+                    clips = []
+                self.clips[name] = [c for clip_id, c in clips if not _is_validation(clip_id, self.val_fraction)]
+                self.used[name] = round(sum(c.seconds for c in self.clips[name]) / 3600, 3)
+        for name in [n for n in self.clips if n not in listed]:
+            del self.clips[name]
+        clips = [c for name in listed for c in self.clips[name]]
+        old = self.batches
+        try:
+            self.batches = Batches(clips, self.budget, self.cfg.max_tokens, self.cfg.pad, seed=seed,
+                                   tokens=self.tokens)
+        except ValueError:
+            self.batches = None
+        if old is not None:
+            old.close()
+        self.listed = listed
+        note = self.dir / "inuse.json.tmp"
+        note.write_text(json.dumps({"folders": listed if self.batches else [], "time": time.time()}) + "\n")
+        note.replace(self.dir / "inuse.json")
+        hours = sum(c.seconds for c in clips) / 3600
+        if self.batches is None:
+            return f"pool      {len(listed)} folders, {hours:.1f} h: too few clips for a batch yet"
+        return (f"pool      {len(listed)} folders, {hours:.1f} h ({self.batches.dropped} clips too long for the "
+                f"fixed shapes); {len(self.used)} folders so far, {sum(self.used.values()):.0f} h")
+
+    def by_source(self) -> dict[str, float]:
+        """Hours streamed per source; shard folders are named <source>__<shard>."""
+        totals: dict[str, float] = {}
+        for name, hours in self.used.items():
+            source = name.split("__")[0]
+            totals[source] = round(totals.get(source, 0.0) + hours, 2)
+        return totals
 
 
 def main(argv=None) -> None:
     parser = argparse.ArgumentParser(prog="python -m akshar.train.distill", description=__doc__.split("\n\n")[0])
     parser.add_argument("--sources", nargs="+", required=True, help="training sets under $AKSHAR_DATA/train")
+    parser.add_argument("--val-only", nargs="+", default=[], metavar="SOURCE",
+                        help="sets under $AKSHAR_DATA/train that give only validation clips (their audio for the rest "
+                             "may be gone)")
+    parser.add_argument("--pool", type=Path, help="folder that akshar.train.feed streams shard folders through")
+    parser.add_argument("--pool-share", type=float, default=0.6, help="share of forward passes taken from the pool")
+    parser.add_argument("--refresh", type=int, default=100, help="read the pool's list every N updates")
     parser.add_argument("--labels", default="shruti", help="teacher labels file: labels-<this>.jsonl")
     parser.add_argument("--student", default="models/shruti/shruti.safetensors")
     parser.add_argument("--teacher", default="models/shruti/shruti.safetensors")
@@ -118,7 +205,7 @@ def main(argv=None) -> None:
         raise SystemExit("student and teacher must share a tokenizer for token-level distillation")
     tokenizer, teacher_cfg = teacher_ck.tokenizer(), teacher_ck.cfg
     student_params, cfg = rung(student_ck.params, student_ck.cfg, args.layers)
-    train, val, stats = load_clips(args.sources, args.labels, tokenizer, cfg, args.val_fraction)
+    train, val, stats = load_clips(args.sources, args.labels, tokenizer, cfg, args.val_fraction, args.val_only)
     print(f"data      {len(train)} train clips ({sum(c.seconds for c in train) / 3600:.1f} h), {len(val)} validation; "
           f"{json.dumps(stats)}", flush=True)
 
@@ -155,7 +242,7 @@ def main(argv=None) -> None:
     optimizer = optax.MultiSteps(optax.chain(optax.clip_by_global_norm(1.0), optax.adamw(schedule, weight_decay=0.0)),
                                  every_k_schedule=args.accum)
     opt_state = optimizer.init(params)
-    state_path, micro_done, log = args.out / "state.msgpack", 0, []
+    state_path, micro_done, log, pool_used = args.out / "state.msgpack", 0, [], {}
     if args.resume and state_path.exists():
         # Restore the arrays into their templates, and take the validation log as saved: flax stores a list as a dict
         # keyed "0", "1", ..., and an empty template list would not match it.
@@ -165,6 +252,7 @@ def main(argv=None) -> None:
         micro_done = int(raw["micro"])
         saved_log = raw.get("log") or {}
         log = [saved_log[k] for k in sorted(saved_log, key=int)] if isinstance(saved_log, dict) else list(saved_log)
+        pool_used = {k: float(v) for k, v in (raw.get("pool_used") or {}).items()}
         print(f"resumed   at update {micro_done // args.accum}", flush=True)
 
     @jax.jit
@@ -185,11 +273,21 @@ def main(argv=None) -> None:
                 "kl": round(float(np.mean([p[1] for p in parts])), 4)}
 
     def save_state(micro):
-        state_path.write_bytes(serialization.to_bytes({"params": params, "opt_state": opt_state, "micro": micro,
-                                                       "log": log}))
+        state = {"params": params, "opt_state": opt_state, "micro": micro, "log": log}
+        if pool is not None and pool.used:
+            state["pool_used"] = pool.used
+        state_path.write_bytes(serialization.to_bytes(state))
 
     batches = Batches(train, args.budget, cfg.max_tokens, cfg.pad, seed=args.seed + micro_done)
     print(f"buckets   {json.dumps(batches.describe())}", flush=True)
+    pool, share, pool_seen = None, args.pool_share, 0.0
+    if args.pool:
+        args.pool.mkdir(parents=True, exist_ok=True)
+        pool = Pool(args.pool, args.labels, tokenizer, cfg, args.budget, [b.tokens for b in batches.buckets],
+                    args.val_fraction, pool_used)
+        print(pool.refresh(args.seed + micro_done) or "pool      nothing listed yet", flush=True)
+        print(f"pool      {args.pool}: {share:.0%} of forward passes once it holds enough clips; "
+              f"read every {args.refresh} updates", flush=True)
     print(f"quant     {args.recipe}; teacher {args.teacher_quant}; alpha {alpha}, temperature {temp}; "
           f"decoder layers {cfg.dec_layers}", flush=True)
     if micro_done == 0:
@@ -199,14 +297,21 @@ def main(argv=None) -> None:
     window_seen, window_started = 0.0, started  # speed per log window: the first windows include compiling
     stream = iter(batches)
     for micro in range(micro_done, total):
-        _, arrays, seconds = next(stream)
+        # The pool's passes are spread evenly: pass m is the pool's when floor((m + 1) * share) steps up.
+        from_pool = pool is not None and pool.batches is not None and int((micro + 1) * share) > int(micro * share)
+        _, arrays, seconds = next(pool.batches if from_pool else stream)
         params, opt_state, parts = train_step(params, opt_state, teacher_params, *arrays)
         window.append(parts)
         seen += seconds
         window_seen += seconds
+        pool_seen += seconds if from_pool else 0.0
         if (micro + 1) % args.accum:
             continue
         step = (micro + 1) // args.accum
+        if pool is not None and step % args.refresh == 0:
+            message = pool.refresh(args.seed + micro + 1)
+            if message:
+                print(message, flush=True)
         if step % 25 == 0 or step == args.steps:
             ce, kl = (float(np.mean([float(p[i]) for p in window])) for i in (0, 1))
             now = time.perf_counter()
@@ -215,10 +320,13 @@ def main(argv=None) -> None:
             window, window_seen, window_started = [], 0.0, now
         if step % args.eval_every == 0 or step == args.steps:
             log.append({"step": step, "val": validate(params), "elapsed_s": round(time.perf_counter() - started, 1),
-                        "audio_hours": round(seen / 3600, 2)})
+                        "audio_hours": round(seen / 3600, 2), **({"pool_audio_hours": round(pool_seen / 3600, 2)}
+                                                                  if pool is not None else {})})
             print(f"val       {log[-1]['val']} at update {step}", flush=True)
             save_state(micro + 1)
     batches.close()
+    if pool is not None and pool.batches is not None:
+        pool.batches.close()
 
     # The track follows the weights' lineage, which the student's checkpoint records (akshar.model.track_b writes B).
     track = args.track or (student_ck.run.get("akshar") or {}).get("track", "A")
@@ -226,6 +334,9 @@ def main(argv=None) -> None:
     run = {**student_ck.run, "mode": "full", "akshar": {
         **lineage, "student": args.student, "teacher": args.teacher,
         "teacher_quant": args.teacher_quant, "sources": args.sources, "labels": args.labels, "recipe": args.recipe,
+        **({"validation_only": args.val_only} if args.val_only else {}),
+        **({"pool": {"share": share, "folders": len(pool.used), "hours": round(sum(pool.used.values()), 1),
+                     "hours_by_source": pool.by_source()}} if pool is not None else {}),
         "layers": cfg.dec_layers, "alpha": alpha, "temperature": temp, "steps": args.steps, "budget": args.budget,
         "accum": args.accum, "lr": args.lr, "seed": args.seed}}
     trained = checkpoint.Checkpoint(jax.tree.map(np.asarray, params), cfg, run, step=args.steps)

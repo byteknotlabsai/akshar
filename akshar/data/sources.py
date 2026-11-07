@@ -34,6 +34,10 @@ SOURCES: dict[str, Source] = {
         Source("librispeech_100", "openslr/librispeech_asr", "71cacbfb7e2354c4226d01e70d77d5fca3d04ba1",
                tuple(f"clean/train.100/{i:04d}.parquet" for i in range(14)),
                audio="audio", text="text", language="en", ledger="admit", id="id"),
+        # The rest of LibriSpeech's clean training speech, for English (D28).
+        Source("librispeech_360", "openslr/librispeech_asr", "71cacbfb7e2354c4226d01e70d77d5fca3d04ba1",
+               tuple(f"clean/train.360/{i:04d}.parquet" for i in range(48)),
+               audio="audio", text="text", language="en", ledger="admit", id="id"),
         # IndicVoices' `text` writes English words in Devanagari; Track A trains on Shruti's transcripts instead.
         Source("indicvoices_hi", "ai4bharat/IndicVoices", "c96f9088f138cf89d419da7e8e643e1f05c00a87",
                tuple(f"hindi/train-{i:05d}-of-00082.parquet" for i in range(82)),
