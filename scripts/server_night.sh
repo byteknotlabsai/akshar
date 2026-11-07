@@ -20,6 +20,7 @@ night=$dir/night
 mkdir -p "$night"
 export HF_HOME=$dir/hf XDG_CACHE_HOME=$dir/cache NEEDLE_TELEMETRY=0 DO_NOT_TRACK=1 HF_HUB_DISABLE_TELEMETRY=1
 export AKSHAR_DATA=$dir/data AKSHAR_RUNS=$dir/runs XLA_PYTHON_CLIENT_PREALLOCATE=false
+export JAX_COMPILATION_CACHE_DIR=$dir/cache/jax  # a run resumed with the same shapes skips most of its 7-15 min compile
 unset JAX_PLATFORMS CUDA_VISIBLE_DEVICES  # training must see the GPU, whatever the caller set
 cd "$dir/repo"
 SOURCES="librispeech_100 rural_women_hi fleurs_hi_train indicvoices_hi kathbath_hi nonspeech"

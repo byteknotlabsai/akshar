@@ -48,6 +48,20 @@ def write_json(path: Path, value) -> None:
     tmp.replace(path)
 
 
+def rows_of(path) -> list[tuple[str, dict]]:
+    """(line, row) for each complete line of a JSONL file that may still be growing: a half-written line is skipped."""
+    out = []
+    with open(path, encoding="utf-8") as handle:
+        for line in handle:
+            if not line.endswith("\n"):
+                break
+            try:
+                out.append((line, json.loads(line)))
+            except ValueError:
+                continue
+    return out
+
+
 def folder_bytes(folder: Path) -> int:
     return sum(f.stat().st_size for f in folder.rglob("*") if f.is_file())
 
@@ -71,24 +85,15 @@ class Source:
         signature = [(str(p), p.stat().st_mtime) for p in paths]
         if signature == self.signature:
             return
-        with open(self.spec["labels"], encoding="utf-8") as handle:
-            labels = {json.loads(line)["id"]: line for line in handle if line.strip()}
-        excluded = set()
-        for path in self.spec.get("exclude", []):
-            with open(path, encoding="utf-8") as handle:
-                excluded |= {json.loads(line)["id"] for line in handle if line.strip()}
+        labels = {row["id"]: line for line, row in rows_of(self.spec["labels"])}
+        excluded = {row["id"] for path in self.spec.get("exclude", []) for _, row in rows_of(path)}
         by_shard: dict[str, list] = {}
-        with open(self.spec["manifest"], encoding="utf-8") as handle:
-            for line in handle:
-                if not line.strip():
-                    continue
-                row = json.loads(line)
-                label = labels.get(row["id"])
-                if label is None or row["id"] in excluded or row["duration"] > 30.0:
-                    continue
-                shard = row["audio"].split("/")[1]
-                by_shard.setdefault(shard, []).append((line.rstrip("\n") + "\n", label.rstrip("\n") + "\n",
-                                                       row["duration"]))
+        for line, row in rows_of(self.spec["manifest"]):
+            label = labels.get(row["id"])
+            if label is None or row["id"] in excluded or row["duration"] > 30.0:
+                continue
+            shard = row["audio"].split("/")[1]
+            by_shard.setdefault(shard, []).append((line, label, row["duration"]))
         self.by_shard, self.signature = by_shard, signature
         log(f"{self.name}: {sum(len(v) for v in by_shard.values())} labelled clips in {len(by_shard)} shards, "
             f"{sum(d for v in by_shard.values() for _, _, d in v) / 3600:.0f} h")
@@ -159,7 +164,7 @@ class Feeder:
         for source in self.sources.values():
             try:
                 source.load()
-            except OSError as error:
+            except (OSError, ValueError, KeyError) as error:
                 log(f"{source.name}: cannot read its manifest or labels yet ({error})")
                 continue
             source.list_tars()
