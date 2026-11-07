@@ -3,6 +3,12 @@
 #
 #   scripts/backup_to_drive.sh
 #
+# First, if ~/.config/akshar/backup.env names a GPU server (AKSHAR_SERVER=user@host, AKSHAR_SERVER_DIR=its work
+# folder) and it answers, its work files are pulled into ~/akshar-data/server: run outputs, labels, test results,
+# logs and scripts. Datasets, caches, login tokens (hf/, rclone/), the code checkout and resume states stay behind.
+# The server is rented, so nothing made there may exist only there. The file is kept out of the repository because
+# it names a private machine.
+#
 # Mirror:  gdrive:akshar/laptop-backup/current/Projects-akshar  this repository, with .git, models/, runs/ and
 #                                                              uncommitted changes
 #          gdrive:akshar/laptop-backup/current/akshar-data      ~/akshar-data without its datasets
@@ -28,6 +34,24 @@ mirror() {  # source folder, name on Drive, extra rclone filters
 }
 
 echo "$(date -Is) backup $STAMP starts" >> "$LOG"
+CONFIG=$HOME/.config/akshar/backup.env
+[ -f "$CONFIG" ] && . "$CONFIG"
+if [ -n "${AKSHAR_SERVER:-}" ]; then
+  if ssh -o BatchMode=yes -o ConnectTimeout=15 "$AKSHAR_SERVER" true 2>/dev/null; then
+    if rsync -a --partial --timeout=300 \
+         --exclude "/repo/" --exclude "/hf/" --exclude "/rclone/" --exclude "/bin/" --exclude "/uv-cache/" \
+         --exclude "/cache/" --exclude "/data/eval/" --exclude "/data/raw/" --exclude "/data3/eval" --exclude "/data3/raw/" \
+         --exclude "/data3/train/*/manifest.jsonl" --exclude "/data3/train/*/blocked.jsonl" \
+         --exclude "clips/" --exclude "staging/" --exclude "*.flac" --exclude "*.tar" --exclude "*.parquet" \
+         --exclude "*.msgpack" "$AKSHAR_SERVER:$AKSHAR_SERVER_DIR/" "$HOME/akshar-data/server/" >> "$LOG" 2>&1; then
+      echo "$(date -Is) pulled the server's work files" >> "$LOG"
+    else
+      echo "$(date -Is) pulling the server's work files FAILED; backing up the rest" >> "$LOG"
+    fi
+  else
+    echo "$(date -Is) the server did not answer; its files were not pulled" >> "$LOG"
+  fi
+fi
 mirror "$HOME/Projects/akshar" Projects-akshar \
   --exclude "/.venv/**" --exclude "__pycache__/**" --exclude ".pytest_cache/**" --exclude ".ruff_cache/**"
 mirror "$HOME/akshar-data" akshar-data --exclude "/raw/**" --exclude "/eval/**" --exclude "/train/**"
