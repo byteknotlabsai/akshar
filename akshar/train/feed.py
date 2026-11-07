@@ -34,7 +34,8 @@ import sys
 import time
 from pathlib import Path
 
-GRACE_S = 30  # after the run lets go of a shard, time for its loader threads to finish the batch they were building
+GRACE_S = 10  # after the run lets go of a shard, time for its loader threads to finish the batch they were building
+PENDING = 12  # shards that may wait for the run to let go of them
 RELIST_S = 300
 
 
@@ -136,10 +137,10 @@ class Feeder:
         listed = self.pool / "pool.json"
         self.listed: list[str] = json.loads(listed.read_text())["folders"] if listed.exists() else []
         self.listed = [name for name in self.listed if (self.pool / name).is_dir()]
-        self.retired: dict[str, float] = {}  # shard folder -> when it left pool.json
-        for path in self.pool.iterdir():  # half-unpacked shards, and shards that left the list before a restart
-            if path.is_dir() and path.name not in self.listed:
-                self.retired[path.name] = 0.0
+        self.retired: dict[str, float] = {}  # shard folder -> when it left pool.json; 0 = delete at once
+        for path in self.pool.iterdir():  # half-unpacked shards, and shards that left the list before a restart,
+            if path.is_dir() and path.name not in self.listed:  # which the run may still read
+                self.retired[path.name] = 0.0 if path.name.startswith(".tmp-") else time.time()
         self.bytes = {name: folder_bytes(self.pool / name) for name in [*self.listed, *self.retired]}
         self.hours: dict[str, float] = {}
         for name in self.listed:
@@ -175,6 +176,9 @@ class Feeder:
 
     def held_bytes(self) -> int:
         return sum(self.bytes.get(name, 0) for name in [*self.listed, *self.retired])
+
+    def listed_bytes(self) -> int:
+        return sum(self.bytes.get(name, 0) for name in self.listed)
 
     def free_bytes(self) -> int:
         return shutil.disk_usage(self.pool).free
@@ -266,10 +270,16 @@ class Feeder:
                 continue
             source, shard = choice
             need = source.sizes[shard]
-            if self.held_bytes() + need > pool_bytes or self.free_bytes() - need < floor:
-                if self.listed and len(self.retired) < 4 and len(self.listed) > 1:
+            # The list keeps to pool_gb; shards that left it wait on disk until the run lets go of them, so the
+            # next fetch need not wait for that, only for the disk's floor.
+            if self.listed_bytes() + need > pool_bytes:
+                while self.listed_bytes() + need > pool_bytes and len(self.listed) > 1 and len(self.retired) < PENDING:
                     self.retire_oldest()
-                time.sleep(5)
+                if self.listed_bytes() + need > pool_bytes:
+                    time.sleep(2)
+                    continue
+            if self.free_bytes() - need < floor:
+                time.sleep(2)
                 continue
             if self.fetch(source, shard):
                 source.visits[shard] = source.visits.get(shard, 0) + 1
