@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use akshar, please cite it as below."
+title: "akshar: offline speech-to-text for Hindi, English and Hinglish"
+type: software
+authors:
+  - name: "The akshar authors"
+repository-code: "https://github.com/byteknotlabsai/akshar"
+license: Apache-2.0
+date-released: "2026-11-07"
+keywords:
+  - speech recognition
+  - Hindi
+  - Hinglish
+  - on-device
+  - quantization
