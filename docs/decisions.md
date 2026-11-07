@@ -368,6 +368,23 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - Every target records where it came from (`by` in labels-mix.jsonl), so either kind can be dropped.
 - **Revisit if:** a longer run with a matching control shows no gain, or a test set regresses.
 
+## D28 (2026-11-07): akshar v2 streams its data from Drive, and learns English from NPTEL's and LibriSpeech's transcripts
+
+- **Decision:**
+  - A run reads training shards from Google Drive while it trains. `akshar.train.feed` keeps about 10 GB of shards on the server's disk and swaps them as training goes; `akshar.train.distill --pool` takes 60% of its batches from them. Training still reads only local disk (D14).
+  - The fixed data on disk is the Hinglish and English sets and silence: MUCS, NPTEL, LibriSpeech train-clean-100's labelled part, FLEURS and the silence clips. IndicVoices, Vaani, Shrutilipi's labelled part, Kathbath and Rural Women stream from Drive.
+  - NPTEL's English references become targets, with numbers spelled out as words (`akshar.data.convert`), for clips Shruti has not labelled. NPTEL's Hindi keeps Shruti's transcripts.
+  - LibriSpeech's train-clean-360 and the rest of train-clean-100 join the stream with their own transcripts, which D27 already admits.
+- **Why:**
+  - akshar v1 trained on 524 h; Shruti trained on 2,732 h. The GPU had time for far more: v1's run processed about 6,000 h of audio, so it heard each clip about a dozen times. The limits were the server's disk, which holds about 530 h at a time, and, until D27, labelling by Shruti on the CPU.
+  - Drive delivers audio several times faster than the GPU trains on it, so a small rotating buffer is enough.
+  - English is where akshar is furthest behind (Svarah by 2.2, LibriSpeech by 1.0), with 75 h of English in v1's data. NPTEL's English part holds about 3,500 h of Indian-accented lectures. Its references are lecture subtitles, mostly verbatim, and Shruti's labels on the same clips have errors of their own ("x here" for "Excel").
+- **Consequences:**
+  - Amends D27 for NPTEL's English.
+  - The server's copies of Kathbath, Rural Women and IndicVoices training audio were deleted, with the owner's approval; their copies are on Drive. Their validation clips stay on disk, so validation loss stays comparable with v1's.
+  - Every shard a run streamed is logged with its source (`<pool>/fetched.jsonl`), and the run's record gives hours per source.
+- **Revisit if:** v2 does worse than v1 on a set whose share of the data fell, or on English.
+
 ## Superseded from the earlier ChatGPT plan
 
 - The project name BharatSTT is now **akshar**.
