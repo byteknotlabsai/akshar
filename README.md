@@ -147,7 +147,7 @@ Next: train on the 2,750 new hours above, and close the English gap (Svarah, Lib
 | [akshar/model/](akshar/model/), [akshar/train/](akshar/train/) | Checkpoints, quantisation, `.cact` export; quantisation-aware distillation |
 | [akshar/serve/](akshar/serve/), [deploy/](deploy/) | The HTTP API and its deploy package |
 | [akshar/ui/](akshar/ui/) | The local page for trying models and browsing results |
-| [scripts/](scripts/) | GPU-server and deploy scripts |
+| [scripts/](scripts/) | GPU-server, deploy and daily Google Drive backup scripts |
 | [docs/](docs/) | Roadmap, decisions (D1 to D27), harness, results for each phase |
 | [data/LICENSES.md](data/LICENSES.md) | The dataset licence ledger |
 | [MODEL_CARD.md](MODEL_CARD.md) | The model card for the Hugging Face release |
