@@ -43,3 +43,12 @@ def test_batches_have_fixed_shapes_and_a_reproducible_order(tmp_path):
         assert ba == bb == 0 and wav.shape == (2, 6 * 16000) and tokens.shape[1] % 16 == 0
         assert np.array_equal(wav, arrays_b[0]) and 0 < seconds <= 12
         assert (lengths > 0).all() and lengths.max() <= 6 * 16000
+
+
+def test_fixed_token_lengths_drop_what_does_not_fit(tmp_path):
+    from akshar.train.loader import Clip, plan
+    clips = [Clip(tmp_path / "a.flac", 3.0, tuple(range(10))), Clip(tmp_path / "b.flac", 4.0, tuple(range(40))),
+             Clip(tmp_path / "c.flac", 10.0, tuple(range(40)))]
+    buckets, groups = plan(clips, 24.0, 320, tokens=[32, 64, 64, 64])
+    assert [b.tokens for b in buckets] == [32, 64, 64, 64]
+    assert [len(g) for g in groups] == [1, 1, 0, 0]  # b has 40 tokens, more than its bucket's 32

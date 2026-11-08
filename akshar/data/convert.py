@@ -35,7 +35,10 @@ from ..eval.paths import DATA_ROOT
 
 MAX_SECONDS = 30.0
 REFERENCE_FIRST = {"indicvoices_hi", "kathbath_full", "kathbath_hi", "rural_women_full", "rural_women_hi", "vaani_hi",
-                   "fleurs_hi_train", "librispeech_100"}
+                   "fleurs_hi_train", "librispeech_100", "librispeech_360", "nptel_en", "nptel_en_b",
+                   "cv_hi", "cv_en_sa"}  # Common Voice: read sentences, without digits
+# English references whose numbers are written in digits: they are spelled out as words first (D28).
+SPELL_NUMBERS = {"nptel_en", "nptel_en_b"}
 # Marks for words the annotator could not make out: the reference has a hole, so it is never a target.
 UNKNOWN = {"unintelligible", "unk", "unknown", "inaudible", "unclear", "indistinct", "incomprehensible", "foreign"}
 # Sounds marked in square brackets (Vaani's [breathing], NPTEL's [laughter]). <Tags> go whatever they name.
@@ -141,8 +144,54 @@ def learn_lexicon(pairs, min_count: int = 5, min_share: float = 0.8) -> dict[str
     return {word: entry[0] for word, entry in choose(*count_alignments(pairs), min_count, min_share).items()}
 
 
+ONES = ("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen "
+        "seventeen eighteen nineteen").split()
+TENS = "_ _ twenty thirty forty fifty sixty seventy eighty ninety".split()
+ORDINALS = {"one": "first", "two": "second", "three": "third", "five": "fifth", "eight": "eighth", "nine": "ninth",
+            "twelve": "twelfth"}
+NUMBER = re.compile(r"(?<![\w.])(\d{1,3}(?:,\d{3})+|\d+)(?:\.(\d+))?(%|st|nd|rd|th)?(?!\w)")
+
+
+def english_cardinal(n: int) -> str:
+    if n < 20:
+        return ONES[n]
+    if n < 100:
+        return TENS[n // 10] + ("" if n % 10 == 0 else " " + ONES[n % 10])
+    if n < 1000:
+        return ONES[n // 100] + " hundred" + ("" if n % 100 == 0 else " " + english_cardinal(n % 100))
+    for value, word in ((10 ** 9, "billion"), (10 ** 6, "million"), (1000, "thousand")):
+        if n >= value:
+            head, rest = divmod(n, value)
+            return english_cardinal(head) + " " + word + ("" if rest == 0 else " " + english_cardinal(rest))
+    raise ValueError(n)
+
+
+def english_ordinal(n: int) -> str:
+    *head, last = english_cardinal(n).split()
+    last = ORDINALS.get(last) or (last[:-1] + "ieth" if last.endswith("y") else last + "th")
+    return " ".join([*head, last])
+
+
+def spell_english_numbers(text: str) -> str:
+    """Numbers in digits as English words: 3 -> three, 1,500 -> one thousand five hundred, 2.5 -> two point five,
+    10% -> ten percent, 2nd -> second. Digits attached to letters (x2, 3d) are left, so strip_markup rejects them."""
+    def say(m: re.Match) -> str:
+        whole = int(m.group(1).replace(",", ""))
+        if whole >= 10 ** 12:
+            return m.group(0)
+        if m.group(3) in ("st", "nd", "rd", "th") and not m.group(2):
+            return f" {english_ordinal(whole)} "
+        words = english_cardinal(whole)
+        if m.group(2):
+            words += " point " + " ".join(ONES[int(d)] for d in m.group(2))
+        return f" {words}{' percent' if m.group(3) == '%' else ''} "
+    return NUMBER.sub(say, text)
+
+
 def to_mixed(text: str, source: str, lexicon: dict[str, str]) -> str | None:
     """A reference as a `mixed`-style target, or None if it cannot be one."""
+    if source in SPELL_NUMBERS:
+        text = spell_english_numbers(text)
     stripped = strip_markup(text, source)
     if stripped is None:
         return None

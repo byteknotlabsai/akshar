@@ -75,8 +75,11 @@ def _repair_manifest(out: Path, done: list[str]) -> None:
         manifest.write_text("".join(line + "\n" for line in keep), encoding="utf-8")
 
 
-def _sampled(key: str, fraction: float) -> bool:
-    return fraction >= 1 or int(hashlib.sha256(key.encode()).hexdigest()[:8], 16) / 0xFFFFFFFF < fraction
+def _sampled(key: str, fraction: float, start: float = 0.0) -> bool:
+    """Whether a clip is in this build's share: its hash falls in [start, fraction)."""
+    if fraction >= 1 and start <= 0:
+        return True
+    return start <= int(hashlib.sha256(key.encode()).hexdigest()[:8], 16) / 0xFFFFFFFF < fraction
 
 
 def build(name: str, hours: float, out: Path | None = None, fraction: float = 1.0) -> dict:
@@ -114,7 +117,7 @@ def build(name: str, hours: float, out: Path | None = None, fraction: float = 1.
                     record = row[src.audio] or {}
                     row_id = "_".join(str(row[c]) for c in id_columns) if id_columns else None
                     key = row_id if row_id is not None else str(record.get("path") or "")
-                    if not _sampled(key, fraction):
+                    if not _sampled(key, fraction, src.sample_from):
                         continue
                     try:
                         samples = _decode(record["bytes"])

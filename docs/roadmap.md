@@ -45,7 +45,7 @@ Every later claim ("beats Shruti", "2 bits costs this much") is a number from th
 
 ## Phase 3: Track B, akshar from Whistle
 
-**Status (2026-11-07):** akshar v1 trained on dataset transcripts (D27) trails Shruti by 0.50 points of mean WER on the full test sets and beats it on FLEURS and MUCS. akshar v0 (1.3 behind) and akshar-lite v0 came first (D25). D26 cleared the last held sources, so accuracy is what stands between akshar and release. Details in [akshar.md](akshar.md).
+**Status (2026-11-08):** akshar v2 beats Shruti's mean WER on the full test sets, 21.32 against 21.78, trained on about 3,000 h streamed from Drive (D28). It leads on Monsoon, FLEURS, Lahaja and MUCS and is level on LibriSpeech; Svarah is 1.22 behind, the one set that keeps it from the release bar. akshar v1 trained on dataset transcripts (D27) was released as AksharSTT v1. Details in [akshar.md](akshar.md).
 
 - **Reproduce Shruti's recipe:**
   - Devanagari pieces in word-start and word-internal forms, with rows initialised from the mean of the byte pieces they replace.
