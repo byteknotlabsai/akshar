@@ -373,7 +373,7 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
 - **Decision:**
   - A run reads training shards from Google Drive while it trains. `akshar.train.feed` keeps about 10 GB of shards on the server's disk and swaps them as training goes; `akshar.train.distill --pool` takes 60% of its batches from them. Training still reads only local disk (D14).
   - The fixed data on disk is the Hinglish and English sets and silence: MUCS, NPTEL, LibriSpeech train-clean-100's labelled part, FLEURS and the silence clips. IndicVoices, Vaani, Shrutilipi's labelled part, Kathbath and Rural Women stream from Drive.
-  - NPTEL's English references become targets, with numbers spelled out as words (`akshar.data.convert`), for clips Shruti has not labelled. NPTEL's Hindi keeps Shruti's transcripts.
+  - NPTEL's English references become targets, with numbers spelled out as words (`akshar.data.convert`); a reference that cannot be one falls back to Shruti's label, as for D27's sources. NPTEL's Hindi keeps Shruti's transcripts. In v2 the 53 h already on disk kept the Shruti labels they had; the new clips, which Shruti never labelled, used their references.
   - LibriSpeech's train-clean-360 and the rest of train-clean-100 join the stream with their own transcripts, which D27 already admits.
 - **Why:**
   - akshar v1 trained on 524 h; Shruti trained on 2,732 h. The GPU had time for far more: v1's run processed about 6,000 h of audio, so it heard each clip about a dozen times. The limits were the server's disk, which holds about 530 h at a time, and, until D27, labelling by Shruti on the CPU.

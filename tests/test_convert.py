@@ -104,8 +104,9 @@ def test_lexicon_skips_split_words_single_letters_and_ambiguous_words():
 @pytest.mark.parametrize("source, rule", [
     ("indicvoices_hi", "reference"), ("kathbath_full", "reference"), ("kathbath_hi", "reference"),
     ("rural_women_full", "reference"), ("rural_women_hi", "reference"), ("vaani_hi", "reference"),
-    ("fleurs_hi_train", "reference"), ("librispeech_100", "reference"),
-    ("mucs_train", "shruti"), ("nptel_en", "shruti"), ("nptel_hi", "shruti"), ("shrutilipi_hi", "shruti"),
+    ("fleurs_hi_train", "reference"), ("librispeech_100", "reference"), ("librispeech_360", "reference"),
+    ("nptel_en", "reference"),  # D28: its English references, numbers spelled out
+    ("mucs_train", "shruti"), ("nptel_hi", "shruti"), ("shrutilipi_hi", "shruti"),
     ("a_new_source", "shruti"), ("nonspeech", "construction"),
 ])
 def test_policy(source, rule):
@@ -228,3 +229,13 @@ def test_cli_learns_writes_and_reloads_the_lexicon(tmp_path, monkeypatch):
     rows = _rows(tmp_path / "train" / "iv01" / "labels-mix.jsonl")
     assert [r["teacher"] for r in rows[::6]] == ["मेरा mobile खो गया", "वो घर आई", "mobile"]
     assert {r["by"] for r in rows} == {"reference"}
+
+
+def test_nptel_english_numbers_become_words():
+    assert convert.to_mixed("So, power supplied by the current v 3 into 2 right", "nptel_en", {}) == \
+        "so power supplied by the current v three into two right"
+    assert convert.spell_english_numbers("1,500 or 2.5, 10% of the 2nd and the 21st").split() == \
+        "one thousand five hundred or two point five , ten percent of the second and the twenty first".split()
+    assert convert.english_cardinal(999_999) == "nine hundred ninety nine thousand nine hundred ninety nine"
+    assert convert.to_mixed("x2 plus 3d", "nptel_en", {}) is None  # digits on letters are not guessed
+    assert convert.to_mixed("in 1990 there were 12", "mucs_train", {}) is None  # only NPTEL's English is spelled out
