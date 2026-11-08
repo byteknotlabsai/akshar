@@ -12,6 +12,9 @@ CONFIG names the pool folder, its size on disk, the free space to leave, rclone,
                   "labels": "/work/data3/train/indicvoices_hi/labels-mix.jsonl", "share": 0.35,
                   "exclude": ["/work/data/train/nptel_en/manifest.jsonl"]}]}
 
+A source may set "hi_tag_share": that share of its clips (chosen by a hash of the clip id, so always the same ones)
+is trained under the Hindi tag with the same target, so that English spoken to a model set to Hindi stays in Latin.
+
 A source's shards are its Drive tars (as akshar.data.stage writes them: clips/<shard>/<id>.flac) that hold at least
 one labelled clip of 30 s or less whose id no `exclude` manifest lists. The next shard comes from the source furthest
 below its share of the pool's hours, and within a source from the shards fetched least often, so every shard is seen
@@ -25,6 +28,7 @@ fetched is logged in <pool>/fetched.jsonl. Restartable: shards already in the po
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import random
@@ -47,6 +51,10 @@ def write_json(path: Path, value) -> None:
     tmp = path.with_name(path.name + ".tmp")
     tmp.write_text(json.dumps(value, ensure_ascii=False) + "\n", encoding="utf-8")
     tmp.replace(path)
+
+
+def _hashed_share(clip_id: str) -> float:
+    return int(hashlib.sha256(f"hi-tag/{clip_id}".encode()).hexdigest()[:8], 16) / 0xFFFFFFFF
 
 
 def rows_of(path) -> list[tuple[str, dict]]:
@@ -83,7 +91,8 @@ class Source:
     def load(self) -> None:
         """(Re)read the manifest and labels when either has changed."""
         paths = [Path(self.spec["manifest"]), Path(self.spec["labels"]), *map(Path, self.spec.get("exclude", []))]
-        signature = [(str(p), p.stat().st_mtime) for p in paths]
+        hi_share = float(self.spec.get("hi_tag_share", 0.0))
+        signature = [(str(p), p.stat().st_mtime) for p in paths] + [hi_share]
         if signature == self.signature:
             return
         labels = {row["id"]: line for line, row in rows_of(self.spec["labels"])}
@@ -93,6 +102,10 @@ class Source:
             label = labels.get(row["id"])
             if label is None or row["id"] in excluded or row["duration"] > 30.0:
                 continue
+            if hi_share > 0 and _hashed_share(row["id"]) < hi_share:
+                tagged = json.loads(label)
+                if tagged.get("language") == "en":
+                    label = json.dumps({**tagged, "language": "hi", "tag": "hi-for-english"}, ensure_ascii=False) + "\n"
             shard = row["audio"].split("/")[1]
             by_shard.setdefault(shard, []).append((line, label, row["duration"]))
         self.by_shard, self.signature = by_shard, signature
