@@ -1,0 +1,196 @@
+{
+ "finished": "2026-11-07T01:29:15+00:00",
+ "phase": 3,
+ "track": "B",
+ "student": "runs/train/m1-akshar-v1/model.safetensors",
+ "teacher": "models/shruti/shruti.safetensors",
+ "teacher_quant": "w4",
+ "sources": [
+  "librispeech_100",
+  "fleurs_hi_train",
+  "indicvoices_hi",
+  "nonspeech",
+  "nptel_en",
+  "nptel_hi",
+  "kathbath_full",
+  "rural_women_full",
+  "mucs_train",
+  "iv02",
+  "iv01"
+ ],
+ "labels": "mix",
+ "recipe": "w4",
+ "layers": 8,
+ "alpha": 0.5,
+ "temperature": 1.0,
+ "steps": 2400,
+ "budget": 240.0,
+ "accum": 2,
+ "lr": 0.0001,
+ "seed": 0,
+ "data": {
+  "librispeech_100": {
+   "clips": 6116,
+   "empty_target": 0,
+   "unlabelled": 0,
+   "over_30s": 0,
+   "other_language": 0
+  },
+  "fleurs_hi_train": {
+   "clips": 971,
+   "empty_target": 0,
+   "unlabelled": 0,
+   "over_30s": 3,
+   "other_language": 0
+  },
+  "indicvoices_hi": {
+   "clips": 22206,
+   "empty_target": 0,
+   "unlabelled": 0,
+   "over_30s": 0,
+   "other_language": 0
+  },
+  "nonspeech": {
+   "clips": 600,
+   "empty_target": 600,
+   "unlabelled": 0,
+   "over_30s": 0,
+   "other_language": 0
+  },
+  "nptel_en": {
+   "clips": 22316,
+   "empty_target": 10,
+   "unlabelled": 0,
+   "over_30s": 0,
+   "other_language": 0
+  },
+  "nptel_hi": {
+   "clips": 24434,
+   "empty_target": 58,
+   "unlabelled": 0,
+   "over_30s": 0,
+   "other_language": 0
+  },
+  "kathbath_full": {
+   "clips": 91752,
+   "empty_target": 0,
+   "unlabelled": 0,
+   "over_30s": 0,
+   "other_language": 0
+  },
+  "rural_women_full": {
+   "clips": 28740,
+   "empty_target": 1,
+   "unlabelled": 0,
+   "over_30s": 0,
+   "other_language": 0
+  },
+  "mucs_train": {
+   "clips": 49378,
+   "empty_target": 17,
+   "unlabelled": 0,
+   "over_30s": 0,
+   "other_language": 0
+  },
+  "iv02": {
+   "clips": 10799,
+   "empty_target": 0,
+   "unlabelled": 0,
+   "over_30s": 0,
+   "other_language": 0
+  },
+  "iv01": {
+   "clips": 10875,
+   "empty_target": 0,
+   "unlabelled": 0,
+   "over_30s": 0,
+   "other_language": 0
+  }
+ },
+ "train_clips": 265496,
+ "val_clips": 2691,
+ "buckets": [
+  {
+   "max_seconds": 6.0,
+   "batch": 40,
+   "tokens": 128,
+   "clips": 140416,
+   "hours": 157.99
+  },
+  {
+   "max_seconds": 12.0,
+   "batch": 20,
+   "tokens": 272,
+   "clips": 89046,
+   "hours": 202.39
+  },
+  {
+   "max_seconds": 18.0,
+   "batch": 13,
+   "tokens": 304,
+   "clips": 26765,
+   "hours": 107.83
+  },
+  {
+   "max_seconds": 30.0,
+   "batch": 8,
+   "tokens": 224,
+   "clips": 9269,
+   "hours": 56.04
+  }
+ ],
+ "log": [
+  {
+   "step": 0,
+   "val": {
+    "ce": 0.2498,
+    "kl": 0.0624
+   }
+  },
+  {
+   "step": 600,
+   "val": {
+    "ce": 0.2412,
+    "kl": 0.0593
+   },
+   "elapsed_s": 943.7,
+   "audio_hours": 56.47
+  },
+  {
+   "step": 1200,
+   "val": {
+    "ce": 0.2372,
+    "kl": 0.0576
+   },
+   "elapsed_s": 1125.0,
+   "audio_hours": 112.73
+  },
+  {
+   "step": 1800,
+   "val": {
+    "ce": 0.2346,
+    "kl": 0.0559
+   },
+   "elapsed_s": 1305.9,
+   "audio_hours": 169.2
+  },
+  {
+   "step": 2400,
+   "val": {
+    "ce": 0.2338,
+    "kl": 0.0549
+   },
+   "elapsed_s": 1486.4,
+   "audio_hours": 225.48
+  }
+ ],
+ "gpu_peak_bytes": 4664868608,
+ "export": {
+  "bytes": 29546527,
+  "tensors": 681,
+  "cq_widths": {
+   "4": 152
+  },
+  "dec_layers": 8
+ }
+}
