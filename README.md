@@ -12,6 +12,13 @@ akshar turns speech into text on the device itself, with no internet connection.
 
 **Status (2026-11-08):** akshar v2 beats [Shruti](https://huggingface.co/udgamlabs/Shruti), the open model it is measured against: 21.32 average word error rate against Shruti's 21.78. It is ahead on four of the six test sets and level on LibriSpeech; Svarah's Indian English is still 1.22 behind. akshar-lite v2, at 20.4 MB, scores 22.28. akshar v1 is published on Hugging Face as [AksharSTT v1](https://huggingface.co/byteknotlabs/AksharSTT-V1). See [Roadmap](#roadmap) for what comes next.
 
+## Try it
+
+- **In your browser:** [akshar.byteknotlabs.com](https://akshar.byteknotlabs.com). Record a few seconds or drop in an audio file, and get the transcript with a timing for every word. Pick AksharSTT v1, akshar v0, akshar-lite v0 or Shruti, or run them all and compare. Your recording goes to our demo server to be transcribed.
+- **On your own machine:** download [AksharSTT v1](https://huggingface.co/byteknotlabs/AksharSTT-V1) from Hugging Face (`akshar-v1.cact`, 29.5 MB, Apache-2.0) and run it offline with the needle engine, as in [Quick start](#quick-start).
+
+akshar v2 and akshar-lite v2 are not published yet.
+
 ## Results
 
 Word error rate (%, lower is better) on the full test sets:
@@ -51,7 +58,7 @@ How each version was made: [docs/akshar.md](docs/akshar.md).
 | akshar | 4-bit | 29.5 MB | The best accuracy |
 | akshar-lite | 2-bit, encoder 4-bit | 20.4 MB | Tight memory budgets; about one point of WER worse |
 
-The weights will be on Hugging Face; this repository holds the code, never the weights. The model card is [MODEL_CARD.md](MODEL_CARD.md).
+AksharSTT v1 is on Hugging Face at [byteknotlabs/AksharSTT-V1](https://huggingface.co/byteknotlabs/AksharSTT-V1). This repository holds the code, never the weights. The model card is [MODEL_CARD.md](MODEL_CARD.md).
 
 ## Quick start
 
