@@ -385,6 +385,26 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - Every shard a run streamed is logged with its source (`<pool>/fetched.jsonl`), and the run's record gives hours per source.
 - **Revisit if:** v2 does worse than v1 on a set whose share of the data fell, or on English.
 
+## D29 (2026-11-08): The converter is repaired from the label audit, and v4 trains on the repaired targets
+
+- **Decision:**
+  - A text-only audit of the training targets (about 1,000 lines over seven sources, read by Claude agents; inputs and results in `~/akshar-data/audit`) found that `akshar.data.convert` lost or mangled targets in ways a reader could see. The converter is repaired as follows, and the repaired targets are written beside the old ones as `labels-fixed.jsonl` (`--labels-name fixed`), so that a run reading `labels-mix.jsonl` is never disturbed.
+  - Vaani: every square bracket is a sound and is removed; tags may hold spaces (`<static noise>`); a gloss may hold several words (`{blue colour}`), letters joined by `_` (`ए_सी {A_C}` is ac), a Devanagari correction (`शारी {सारी}`), and may follow an abbreviation written with dots (`ए.टी.एम {ATM}`); a sound written in the braces (`{breathing}`) is dropped; the annotators' misspellings in `GLOSS_TYPOS` are corrected; the lexicon's spelling replaces a gloss only when the two are spellings of one word (`{color}` becomes colour, `{said}` side; `{cap}` stays cap beside the lexicon's cab, `{lights}` stays plural).
+  - Rural Women: its square brackets are glosses, apart from the few sounds in `RURAL_SOUNDS` (`[horn]`, `[clink]`); a Hindi word glossed in Latin keeps its Devanagari (`लाख [Lakh]`, `पनीर [paneer]`); misspelt glosses are corrected (`[Docter]`); a gloss of several words never spans a Hindi function word, so `और मोरक्कोनऑइल [moroccon oil]` replaces one token.
+  - Lexicon lookup: a word is also found under a folded spelling (no nukta, short for long i, e for ai, o for au, anusvara for a half nasal, no reph), so `कन्फ़र्म`, `ड्राईवर`, `पर्सेन्ट` and `बौक्स` convert; English number words (`एटीन`, `थाउज़ेंड`, `पर्सेंट`) convert with any non-empty lexicon, so one number is never split across scripts; the Hindi slips `नो` beside a number word (for `नौ`) and `तेतीस` are repaired, in converted references and in Shruti's fallback labels.
+  - English: Common Voice and LibriSpeech fold accented letters (`Castellón` is castellon) instead of losing the sentence. NPTEL drops the speaker label (`Jayanta Chatterjee:`); rejects a segment with a slash between short symbols (`1/r`), a slide-time tag, the sung motto, or a leading digit, and a segment that ends in a digit when the next segment of the video starts with one (a number split at its decimal point); reads Indian grouping (`1,05,000` is one lakh five thousand) and years after in, since, from and the like (`in 1995` is nineteen ninety five); leaves 1100-1999 elsewhere, 2010-2099 after such a word, malformed groupings (`1,0,5000`) and its mojibake (`PrimÕs`) to rejection.
+  - akshar v3, which started training the same evening before these repairs were tested, keeps the old targets. v4 streams the `labels-fixed` targets.
+- **Why:**
+  - Vaani lost 106,114 of 424,964 references (25%) to markup the stripper could not parse; 9 of 10 sampled rejections were complete transcripts. The repaired converter accepts 402,038: 83,191 recovered, 3 lost, 15,952 changed (mostly `color` to colour, and misspelt glosses).
+  - IndicVoices kept English words in Devanagari beside converted ones (`फ्री laptop स्कीम`); the folded lookup and the number words change 12,878 of 411,256 targets.
+  - NPTEL's accepted targets held about 300 speaker labels, 292 maths slashes, 56 misread Indian groupings, 869 numbers that are years, and numbers split across segments. The repairs cost it 4% of its lines (nptel_en_b: 364,029 to 349,505, of which 5,626 are split numbers) and change 810.
+  - Rural Women: 127 misspelt gloss tokens, `लाख` and `पनीर` in Latin, 17 brackets replacing the wrong word, `नो` for `नौ`. It now accepts 27,570 of 28,740 (33 recovered, 1 lost, 210 changed). Common Voice English recovers 77 sentences with accented names. Kathbath is unchanged.
+- **Consequences:**
+  - The eleven validation and fixed-data `labels-mix` files are untouched, so validation loss and the compile shapes stay comparable with v2 and v3.
+  - `tests/test_convert.py` holds the audit's examples; `docs/research/` is unchanged (no new source).
+  - Deferred, as style choices to test on dev first: the 750-word loanword list from the audit, `सर`/`बस`, foreign place names, ok/okay and etc/etcetera, plural glosses (`लाइटें {light}`), transcribers' matra slips, Kathbath's abbreviations (`डॉ`), and the 17 Rural Women brackets after the wrong word, which still replace it.
+- **Revisit if:** v4 does worse than v3 on a dev set whose source was re-converted, or the recovered Vaani lines prove to carry wrong words.
+
 ## Superseded from the earlier ChatGPT plan
 
 - The project name BharatSTT is now **akshar**.
