@@ -35,9 +35,10 @@ from ..eval.paths import DATA_ROOT
 
 MAX_SECONDS = 30.0
 REFERENCE_FIRST = {"indicvoices_hi", "kathbath_full", "kathbath_hi", "rural_women_full", "rural_women_hi", "vaani_hi",
-                   "fleurs_hi_train", "librispeech_100", "librispeech_360", "nptel_en"}
+                   "fleurs_hi_train", "librispeech_100", "librispeech_360", "nptel_en", "nptel_en_b",
+                   "cv_hi", "cv_en_sa"}  # Common Voice: read sentences, without digits
 # English references whose numbers are written in digits: they are spelled out as words first (D28).
-SPELL_NUMBERS = {"nptel_en"}
+SPELL_NUMBERS = {"nptel_en", "nptel_en_b"}
 # Marks for words the annotator could not make out: the reference has a hole, so it is never a target.
 UNKNOWN = {"unintelligible", "unk", "unknown", "inaudible", "unclear", "indistinct", "incomprehensible", "foreign"}
 # Sounds marked in square brackets (Vaani's [breathing], NPTEL's [laughter]). <Tags> go whatever they name.

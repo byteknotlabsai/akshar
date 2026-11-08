@@ -17,6 +17,8 @@ and the run takes --pool-share of its batches from them (see Pool). --val-only s
 source can move to the stream and keep its place in the validation loss.
 
 Writes <out>/model.safetensors, <out>/model-<recipe>.cact, <out>/state.msgpack (for --resume) and <out>/train.json.
+With --ema D it also keeps an exponential moving average of the weights from update --ema-start on, and writes it as
+<out>/model-ema.safetensors and <out>/model-ema-<recipe>.cact, so that both can be scored.
 """
 from __future__ import annotations
 
@@ -167,6 +169,8 @@ def main(argv=None) -> None:
     parser.add_argument("--pool", type=Path, help="folder that akshar.train.feed streams shard folders through")
     parser.add_argument("--pool-share", type=float, default=0.6, help="share of forward passes taken from the pool")
     parser.add_argument("--refresh", type=int, default=100, help="read the pool's list every N updates")
+    parser.add_argument("--ema", type=float, default=0.0, help="decay of a moving average of the weights; 0 = none")
+    parser.add_argument("--ema-start", type=int, default=0, help="the update from which the average is kept")
     parser.add_argument("--labels", default="shruti", help="teacher labels file: labels-<this>.jsonl")
     parser.add_argument("--student", default="models/shruti/shruti.safetensors")
     parser.add_argument("--teacher", default="models/shruti/shruti.safetensors")
@@ -247,6 +251,7 @@ def main(argv=None) -> None:
                                  every_k_schedule=args.accum)
     opt_state = optimizer.init(params)
     state_path, micro_done, log, pool_used = args.out / "state.msgpack", 0, [], {}
+    ema = None  # the moving average of the weights, once --ema-start is reached
     if args.resume and state_path.exists():
         # Restore the arrays into their templates, and take the validation log as saved: flax stores a list as a dict
         # keyed "0", "1", ..., and an empty template list would not match it.
@@ -257,6 +262,8 @@ def main(argv=None) -> None:
         saved_log = raw.get("log") or {}
         log = [saved_log[k] for k in sorted(saved_log, key=int)] if isinstance(saved_log, dict) else list(saved_log)
         pool_used = {k: float(v) for k, v in (raw.get("pool_used") or {}).items()}
+        if raw.get("ema") is not None:
+            ema = serialization.from_state_dict(params, raw["ema"])
         print(f"resumed   at update {micro_done // args.accum}", flush=True)
 
     @jax.jit
@@ -266,6 +273,7 @@ def main(argv=None) -> None:
         return optax.apply_updates(params, updates), opt_state, parts
 
     eval_losses = jax.jit(lambda p, tp, w, l, t: losses(p, tp, w, l, t)[1])
+    ema_step = jax.jit(lambda e, p: jax.tree.map(lambda a, b: args.ema * a + (1 - args.ema) * b, e, p))
     val_buckets, val_groups = plan(val, args.budget, cfg.max_tokens)
     val_batches = [(b, g[i:i + bucket.batch]) for b, (bucket, g) in enumerate(zip(val_buckets, val_groups))
                    for i in range(0, len(g) - bucket.batch + 1, bucket.batch)]
@@ -278,6 +286,8 @@ def main(argv=None) -> None:
 
     def save_state(micro):
         state = {"params": params, "opt_state": opt_state, "micro": micro, "log": log}
+        if ema is not None:
+            state["ema"] = ema
         if pool is not None and pool.used:
             state["pool_used"] = pool.used
         state_path.write_bytes(serialization.to_bytes(state))
@@ -312,6 +322,8 @@ def main(argv=None) -> None:
         if (micro + 1) % args.accum:
             continue
         step = (micro + 1) // args.accum
+        if args.ema > 0 and step >= args.ema_start:
+            ema = jax.tree.map(jnp.copy, params) if ema is None else ema_step(ema, params)
         if pool is not None and step % args.refresh == 0:
             message = pool.refresh(args.seed + micro + 1)
             if message:
@@ -331,6 +343,9 @@ def main(argv=None) -> None:
     batches.close()
     if pool is not None and pool.batches is not None:
         pool.batches.close()
+    if ema is not None:  # the average is scored beside the last weights; its validation loss is in the record
+        ema_val = validate(ema)
+        print(f"val       {ema_val} for the moving average", flush=True)
 
     # The track follows the weights' lineage, which the student's checkpoint records (akshar.model.track_b writes B).
     track = args.track or (student_ck.run.get("akshar") or {}).get("track", "A")
@@ -339,6 +354,7 @@ def main(argv=None) -> None:
         **lineage, "student": args.student, "teacher": args.teacher,
         "teacher_quant": args.teacher_quant, "sources": args.sources, "labels": args.labels, "recipe": args.recipe,
         **({"validation_only": args.val_only} if args.val_only else {}), **({"weights": weights} if weights else {}),
+        **({"ema": {"decay": args.ema, "start": args.ema_start}} if args.ema > 0 else {}),
         **({"pool": {"share": share, "folders": len(pool.used), "hours": round(sum(pool.used.values()), 1),
                      "hours_by_source": pool.by_source()}} if pool is not None else {}),
         "layers": cfg.dec_layers, "alpha": alpha, "temperature": temp, "steps": args.steps, "budget": args.budget,
@@ -346,9 +362,16 @@ def main(argv=None) -> None:
     trained = checkpoint.Checkpoint(jax.tree.map(np.asarray, params), cfg, run, step=args.steps)
     checkpoint.save(args.out / "model.safetensors", trained)
     info = export.write(trained, args.out / f"model-{args.recipe}.cact", RECIPES[args.recipe])
+    if ema is not None:
+        averaged = checkpoint.Checkpoint(jax.tree.map(np.asarray, ema), cfg,
+                                         {**run, "akshar": {**run["akshar"], "weights_are": "moving average"}},
+                                         step=args.steps)
+        checkpoint.save(args.out / "model-ema.safetensors", averaged)
+        export.write(averaged, args.out / f"model-ema-{args.recipe}.cact", RECIPES[args.recipe])
     summary = {"finished": datetime.now(timezone.utc).isoformat(timespec="seconds"), **run["akshar"],
                "data": stats, "train_clips": len(train), "val_clips": len(val), "buckets": batches.describe(),
                "log": log, "gpu_peak_bytes": (jax.devices()[0].memory_stats() or {}).get("peak_bytes_in_use"),
+               **({"ema_val": ema_val} if ema is not None else {}),
                "export": {k: v for k, v in info.items() if k != "path"}}
     (args.out / "train.json").write_text(json.dumps(summary, indent=1) + "\n", encoding="utf-8")
     print(f"wrote     {info['path']} ({info['bytes'] / 1e6:.2f} MB)", flush=True)

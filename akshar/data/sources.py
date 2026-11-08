@@ -23,6 +23,9 @@ class Source:
     ledger: str  # status in data/LICENSES.md
     id: str | tuple[str, ...] | None = None  # id column, or columns joined with '_'; None means the audio file's name
     gated: bool = False
+    # Clips whose sampling hash is below this belong to another source built from the same files, so a second
+    # slice (--fraction f) takes the clips with hash in [sample_from, f) and never repeats the first.
+    sample_from: float = 0.0
 
 
 SOURCES: dict[str, Source] = {
@@ -59,6 +62,12 @@ SOURCES: dict[str, Source] = {
                tuple(f"Indic-En/hin/train-{i:05d}-of-00009.parquet" for i in range(9)),
                audio="chunked_audio_filepath", text="text", language="hi", ledger="admit (D21)",
                id=("video_id", "start_time"), gated=True),
+        # A second slice of NPTEL's English lectures, disjoint from nptel_en's quarter (D28): build it with
+        # --fraction 0.5 for the clips whose hash is in [0.25, 0.5).
+        Source("nptel_en_b", "ai4bharat/NPTEL", "9e488c74c2285cceaf5cd1e3605e56b1a8584783",
+               tuple(f"En-Indic/train-{i:05d}-of-00028.parquet" for i in range(28)),
+               audio="chunked_audio_filepath", text="text", language="en", ledger="admit (D21)",
+               id=("video_id", "start_time"), gated=True, sample_from=0.25),
         # Shrutilipi: All India Radio news bulletins cut into clips, with the bulletin scripts (read off PDFs, not
         # verbatim) as text. Shruti's largest Hindi source. Clip ids are the file names, e.g.
         # Regional-Shimla-Hindi-0915-2021228114616_chunk_2.

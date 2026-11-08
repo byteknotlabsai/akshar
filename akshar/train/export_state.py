@@ -23,6 +23,7 @@ def main(argv=None) -> None:
     parser.add_argument("--student", type=Path, required=True, help="the checkpoint the run started from")
     parser.add_argument("--recipe", choices=sorted(RECIPES), required=True)
     parser.add_argument("--layers", type=int)
+    parser.add_argument("--ema", action="store_true", help="export the run's moving average of the weights instead")
     args = parser.parse_args(argv)
 
     import jax
@@ -35,12 +36,15 @@ def main(argv=None) -> None:
     params, cfg = rung(start.params, start.cfg, args.layers)
     params = jax.tree.map(lambda a: np.asarray(a, np.float32), params)
     raw = serialization.msgpack_restore((args.run / "state.msgpack").read_bytes())
-    restored = serialization.from_state_dict(params, raw["params"])
+    if args.ema and raw.get("ema") is None:
+        raise SystemExit(f"{args.run}/state.msgpack holds no moving average")
+    restored = serialization.from_state_dict(params, raw["ema"] if args.ema else raw["params"])
     micro = int(raw.get("micro", 0))
     run = {**start.run, "akshar": {**start.run.get("akshar", {}), "exported_from_state": str(args.run), "micro": micro}}
     ck = checkpoint.Checkpoint(jax.tree.map(np.asarray, restored), cfg, run, step=micro)
-    checkpoint.save(args.run / "model-latest.safetensors", ck)
-    info = export.write(ck, args.run / f"model-latest-{args.recipe}.cact", RECIPES[args.recipe])
+    tag = "latest-ema" if args.ema else "latest"
+    checkpoint.save(args.run / f"model-{tag}.safetensors", ck)
+    info = export.write(ck, args.run / f"model-{tag}-{args.recipe}.cact", RECIPES[args.recipe])
     print(json.dumps({"micro_steps": micro, "cact": str(info["path"]), "bytes": info["bytes"]}))
 
 
