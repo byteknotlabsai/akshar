@@ -16,9 +16,11 @@ A source may set "hi_tag_share": that share of its clips (chosen by a hash of th
 is trained under the Hindi tag with the same target, so that English spoken to a model set to Hindi stays in Latin.
 
 A source's shards are its Drive tars (as akshar.data.stage writes them: clips/<shard>/<id>.flac) that hold at least
-one labelled clip of 30 s or less whose id no `exclude` manifest lists. The next shard comes from the source furthest
-below its share of the pool's hours, and within a source from the shards fetched least often, so every shard is seen
-once before any is seen twice. A shard is unpacked into <pool>/<source>__<shard>/ beside its own manifest.jsonl and
+one labelled clip of 30 s or less whose id no `exclude` manifest lists. The next shard comes from the source whose
+hours in the pool fall shortest of its share, relative to that share (a source with nothing in the pool comes first),
+and within a source from the shards fetched least often, so every shard is seen once before any is seen twice. The
+shares also go to <pool>/shares.json, from which the run weights its draws from the pool by source (D31): a shard of
+30 h and one of 2 h then count by their sources' shares, not by their hours. A shard is unpacked into <pool>/<source>__<shard>/ beside its own manifest.jsonl and
 labels-<labels>.jsonl (unlabelled clips are deleted), then added to <pool>/pool.json.
 
 When the pool is full, its oldest shard leaves pool.json and is deleted only once the run has written an inuse.json,
@@ -182,7 +184,13 @@ class Feeder:
                 log(f"{source.name}: cannot read its manifest or labels yet ({error})")
                 continue
             source.list_tars()
+        self.write_shares()
         self.listed_at = time.time()
+
+    def write_shares(self) -> None:
+        """The sources' shares, for the run to weight its draws from the pool by source."""
+        write_json(self.pool / "shares.json", {"shares": {s.name: s.share for s in self.sources.values() if s.share > 0},
+                                               "time": time.time()})
 
     def save(self) -> None:
         write_json(self.pool / "pool.json", {"folders": self.listed, "time": time.time()})
@@ -223,8 +231,8 @@ class Feeder:
             by_source[name.split("__")[0]] = by_source.get(name.split("__")[0], 0.0) + hours
         weights = sum(s.share for s in self.sources.values() if s.share > 0 and s.ready())
         held = {*self.listed, *self.retired}
-        ranked = sorted((s for s in self.sources.values() if s.share > 0 and s.ready()),
-                        key=lambda s: by_source.get(s.name, 0.0) / max(total, 1e-9) - s.share / weights)
+        ranked = sorted((s for s in self.sources.values() if s.share > 0 and s.ready()),  # relative shortfall, D31
+                        key=lambda s: by_source.get(s.name, 0.0) / max(total, 1e-9) / (s.share / weights))
         for source in ranked:
             shard = source.next_shard(held, self.rng)
             if shard is not None:

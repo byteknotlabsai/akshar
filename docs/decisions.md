@@ -424,6 +424,18 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - Common Voice enters NOTICE and the data tables; data/LICENSES.md already carries it as `admit (D26)`.
 - **Revisit if:** v4 with the intended shares does worse on Svarah, or the `hi`-tagged English share hurts a Hindi set.
 
+## D31 (2026-11-09): The run draws from the stream by source share, not by the hours a shard happens to hold
+
+- **Decision:**
+  - `akshar.train.feed` writes its sources' shares to `<pool>/shares.json`, and `akshar.train.distill` lists each source's pool clips as many times as its share divided by its hours in the pool demands (relative to the least-weighted source, rounded, at most 16 times), so the hours drawn per source follow the shares whatever the shard sizes.
+  - The feeder picks the next shard from the source whose hours in the pool fall shortest of its share relative to that share, a source with nothing in the pool first, instead of by the absolute shortfall in hours.
+- **Why:** D30 found that NPTEL's 26 to 32 hour shards took half of v3's pool and that the absolute ranking never reached Kathbath or Common Voice Hindi, so v3 trained on about 53% English against the 38% planned. Restaging NPTEL in small shards would mean re-uploading about 1,600 h to Drive; weighting the draws fixes the mix for any shard size.
+- **Consequences:**
+  - v4 trains with the planned shares. The run's log states the repeats in use at every refresh, and the feeder's fetched.jsonl still records what came down.
+  - A source whose share is tiny for the hours it holds (a 30 h shard at 10%) is drawn from slowly, so its shards are seen partly before they leave the pool; the feeder's rotation brings them back.
+  - Tested in the suite (`tests/test_feed.py`, `tests/test_loader.py`) and in a two-step CPU run on the laptop with a two-source scratch pool.
+- **Revisit if:** v4's stream deviates from the planned shares by more than a few points (compare the log's repeats and fetched hours with the plan), or the repeats make the loader slow.
+
 ## Superseded from the earlier ChatGPT plan
 
 - The project name BharatSTT is now **akshar**.

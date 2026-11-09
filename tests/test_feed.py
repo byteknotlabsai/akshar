@@ -40,3 +40,36 @@ def test_a_share_of_english_clips_is_tagged_hindi(tmp_path):
     assert 50 < len(hindi) < 110 and all(x["teacher"] == "hello there" for x in hindi)
     source.load()  # unchanged files and share: the same clips stay tagged
     assert [json.loads(label)["language"] for _, label, _ in source.by_shard["cv-0"]] == [x["language"] for x in labels]
+
+
+def _feeder(tmp_path, shares):
+    config = {"pool": str(tmp_path / "pool"), "pool_gb": 1, "floor_gb": 0, "rclone": ["rclone"], "sources": [
+        {"name": name, "remote": f"r:{name}", "share": share, "manifest": str(tmp_path / f"{name}.jsonl"),
+         "labels": str(tmp_path / f"{name}.labels.jsonl")} for name, share in shares.items()]}
+    (tmp_path / "feed.json").write_text(json.dumps(config))
+    feeder = feed.Feeder(tmp_path / "feed.json")
+    for source in feeder.sources.values():  # one shard each, as if listed on Drive and labelled
+        source.by_shard, source.sizes = {"s0": [("{}", "{}", 3600.0)]}, {"s0": 1}
+    return feeder
+
+
+def test_pick_ranks_sources_by_relative_shortfall_with_absent_sources_first(tmp_path):
+    # Planned shares: nptel 10%, indicvoices 22%, kathbath 5%. In the pool: an nptel shard of 30 h and 20 h of
+    # indicvoices. Kathbath holds nothing, so it comes first although its shortfall in hours is the smallest (D31).
+    feeder = _feeder(tmp_path, {"nptel": 0.10, "indicvoices": 0.22, "kathbath": 0.05})
+    feeder.hours = {"nptel__a": 30.0, "indicvoices__b": 20.0}
+    assert feeder.pick()[0].name == "kathbath"
+    # With 4 h of Kathbath in (3.5% against 5%: 70% of its share), IndicVoices at 20 of 54 h (37% against 22%) and
+    # NPTEL at 30 of 54 h (56% against 10%) are both over, so Kathbath is still the shortest relative to its share.
+    feeder.hours["kathbath__c"] = 4.0
+    assert feeder.pick()[0].name == "kathbath"
+    feeder.hours["kathbath__c"] = 10.0  # 17% against 5%: now IndicVoices (37% / 22%) is the shortest
+    assert feeder.pick()[0].name == "indicvoices"
+
+
+def test_relist_writes_the_shares_for_the_run(tmp_path, monkeypatch):
+    feeder = _feeder(tmp_path, {"a": 0.7, "b": 0.3, "off": 0.0})
+    monkeypatch.setattr(feed.Source, "load", lambda self: None)
+    monkeypatch.setattr(feed.Source, "list_tars", lambda self: None)
+    feeder.relist()
+    assert json.loads((tmp_path / "pool" / "shares.json").read_text())["shares"] == {"a": 0.7, "b": 0.3}
