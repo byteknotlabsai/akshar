@@ -10,14 +10,14 @@ akshar turns speech into text on the device itself, with no internet connection.
 जैसे कि आप देख सकते हैं workspace में पाँच tabs हैं
 ```
 
-**Status (2026-11-08):** akshar v2 beats [Shruti](https://huggingface.co/udgamlabs/Shruti), the open model it is measured against: 21.32 average word error rate against Shruti's 21.78. It is ahead on four of the six test sets and level on LibriSpeech; Svarah's Indian English is still 1.22 behind. akshar-lite v2, at 20.4 MB, scores 22.28. akshar v1 is published on Hugging Face as [AksharSTT v1](https://huggingface.co/byteknotlabs/AksharSTT-V1). See [Roadmap](#roadmap) for what comes next.
+**Status (2026-11-09):** akshar v3 beats [Shruti](https://huggingface.co/udgamlabs/Shruti), the open model it is measured against, on every test set: 20.85 average word error rate against Shruti's 21.78 (20.78 with its averaged weights), with Indian-accented English (Svarah) at 21.90 against 22.45. It is the first akshar to pass the release bar below. akshar-lite v3, at 20.4 MB, scores 21.78, level with Shruti's mean. akshar v1 is published on Hugging Face as [AksharSTT v1](https://huggingface.co/byteknotlabs/AksharSTT-V1). See [Roadmap](#roadmap) for what comes next.
 
 ## Try it
 
 - **In your browser:** [akshar.byteknotlabs.com](https://akshar.byteknotlabs.com). Record a few seconds or drop in an audio file, and get the transcript with a timing for every word. Pick AksharSTT v1, akshar v0, akshar-lite v0 or Shruti, or run them all and compare. Your recording goes to our demo server to be transcribed.
 - **On your own machine:** download [AksharSTT v1](https://huggingface.co/byteknotlabs/AksharSTT-V1) from Hugging Face (`akshar-v1.cact`, 29.5 MB, Apache-2.0) and run it offline with the needle engine, as in [Quick start](#quick-start).
 
-akshar v2 and akshar-lite v2 are not published yet.
+akshar v3, akshar-lite v3 and the v2 models are not published yet.
 
 ## Results
 
@@ -25,12 +25,16 @@ Word error rate (%, lower is better) on the full test sets:
 
 | Model | File | Monsoon Hindi | FLEURS Hindi | Lahaja | MUCS Hinglish | Svarah | LibriSpeech clean | Silence | Mean |
 |---|---|---|---|---|---|---|---|---|---|
-| Shruti, 4-bit | 29.5 MB | 20.54 | 20.21 | 26.29 | 35.26 | **22.45** | **5.95** | 0 | 21.78 |
-| **akshar v2** | 29.5 MB | **20.45** | **18.42** | **25.05** | **34.30** | 23.67 | 6.03 | 0 | **21.32** |
+| Shruti, 4-bit | 29.5 MB | 20.54 | 20.21 | 26.29 | 35.26 | 22.45 | 5.95 | 0 | 21.78 |
+| **akshar v3, averaged weights** | 29.5 MB | **19.70** | **18.27** | **24.87** | **34.09** | **21.85** | **5.88** | 0 | **20.78** |
+| akshar v3, final weights | 29.5 MB | 19.82 | 18.32 | 24.88 | 34.24 | 21.90 | 5.93 | 0 | 20.85 |
+| akshar v2 | 29.5 MB | 20.45 | 18.42 | 25.05 | 34.30 | 23.67 | 6.03 | 0 | 21.32 |
 | akshar v1, dataset transcripts (AksharSTT v1) | 29.5 MB | 21.78 | 19.37 | 26.49 | 34.41 | 24.68 | 6.92 | 0 | 22.28 |
 | akshar v1 | 29.5 MB | 22.07 | 19.83 | 26.89 | 34.46 | 24.42 | 7.01 | 0 | 22.45 |
 | akshar v0 | 29.5 MB | 23.53 | 20.92 | 27.70 | 34.75 | 24.81 | 6.98 | 0 | 23.11 |
-| **akshar-lite v2** | 20.4 MB | 22.45 | 19.73 | 25.06 | 34.63 | 25.07 | 6.74 | 0 | 22.28 |
+| **akshar-lite v3** | 20.4 MB | 22.07 | 19.27 | 24.53 | 34.79 | 23.47 | 6.53 | 0 | **21.78** |
+| akshar-lite v3, from the averaged weights | 20.4 MB | 21.27 | 19.57 | 24.97 | 34.55 | 23.05 | 6.59 | 0 | 21.67 |
+| akshar-lite v2 | 20.4 MB | 22.45 | 19.73 | 25.06 | 34.63 | 25.07 | 6.74 | 0 | 22.28 |
 | akshar-lite v0 | 20.4 MB | 24.79 | 21.78 | 28.18 | 35.06 | 26.45 | 7.91 | 0 | 24.03 |
 
 - Every model was scored by our harness, `python -m akshar.eval`, on the same machine. The settings:
@@ -105,28 +109,31 @@ The text layer is still to come ([roadmap](docs/roadmap.md), Phase 5). Reasons: 
 - **Precision:** 4-bit quantisation-aware training throughout, so the 29.5 MB file is what was trained, not a compressed afterthought.
 - **Targets:** each dataset's own human transcripts, converted to the `mixed` style, wherever they are verbatim (`akshar.data.convert`, D27). Elsewhere, Shruti's transcripts. Distillation from Shruti's output distributions throughout.
 - **akshar-lite:** made from akshar with the 2-bit recipe found in [Phase 2](docs/two-bit.md).
-- **Compute:** one RTX 5080, in night windows; v2 took about 6.5 GPU-hours. Free compute only.
-- **Data on a small disk:** v2 streamed its data from Google Drive while it trained (`akshar.train.feed`), so it learned from about 3,000 hours on a server that holds about 500 (D28).
+- **Compute:** one RTX 5080, in night windows; v2 took about 6.5 GPU-hours and v3 about 9 more. Free compute only.
+- **Data on a small disk:** since v2 the data streams from Google Drive while the model trains (`akshar.train.feed`), so v3 learned from about 3,900 hours on a server that holds about 500 (D28).
+- **Indian English:** v3 added Common Voice's South Asian English and more NPTEL lectures, and trained a fifth of that English under the Hindi tag so that English stays English in the default Hindi mode (D30).
 
 ## Training data
 
-akshar v2 learned from about 3,000 hours (v1 from about 530):
+akshar v3 learned from about 3,900 hours (v2 from about 3,000, v1 from about 530):
 
 | Source | Hours | Licence |
 |---|---|---|
+| [NPTEL](https://huggingface.co/datasets/ai4bharat/NPTEL), English lectures | 1,644 | CC-BY-4.0 |
 | [IndicVoices](https://huggingface.co/datasets/ai4bharat/IndicVoices), Hindi | 779 | CC-BY-4.0 |
-| [NPTEL](https://huggingface.co/datasets/ai4bharat/NPTEL), English lectures | 824 | CC-BY-4.0 |
 | [Vaani](https://huggingface.co/datasets/ARTPARK-IISc/Vaani-transcription-part), transcribed Hindi | 460 | CC-BY-4.0 |
-| [LibriSpeech](https://www.openslr.org/12/), train-clean-100 and train-clean-360 | 314 | CC-BY-4.0 |
+| [LibriSpeech](https://www.openslr.org/12/), train-clean-100 and train-clean-360 | 344 | CC-BY-4.0 |
 | [Shrutilipi](https://huggingface.co/datasets/ai4bharat/Shrutilipi), Hindi (the part labelled so far) | 263 | CC-BY-4.0 |
-| [Kathbath](https://huggingface.co/datasets/ai4bharat/Kathbath), Hindi | 130 | CC-BY-4.0 |
+| [Common Voice](https://datacollective.mozillafoundation.org/) Scripted Speech 26.0, South Asian English | 158 | CC0 |
 | [MUCS 2021](https://www.openslr.org/104/), Hindi-English | 92 | CC-BY-SA-4.0 |
-| [Rural Women ASR v2](https://huggingface.co/datasets/ai4bharat/Rural_Women_ASR_v2), Hindi | 79 | CC-BY-4.0 |
+| [Rural Women ASR v2](https://huggingface.co/datasets/ai4bharat/Rural_Women_ASR_v2), Hindi | 78 | CC-BY-4.0 |
 | [NPTEL](https://huggingface.co/datasets/ai4bharat/NPTEL), Hindi lectures | 60 | CC-BY-4.0 |
+| [Kathbath](https://huggingface.co/datasets/ai4bharat/Kathbath), Hindi | 14 (v2: 130) | CC-BY-4.0 |
+| [Common Voice](https://datacollective.mozillafoundation.org/) 27.0, Hindi | 5 | CC0 |
 | [FLEURS](https://huggingface.co/datasets/google/fleurs), Hindi train | 3 | CC-BY-4.0 |
 | Silence and noise, generated | 2 | |
 
-Not used yet: the rest of Shrutilipi (about 1,100 h, which needs Shruti's labels), most of NPTEL's English lectures (about 2,600 h more) and Common Voice's Indian-accented English.
+Not used yet: the rest of Shrutilipi (about 1,100 h; about 500 h of it is labelled with akshar v2 and waits for v4), half of NPTEL's English lectures (about 1,700 h), and the repaired transcripts of D29. The small Hindi sources got less than planned in v3 because of the feeder's shard sizes (D30).
 
 **Rules:**
 - No dataset is used without an entry in the licence ledger, [data/LICENSES.md](data/LICENSES.md). Every source is credited in [NOTICE](NOTICE).
@@ -139,7 +146,7 @@ Not used yet: the rest of Shrutilipi (about 1,100 h, which needs Shruti's labels
 | 0 | An evaluation harness that reproduces Shruti's published scores | Done ([eval.md](docs/eval.md)) |
 | 1 | Train Whistle's weights and export 4-bit and 2-bit models | Done ([toolchain.md](docs/toolchain.md)) |
 | 2 | The 2-bit recipe for akshar-lite | Done ([two-bit.md](docs/two-bit.md)) |
-| 3 | akshar from Whistle | In progress: v2 beats Shruti's mean; Svarah is 1.22 behind ([akshar.md](docs/akshar.md)) |
+| 3 | akshar from Whistle | v3 beats Shruti on every test set ([akshar.md](docs/akshar.md)); v4 trains on repaired transcripts and a balanced stream |
 | 4 | Windows, Mac and phones | Next |
 | 5 | Output styles (the text layer) | Planned |
 | 6 | Release | Planned |
@@ -148,7 +155,7 @@ Not used yet: the rest of Shrutilipi (about 1,100 h, which needs Shruti's labels
 - **akshar:** a lower mean WER than Shruti, with no test set more than 0.5 worse.
 - **akshar-lite:** within 2 points of akshar.
 
-Next: close the Svarah gap, the last set more than 0.5 behind Shruti. Details: [docs/roadmap.md](docs/roadmap.md).
+Next: v4 on the repaired transcripts (D29) with the stream shares the feeder was meant to give (D30), then the devices of Phase 4. Details: [docs/roadmap.md](docs/roadmap.md).
 
 ## Repository layout
 

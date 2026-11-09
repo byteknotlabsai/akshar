@@ -405,6 +405,25 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - Deferred, as style choices to test on dev first: the 750-word loanword list from the audit, `सर`/`बस`, foreign place names, ok/okay and etc/etcetera, plural glosses (`लाइटें {light}`), transcribers' matra slips, Kathbath's abbreviations (`डॉ`), and the 17 Rural Women brackets after the wrong word, which still replace it.
 - **Revisit if:** v4 does worse than v3 on a dev set whose source was re-converted, or the recovered Vaani lines prove to carry wrong words.
 
+## D30 (2026-11-09): akshar v3 trains on more Indian English, a fifth of it under the Hindi tag, and keeps a weight average
+
+- **Decision:**
+  - v3 starts from v2's weights and trains 110,000 more updates at a fresh learning rate of 2e-4 (cosine decay, no warm-up), with the same fixed data, validation clips and loss as v2 (4-bit QAT, datasets' transcripts where verbatim, distillation from Shruti at 0.5).
+  - The stream from Drive adds Indian-accented English: Common Voice Scripted Speech 26.0, South Asian English (CC0, Mozilla Data Collective; admitted under D26), a second disjoint quarter of NPTEL's English lectures (`nptel_en_b`), and Common Voice 27.0 Hindi. The pool share rises to 70% of batches. The planned stream shares were Common Voice English 13%, NPTEL English 10% + 12%, LibriSpeech-360 5%, IndicVoices 22%, Vaani 17%, Shrutilipi 7%, Rural Women 6%, Kathbath 5%, Common Voice Hindi 3%, so that English would be about 38% of batches and Indian-accented English about 31%.
+  - A fifth of each Indian English source's clips, chosen by a hash of the clip id, train under the `hi` tag with the same Latin target (`hi_tag_share` in `akshar.train.feed`), so that English spoken to the model in its default Hindi mode stays English.
+  - From 60% of the run the trainer keeps an exponential moving average of the weights (decay 0.9998) and exports it beside the final weights (`--ema`), so both can be scored.
+  - akshar-lite v3 is distilled from v3 with D24's recipe; a second candidate is distilled from the averaged weights.
+- **Why:**
+  - v2 beat Shruti on the mean but was 1.22 behind on Svarah, the only set more than 0.5 worse, and the owner found all models weak on their own Indian English. Shruti trained on Common Voice's Indian English, which v2 lacked.
+  - The owner's own clips were decoded under the page's default `hi` flag, where Shruti's report measured 25.8 against 21.1 WER on Svarah; the `hi`-tagged share addresses that mode.
+- **Consequences:**
+  - v3 beats Shruti on every test set (Svarah 21.90 against 22.45), the first akshar to pass the release bar: mean 20.85 against Shruti's 21.78 and v2's 21.32. Under the `hi` flag Svarah is 28.47 (v2 32.86; Shruti's own figure 25.8).
+  - The stream did not follow the planned shares. NPTEL's shards hold 26 to 32 hours each, a quarter of the 115-hour pool, and the feeder ranks sources by their absolute shortfall of hours in the pool, so the two NPTEL sources held about half the pool's hours throughout, Common Voice English a tenth, and the small Hindi sources starved: Kathbath was fetched twice, Common Voice Hindi once, Rural Women for 88 of 10,615 fetched hours. By fetched hours English was about 62% of the stream (about 53% of all batches), Hindi and Hinglish about 47%. Every Hindi set still improved.
+  - Before v4 the feeder must either stage NPTEL in shards of a few hours, rank sources by relative shortfall, or let the trainer weight pool batches by source; and the run record should state the realised shares.
+  - v3 saw about 3,670 distinct hours from the stream (IndicVoices 779, NPTEL English 771 + 820, Vaani 460, LibriSpeech-360 322, Shrutilipi 263, Common Voice English 158, Rural Women 78, Kathbath 14, Common Voice Hindi 5) plus the 230 fixed hours; about 10,600 hours passed through the pool, so streamed shards were seen about three times.
+  - Common Voice enters NOTICE and the data tables; data/LICENSES.md already carries it as `admit (D26)`.
+- **Revisit if:** v4 with the intended shares does worse on Svarah, or the `hi`-tagged English share hurts a Hindi set.
+
 ## Superseded from the earlier ChatGPT plan
 
 - The project name BharatSTT is now **akshar**.
