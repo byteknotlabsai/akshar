@@ -1,0 +1,56 @@
+# kind	devanagari	english	reason
+exclude	ऐसी		Hindi "such" (feminine); AC is एसी
+exclude	बेच		Hindi "sell" (बेचना); batch is बैच
+exclude	शौक		Hindi "hobby, liking"
+exclude	शौक़		Hindi "hobby, liking"
+exclude	लाकर		Hindi "having brought" (लाना); locker is लॉकर
+exclude	पिए		Hindi "drank" / colloquial "for"
+exclude	मारकर		Hindi "having hit" (मारना); marker is मार्कर
+exclude	सेव		Hindi sev (namkeen) and apple; too ambiguous
+override	कलकत्ता	calcutta	spoken old name
+override	बंबई	bombay	spoken old name
+override	बम्बई	bombay	spoken old name
+override	बॉम्बे	bombay	spoken old name
+override	बड़ौदा	baroda	spoken old name
+override	बडौदा	baroda	spoken old name
+override	उड़ीसा	orissa	spoken old name
+override	उडीसा	orissa	spoken old name
+override	पूना	poona	spoken old name
+override	मद्रास	madras	spoken old name
+override	त्रिवेंद्रम	trivandrum	spoken old name
+override	बैंगलोर	bangalore	as spoken
+override	बंगलौर	bangalore	as spoken
+override	बंगलुरु	bengaluru	as spoken
+override	बेंगलुरु	bengaluru	as spoken
+override	बेंगलूरु	bengaluru	as spoken
+override	पुडुचेरी	puducherry	as spoken
+override	पुदुचेरी	puducherry	as spoken
+override	गुरुग्राम	gurugram	as spoken
+override	मैसूरु	mysuru	as spoken
+override	मंगलुरु	mangaluru	as spoken
+override	मैंगलोर	mangalore	as spoken
+override	हुब्बल्ली	hubballi	as spoken
+override	बेलगावी	belagavi	as spoken
+override	कलबुर्गी	kalaburagi	as spoken
+override	बल्लारी	ballari	as spoken
+override	शिवमोग्गा	shivamogga	as spoken
+override	कोडगु	kodagu	as spoken
+override	विजयपुरा	vijayapura	as spoken
+override	टाटानगर	tatanagar	as spoken
+override	नर्मदापुरम	narmadapuram	as spoken
+override	संभाजीनगर	sambhajinagar	as spoken
+override	अहिल्यानगर	ahilyanagar	as spoken
+override	ज्योतिर्मठ	jyotirmath	as spoken
+override	उत्तरांचल	uttaranchal	as spoken
+override	प्रयाग	prayag	as spoken
+override	इलाहाबाद	allahabad	spoken old name
+override	बनारस	banaras	as spoken
+override	गोहाटी	gauhati	as spoken
+override	ब्रह्मपुर	brahmapur	as spoken
+override	बर्दवान	burdwan	as spoken
+override	पंजिम	panjim	as spoken
+override	आंबेर	amber	as spoken
+override	हिमाचल	himachal	the speaker said only this word
+override	अरुणाचल	arunachal	the speaker said only this word
+override	गंगानगर	ganganagar	the speaker said only this word
+override	केजी	kg	as spoken

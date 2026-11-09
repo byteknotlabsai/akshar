@@ -1,0 +1,526 @@
+english	devanagari	category	note
+table	टेबल|टेबिल|टेबुल|टेबलों	object	
+chair	चेयर|चेयरों	object	
+sofa	सोफा|सोफ़ा|सोफे|सोफ़े	object	
+bed	बेड|बेडों	object	
+bedsheet	बेडशीट|बेड शीट|बेडशीटें	object	
+mattress	मैट्रेस|मेट्रेस|मैट्रैस	object	
+blanket	ब्लैंकेट|ब्लैंकिट|ब्लेंकेट	object	
+cushion	कुशन|कुशनों	object	
+cupboard	कबर्ड|कपबोर्ड|कबोर्ड	object	
+almirah	अलमीरा|अल्मीरा	object	अलमारी is the Hindi word; do not map it
+wardrobe	वार्डरोब|वॉर्डरोब	object	
+shelf	शेल्फ|शेल्फ़	object	
+rack	रैक|रेक	object	
+drawer	ड्रॉअर|ड्रावर|ड्राअर	object	
+mirror	मिरर	object	
+dressing table	ड्रेसिंग टेबल|ड्रेसिंग टेबिल	object	
+dining table	डाइनिंग टेबल|डायनिंग टेबल	object	
+bench	बेंच|बैंच	object	
+stool	स्टूल	object	
+desk	डेस्क	object	
+curtain	कर्टन|कर्टेन	object	
+carpet	कारपेट|कार्पेट	object	
+mat	मैट	object	
+hanger	हैंगर|हेंगर	object	
+stand	स्टैंड|स्टेंड	object	
+showpiece	शोपीस|शो पीस	object	
+pot	पॉट	object	
+lamp	लैंप|लैम्प	object	
+wall clock	वॉल क्लॉक|वाल क्लॉक|वॉल क्लाक	object	
+alarm	अलार्म	object	
+photo frame	फोटो फ्रेम|फ़ोटो फ्रेम|फोटोफ्रेम	object	
+frame	फ्रेम	object	
+locker	लॉकर|लाकर	object	
+room	रूम|रूमों	object	
+bedroom	बेडरूम|बेड रूम	object	
+bathroom	बाथरूम|बाथ रूम	object	
+kitchen	किचन|किचेन	object	
+drawing room	ड्राइंग रूम|ड्रॉइंग रूम	object	
+hall	हॉल	object	हाल (condition) is Hindi; only हॉल is mapped
+balcony	बालकनी|बाल्कनी	object	
+floor	फ्लोर|फ़्लोर	object	AMBIGUOUS: फ्लोर is also flour
+gate	गेट	object	
+door	डोर	object	AMBIGUOUS: डोर is Hindi for string or thread
+lift	लिफ्ट|लिफ़्ट	object	
+garage	गैराज|गेराज|गराज	object	
+parking	पार्किंग	object	
+flat	फ्लैट|फ़्लैट|फ्लैटों	object	
+toilet	टॉयलेट|टॉइलेट|टायलेट	object	
+wash basin	वॉश बेसिन|वाशबेसिन|वॉशबेसिन	object	
+sink	सिंक	object	AMBIGUOUS: सिंक is also sync
+shower	शावर|शॉवर	object	
+tub	टब	object	
+tap	टैप	object	टेप is tape; नल is the usual Hindi word
+pipe	पाइप|पाईप	object	
+tank	टैंक	object	टंकी is the Hindi form; not mapped
+motor	मोटर	object	
+pump	पंप|पम्प	object	
+tile	टाइल|टाईल	object	
+tiles	टाइल्स|टाईल्स	object	
+marble	मार्बल|मारबल	object	
+cement	सीमेंट|सिमेंट	object	
+putty	पुट्टी|पुटी	object	
+paint	पेंट|पेन्ट	object	AMBIGUOUS: पेंट is also written for pant
+wallpaper	वॉलपेपर|वालपेपर	object	
+polish	पॉलिश|पालिश	object	
+brush	ब्रश|ब्रुश	object	
+bucket	बकेट	object	बाल्टी is the Hindi word; not mapped
+mug	मग	object	
+dustbin	डस्टबिन|डस्टबीन	object	
+basket	बास्केट|बास्किट	object	
+mop	मॉप|मोप	object	
+duster	डस्टर	object	
+detergent	डिटर्जेंट|डिटरजेंट	object	
+phenyl	फिनाइल|फिनायल|फ़िनाइल	object	Indian English for a floor disinfectant
+coil	कॉइल|क्वाइल|कॉयल	object	
+spray	स्प्रे	object	
+candle	कैंडल|कैंडिल	object	
+torch	टॉर्च|टार्च	object	
+light	लाइट|लाईट	object	
+bulb	बल्ब|बल्बों	object	
+tube light	ट्यूबलाइट|ट्यूब लाइट	object	
+switch	स्विच	object	
+plug	प्लग	object	
+socket	सॉकेट|साकेट	object	
+extension board	एक्सटेंशन बोर्ड|एक्सटेंसन बोर्ड	object	
+meter	मीटर	object	
+fan	फैन|फ़ैन	object	
+cooler	कूलर|कूलरों	object	
+heater	हीटर	object	
+geyser	गीजर|गीज़र	object	
+fridge	फ्रिज|फ्रीज|फ़्रिज	object	AMBIGUOUS: फ्रीज is also freeze
+inverter	इन्वर्टर|इनवर्टर	object	
+stabilizer	स्टेबलाइज़र|स्टेबलाइजर	object	
+generator	जनरेटर|जेनरेटर	object	
+washing machine	वाशिंग मशीन|वॉशिंग मशीन	object	
+machine	मशीन|मशीनें|मशीनों	object	
+iron	आयरन	object	
+press	प्रेस	object	spoken for a clothes iron; also the media
+water purifier	वाटर प्यूरीफायर|वॉटर प्यूरीफायर|वाटर प्यूरिफायर	object	
+filter	फिल्टर|फ़िल्टर	object	
+wire	वायर|वायरों	object	
+battery	बैटरी|बेटरी|बैट्री	object	
+cell	सेल	object	AMBIGUOUS: सेल is also sale
+bottle	बॉटल|बोटल	object	बोतल is the naturalised Hindi form; not mapped
+water bottle	वाटर बॉटल|वॉटर बॉटल	object	
+glass	ग्लास|ग्लासों	object	गिलास is the naturalised Hindi form; not mapped
+glasses	ग्लासेस	object	drinking glasses or spectacles
+plate	प्लेट|प्लेटें|प्लेटों	object	
+bowl	बाउल|बॉउल	object	
+spoon	स्पून	object	
+fork	फोर्क|फ़ोर्क|फॉर्क	object	
+knife	नाइफ|नाइफ़	object	
+cup	कप|कपों	object	
+dinner set	डिनर सेट	object	
+crockery	क्रॉकरी|क्राकरी	object	
+jug	जग	object	AMBIGUOUS: जग is also Hindi for world
+tray	ट्रे	object	
+jar	जार	object	AMBIGUOUS: जार also occurs in Hindi (जार जार रोना)
+container	कंटेनर|कन्टेनर	object	
+flask	फ्लास्क	object	
+lunch box	लंच बॉक्स|लंचबॉक्स|लंच बाक्स	object	
+tiffin	टिफिन|टिफ़िन	object	
+gas	गैस	object	
+cylinder	सिलेंडर|सिलिंडर|सलेंडर	object	
+stove	स्टोव	object	
+induction	इंडक्शन	object	
+lighter	लाइटर|लाईटर	object	
+match box	मैचबॉक्स|मैच बॉक्स	object	माचिस is the Hindi word; not mapped
+cooker	कुकर	object	
+pressure cooker	प्रेशर कुकर|प्रैशर कुकर	object	
+mixer	मिक्सर	object	
+mixie	मिक्सी	object	Indian English for a mixer grinder
+grinder	ग्राइंडर	object	
+juicer	जूसर	object	
+oven	ओवन	object	
+microwave	माइक्रोवेव	object	
+toaster	टोस्टर	object	
+chimney	चिमनी	object	also an established Hindi word
+pan	पैन	object	also PAN card
+non stick	नॉन स्टिक|नॉनस्टिक|नान स्टिक	object	
+aluminium	एल्युमिनियम|एल्यूमीनियम|अल्युमिनियम	object	
+steel	स्टील	object	
+plastic	प्लास्टिक	object	
+dish	डिश	object	
+towel	टॉवल|टावल|टॉवेल	object	तौलिया is the Hindi word; not mapped
+napkin	नैपकिन|नेपकिन	object	
+tissue	टिशू|टिश्यू|टीशू	object	
+soap	सोप	object	साबुन is the Hindi word; not mapped
+shampoo	शैम्पू|शैंपू|शेम्पू|शैम्पु	object	
+conditioner	कंडीशनर|कंडिशनर	object	
+cream	क्रीम	object	
+face wash	फेस वॉश|फेसवॉश|फेस वाश|फ़ेसवॉश	object	
+hand wash	हैंड वॉश|हैंडवॉश|हैंड वाश	object	
+lotion	लोशन	object	
+moisturizer	मॉइस्चराइज़र|मॉइस्चराइजर	object	
+sunscreen	सनस्क्रीन	object	
+powder	पाउडर|पॉउडर	object	
+perfume	परफ्यूम|परफ़्यूम|परफ्युम	object	
+deodorant	डियोडरेंट|डिओडरेंट	object	
+deo	डियो|डिओ	object	
+scent	सेंट	object	AMBIGUOUS: सेंट is also cent and saint
+sanitizer	सैनिटाइज़र|सैनिटाइजर|सेनेटाइजर|सेनिटाइजर	object	
+mask	मास्क	object	
+gloves	ग्लव्स|ग्लोव्स	object	
+toothbrush	टूथब्रश|टूथ ब्रश	object	
+toothpaste	टूथपेस्ट|टूथ पेस्ट	object	
+paste	पेस्ट	object	
+razor	रेज़र|रेजर	object	
+blade	ब्लेड	object	
+trimmer	ट्रिमर	object	
+hair dryer	हेयर ड्रायर|हेयर ड्राइयर	object	
+gel	जेल	object	AMBIGUOUS: जेल is also jail
+nail cutter	नेल कटर|नेलकटर	object	
+nail polish	नेल पॉलिश|नेलपॉलिश|नेल पालिश	object	
+nail paint	नेल पेंट|नेलपेंट	object	
+lipstick	लिपस्टिक	object	
+makeup	मेकअप|मेक अप	object	
+cotton	कॉटन|कोटन	object	
+sanitary pad	सैनिटरी पैड|सेनेटरी पैड	object	
+pad	पैड	object	
+bag	बैग|बेग|बैगों	object	
+handbag	हैंडबैग|हैंड बैग	object	
+suitcase	सूटकेस|सूट केस	object	
+pouch	पाउच	object	
+purse	पर्स	object	
+wallet	वॉलेट|वालेट	object	
+belt	बेल्ट	object	
+watch	वॉच|वाच	object	
+ring	रिंग	object	
+chain	चेन|चैन	object	AMBIGUOUS: चैन is also Hindi for peace or relief
+locket	लॉकेट|लाकेट	object	
+necklace	नेकलेस|नैकलेस	object	
+bracelet	ब्रेसलेट	object	
+earrings	ईयररिंग्स|इयररिंग्स|ईयररिंग	object	
+jewellery	ज्वेलरी|ज्वैलरी	object	
+goggles	गॉगल्स|गोगल्स|गॉगल	object	
+specs	स्पेक्स|स्पैक्स	object	
+sunglasses	सनग्लासेस|सन ग्लासेस	object	
+lens	लेंस|लैंस	object	
+raincoat	रेनकोट|रेन कोट	object	
+keychain	कीचेन|की चेन	object	
+key	की	object	AMBIGUOUS: की is the Hindi postposition (of); never map without context
+lock	लॉक|लाक	object	लोक (people, world) is Hindi; not mapped
+id card	आईडी कार्ड|आई डी कार्ड	object	
+card	कार्ड|कार्डों	object	
+visiting card	विजिटिंग कार्ड	object	
+greeting card	ग्रीटिंग कार्ड	object	
+ticket	टिकट|टिकिट|टिकटें|टिकटों	object	
+coupon	कूपन	object	
+coin	कॉइन|कोइन|क्वाइन	object	
+note	नोट|नोटों	object	currency note or written note
+photo	फोटो|फ़ोटो|फोटू	object	
+sticker	स्टिकर|स्टीकर	object	
+tattoo	टैटू|टेटू	object	
+clip	क्लिप	object	
+rubber band	रबर बैंड|रबड़ बैंड	object	
+safety pin	सेफ्टी पिन|सेफ़्टी पिन	object	
+button	बटन|बटनों	object	
+zip	ज़िप|जिप	object	
+pocket	पॉकेट|पाकेट	object	
+collar	कॉलर|कालर	object	
+cigarette	सिगरेट|सिग्रेट|सिगरेटें	object	
+parcel	पार्सल	object	
+courier	कूरियर|कुरियर	object	
+gift	गिफ्ट|गिफ़्ट	object	
+bouquet	बुके	object	
+ribbon	रिबन|रिब्बन	object	
+balloon	बैलून|बलून	object	
+teddy bear	टेडी बियर|टेडीबियर	object	
+toy	टॉय	object	
+doll	डॉल	object	
+shoes	शूज़|शूज	object	
+sneakers	स्नीकर्स|स्नीकर	object	
+boot	बूट|बूटों	object	
+heels	हील्स|हील	object	
+sandal	सैंडल|सैंडिल|सेंडल|सैंडलें	object	
+slipper	स्लिपर|स्लीपर	object	AMBIGUOUS: स्लीपर is also sleeper (train class)
+socks	सॉक्स|साक्स|सोक्स	object	
+shirt	शर्ट|शर्टें|शर्टों	object	
+t shirt	टीशर्ट|टी शर्ट|टी-शर्ट	object	
+pant	पैंट|पैन्ट|पैंटें	object	also spelled पेंट, which is listed under paint
+pants	पैंट्स	object	
+jeans	जींस|जीन्स	object	
+shorts	शॉर्ट्स|शार्ट्स	object	
+half pant	हाफ पैंट|हाफ़ पैंट	object	
+lower	लोअर|लोवर	object	Indian English for track pants
+tracksuit	ट्रैकसूट|ट्रैक सूट	object	
+leggings	लेगिंग्स|लेगिंग|लैगिंग	object	
+jacket	जैकेट|जाकेट|जैकिट	object	
+sweater	स्वेटर|स्वेटरों	object	
+coat	कोट	object	
+blazer	ब्लेज़र|ब्लेजर	object	
+inner	इनर	object	Indian English for innerwear or a vest
+vest	वेस्ट	object	AMBIGUOUS: वेस्ट is also west and waste
+underwear	अंडरवियर|अंडरवेयर	object	
+bra	ब्रा	object	
+cap	कैप	object	
+hat	हैट	object	
+tie	टाई	object	
+suit	सूट	object	
+nighty	नाइटी	object	
+frock	फ्रॉक|फ्राक	object	
+skirt	स्कर्ट	object	
+top	टॉप	object	
+dress	ड्रेस|ड्रेसें	object	
+gown	गाउन	object	
+uniform	यूनिफॉर्म|यूनिफार्म|यूनिफ़ॉर्म	object	
+blouse	ब्लाउज़|ब्लाउज	object	
+muffler	मफलर|मफ़लर	object	
+scarf	स्कार्फ|स्कार्फ़	object	
+full sleeve	फुल स्लीव|फुल स्लीव्स|फ़ुल स्लीव	object	
+half sleeve	हाफ स्लीव|हाफ स्लीव्स|हाफ़ स्लीव	object	
+lace	लेस	object	AMBIGUOUS: लेस is also less
+silk	सिल्क	object	
+leather	लेदर|लैदर	object	
+jersey	जर्सी	object	
+cake	केक|केकों	object	
+black forest	ब्लैक फॉरेस्ट|ब्लैक फ़ॉरेस्ट	object	
+pastry	पेस्ट्री|पैस्ट्री	object	
+brownie	ब्राउनी	object	
+donut	डोनट	object	
+cookies	कुकीज़|कुकीज	object	
+biscuit	बिस्किट|बिस्कुट|बिस्कीट|बिस्कुटों	object	बिस्कुट is the usual spoken form
+rusk	रस्क	object	
+toast	टोस्ट	object	
+bread	ब्रेड	object	
+bun	बन	object	AMBIGUOUS: बन is also Hindi (become; forest)
+butter	बटर	object	
+cheese	चीज़|चीज	object	AMBIGUOUS: चीज़ is Hindi for thing
+jam	जैम|जेम	object	AMBIGUOUS: close to जाम (traffic jam); जेम is also gem
+jelly	जेली|जैली	object	
+chocolate	चॉकलेट|चाकलेट|चोकलेट	object	
+toffee	टॉफी|टॉफ़ी|टाफी|टॉफियां	object	
+candy	कैंडी	object	
+lollipop	लॉलीपॉप|लालीपाप|लॉलीपाप	object	
+chewing gum	च्युइंग गम|च्यूइंगम|च्युइंगम	object	
+ice cream	आइसक्रीम|आइस क्रीम|आईसक्रीम	object	
+pudding	पुडिंग	object	
+dessert	डेज़र्ट|डेजर्ट	object	AMBIGUOUS: also desert
+sweets	स्वीट्स	object	
+pizza	पिज़्ज़ा|पिज्जा|पिज़ा|पिज्ज़ा	object	
+burger	बर्गर	object	
+sandwich	सैंडविच|सेंडविच|सैन्डविच	object	
+french fries	फ्रेंच फ्राइज़|फ्रेंच फ्राइज|फ्रेंच फ्राई	object	
+fries	फ्राइज़|फ्राइज	object	
+chips	चिप्स	object	
+wafers	वेफर्स|वेफ़र्स|वेफर	object	
+popcorn	पॉपकॉर्न|पॉपकार्न|पोपकॉर्न	object	
+snacks	स्नैक्स|स्नेक्स	object	AMBIGUOUS: स्नेक्स is also snakes
+noodles	नूडल्स|नूडल	object	
+chowmein	चाउमीन|चौमीन|चाऊमीन	object	
+pasta	पास्ता	object	
+momos	मोमोज़|मोमोज|मोमो	object	
+manchurian	मंचूरियन|मंचुरियन	object	
+fried rice	फ्राइड राइस|फ्राइड राईस	object	
+spring roll	स्प्रिंग रोल	object	
+roll	रोल	object	AMBIGUOUS: रोल is also role
+cutlet	कटलेट|कटलट	object	
+patties	पैटीज़|पैटीज|पेटीज	object	
+puff	पफ	object	
+shawarma	शवरमा|शोरमा|शावरमा	object	
+salad	सलाद|सैलेड	object	सलाद is the usual spoken form
+soup	सूप	object	AMBIGUOUS: सूप is also the Hindi winnowing basket
+egg	एग	object	
+omelette	ऑमलेट|आमलेट|ओमलेट	object	
+chicken	चिकन	object	AMBIGUOUS: चिकन is also chikan embroidery
+mutton	मटन	object	
+fish	फिश|फ़िश	object	
+prawns	प्रॉन्स|प्रॉन|प्रान	object	
+curry	करी	object	AMBIGUOUS: करी is also a Hindi verb form (did)
+veg	वेज	object	
+non veg	नॉनवेज|नॉन वेज|नानवेज	object	
+fast food	फास्ट फूड|फ़ास्ट फ़ूड|फास्टफूड	object	
+junk food	जंक फूड|जंक फ़ूड	object	
+food	फूड|फ़ूड	object	
+breakfast	ब्रेकफास्ट|ब्रेकफ़ास्ट|ब्रेक फास्ट	object	
+lunch	लंच	object	
+dinner	डिनर	object	
+starter	स्टार्टर	object	
+menu	मेन्यू|मेनू	object	
+recipe	रेसिपी|रेसीपी	object	
+flavour	फ्लेवर|फ़्लेवर	object	
+vanilla	वनीला|वेनिला|वैनिला	object	
+butterscotch	बटरस्कॉच|बटर स्कॉच	object	
+strawberry	स्ट्रॉबेरी|स्ट्राबेरी	object	
+pineapple	पाइनएप्पल|पाइनापल|पाइनेपल	object	
+mango	मैंगो	object	mostly in mango shake or mango juice; आम is the Hindi word
+orange	ऑरेंज|ओरेंज|आरेंज	object	fruit or colour
+lemon	लेमन	object	
+fruit	फ्रूट	object	
+fruits	फ्रूट्स	object	
+dry fruits	ड्राई फ्रूट्स|ड्राईफ्रूट्स|ड्राई फ्रूट	object	
+vegetable	वेजिटेबल|वेजीटेबल	object	
+mushroom	मशरूम	object	
+capsicum	कैप्सिकम|केप्सिकम	object	
+baby corn	बेबी कॉर्न	object	
+sweet corn	स्वीट कॉर्न|स्वीटकॉर्न	object	
+corn	कॉर्न|कार्न	object	
+cornflakes	कॉर्नफ्लेक्स|कॉर्न फ्लेक्स	object	
+oats	ओट्स	object	
+soya	सोया	object	AMBIGUOUS: सोया is also Hindi (slept)
+soya chunks	सोया चंक्स	object	
+tomato	टोमैटो|टोमेटो|टमाटो	object	टमाटर is the Hindi word; टोमैटो mostly in tomato sauce or soup
+chilli	चिली|चिल्ली	object	AMBIGUOUS: चिली is also Chile
+chilli potato	चिली पोटैटो|चिल्ली पोटेटो|चिली पोटेटो	object	
+sauce	सॉस|सोस	object	सास (mother in law) is Hindi; not mapped
+ketchup	केचप|कैचप	object	
+mayonnaise	मेयोनीज़|मेयोनेज़|मेयोनीज|मेयोनेज	object	
+mayo	मेयो	object	
+vinegar	विनेगर	object	
+syrup	सिरप	object	
+refined	रिफाइंड|रिफ़ाइंड	object	said for refined cooking oil
+oil	ऑयल|आयल|ऑइल	object	तेल is the Hindi word
+baking powder	बेकिंग पाउडर	object	
+baking soda	बेकिंग सोडा	object	
+juice	जूस|ज्यूस	object	
+coffee	कॉफी|कॉफ़ी|कोफी	object	काफी (quite, enough) is Hindi; not mapped
+cold coffee	कोल्ड कॉफी|कोल्ड कॉफ़ी	object	
+green tea	ग्रीन टी	object	
+cold drink	कोल्ड ड्रिंक|कोल्डड्रिंक|कोल्ड ड्रिंक्स	object	
+soft drink	सॉफ्ट ड्रिंक|सॉफ़्ट ड्रिंक|साफ्ट ड्रिंक	object	
+drink	ड्रिंक|ड्रिंक्स	object	
+soda	सोडा	object	
+shake	शेक	object	
+milkshake	मिल्कशेक|मिल्क शेक	object	
+cocktail	कॉकटेल|कोकटेल	object	
+mineral water	मिनरल वाटर|मिनरल वॉटर	object	
+water	वाटर|वॉटर	object	mostly in compounds; पानी is the Hindi word
+beer	बियर|बीयर	object	AMBIGUOUS: बियर is also bear (teddy bear)
+wine	वाइन|वाईन	object	
+whisky	व्हिस्की|विस्की	object	
+rum	रम	object	AMBIGUOUS: रम is also Hindi (रम जाना, to be absorbed)
+vodka	वोडका	object	
+car	कार|कारें|कारों	object	
+bike	बाइक|बाईक	object	
+motorcycle	मोटरसाइकिल|मोटर साइकिल|मोटरसाइकल	object	
+scooter	स्कूटर	object	
+scooty	स्कूटी	object	
+cycle	साइकिल|सायकल|साईकिल|साइकल	object	
+auto	ऑटो|आटो	object	
+bus	बस|बसें|बसों	object	AMBIGUOUS: बस is also Hindi for just or enough
+truck	ट्रक|ट्रकों	object	
+tractor	ट्रैक्टर|ट्रेक्टर	object	
+jeep	जीप	object	
+van	वैन	object	
+tempo	टेम्पो|टेंपो	object	
+taxi	टैक्सी	object	
+cab	कैब	object	
+train	ट्रेन|ट्रेनें|ट्रेनों	object	
+metro	मेट्रो	object	
+flight	फ्लाइट|फ़्लाइट	object	
+plane	प्लेन	object	AMBIGUOUS: प्लेन is also plain
+boat	बोट	object	AMBIGUOUS: बोट is also a dialect spelling of vote (वोट)
+ambulance	एम्बुलेंस|एंबुलेंस	object	
+trolley	ट्रॉली|ट्राली	object	
+tyre	टायर|टायरों	object	
+tube	ट्यूब	object	
+puncture	पंक्चर|पंचर	object	
+brake	ब्रेक	object	AMBIGUOUS: ब्रेक is also break
+gear	गियर|गेयर	object	
+clutch	क्लच	object	
+horn	हॉर्न|हार्न	object	
+seat	सीट|सीटें|सीटों	object	
+helmet	हेलमेट|हैलमेट	object	
+petrol	पेट्रोल	object	
+diesel	डीज़ल|डीजल	object	
+engine	इंजन|इंजिन	object	
+number plate	नंबर प्लेट|नम्बर प्लेट	object	
+headlight	हेडलाइट|हेड लाइट	object	
+indicator	इंडिकेटर	object	
+wiper	वाइपर	object	
+bumper	बंपर|बम्पर	object	
+bonnet	बोनट|बॉनट	object	
+dicky	डिक्की|डिग्गी	object	Indian English for a car boot
+steering	स्टीयरिंग|स्टेयरिंग	object	
+silencer	साइलेंसर|सायलेंसर	object	
+pedal	पैडल|पेडल	object	
+handle	हैंडल|हेंडल	object	
+wheel	व्हील	object	
+stepney	स्टेपनी|स्टैपनी	object	Indian English for a spare wheel
+spare parts	स्पेयर पार्ट्स|स्पेयर पार्ट	object	
+kick	किक	object	
+mileage	माइलेज|माईलेज	object	
+carrier	कैरियर	object	AMBIGUOUS: कैरियर is also career
+mudguard	मडगार्ड	object	
+shocker	शॉकर	object	Indian English for a shock absorber
+cover	कवर|कवरों	object	
+pen	पेन|पेनों	object	AMBIGUOUS: पेन is also said for pain
+pencil	पेंसिल|पेन्सिल|पैंसिल	object	
+eraser	इरेज़र|इरेजर	object	
+rubber	रबर|रबड़	object	also said for an eraser
+sharpener	शार्पनर	object	
+scale	स्केल	object	said for a ruler
+paper	पेपर|पेपरों	object	
+copy	कॉपी|कापी|कॉपियां|कॉपियों	object	said for a notebook
+notebook	नोटबुक|नोट बुक	object	
+register	रजिस्टर|रजिस्टरों	object	
+file	फाइल|फ़ाइल|फाइलें|फाइलों	object	
+folder	फोल्डर|फ़ोल्डर	object	
+stapler	स्टेपलर|स्टैपलर	object	
+pin	पिन	object	
+tape	टेप	object	
+cello tape	सेलोटेप|सेलो टेप	object	
+marker	मार्कर	object	
+sketch pen	स्केच पेन	object	
+crayons	क्रेयॉन्स|क्रेयान्स|क्रेयॉन	object	
+chart	चार्ट	object	
+board	बोर्ड	object	
+blackboard	ब्लैकबोर्ड|ब्लैक बोर्ड	object	
+whiteboard	व्हाइटबोर्ड|वाइटबोर्ड	object	
+chalk	चॉक|चाक	object	AMBIGUOUS: चाक is also Hindi for a potter's wheel
+calendar	कैलेंडर|कैलेण्डर|कलेंडर	object	
+diary	डायरी|डायरियां	object	
+stamp	स्टैंप|स्टाम्प|स्टांप	object	
+glue	ग्लू	object	
+compass	कंपास|कम्पास	object	
+geometry box	ज्योमेट्री बॉक्स|जियोमेट्री बॉक्स	object	
+book	बुक	object	किताब is the Hindi word
+magazine	मैगज़ीन|मैगजीन	object	
+newspaper	न्यूज़पेपर|न्यूजपेपर	object	
+printout	प्रिंटआउट|प्रिंट आउट	object	
+xerox	ज़ेरॉक्स|जेरॉक्स|ज़ीरॉक्स|जीरोक्स	object	brand used as the generic word for a photocopy
+photocopy	फोटोकॉपी|फ़ोटोकॉपी	object	
+form	फॉर्म|फार्म	object	AMBIGUOUS: फार्म is also farm
+bill	बिल	object	AMBIGUOUS: बिल is also Hindi for burrow
+poster	पोस्टर	object	
+banner	बैनर	object	
+flex	फ्लेक्स	object	Indian English for a printed vinyl banner
+label	लेबल	object	
+tag	टैग	object	
+screw	स्क्रू	object	
+screwdriver	स्क्रूड्राइवर|स्क्रू ड्राइवर	object	
+spanner	स्पैनर|स्पेनर	object	
+plier	प्लायर|प्लायर्स	object	
+drill	ड्रिल	object	
+cutter	कटर	object	
+nut	नट	object	AMBIGUOUS: नट is also Hindi for acrobat
+bolt	बोल्ट	object	
+jack	जैक|जेक	object	
+tool kit	टूल किट|टूलकिट	object	
+grease	ग्रीस	object	AMBIGUOUS: ग्रीस is also Greece
+magnet	मैग्नेट|मैगनेट	object	
+inch tape	इंच टेप|इंचटेप	object	Indian English for a measuring tape
+box	बॉक्स|बाक्स	object	
+carton	कार्टन	object	
+packet	पैकेट|पेकेट|पैकेटों	object	
+polythene	पॉलीथीन|पॉलिथीन|पोलीथीन	object	
+thermocol	थर्मोकोल|थर्माकोल	object	Indian English for polystyrene foam
+sheet	शीट	object	
+tin	टिन	object	
+cardboard	कार्डबोर्ड	object	
+ball	बॉल	object	बाल (hair) is Hindi; only बॉल is mapped
+bat	बैट	object	
+racket	रैकेट|रैकिट	object	
+shuttlecock	शटलकॉक|शटल कॉक	object	
+net	नेट	object	also said for the internet
+wicket	विकेट	object	
+stumps	स्टंप्स|स्टम्प्स|स्टंप	object	
+football	फुटबॉल|फ़ुटबॉल|फुटबाल	object	
+carrom	कैरम	object	
+ludo	लूडो	object	
+puzzle	पज़ल|पजल	object	
+medal	मेडल|मैडल	object	
+trophy	ट्रॉफी|ट्रॉफ़ी|ट्राफी	object	
+tent	टेंट|टैंट	object	

@@ -1,0 +1,551 @@
+english	devanagari	category	note
+andhra pradesh	आंध्र प्रदेश|आंध्रप्रदेश|आन्ध्र प्रदेश	place_india	
+arunachal pradesh	अरुणाचल प्रदेश|अरुणाचल	place_india	
+assam	असम|आसाम	place_india	
+bihar	बिहार	place_india	
+chhattisgarh	छत्तीसगढ़|छत्तीसगढ|छतीसगढ़	place_india	
+goa	गोवा	place_india	
+gujarat	गुजरात	place_india	
+haryana	हरियाणा|हरियाना	place_india	
+himachal pradesh	हिमाचल प्रदेश|हिमाचल	place_india	
+jharkhand	झारखंड|झारखण्ड	place_india	
+karnataka	कर्नाटक|कर्णाटक	place_india	
+kerala	केरल|केरला	place_india	
+madhya pradesh	मध्य प्रदेश|मध्यप्रदेश	place_india	
+maharashtra	महाराष्ट्र|महाराष्ट्रा	place_india	
+manipur	मणिपुर|मनीपुर	place_india	
+meghalaya	मेघालय	place_india	
+mizoram	मिजोरम|मिज़ोरम	place_india	
+nagaland	नागालैंड|नगालैंड	place_india	
+odisha	ओडिशा|उड़ीसा|ओड़िशा|उडीसा	place_india	ALSO: orissa (old name)
+punjab	पंजाब	place_india	
+rajasthan	राजस्थान	place_india	
+sikkim	सिक्किम	place_india	
+tamil nadu	तमिलनाडु|तमिल नाडु|तमिलनाड	place_india	
+telangana	तेलंगाना|तेलंगाणा	place_india	
+tripura	त्रिपुरा	place_india	
+uttar pradesh	उत्तर प्रदेश|उत्तरप्रदेश	place_india	
+uttarakhand	उत्तराखंड|उत्तराखण्ड|उत्तरांचल	place_india	ALSO: uttaranchal (old name)
+west bengal	पश्चिम बंगाल|वेस्ट बंगाल	place_india	
+bengal	बंगाल	place_india	
+andaman	अंडमान|अण्डमान	place_india	UT is andaman and nicobar islands
+nicobar	निकोबार	place_india	
+chandigarh	चंडीगढ़|चण्डीगढ़|चंडीगढ	place_india	
+dadra	दादरा	place_india	AMBIGUOUS: also dadra, a light-classical song form and taal; UT is dadra and nagar haveli and daman and diu
+nagar haveli	नगर हवेली	place_india	
+daman	दमन	place_india	AMBIGUOUS: also the Hindi word for repression (दमन)
+diu	दीव|दीयू|दियू	place_india	
+delhi	दिल्ली|देहली|डेल्ही|दिल्लि	place_india	
+new delhi	नई दिल्ली|न्यू दिल्ली|नयी दिल्ली	place_india	
+jammu	जम्मू	place_india	
+kashmir	कश्मीर|काश्मीर	place_india	
+ladakh	लद्दाख|लदाख	place_india	
+lakshadweep	लक्षद्वीप	place_india	
+pondicherry	पांडिचेरी|पुडुचेरी|पुदुचेरी|पॉन्डिचेरी	place_india	ALSO: puducherry (official name)
+amaravati	अमरावती	place_india	AMBIGUOUS: same Devanagari as amravati (maharashtra city); also Indra's heavenly city
+itanagar	ईटानगर|इटानगर	place_india	
+dispur	दिसपुर	place_india	
+patna	पटना	place_india	
+raipur	रायपुर	place_india	
+panaji	पणजी|पंजिम|पणजि	place_india	ALSO: panjim
+gandhinagar	गांधीनगर|गाँधीनगर|गांधी नगर	place_india	
+shimla	शिमला	place_india	
+ranchi	रांची|राँची	place_india	
+bangalore	बैंगलोर|बेंगलुरु|बंगलौर|बेंगलूरु|बंगलुरु	place_india	ALSO: bengaluru
+thiruvananthapuram	तिरुवनंतपुरम|त्रिवेंद्रम|तिरुअनंतपुरम	place_india	ALSO: trivandrum
+bhopal	भोपाल	place_india	
+mumbai	मुंबई|मुम्बई|बंबई|बम्बई|बॉम्बे	place_india	ALSO: bombay (old name)
+imphal	इंफाल|इम्फाल	place_india	
+shillong	शिलांग|शिलॉन्ग	place_india	
+aizawl	आइजोल|आइज़ोल|एजल	place_india	
+kohima	कोहिमा	place_india	
+bhubaneswar	भुवनेश्वर|भुबनेश्वर	place_india	
+jaipur	जयपुर	place_india	
+gangtok	गंगटोक|गैंगटोक	place_india	
+chennai	चेन्नई|चेन्नै|मद्रास	place_india	ALSO: madras (old name)
+hyderabad	हैदराबाद|हैद्राबाद	place_india	
+agartala	अगरतला	place_india	
+lucknow	लखनऊ|लखनउ|लखनौ	place_india	
+dehradun	देहरादून|देहरादुन	place_india	
+gairsain	गैरसैंण|गैरसैण	place_india	uttarakhand summer capital
+kolkata	कोलकाता|कलकत्ता|कोलकत्ता	place_india	ALSO: calcutta (old name)
+port blair	पोर्ट ब्लेयर|श्री विजयपुरम	place_india	ALSO: sri vijaya puram (renamed 2024)
+kavaratti	कवरत्ती|कवारत्ती	place_india	
+silvassa	सिलवासा	place_india	
+srinagar	श्रीनगर	place_india	
+leh	लेह	place_india	
+dharamshala	धर्मशाला|धरमशाला	place_india	AMBIGUOUS: also the Hindi word for a pilgrims' rest house
+up	यूपी|यू पी	place_india	uttar pradesh
+mp	एमपी|एम पी	place_india	AMBIGUOUS: also MP, member of parliament
+hp	एचपी	place_india	AMBIGUOUS: also the hp brand and horsepower
+jk	जेके|जे के	place_india	AMBIGUOUS: also jk brands (jk tyre, jk cement)
+ncr	एनसीआर|एन सी आर	place_india	
+kanpur	कानपुर	place_india	
+agra	आगरा	place_india	
+meerut	मेरठ	place_india	
+varanasi	वाराणसी|बनारस|वाराणासी	place_india	ALSO: banaras
+kashi	काशी	place_india	ALSO: varanasi
+prayagraj	प्रयागराज|इलाहाबाद|प्रयाग	place_india	ALSO: allahabad (old name)
+ghaziabad	गाजियाबाद|ग़ाज़ियाबाद|गाज़ियाबाद	place_india	
+noida	नोएडा|नोयडा|नोइडा	place_india	
+greater noida	ग्रेटर नोएडा|ग्रेटर नोयडा	place_india	
+bareilly	बरेली	place_india	
+aligarh	अलीगढ़|अलीगढ	place_india	
+moradabad	मुरादाबाद	place_india	
+saharanpur	सहारनपुर	place_india	
+gorakhpur	गोरखपुर	place_india	
+firozabad	फिरोजाबाद|फ़िरोज़ाबाद	place_india	
+jhansi	झांसी|झाँसी	place_india	
+muzaffarnagar	मुजफ्फरनगर|मुज़फ़्फ़रनगर|मुजफ्फर नगर	place_india	
+mathura	मथुरा	place_india	
+vrindavan	वृंदावन|वृन्दावन|बृंदावन	place_india	
+ayodhya	अयोध्या	place_india	
+faizabad	फैजाबाद|फ़ैज़ाबाद	place_india	
+shahjahanpur	शाहजहांपुर|शाहजहाँपुर	place_india	
+rampur	रामपुर	place_india	
+hapur	हापुड़|हापुर	place_india	
+etawah	इटावा	place_india	
+budaun	बदायूं|बदायूँ	place_india	
+unnao	उन्नाव	place_india	
+sitapur	सीतापुर	place_india	
+lakhimpur	लखीमपुर|लखीमपुर खीरी	place_india	
+bahraich	बहराइच	place_india	
+ballia	बलिया	place_india	
+azamgarh	आजमगढ़|आज़मगढ़	place_india	
+jaunpur	जौनपुर	place_india	
+mirzapur	मिर्जापुर|मिर्ज़ापुर	place_india	
+sultanpur	सुल्तानपुर|सुलतानपुर	place_india	
+rae bareli	रायबरेली|राय बरेली	place_india	
+amethi	अमेठी	place_india	
+gonda	गोंडा	place_india	
+basti	बस्ती	place_india	AMBIGUOUS: also the Hindi word for a settlement or slum
+deoria	देवरिया	place_india	
+kushinagar	कुशीनगर	place_india	
+ghazipur	गाजीपुर|ग़ाज़ीपुर	place_india	
+mau	मऊ	place_india	
+banda	बांदा|बाँदा	place_india	AMBIGUOUS: close to बंदा (a man, a guy); check vowel length
+hamirpur	हमीरपुर	place_india	towns in UP and himachal
+bulandshahr	बुलंदशहर|बुलन्दशहर	place_india	
+bijnor	बिजनौर	place_india	
+sambhal	संभल|सम्भल	place_india	AMBIGUOUS: also the imperative संभल (steady yourself, be careful)
+pratapgarh	प्रतापगढ़	place_india	towns in UP and rajasthan
+chitrakoot	चित्रकूट	place_india	
+mughalsarai	मुगलसराय|मुग़लसराय	place_india	ALSO: pt deen dayal upadhyaya nagar (renamed)
+loni	लोनी	place_india	
+sarnath	सारनाथ	place_india	
+fatehpur sikri	फतेहपुर सीकरी|फ़तेहपुर सीकरी	place_india	
+taj mahal	ताजमहल|ताज महल	place_india	
+gaya	गया	place_india	AMBIGUOUS: also the very common verb form गया (went)
+bodh gaya	बोधगया|बोध गया	place_india	
+bhagalpur	भागलपुर	place_india	
+muzaffarpur	मुजफ्फरपुर|मुज़फ़्फ़रपुर	place_india	
+darbhanga	दरभंगा	place_india	
+purnia	पूर्णिया|पुर्णिया	place_india	
+arrah	आरा	place_india	AMBIGUOUS: also the Hindi word for a saw (आरा)
+begusarai	बेगूसराय|बेगुसराय	place_india	
+katihar	कटिहार	place_india	
+munger	मुंगेर	place_india	
+chhapra	छपरा	place_india	
+siwan	सीवान|सिवान	place_india	
+buxar	बक्सर	place_india	
+sasaram	सासाराम	place_india	
+hajipur	हाजीपुर	place_india	
+bihar sharif	बिहार शरीफ|बिहारशरीफ	place_india	
+motihari	मोतिहारी	place_india	
+nalanda	नालंदा|नालन्दा	place_india	
+rajgir	राजगीर	place_india	
+samastipur	समस्तीपुर	place_india	
+madhubani	मधुबनी	place_india	also the painting style
+vaishali	वैशाली	place_india	AMBIGUOUS: also a common woman's name; also a ghaziabad neighbourhood
+jamshedpur	जमशेदपुर|टाटानगर	place_india	ALSO: tatanagar
+dhanbad	धनबाद	place_india	
+bokaro	बोकारो	place_india	
+deoghar	देवघर	place_india	
+hazaribagh	हजारीबाग|हज़ारीबाग़	place_india	
+giridih	गिरिडीह	place_india	
+cuttack	कटक	place_india	
+rourkela	राउरकेला	place_india	
+puri	पुरी	place_india	AMBIGUOUS: often confused with पूरी (whole; the fried bread); also a surname
+sambalpur	संबलपुर|सम्बलपुर	place_india	
+berhampur	बरहमपुर|ब्रह्मपुर	place_india	ALSO: brahmapur
+balasore	बालासोर|बालेश्वर	place_india	
+konark	कोणार्क|कोनार्क	place_india	
+howrah	हावड़ा|हावडा	place_india	
+durgapur	दुर्गापुर	place_india	
+asansol	आसनसोल	place_india	
+siliguri	सिलीगुड़ी|सिलिगुड़ी	place_india	
+darjeeling	दार्जिलिंग|दार्जीलिंग	place_india	
+kharagpur	खड़गपुर	place_india	
+bardhaman	बर्धमान|बर्दवान|वर्धमान	place_india	ALSO: burdwan; AMBIGUOUS: वर्धमान is also Mahavira's name and means growing
+malda	मालदा	place_india	
+shantiniketan	शांतिनिकेतन|शान्तिनिकेतन	place_india	
+guwahati	गुवाहाटी|गोहाटी	place_india	ALSO: gauhati
+dibrugarh	डिब्रूगढ़|डिब्रुगढ़	place_india	
+silchar	सिलचर	place_india	
+jorhat	जोरहाट	place_india	
+tezpur	तेजपुर|तेज़पुर	place_india	
+kaziranga	काजीरंगा|काज़ीरंगा	place_india	
+dimapur	दीमापुर|दिमापुर	place_india	
+tawang	तवांग	place_india	
+cherrapunji	चेरापूंजी|चेरापुंजी	place_india	ALSO: sohra
+indore	इंदौर|इन्दौर	place_india	
+gwalior	ग्वालियर	place_india	
+jabalpur	जबलपुर	place_india	
+ujjain	उज्जैन	place_india	
+sagar	सागर	place_india	AMBIGUOUS: also the Hindi word for sea; also a common given name
+ratlam	रतलाम	place_india	
+satna	सतना	place_india	
+rewa	रीवा	place_india	
+dewas	देवास	place_india	
+katni	कटनी	place_india	
+singrauli	सिंगरौली	place_india	
+burhanpur	बुरहानपुर	place_india	
+khandwa	खंडवा	place_india	
+chhindwara	छिंदवाड़ा|छिन्दवाड़ा	place_india	
+hoshangabad	होशंगाबाद|नर्मदापुरम	place_india	ALSO: narmadapuram (renamed)
+vidisha	विदिशा	place_india	
+mandsaur	मंदसौर|मन्दसौर	place_india	
+shivpuri	शिवपुरी	place_india	
+guna	गुना	place_india	AMBIGUOUS: also गुना meaning times or -fold (दो गुना)
+chhatarpur	छतरपुर	place_india	
+khajuraho	खजुराहो	place_india	
+orchha	ओरछा	place_india	
+pachmarhi	पचमढ़ी|पंचमढ़ी	place_india	
+mandu	मांडू|माण्डू	place_india	
+omkareshwar	ओंकारेश्वर|ओमकारेश्वर	place_india	
+sanchi	सांची|साँची	place_india	
+harda	हरदा	place_india	
+betul	बैतूल	place_india	
+morena	मुरैना	place_india	
+bhind	भिंड|भिण्ड	place_india	
+panna	पन्ना	place_india	AMBIGUOUS: also the Hindi words for page and emerald
+dhar	धार	place_india	AMBIGUOUS: also the Hindi word for an edge or a stream (धार)
+mhow	महू	place_india	ALSO: dr ambedkar nagar
+itarsi	इटारसी	place_india	
+amarkantak	अमरकंटक	place_india	
+kanha	कान्हा	place_india	AMBIGUOUS: also a pet name of krishna and a given name
+bhilai	भिलाई	place_india	
+durg	दुर्ग	place_india	AMBIGUOUS: also the Hindi word for fort
+bilaspur	बिलासपुर	place_india	cities in chhattisgarh and himachal
+korba	कोरबा	place_india	
+rajnandgaon	राजनांदगांव|राजनांदगाँव	place_india	
+raigarh	रायगढ़	place_india	AMBIGUOUS: Hindi also writes raigad (maharashtra) as रायगढ़
+jagdalpur	जगदलपुर	place_india	
+ambikapur	अंबिकापुर|अम्बिकापुर	place_india	
+bastar	बस्तर	place_india	
+ahmedabad	अहमदाबाद|अमदावाद	place_india	
+surat	सूरत	place_india	AMBIGUOUS: also the Hindi word for face or appearance
+vadodara	वडोदरा|बड़ौदा|बडौदा	place_india	ALSO: baroda
+rajkot	राजकोट	place_india	
+bhavnagar	भावनगर	place_india	
+jamnagar	जामनगर	place_india	
+junagadh	जूनागढ़|जुनागढ़	place_india	
+gandhidham	गांधीधाम	place_india	
+anand	आणंद	place_india	AMBIGUOUS: often written आनंद, the Hindi word for joy and a common given name; only आणंद listed
+nadiad	नडियाद	place_india	
+morbi	मोरबी	place_india	
+bharuch	भरूच|भड़ूच	place_india	
+vapi	वापी	place_india	
+navsari	नवसारी	place_india	
+valsad	वलसाड	place_india	
+porbandar	पोरबंदर	place_india	
+dwarka	द्वारका	place_india	pilgrimage town in gujarat and a delhi neighbourhood
+somnath	सोमनाथ	place_india	
+kutch	कच्छ	place_india	ALSO: kachchh
+bhuj	भुज	place_india	AMBIGUOUS: also the Sanskrit word for arm (भुज, as in भुजा)
+mehsana	मेहसाणा|महेसाणा	place_india	
+ambaji	अंबाजी|अम्बाजी	place_india	
+kevadia	केवड़िया|केवडिया	place_india	ALSO: ekta nagar
+statue of unity	स्टैच्यू ऑफ यूनिटी|स्टेच्यू ऑफ यूनिटी	place_india	
+saputara	सापुतारा	place_india	
+gir	गिर	place_india	AMBIGUOUS: also the verb stem गिर (fall), as in गिर गया
+pune	पुणे|पूना|पूणे	place_india	ALSO: poona (old name)
+nagpur	नागपुर	place_india	
+nashik	नासिक|नाशिक	place_india	ALSO: nasik
+aurangabad	औरंगाबाद|छत्रपति संभाजीनगर|संभाजीनगर	place_india	ALSO: chhatrapati sambhajinagar (renamed); also a town in bihar
+solapur	सोलापुर|शोलापुर	place_india	
+thane	ठाणे|ठाने|थाने	place_india	AMBIGUOUS: थाने is also the oblique form of थाना (police station)
+kalyan	कल्याण	place_india	AMBIGUOUS: also the Hindi word for welfare or well-being
+dombivli	डोंबिवली|डोम्बिवली	place_india	
+vasai	वसई	place_india	
+virar	विरार	place_india	
+bhiwandi	भिवंडी	place_india	
+amravati	अमरावती	place_india	AMBIGUOUS: same Devanagari as amaravati (andhra pradesh capital)
+kolhapur	कोल्हापुर	place_india	
+sangli	सांगली	place_india	
+akola	अकोला	place_india	
+jalgaon	जलगांव|जलगाँव	place_india	
+latur	लातूर	place_india	
+dhule	धुले|धुलिया	place_india	
+ahmednagar	अहमदनगर|अहिल्यानगर	place_india	ALSO: ahilyanagar (renamed)
+chandrapur	चंद्रपुर|चन्द्रपुर	place_india	
+parbhani	परभणी|परभनी	place_india	
+nanded	नांदेड़|नांदेड	place_india	
+jalna	जालना	place_india	AMBIGUOUS: close to जलना (to burn); check vowel length
+malegaon	मालेगांव|मालेगाँव	place_india	
+ulhasnagar	उल्हासनगर	place_india	
+panvel	पनवेल	place_india	
+navi mumbai	नवी मुंबई|नवी मुम्बई	place_india	
+pimpri chinchwad	पिंपरी चिंचवड़|पिंपरी चिंचवड	place_india	
+lonavala	लोनावला|लोणावला	place_india	
+khandala	खंडाला	place_india	
+mahabaleshwar	महाबलेश्वर	place_india	
+matheran	माथेरान	place_india	
+shirdi	शिरडी|शिर्डी	place_india	
+pandharpur	पंढरपुर	place_india	
+alibag	अलीबाग	place_india	
+ratnagiri	रत्नागिरी	place_india	
+satara	सातारा|सतारा	place_india	
+baramati	बारामती	place_india	
+wardha	वर्धा	place_india	
+yavatmal	यवतमाल	place_india	
+trimbakeshwar	त्र्यंबकेश्वर|त्रयंबकेश्वर	place_india	
+ajanta	अजंता|अजन्ता	place_india	also a brand
+ellora	एलोरा	place_india	
+jodhpur	जोधपुर	place_india	
+kota	कोटा	place_india	AMBIGUOUS: also the Hindi word for quota
+bikaner	बीकानेर	place_india	
+ajmer	अजमेर	place_india	
+udaipur	उदयपुर	place_india	
+bhilwara	भीलवाड़ा|भीलवाडा	place_india	
+alwar	अलवर	place_india	
+bharatpur	भरतपुर	place_india	
+sikar	सीकर	place_india	
+sri ganganagar	श्रीगंगानगर|गंगानगर	place_india	
+barmer	बाड़मेर|बाडमेर	place_india	
+jaisalmer	जैसलमेर	place_india	
+chittorgarh	चित्तौड़गढ़|चित्तौड़|चित्तौरगढ़	place_india	
+pushkar	पुष्कर	place_india	
+mount abu	माउंट आबू	place_india	
+nathdwara	नाथद्वारा	place_india	
+sawai madhopur	सवाई माधोपुर	place_india	
+ranthambore	रणथंभौर|रणथम्भौर|रणथंबोर	place_india	
+jhunjhunu	झुंझुनू|झुंझुनूं	place_india	
+nagaur	नागौर	place_india	
+bundi	बूंदी|बूँदी	place_india	AMBIGUOUS: also बूंदी, the sweet (boondi)
+khatu shyam	खाटू श्याम|खाटूश्याम	place_india	
+pali	पाली	place_india	AMBIGUOUS: also the pali language and पाली (a work shift)
+hawa mahal	हवा महल	place_india	
+amer	आमेर|आंबेर	place_india	ALSO: amber
+ludhiana	लुधियाना	place_india	
+amritsar	अमृतसर	place_india	
+jalandhar	जालंधर|जालन्धर	place_india	
+patiala	पटियाला	place_india	
+bathinda	बठिंडा|भटिंडा	place_india	
+mohali	मोहाली	place_india	
+pathankot	पठानकोट	place_india	
+hoshiarpur	होशियारपुर	place_india	
+firozpur	फिरोजपुर|फ़िरोज़पुर	place_india	
+moga	मोगा	place_india	
+anandpur sahib	आनंदपुर साहिब	place_india	
+golden temple	गोल्डन टेंपल|गोल्डन टेम्पल	place_india	
+harmandir sahib	हरमंदिर साहिब|हरिमंदिर साहिब	place_india	
+wagah	वाघा|बाघा	place_india	
+attari	अटारी	place_india	AMBIGUOUS: also the Hindi word for an attic or upper room
+jallianwala bagh	जलियांवाला बाग|जलियाँवाला बाग	place_india	
+gurgaon	गुड़गांव|गुरुग्राम|गुड़गाँव|गुडगांव	place_india	ALSO: gurugram
+faridabad	फरीदाबाद|फ़रीदाबाद	place_india	
+panipat	पानीपत	place_india	
+ambala	अंबाला|अम्बाला	place_india	
+yamunanagar	यमुनानगर|यमुना नगर	place_india	
+rohtak	रोहतक	place_india	
+hisar	हिसार	place_india	
+karnal	करनाल	place_india	
+sonipat	सोनीपत	place_india	
+panchkula	पंचकूला|पंचकुला	place_india	
+bhiwani	भिवानी	place_india	
+sirsa	सिरसा	place_india	
+kurukshetra	कुरुक्षेत्र	place_india	
+rewari	रेवाड़ी	place_india	
+jind	जींद	place_india	
+nuh	नूंह	place_india	
+bahadurgarh	बहादुरगढ़	place_india	
+manesar	मानेसर	place_india	
+manali	मनाली	place_india	
+mcleodganj	मैक्लोडगंज|मैकलोडगंज	place_india	
+kullu	कुल्लू	place_india	
+kasauli	कसौली	place_india	
+dalhousie	डलहौजी|डलहौज़ी	place_india	
+solan	सोलन	place_india	
+mandi	मंडी	place_india	AMBIGUOUS: also the Hindi word for market (and for a slump)
+kangra	कांगड़ा	place_india	
+spiti	स्पीति	place_india	
+kinnaur	किन्नौर	place_india	
+lahaul	लाहौल	place_india	
+kasol	कसोल	place_india	
+rohtang	रोहतांग	place_india	
+kufri	कुफरी	place_india	
+palampur	पालमपुर	place_india	
+jwalamukhi	ज्वालामुखी	place_india	AMBIGUOUS: also the Hindi word for volcano
+haridwar	हरिद्वार|हरद्वार	place_india	
+rishikesh	ऋषिकेश|रिषिकेश|ऋषीकेश	place_india	
+nainital	नैनीताल	place_india	
+mussoorie	मसूरी	place_india	
+haldwani	हल्द्वानी	place_india	
+roorkee	रुड़की|रूड़की	place_india	
+rudrapur	रुद्रपुर	place_india	
+almora	अल्मोड़ा	place_india	
+kedarnath	केदारनाथ	place_india	
+badrinath	बद्रीनाथ|बदरीनाथ	place_india	
+gangotri	गंगोत्री	place_india	
+yamunotri	यमुनोत्री	place_india	
+auli	औली	place_india	
+ranikhet	रानीखेत	place_india	
+joshimath	जोशीमठ|ज्योतिर्मठ	place_india	ALSO: jyotirmath (renamed)
+uttarkashi	उत्तरकाशी	place_india	
+jim corbett	जिम कॉर्बेट|जिम कार्बेट	place_india	
+char dham	चार धाम|चारधाम	place_india	
+gulmarg	गुलमर्ग	place_india	
+pahalgam	पहलगाम	place_india	
+sonamarg	सोनमर्ग	place_india	
+vaishno devi	वैष्णो देवी|वैष्णोदेवी	place_india	
+katra	कटरा	place_india	AMBIGUOUS: also कटरा, a market lane in many old-city names
+anantnag	अनंतनाग	place_india	
+baramulla	बारामूला|बारामुला	place_india	
+udhampur	उधमपुर	place_india	
+amarnath	अमरनाथ	place_india	also a given name
+dal lake	डल झील|डल लेक	place_india	
+poonch	पुंछ|पुंच	place_india	AMBIGUOUS: close to पूंछ (tail) and पूछ (ask)
+pulwama	पुलवामा	place_india	
+kargil	कारगिल	place_india	
+pangong	पैंगोंग|पांगोंग	place_india	
+galwan	गलवान	place_india	
+siachen	सियाचिन|सियाचीन	place_india	
+mysore	मैसूर|मैसूरु	place_india	ALSO: mysuru
+mangalore	मंगलौर|मंगलुरु|मैंगलोर	place_india	ALSO: mangaluru
+hubli	हुबली|हुब्बल्ली	place_india	ALSO: hubballi
+dharwad	धारवाड़	place_india	
+belgaum	बेलगाम|बेलगावी	place_india	ALSO: belagavi
+gulbarga	गुलबर्गा|कलबुर्गी	place_india	ALSO: kalaburagi
+davanagere	दावणगेरे|दावनगेरे	place_india	
+bellary	बेल्लारी|बल्लारी	place_india	ALSO: ballari
+shimoga	शिमोगा|शिवमोग्गा	place_india	ALSO: shivamogga
+udupi	उडुपी	place_india	
+hampi	हम्पी|हंपी	place_india	
+coorg	कूर्ग|कोडगु	place_india	ALSO: kodagu
+chikmagalur	चिकमगलूर|चिक्कमगलुरु	place_india	
+bijapur	बीजापुर|विजयपुरा	place_india	ALSO: vijayapura
+gokarna	गोकर्ण	place_india	
+kochi	कोच्चि|कोचीन|कोची	place_india	ALSO: cochin
+kozhikode	कोझिकोड|कालीकट	place_india	ALSO: calicut
+thrissur	त्रिशूर	place_india	AMBIGUOUS: close to त्रिशूल (trident)
+kollam	कोल्लम	place_india	
+kannur	कन्नूर	place_india	
+alappuzha	अलप्पुझा|अलेप्पी	place_india	ALSO: alleppey
+munnar	मुन्नार	place_india	
+sabarimala	सबरीमाला|शबरीमाला	place_india	
+wayanad	वायनाड	place_india	
+ernakulam	एर्नाकुलम	place_india	
+coimbatore	कोयंबटूर|कोयम्बटूर|कोयंबतूर	place_india	
+madurai	मदुरै|मदुरई	place_india	
+trichy	त्रिची|तिरुचिरापल्ली	place_india	ALSO: tiruchirappalli
+salem	सेलम|सलेम	place_india	
+tirunelveli	तिरुनेलवेली	place_india	
+tiruppur	तिरुप्पुर|तिरुपुर	place_india	
+vellore	वेल्लोर	place_india	
+erode	इरोड	place_india	
+tuticorin	तूतीकोरिन|थूथुकुडी	place_india	ALSO: thoothukudi
+ooty	ऊटी	place_india	ALSO: udhagamandalam
+kodaikanal	कोडाइकनाल	place_india	
+kanyakumari	कन्याकुमारी	place_india	
+rameswaram	रामेश्वरम	place_india	
+thanjavur	तंजावुर|तंजौर	place_india	ALSO: tanjore
+kanchipuram	कांचीपुरम	place_india	
+mahabalipuram	महाबलीपुरम|मामल्लपुरम	place_india	ALSO: mamallapuram
+hosur	होसुर|होसूर	place_india	
+visakhapatnam	विशाखापत्तनम|विशाखापट्टनम|वाइजैग|विजाग	place_india	ALSO: vizag
+vijayawada	विजयवाड़ा	place_india	
+guntur	गुंटूर	place_india	
+nellore	नेल्लोर	place_india	
+kurnool	कुरनूल	place_india	
+tirupati	तिरुपति	place_india	
+tirumala	तिरुमला|तिरुमाला	place_india	
+rajahmundry	राजमुंदरी|राजमहेंद्रवरम	place_india	ALSO: rajamahendravaram
+kakinada	काकीनाडा	place_india	
+kadapa	कडप्पा	place_india	
+anantapur	अनंतपुर	place_india	
+srisailam	श्रीशैलम	place_india	
+secunderabad	सिकंदराबाद|सिकन्दराबाद	place_india	
+warangal	वारंगल	place_india	
+karimnagar	करीमनगर	place_india	
+nizamabad	निजामाबाद|निज़ामाबाद	place_india	
+khammam	खम्मम	place_india	
+margao	मडगांव|मडगाँव|मारगाओ	place_india	ALSO: madgaon
+vasco da gama	वास्को|वास्को डी गामा|वास्को द गामा	place_india	AMBIGUOUS: also the portuguese explorer's name
+calangute	कलंगुट|कैलंगुट	place_india	
+connaught place	कनॉट प्लेस|कनाट प्लेस	place_india	ALSO: cp
+chandni chowk	चांदनी चौक|चाँदनी चौक	place_india	
+karol bagh	करोल बाग	place_india	
+lajpat nagar	लाजपत नगर	place_india	
+saket	साकेत	place_india	AMBIGUOUS: also a common given name
+rohini	रोहिणी|रोहिनी	place_india	AMBIGUOUS: also a common woman's name and a nakshatra
+janakpuri	जनकपुरी	place_india	
+laxmi nagar	लक्ष्मी नगर|लक्ष्मीनगर	place_india	
+hauz khas	हौज खास|हौज़ ख़ास	place_india	
+nehru place	नेहरू प्लेस	place_india	
+anand vihar	आनंद विहार	place_india	
+nizamuddin	निजामुद्दीन|निज़ामुद्दीन	place_india	delhi station and neighbourhood; also the sufi saint
+lal qila	लाल किला|लाल क़िला	place_india	ALSO: red fort
+india gate	इंडिया गेट	place_india	
+qutub minar	कुतुब मीनार|क़ुतुब मीनार|कुतुबमीनार	place_india	
+jewar	जेवर	place_india	AMBIGUOUS: also the Hindi word for jewellery (ज़ेवर); noida airport site
+andheri	अंधेरी|अँधेरी	place_india	AMBIGUOUS: also अंधेरी (dark, feminine)
+bandra	बांद्रा|बान्द्रा	place_india	
+dadar	दादर	place_india	
+kurla	कुर्ला	place_india	
+borivali	बोरीवली|बोरिवली	place_india	
+juhu	जुहू	place_india	
+colaba	कोलाबा	place_india	
+worli	वर्ली|वरली	place_india	
+churchgate	चर्चगेट	place_india	
+powai	पवई	place_india	
+dharavi	धारावी	place_india	
+marine drive	मरीन ड्राइव	place_india	
+gateway of india	गेटवे ऑफ इंडिया	place_india	
+vashi	वाशी	place_india	
+whitefield	व्हाइटफील्ड|वाइटफील्ड	place_india	
+koramangala	कोरमंगला	place_india	
+electronic city	इलेक्ट्रॉनिक सिटी|इलेक्ट्रोनिक सिटी	place_india	
+indiranagar	इंदिरानगर|इंदिरा नगर	place_india	
+hitech city	हाईटेक सिटी|हाइटेक सिटी|हाई टेक सिटी	place_india	
+gachibowli	गाचीबोवली|गच्चीबोवली|गाचीबावली	place_india	
+banjara hills	बंजारा हिल्स	place_india	
+charminar	चारमीनार|चार मीनार	place_india	
+salt lake	साल्ट लेक|सॉल्ट लेक	place_india	ALSO: bidhannagar
+sealdah	सियालदह|सियालदाह	place_india	
+hazratganj	हजरतगंज|हज़रतगंज	place_india	
+ganga	गंगा	place_india	ALSO: ganges
+yamuna	यमुना|जमुना	place_india	
+godavari	गोदावरी	place_india	
+krishna	कृष्णा	place_india	AMBIGUOUS: also the god krishna (कृष्ण) and a common given name
+kaveri	कावेरी	place_india	ALSO: cauvery
+narmada	नर्मदा	place_india	
+brahmaputra	ब्रह्मपुत्र|ब्रम्हपुत्र	place_india	
+sutlej	सतलुज|सतलज	place_india	
+beas	ब्यास	place_india	AMBIGUOUS: also the sage vyasa (व्यास, ब्यास) and a surname
+chenab	चिनाब|चेनाब	place_india	
+jhelum	झेलम	place_india	
+chambal	चंबल|चम्बल	place_india	
+gomti	गोमती|गोमति	place_india	
+saryu	सरयू	place_india	
+sabarmati	साबरमती	place_india	
+hooghly	हुगली	place_india	
+tapti	ताप्ती|तापी	place_india	ALSO: tapi
+bundelkhand	बुंदेलखंड|बुन्देलखण्ड	place_india	
+vidarbha	विदर्भ	place_india	
+konkan	कोंकण|कोकण	place_india	
+malwa	मालवा	place_india	regions in madhya pradesh and punjab
+marathwada	मराठवाड़ा	place_india	
+awadh	अवध	place_india	
+purvanchal	पूर्वांचल	place_india	
+mithila	मिथिला	place_india	
+braj	ब्रज|बृज	place_india	also a given name (brij)
+mewar	मेवाड़	place_india	
+marwar	मारवाड़	place_india	
+saurashtra	सौराष्ट्र	place_india	
+kumaon	कुमाऊं|कुमाऊँ	place_india	
+garhwal	गढ़वाल	place_india	
+deccan	दक्कन|डेक्कन	place_india	
+terai	तराई	place_india	AMBIGUOUS: also the common noun तराई (foothill lowland)
+himalaya	हिमालय	place_india	
+aravalli	अरावली	place_india	

@@ -283,6 +283,18 @@ def test_lexicon_lookup_tolerates_spelling_variants():
     assert convert.to_mixed("कन्फ़र्म", "indicvoices_hi", {}) == "कन्फ़र्म"
 
 
+def test_curated_entries_are_found_exactly_and_blocked_words_never(tmp_path):
+    # Learned entries fold (ड्राईवर finds ड्राइवर); curated ones do not (ऐसी, "such", must not find the curated एसी, ac).
+    path = tmp_path / "lexicon.json"
+    path.write_text(json.dumps({"words": {"ड्राइवर": ["driver", 12, 12], "एसी": ["ac", 0, 0], "बैच": ["batch", 0, 0],
+                                          "लाइट": ["light", 30, 31]}, "blocked": ["लाइट"]}, ensure_ascii=False),
+                    encoding="utf-8")
+    table = convert.load_lexicon_table(path)
+    assert convert.to_mixed("ड्राईवर एसी ऐसी बैच बेच लाइट", "indicvoices_hi", table) == "driver ac ऐसी batch बेच लाइट"
+    assert convert.Lexicon({"एसी": "ac"}).convert("ऐसी") == "ac"  # a plain dict still folds everything (the old way)
+    assert convert.load_lexicon(path) == {"ड्राइवर": "driver", "एसी": "ac", "बैच": "batch", "लाइट": "light"}
+
+
 def test_english_number_words_convert_with_any_lexicon():
     # One number must not come out in two scripts (एटीन thousand): the number words join every non-empty lexicon.
     assert convert.to_mixed("ये ट्वेन्टी थाउज़ेंड के बैग टेन पर्सेंट एटीन थाउज़ेंड सेकेंड थर्ड", "indicvoices_hi",

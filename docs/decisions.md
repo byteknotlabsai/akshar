@@ -436,6 +436,23 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - Tested in the suite (`tests/test_feed.py`, `tests/test_loader.py`) and in a two-step CPU run on the laptop with a two-source scratch pool.
 - **Revisit if:** v4's stream deviates from the planned shares by more than a few points (compare the log's repeats and fetched hours with the plan), or the repeats make the loader slow.
 
+## D32 (2026-11-09): A curated list of English words, brands and place names that akshar writes in Latin
+
+- **Decision:**
+  - The converter's lexicon grows from the 917 words learned from Shruti to about 5,100 Devanagari spellings of 2,900 English words: technology, everyday objects, institutions and services, brands and spoken abbreviations, time and measure words, common Hinglish words, and place names in and outside India, written by eight Claude Opus 5.5 agents and reviewed against the data (`data/english-words/`, built by `scripts/build_english_words.py`).
+  - A spelling converts only when it is safe: not on the agents' blocklist of Hindi look-alikes (पर, बस, सर, नो), not marked ambiguous, not a Hindi name that is a different word from the English one (चीन stays; दिल्ली becomes delhi), not an inflected Hindi form of a listed word (स्कूलों), and not a token that Vaani's and Rural Women's annotators leave in Devanagari at least 85% of the time. Place names convert to the name spoken (बनारस is banaras), never to a renamed official form.
+  - Curated spellings are looked up exactly; only the learned words are also found under folded spellings (D29), and a blocked list protects Hindi words from both lookups. The lexicon file carries the counts that tell the two apart and the blocked list (`akshar.data.convert.load_lexicon_table`).
+  - v4's Hindi targets (IndicVoices, Vaani, Kathbath, Rural Women, Common Voice Hindi) are re-converted with this lexicon, and the Shrutilipi targets, which are model transcripts, are rewritten token by token with it.
+- **Why:**
+  - The owner's own test of v3: Hindi is good, but English words inside Hindi speech and Indian-accented English are bad. The learned lexicon left most English words in Devanagari (the audit's lexicon gaps), so the model writes स्कूल beside school depending on the sentence, and the style the product promised (D11) was not what it learned.
+  - Mining the lexicon from Shruti's output only reproduces Shruti's habits; a curated list says what the product should write.
+  - The first merge showed why review against the data is needed: folded lookups turned ऐसी ("such") into ac 1,983 times and बेच ("sell") into batch, and the agents mapped बनारस to varanasi. Over 400,000 Hindi transcripts the final list converts 65,000 more tokens (about 1% of words, in 13% of lines), and the 700 most frequent conversions were read.
+- **Consequences:**
+  - FLEURS and Lahaja references keep loanwords and place names in Devanagari, so their WER may rise for v4; Monsoon's lattice scorer and MUCS accept Latin. The owner chose the product's behaviour over the table.
+  - Fixed-data and validation `labels-mix` files are untouched; the re-converted targets are `labels-fixed2.*` beside them.
+  - The list is a product asset as much as a training one: the text layer (Phase 5) can use it for the `devanagari` and `roman` styles.
+- **Revisit if:** v4 writes Hindi words in Latin (a blocklist gap), or FLEURS and Lahaja fall by more than about a point.
+
 ## Superseded from the earlier ChatGPT plan
 
 - The project name BharatSTT is now **akshar**.

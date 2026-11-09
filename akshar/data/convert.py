@@ -397,15 +397,18 @@ def fold_devanagari(word: str) -> str:
 
 class Lexicon:
     """A lexicon (Devanagari word -> Latin spelling) with its lookup tables, built once per conversion. A non-empty
-    lexicon also converts the English number words; the folded table holds every entry under its folded key, minus
-    keys that fold together with different spellings."""
+    lexicon also converts the English number words. The folded table holds entries under their folded keys, minus
+    keys that fold together with different spellings; `fold_from` limits it to a subset (the words learned from
+    Shruti), because a large curated list folds onto real Hindi words (ऐसी onto एसी, बेच onto बैच; D32). `blocked`
+    words are never converted, by either lookup."""
 
-    def __init__(self, words: dict[str, str]):
+    def __init__(self, words: dict[str, str], fold_from: dict[str, str] | None = None, blocked=()):
         self.words = words
+        self.blocked = set(blocked)
         self.exact = {**NUMBER_WORDS, **words} if words else {}
         self.folded: dict[str, str] = {}
         clashes = set()
-        for word, spelling in self.exact.items():
+        for word, spelling in ({**NUMBER_WORDS, **fold_from} if fold_from is not None else self.exact).items():
             key = fold_devanagari(word)
             if self.folded.setdefault(key, spelling) != spelling:
                 clashes.add(key)
@@ -423,6 +426,8 @@ class Lexicon:
 
     def convert(self, word: str) -> str:
         """The Latin spelling for a normalised word, found exactly or under its folded spelling, else the word."""
+        if word in self.blocked:
+            return word
         if word in self.exact:
             return self.exact[word]
         if DEVANAGARI_ANY.search(word):
@@ -517,6 +522,15 @@ def load_lexicon(path: Path) -> dict[str, str]:
     return {word: entry[0] for word, entry in json.loads(path.read_text(encoding="utf-8"))["words"].items()}
 
 
+def load_lexicon_table(path: Path) -> Lexicon:
+    """The lexicon file as a Lexicon: entries with an alignment count (learned from Shruti) are also found under
+    their folded spelling; curated entries (count 0) only exactly; the file's `blocked` words never convert."""
+    body = json.loads(path.read_text(encoding="utf-8"))
+    words = {word: entry[0] for word, entry in body["words"].items()}
+    learned = {word: entry[0] for word, entry in body["words"].items() if len(entry) > 1 and entry[1]}
+    return Lexicon(words, fold_from=learned, blocked=body.get("blocked", []))
+
+
 def split_numbers(rows: list[dict]) -> set[str]:
     """Ids of NPTEL segments that end in a digit while the next segment of the same video starts with one: the
     subtitles were cut at full stops, decimal points included, so the number straddles the two and its spoken
@@ -538,13 +552,13 @@ def split_numbers(rows: list[dict]) -> set[str]:
     return split
 
 
-def convert(name: str, lexicon: dict[str, str], lexicon_path: Path, labels_name: str = "mix") -> dict:
+def convert(name: str, lexicon: dict[str, str] | Lexicon, lexicon_path: Path, labels_name: str = "mix") -> dict:
     """Write labels-<labels_name>.jsonl and .json for one source folder. The policy follows each manifest row's
     `source`, so a slice such as iv02 (rows from indicvoices_hi) gets its dataset's policy."""
     folder = DATA_ROOT / "train" / name
     labels = _shruti_labels(folder)
     counts, policies, rows = Counter(), {}, []
-    table = Lexicon(lexicon)
+    table = lexicon if isinstance(lexicon, Lexicon) else Lexicon(lexicon)
     manifest = _read_jsonl(folder / "manifest.jsonl")
     split = split_numbers(manifest)
     for row in manifest:
@@ -597,7 +611,7 @@ def main(argv=None) -> None:
     parser.add_argument("--labels-name", default="mix", metavar="NAME",
                         help="write labels-NAME.jsonl and labels-NAME.json (default mix)")
     args = parser.parse_args(argv)
-    lexicon = write_lexicon(args.lexicon, args.sources) if args.learn else load_lexicon(args.lexicon)
+    lexicon = write_lexicon(args.lexicon, args.sources) if args.learn else load_lexicon_table(args.lexicon)
     for name in args.sources:
         print(json.dumps(convert(name, lexicon, args.lexicon, args.labels_name), ensure_ascii=False), flush=True)
 
