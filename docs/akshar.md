@@ -2,7 +2,7 @@
 
 Phase 3 of the [roadmap](roadmap.md): akshar itself, trained from Whistle rather than from Shruti's weights (D9). This page records how each version was made and how it scored.
 
-**Status (2026-11-09):** akshar v3 beats Shruti on every test set: 20.85 mean WER on the full test sets against Shruti's 21.78 (20.78 with its averaged weights), both scored by our harness on the same clips, with Svarah's Indian English at 21.90 against 22.45. It is the first akshar to pass the roadmap's release bar. v3 trained from v2 on about 3,900 h, with more Indian-accented English (D30). v2 (21.32) beat Shruti's mean but trailed on Svarah; akshar v0, v1 and r1 (released as AksharSTT v1) came before it; see "Release" below.
+**Status (2026-11-10):** akshar v4 and v3 both beat Shruti on every test set at 20.78 mean WER against Shruti's 21.78, scored by our harness on the same clips. v4 is the stronger on Indian English (Svarah 21.41 against Shruti's 22.45) and on English words inside Hindi, which it writes in Latin from a curated list (D32); v3 is the stronger on accented Hindi. akshar-lite v4 (21.71) is the first lite below Shruti's mean. v4 trained from v3's averaged weights with the stream shares the feeder was meant to give (D31) and the repaired transcripts (D29). v2 (21.32) beat Shruti's mean but trailed on Svarah; akshar v0, v1 and r1 (released as AksharSTT v1) came before it; see "Release" below.
 
 ## akshar v0
 
@@ -212,6 +212,47 @@ Full test sets on the server, with the same harness settings as v0 above:
 - The averaged weights (the moving average from update 66,000) beat the final weights on every set, by 0.07 of mean. They are the release candidate.
 - Both write nothing on the silent clips. The files are `models/akshar/akshar-v3-ema.cact` (averaged) and `akshar-v3.cact` (final).
 
+## akshar v4
+
+### How it was made
+
+- **Start:** v3's averaged weights, trained 64,000 more updates (a late start left half of v3's budget) at a peak learning rate of 1.5e-4 with cosine decay, the moving average kept from update 38,400 (D30's recipe otherwise). Validation cross-entropy: 0.2112 at the start, 0.2191 at update 20,000, 0.2111 at the end; 0.2109 for the average.
+- **Stream (D31):** the feeder ranks sources by relative shortfall and the trainer draws from the pool by source share, so the planned mix is the trained mix. Shares: Common Voice South Asian English 18%, NPTEL English 14% + 14%, LibriSpeech-360 4% (English 50% of the stream, about 45% of all batches), IndicVoices 20%, Vaani 13%, Rural Women 5%, Kathbath 4%, Shrutilipi 3% (Shruti's labels) + 3% (akshar v2's labels where they agree with the script within 5%, D29's `akshar.data.agreement`), Common Voice Hindi 2%. The pool takes 70% of batches. 40% of the Indian English clips train under the `hi` tag.
+- **Targets:** the repaired conversions of D29 (Vaani gives 402,038 lines instead of 318,850) and the curated English-word lexicon of D32 (about 5,100 Devanagari spellings), so English words, brands and place names in the Hindi sources are written in Latin, including in the Shrutilipi labels (half of their lines changed).
+- **Schedule:** two GPU windows, 00:30 to 02:45 and 03:05 to 06:40, with coot-moe running through the owner's 03:00 cleanup (D23); about 3.5 updates a second. Runs `v4-akshar`, `l4-akshar-lite-v4` and `l4-akshar-lite-v4-ema` (18 min each).
+- **Dev check at update 19,000:** Monsoon 21.25, FLEURS 18.71, Lahaja 22.14, MUCS 51.01, Svarah 20.83, LibriSpeech 5.56, mean 23.25, the best dev mean of any checkpoint (v3 at 33,000: 23.74).
+
+### Results
+
+Full test sets on the server, with the same harness settings as v0 above:
+
+| Model | File | Monsoon | FLEURS Hindi | Lahaja | MUCS | Svarah | LibriSpeech clean | Silence | Mean WER |
+|---|---|---|---|---|---|---|---|---|---|
+| Shruti, 4-bit as released | 29.5 MB | 20.54 | 20.21 | 26.29 | 35.26 | 22.45 | 5.95 | 0 | 21.78 |
+| akshar v3, averaged weights | 29.5 MB | 19.70 | 18.27 | 24.87 | 34.09 | 21.85 | 5.88 | 0 | 20.78 |
+| akshar v4, final weights | 29.5 MB | 19.47 | 18.45 | 25.45 | 34.07 | 21.41 | 5.82 | 0 | 20.78 |
+| **akshar v4, averaged weights** | 29.5 MB | **19.35** | 18.41 | 25.40 | 34.18 | 21.48 | 5.86 | 0 | **20.78** |
+
+- v4 moves where it was aimed: Svarah 0.44 better than v3's average (1.04 ahead of Shruti), Monsoon 0.23 better, MUCS and LibriSpeech level or slightly better. Under the `hi` flag Svarah is 26.97 (v3 28.47, v2 32.86): the gap between the two modes is 5.6 points, from 6.6 in v3 and 9.2 in v2.
+- Lahaja is 0.58 worse than v3's average (still 0.84 ahead of Shruti) and FLEURS 0.18 worse. The loss is not the Latin script: scored script-insensitively (both sides romanised) Lahaja still rises by 0.52, and substitutions that are the same word in the other script stay at 4% of errors. v4 writes about 10% more Latin words on Lahaja than v3, mostly wrong ones, which points at the heavier English share and the larger `hi`-tagged English share pulling accented Hindi toward English in `hi` mode. A v5 would ease both.
+- The averaged weights score the same mean; they are better on Monsoon, FLEURS and Lahaja by a few hundredths and worse on Svarah, MUCS and LibriSpeech by as much. Both write nothing on the silent clips. The files are `models/akshar/akshar-v4-ema.cact` (averaged, the release candidate) and `akshar-v4.cact`.
+- v4 and v3 share a mean of 20.78; they differ in profile. v4 is the one to ship if Indian English and English words matter most, v3 if accented Hindi does.
+
+## akshar-lite v4
+
+D24's recipe made from akshar v4 (run `l4-akshar-lite-v4`, 18 minutes), and a second candidate from v4's averaged weights (`l4-akshar-lite-v4-ema`).
+
+| Model | File | Monsoon | FLEURS Hindi | Lahaja | MUCS | Svarah | LibriSpeech clean | Silence | Mean WER |
+|---|---|---|---|---|---|---|---|---|---|
+| Shruti, 4-bit as released | 29.5 MB | 20.54 | 20.21 | 26.29 | 35.26 | 22.45 | 5.95 | 0 | 21.78 |
+| akshar v4, averaged weights | 29.5 MB | 19.35 | 18.41 | 25.40 | 34.18 | 21.48 | 5.86 | 0 | 20.78 |
+| akshar-lite v3 | 20.4 MB | 22.07 | 19.27 | 24.53 | 34.79 | 23.47 | 6.53 | 0 | 21.78 |
+| **akshar-lite v4** | 20.4 MB | 21.55 | 19.14 | 25.78 | 34.85 | 22.43 | 6.50 | 0 | **21.71** |
+| akshar-lite v4, from the averaged weights | 20.4 MB | 21.79 | 19.04 | 25.77 | 34.96 | 22.43 | 6.56 | 0 | 21.76 |
+
+- akshar-lite v4 is the first lite below Shruti's mean (21.71 against 21.78), 0.93 behind akshar v4, inside the 2-point bar. Svarah gains 1.04 on lite v3 and is level with Shruti (22.43 against 22.45); Monsoon gains 0.52. Lahaja gives back 1.25, the same pattern as the full model.
+- The candidate from the averaged weights is level with it (21.76). Both write nothing on silence. The files are `models/akshar/akshar-lite-v4.cact` and `akshar-lite-v4-ema.cact`.
+
 ## akshar-lite v3
 
 D24's recipe made from akshar v3 (run `l4-akshar-lite-v3`): Cactus's 2-bit mix with the encoder at 4 bits (20.4 MB), starting from v3's full-precision weights and distilled from v3 as deployed, learning rate 4e-4, 3,600 updates on v3's fixed data and stream (18 minutes, 426 h streamed). A second candidate, `l4-akshar-lite-v3-ema`, was made the same way from v3's averaged weights.
@@ -247,7 +288,7 @@ D24's recipe made from akshar v2: Cactus's 2-bit mix with the encoder at 4 bits 
 
 ## Running it
 
-The files are `models/akshar/akshar-v3.cact`, `akshar-v3-ema.cact`, `akshar-lite-v3.cact`, `akshar-lite-v3-ema.cact`, `akshar-v2.cact`, `akshar-lite-v2.cact`, `akshar-v1.cact`, `akshar-v0.cact` and `akshar-lite-v0.cact` on the laptop (not committed), and on Drive under `akshar/phase3-runs/`. Any needle engine runs them like Shruti:
+The files are `models/akshar/akshar-v4.cact`, `akshar-v4-ema.cact`, `akshar-lite-v4.cact`, `akshar-lite-v4-ema.cact`, `akshar-v3.cact`, `akshar-v3-ema.cact`, `akshar-lite-v3.cact`, `akshar-lite-v3-ema.cact`, `akshar-v2.cact`, `akshar-lite-v2.cact`, `akshar-v1.cact`, `akshar-v0.cact` and `akshar-lite-v0.cact` on the laptop (not committed), and on Drive under `akshar/phase3-runs/`. Any needle engine runs them like Shruti:
 
 ```python
 from needle import Whistle

@@ -45,7 +45,7 @@ Every later claim ("beats Shruti", "2 bits costs this much") is a number from th
 
 ## Phase 3: Track B, akshar from Whistle
 
-**Status (2026-11-09):** akshar v3 beats Shruti on every test set, 20.85 mean WER against 21.78, Svarah included (21.90 against 22.45), so it passes the release gate below. It trained from v2 on about 3,900 h with more Indian English (D30). akshar v1 trained on dataset transcripts (D27) was released as AksharSTT v1. Details in [akshar.md](akshar.md).
+**Status (2026-11-10):** done. akshar v3 and v4 both beat Shruti on every test set at 20.78 mean WER against 21.78; v4 (from v3's averaged weights, on the planned stream shares of D31, the repaired transcripts of D29 and the English-word lexicon of D32) leads on Indian English (Svarah 21.41 against 22.45) and writes English words in Latin; v3 leads on accented Hindi. akshar-lite v4 scores 21.71. akshar v1 trained on dataset transcripts (D27) was released as AksharSTT v1. Details in [akshar.md](akshar.md).
 
 - **Reproduce Shruti's recipe:**
   - Devanagari pieces in word-start and word-internal forms, with rows initialised from the mean of the byte pieces they replace.
