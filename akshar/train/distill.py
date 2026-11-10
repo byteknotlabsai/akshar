@@ -13,7 +13,8 @@ teacher's full output distribution, which the roadmap's exit check compares.
         --steps 2000 --out runs/train/a2-kd
 
 With --pool, more clips stream in during the run: akshar.train.feed keeps a few Drive shards at a time in that folder,
-and the run takes --pool-share of its batches from them (see Pool). --val-only sources give validation clips only, so a
+and the run takes --pool-share of its batches from them (see Pool), drawing from each source in proportion to the
+share the feeder gives it in <pool>/shares.json rather than to the hours it happens to hold (D31). --val-only sources give validation clips only, so a
 source can move to the stream and keep its place in the validation loss.
 
 Writes <out>/model.safetensors, <out>/model-<recipe>.cact, <out>/state.msgpack (for --resume) and <out>/train.json.
@@ -91,6 +92,20 @@ def load_clips(sources: list[str], labels: str, tokenizer, cfg, val_fraction: fl
     return train, val, stats
 
 
+MAX_REPEAT = 16  # a source's clips are listed at most this many times as often as the least-weighted source's
+
+
+def draw_repeats(hours: dict[str, float], shares: dict[str, float], cap: int = MAX_REPEAT) -> dict[str, int]:
+    """How many times each source's pool clips are listed for drawing, so that the hours drawn per source follow the
+    sources' shares rather than the hours each holds in the pool: proportional to share / hours, scaled so that the
+    least-weighted source is listed once, rounded, and capped. Sources without a share are listed once."""
+    weights = {name: shares[name] / h for name, h in hours.items() if h > 0 and shares.get(name, 0) > 0}
+    if not weights:
+        return {name: 1 for name in hours}
+    least = min(weights.values())
+    return {name: min(cap, max(1, round(weights[name] / least))) if name in weights else 1 for name in hours}
+
+
 class Pool:
     """Clips streamed through a folder by akshar.train.feed while the run trains.
 
@@ -108,6 +123,7 @@ class Pool:
         self.listed: list[str] = []
         self.clips: dict[str, list] = {}
         self.batches = None
+        self.repeats: dict[str, int] = {}  # how many times each source's clips are listed for drawing (draw_repeats)
         self.used: dict[str, float] = dict(used or {})  # every shard folder this run has trained on: hours
 
     def refresh(self, seed: int) -> str | None:
@@ -130,7 +146,16 @@ class Pool:
                 self.used[name] = round(sum(c.seconds for c in self.clips[name]) / 3600, 3)
         for name in [n for n in self.clips if n not in listed]:
             del self.clips[name]
-        clips = [c for name in listed for c in self.clips[name]]
+        hours_by_source: dict[str, float] = {}
+        for name in listed:
+            source = name.split("__")[0]
+            hours_by_source[source] = hours_by_source.get(source, 0.0) + sum(c.seconds for c in self.clips[name]) / 3600
+        try:
+            shares = json.loads((self.dir / "shares.json").read_text(encoding="utf-8"))["shares"]
+        except (OSError, ValueError, KeyError, TypeError):
+            shares = {}
+        self.repeats = draw_repeats(hours_by_source, shares)
+        clips = [c for name in listed for c in self.clips[name] * self.repeats[name.split("__")[0]]]
         old = self.batches
         try:
             self.batches = Batches(clips, self.budget, self.cfg.max_tokens, self.cfg.pad, seed=seed,
@@ -143,11 +168,13 @@ class Pool:
         note = self.dir / "inuse.json.tmp"
         note.write_text(json.dumps({"folders": listed if self.batches else [], "time": time.time()}) + "\n")
         note.replace(self.dir / "inuse.json")
-        hours = sum(c.seconds for c in clips) / 3600
+        hours = sum(hours_by_source.values())
         if self.batches is None:
             return f"pool      {len(listed)} folders, {hours:.1f} h: too few clips for a batch yet"
+        drawn = " ".join(f"{name} x{k}" for name, k in sorted(self.repeats.items()) if k > 1)
         return (f"pool      {len(listed)} folders, {hours:.1f} h ({self.batches.dropped} clips too long for the "
-                f"fixed shapes); {len(self.used)} folders so far, {sum(self.used.values()):.0f} h")
+                f"fixed shapes); {len(self.used)} folders so far, {sum(self.used.values()):.0f} h"
+                + (f"; draws weighted by share: {drawn}" if drawn else ""))
 
     def by_source(self) -> dict[str, float]:
         """Hours streamed per source; shard folders are named <source>__<shard>."""

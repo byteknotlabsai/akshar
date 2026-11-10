@@ -1,0 +1,484 @@
+english	devanagari	category	note
+mobile	मोबाइल|मोबाईल|मोबाइलों	tech	
+mobiles	मोबाइल्स|मोबाईल्स	tech	
+phone	फोन|फ़ोन|फोनों	tech	
+phones	फोन्स|फ़ोन्स	tech	
+smartphone	स्मार्टफोन|स्मार्टफ़ोन|स्मार्ट फोन	tech	
+cellphone	सेलफोन|सेलफ़ोन|सेल फोन	tech	
+touch phone	टचफोन|टच फोन|टच फ़ोन	tech	Indian usage for a touchscreen smartphone
+feature phone	फीचर फोन|फ़ीचर फ़ोन	tech	
+landline	लैंडलाइन|लैंड लाइन	tech	
+telephone	टेलीफोन|टेलिफोन|टेलीफ़ोन	tech	
+sim	सिम|सिमों	tech	
+sim card	सिमकार्ड|सिम कार्ड	tech	
+recharge	रिचार्ज|रीचार्ज	tech	
+top up	टॉपअप|टॉप अप	tech	
+balance	बैलेंस|बेलेंस|बैलेन्स	tech	
+talktime	टॉकटाइम|टाकटाइम|टॉक टाइम	tech	
+plan	प्लान|प्लैन|प्लानों	tech	
+pack	पैक|पैकों	tech	
+validity	वैलिडिटी|वेलिडिटी	tech	
+unlimited	अनलिमिटेड|अनलिमिटिड	tech	
+prepaid	प्रीपेड|प्री पेड	tech	
+postpaid	पोस्टपेड|पोस्ट पेड	tech	
+roaming	रोमिंग	tech	
+incoming	इनकमिंग	tech	
+outgoing	आउटगोइंग	tech	
+operator	ऑपरेटर|आपरेटर	tech	
+customer care	कस्टमर केयर|कस्टमर केअर	tech	
+helpline	हेल्पलाइन|हेल्प लाइन	tech	
+data	डेटा|डाटा	tech	
+network	नेटवर्क|नैटवर्क	tech	
+signal	सिग्नल|सिगनल|सिग्नलों	tech	
+tower	टावर|टॉवर|टावरों	tech	
+range	रेंज|रेन्ज	tech	
+four g	फोरजी|4जी|फोर जी	tech	spoken form of 4G; mixed style writes numbers as words
+five g	फाइवजी|5जी|फाइव जी	tech	spoken form of 5G; mixed style writes numbers as words
+three g	थ्रीजी|3जी|थ्री जी	tech	spoken form of 3G; mixed style writes numbers as words
+port	पोर्ट	tech	
+call	कॉल|कॉलों	tech	काल left out on purpose: it is Hindi (time, era, death)
+calls	कॉल्स|काल्स	tech	
+calling	कॉलिंग|कालिंग	tech	
+missed	मिस्ड	tech	
+miss	मिस	tech	
+missed call	मिस्डकॉल|मिस्ड कॉल|मिस्ड काल	tech	
+miss call	मिसकॉल|मिस कॉल|मिस काल	tech	usual Indian spoken form of missed call
+video call	वीडियो कॉल|विडियो कॉल|वीडियो काल	tech	
+voice	वॉइस|वॉयस	tech	
+dial	डायल	tech	
+number	नंबर|नम्बर|नंबरों	tech	general word; very frequent as a phone number
+busy	बिजी|बिज़ी	tech	
+hold	होल्ड	tech	
+waiting	वेटिंग	tech	
+receive	रिसीव|रिसिव	tech	
+dnd	डीएनडी|डी एन डी	tech	
+ringtone	रिंगटोन|रिंग टोन	tech	
+caller tune	कॉलरट्यून|कॉलर ट्यून|कालर ट्यून	tech	
+ring	रिंग	tech	
+silent	साइलेंट|सायलेंट|साइलेन्ट	tech	
+vibrate	वाइब्रेट|वाईब्रेट	tech	
+vibration	वाइब्रेशन|वाईब्रेशन	tech	
+speaker	स्पीकर|स्पीकरों	tech	
+speakers	स्पीकर्स	tech	
+loudspeaker	लाउडस्पीकर|लाउड स्पीकर	tech	
+mute	म्यूट	tech	
+unmute	अनम्यूट	tech	
+volume	वॉल्यूम|वाल्यूम|वॉल्युम	tech	
+airplane mode	एयरप्लेन मोड|एअरप्लेन मोड	tech	
+aeroplane mode	एरोप्लेन मोड|एयरोप्लेन मोड	tech	common Indian spoken form of airplane mode
+flight mode	फ्लाइट मोड|फ़्लाइट मोड	tech	
+switch off	स्विचऑफ|स्विच ऑफ|स्विच आफ	tech	
+switch on	स्विचऑन|स्विच ऑन	tech	
+on	ऑन	tech	
+off	ऑफ|ऑफ़	tech	
+std	एसटीडी|एस टी डी	tech	old long-distance calling (STD call, STD booth)
+message	मैसेज|मेसेज|मसेज|मैसेजों	tech	
+messages	मैसेजेस|मेसेजेस|मैसेजेज	tech	
+sms	एसएमएस|एस एम एस	tech	
+text	टेक्स्ट|टैक्स्ट	tech	
+chat	चैट	tech	
+chatting	चैटिंग	tech	
+group	ग्रुप|ग्रूप|ग्रुपों	tech	
+groups	ग्रुप्स	tech	
+admin	एडमिन|ऐडमिन	tech	
+add	ऐड|एड	tech	AMBIGUOUS: ऐड/एड is also ad (advertisement); 'group mein add karo' is add
+remove	रिमूव|रिमुव	tech	
+exit	एग्जिट|एग्ज़िट|एक्जिट	tech	
+join	जॉइन|ज्वाइन|जोइन	tech	
+seen	सीन	tech	AMBIGUOUS: सीन is more often scene ('kya scene hai')
+status	स्टेटस|स्टैटस	tech	
+dp	डीपी|डी पी	tech	display picture
+profile	प्रोफाइल|प्रोफ़ाइल|प्रोफाईल	tech	
+emoji	इमोजी|ईमोजी	tech	
+sticker	स्टिकर|स्टीकर	tech	
+stickers	स्टिकर्स|स्टीकर्स	tech	
+reply	रिप्लाई|रिप्लाय	tech	
+forward	फॉरवर्ड|फारवर्ड	tech	
+send	सेंड|सेन्ड	tech	
+contact	कॉन्टैक्ट|कांटेक्ट|कॉन्टेक्ट|कांटैक्ट	tech	
+contacts	कॉन्टैक्ट्स|कांटेक्ट्स|कॉन्टेक्ट्स	tech	
+block	ब्लॉक|ब्लाक	tech	
+unblock	अनब्लॉक|अनब्लाक	tech	
+report	रिपोर्ट	tech	
+internet	इंटरनेट|इन्टरनेट|इंटरनैट	tech	
+net	नेट	tech	short for internet
+online	ऑनलाइन|आनलाइन|ऑन लाइन	tech	
+offline	ऑफलाइन|ऑफ़लाइन|आफलाइन	tech	
+wifi	वाईफाई|वाईफ़ाई|वायफाय|वाई फाई	tech	
+hotspot	हॉटस्पॉट|हाटस्पाट|हॉट स्पॉट	tech	
+bluetooth	ब्लूटूथ|ब्लुटूथ|ब्लूटुथ	tech	
+wireless	वायरलेस|वायरलैस	tech	
+router	राउटर	tech	
+broadband	ब्रॉडबैंड|ब्रॉडबेंड|ब्राडबैंड	tech	
+connection	कनेक्शन|कनेक्सन|कनैक्शन	tech	
+connect	कनेक्ट|कनैक्ट	tech	
+speed	स्पीड	tech	
+website	वेबसाइट|वेबसाईट|वेब साइट	tech	
+site	साइट|साईट	tech	
+web	वेब	tech	
+page	पेज	tech	
+home page	होमपेज|होम पेज	tech	
+portal	पोर्टल	tech	
+link	लिंक	tech	
+links	लिंक्स	tech	
+browser	ब्राउज़र|ब्राउजर	tech	
+search	सर्च	tech	
+server	सर्वर	tech	
+down	डाउन	tech	
+cloud	क्लाउड	tech	tech sense; the sky cloud is बादल
+email	ईमेल|इमेल|ई मेल	tech	
+mail	मेल	tech	AMBIGUOUS: मेल is also Hindi (match, harmony; मेल खाना, मेल जोल)
+inbox	इनबॉक्स|इनबाक्स	tech	
+spam	स्पैम|स्पेम	tech	
+attachment	अटैचमेंट|अटेचमेंट	tech	
+attach	अटैच|अटेच	tech	
+account	अकाउंट|एकाउंट|अकॉउंट|अकाउंटों	tech	
+id	आईडी|आई डी	tech	
+user	यूजर|यूज़र	tech	
+username	यूजरनेम|यूज़रनेम|यूजर नेम	tech	
+login	लॉगिन|लोगिन|लॉग इन	tech	
+logout	लॉगआउट|लॉग आउट	tech	
+sign in	साइनइन|साइन इन	tech	
+sign up	साइनअप|साइन अप	tech	
+register	रजिस्टर	tech	
+registration	रजिस्ट्रेशन|रजिस्टरेशन	tech	
+verify	वेरीफाई|वेरिफाई|वेरीफ़ाई	tech	
+verification	वेरिफिकेशन|वेरीफिकेशन	tech	
+password	पासवर्ड	tech	
+otp	ओटीपी|ओ टी पी	tech	
+pin	पिन	tech	
+submit	सबमिट	tech	
+net banking	नेटबैंकिंग|नेट बैंकिंग	tech	
+upi	यूपीआई|यू पी आई	tech	
+qr	क्यूआर|क्यू आर	tech	
+qr code	क्यूआर कोड|क्यू आर कोड	tech	
+scan	स्कैन|स्केन	tech	
+scanner	स्कैनर|स्केनर	tech	
+cyber	साइबर	tech	
+cyber cafe	साइबर कैफे|साइबर कैफ़े	tech	
+privacy	प्राइवेसी|प्राईवेसी	tech	
+security	सिक्योरिटी|सिक्यूरिटी|सेक्युरिटी	tech	
+hack	हैक|हेक	tech	
+hacker	हैकर|हेकर	tech	
+virus	वायरस	tech	
+social media	सोशल मीडिया	tech	
+post	पोस्ट|पोस्टों	tech	
+posts	पोस्ट्स	tech	
+story	स्टोरी	tech	
+stories	स्टोरीज|स्टोरीज़	tech	
+reel	रील|रीलों	tech	
+reels	रील्स	tech	
+shorts	शॉर्ट्स|शार्ट्स	tech	
+like	लाइक|लाईक	tech	
+likes	लाइक्स|लाईक्स	tech	
+comment	कमेंट|कॉमेंट|कमेन्ट	tech	
+comments	कमेंट्स|कॉमेंट्स|कमेन्ट्स	tech	
+share	शेयर|शेअर	tech	
+subscribe	सब्सक्राइब|सबस्क्राइब	tech	
+subscriber	सब्सक्राइबर|सबस्क्राइबर	tech	
+subscribers	सब्सक्राइबर्स|सबस्क्राइबर्स	tech	
+subscription	सब्सक्रिप्शन|सबस्क्रिप्शन	tech	
+follow	फॉलो|फालो	tech	
+follower	फॉलोवर|फॉलोअर|फालोअर	tech	
+followers	फॉलोवर्स|फॉलोअर्स|फालोअर्स	tech	
+view	व्यू	tech	
+views	व्यूज|व्यूज़|व्यूस	tech	
+viral	वायरल	tech	
+trend	ट्रेंड|ट्रेन्ड	tech	
+trending	ट्रेंडिंग|ट्रेन्डिंग	tech	
+hashtag	हैशटैग|हैश टैग	tech	
+tag	टैग|टेग	tech	
+caption	कैप्शन|केप्शन	tech	
+bio	बायो	tech	
+meme	मीम	tech	
+blog	ब्लॉग|ब्लाग	tech	
+influencer	इन्फ्लुएंसर|इंफ्लुएंसर|इनफ्लुएंसर	tech	
+content	कंटेंट|कन्टेंट|कॉन्टेंट	tech	
+live	लाइव|लाईव	tech	
+streaming	स्ट्रीमिंग	tech	
+web series	वेब सीरीज|वेब सीरीज़	tech	
+ott	ओटीटी|ओ टी टी	tech	
+ads	ऐड्स|एड्स	tech	AMBIGUOUS: एड्स is also the disease AIDS
+advertisement	एडवरटाइजमेंट|एडवर्टाइजमेंट|ऐडवर्टाइज़मेंट	tech	
+notification	नोटिफिकेशन|नोटिफ़िकेशन	tech	
+notifications	नोटिफिकेशंस|नोटिफिकेशन्स	tech	
+alert	अलर्ट	tech	
+allow	अलाउ	tech	
+app	ऐप|एप|ऐप्प|एप्प	tech	
+apps	ऐप्स|एप्स|ऐप्प्स	tech	
+application	एप्लीकेशन|एप्लिकेशन|ऐप्लिकेशन	tech	
+apk	एपीके|ए पी के	tech	
+download	डाउनलोड	tech	
+upload	अपलोड	tech	
+update	अपडेट	tech	
+updates	अपडेट्स	tech	
+upgrade	अपग्रेड	tech	
+version	वर्जन|वर्ज़न	tech	
+install	इंस्टॉल|इंस्टाल|इन्स्टॉल	tech	
+uninstall	अनइंस्टॉल|अनइंस्टाल|अन इंस्टॉल	tech	
+delete	डिलीट|डिलिट	tech	
+setting	सेटिंग	tech	
+settings	सेटिंग्स|सेटिंग्ज	tech	
+option	ऑप्शन|आप्शन|ऑप्सन	tech	
+menu	मेनू|मेन्यू	tech	
+icon	आइकन|आइकॉन|आईकन	tech	
+home	होम	tech	AMBIGUOUS: होम is also Hindi (fire offering, हवन)
+wallpaper	वॉलपेपर|वालपेपर	tech	
+theme	थीम	tech	
+font	फॉन्ट|फ़ॉन्ट|फान्ट	tech	
+mode	मोड	tech	AMBIGUOUS: मोड is a common nukta-less spelling of Hindi मोड़ (turn, bend)
+brightness	ब्राइटनेस	tech	
+click	क्लिक	tech	
+tap	टैप	tech	
+touch	टच	tech	
+swipe	स्वाइप	tech	
+scroll	स्क्रॉल|स्क्रोल	tech	
+zoom	ज़ूम|जूम	tech	
+select	सेलेक्ट|सिलेक्ट	tech	
+type	टाइप|टाईप	tech	
+typing	टाइपिंग|टाईपिंग	tech	
+copy	कॉपी|कापी	tech	कॉपी also means a school notebook (same Latin word)
+paste	पेस्ट	tech	
+cut	कट	tech	
+save	सेव	tech	AMBIGUOUS: सेव is also the snack sev and a common spelling of सेब (apple)
+edit	एडिट|ऐडिट	tech	
+editing	एडिटिंग|ऐडिटिंग	tech	
+refresh	रिफ्रेश|रिफ़्रेश	tech	
+restart	रीस्टार्ट|रिस्टार्ट	tech	
+reset	रीसेट|रिसेट	tech	
+factory reset	फैक्ट्री रीसेट|फैक्टरी रीसेट	tech	
+format	फॉर्मेट|फार्मेट|फॉरमेट	tech	
+backup	बैकअप|बैक अप	tech	
+restore	रिस्टोर	tech	
+lock	लॉक|लाक	tech	
+unlock	अनलॉक|अनलाक	tech	
+pattern	पैटर्न|पेटर्न	tech	
+fingerprint	फिंगरप्रिंट|फिंगर प्रिंट	tech	
+hang	हैंग|हेंग	tech	phone freezing ('phone hang ho gaya')
+crash	क्रैश|क्रेश	tech	
+error	एरर|इरर	tech	
+bug	बग	tech	
+loading	लोडिंग	tech	
+buffering	बफरिंग|बफ़रिंग	tech	
+auto	ऑटो|आटो	tech	
+automatic	ऑटोमैटिक|ऑटोमेटिक|आटोमेटिक	tech	
+manual	मैनुअल|मैन्युअल|मेनुअल	tech	
+play	प्ले	tech	
+pause	पॉज|पॉज़	tech	
+skip	स्किप	tech	
+enter	एंटर	tech	इंटर left out on purpose: it also means intermediate (class 12)
+screenshot	स्क्रीनशॉट|स्क्रीनशाट|स्क्रीन शॉट	tech	
+screenshots	स्क्रीनशॉट्स|स्क्रीन शॉट्स	tech	
+record	रिकॉर्ड|रिकार्ड|रेकॉर्ड	tech	
+recording	रिकॉर्डिंग|रिकार्डिंग|रेकॉर्डिंग	tech	
+game	गेम|गेमों	tech	
+games	गेम्स	tech	
+gaming	गेमिंग	tech	
+player	प्लेयर	tech	
+calculator	कैलकुलेटर|कैलक्युलेटर|केलकुलेटर	tech	
+alarm	अलार्म|अलारम	tech	
+timer	टाइमर|टाईमर	tech	
+location	लोकेशन|लोकेसन	tech	
+gps	जीपीएस|जी पी एस	tech	
+map	मैप	tech	
+feature	फीचर|फ़ीचर	tech	
+model	मॉडल|माडल	tech	
+pair	पेयर	tech	Bluetooth pairing; not Hindi पैर (foot)
+pairing	पेयरिंग	tech	
+camera	कैमरा|कैमरे|केमरा|कैमरों	tech	
+front	फ्रंट	tech	
+back	बैक	tech	
+selfie	सेल्फी|सेल्फ़ी	tech	
+photo	फोटो|फ़ोटो|फोटू	tech	फोटू is a colloquial pronunciation
+photos	फोटोज|फोटोस|फ़ोटोज़	tech	
+video	वीडियो|विडियो|वीडिओ	tech	
+videos	वीडियोज|वीडियोज़|वीडियोस|विडियोज	tech	
+audio	ऑडियो|आडियो	tech	
+gallery	गैलरी|गेलरी	tech	
+album	एल्बम|अल्बम	tech	
+flash	फ्लैश|फ्लेश	tech	
+flashlight	फ्लैशलाइट|फ्लैश लाइट	tech	
+torch	टॉर्च|टार्च	tech	
+filter	फिल्टर|फ़िल्टर	tech	
+megapixel	मेगापिक्सल|मेगापिक्सेल|मेगा पिक्सल	tech	
+resolution	रेजोल्यूशन|रिज़ॉल्यूशन|रेज़ोल्यूशन	tech	
+lens	लेंस|लैंस	tech	
+sensor	सेंसर|सेन्सर	tech	
+drone	ड्रोन	tech	
+webcam	वेबकैम|वेब कैम	tech	
+cctv	सीसीटीवी|सी सी टी वी	tech	
+projector	प्रोजेक्टर|प्रॉजेक्टर	tech	
+screen	स्क्रीन|स्क्रिन	tech	
+display	डिस्प्ले|डिसप्ले	tech	
+touchscreen	टचस्क्रीन|टच स्क्रीन	tech	
+keypad	कीपैड|की पैड	tech	
+button	बटन|बटनों	tech	
+battery	बैटरी|बैट्री|बेटरी|बैटरियों	tech	
+cell	सेल	tech	AMBIGUOUS: सेल is also sale
+charger	चार्जर|चार्जरों	tech	
+charge	चार्ज	tech	
+charging	चार्जिंग	tech	
+fast charging	फास्ट चार्जिंग|फ़ास्ट चार्जिंग	tech	
+power bank	पावरबैंक|पावर बैंक|पॉवर बैंक	tech	
+type c	टाइप सी	tech	USB-C cable or port
+usb	यूएसबी|यू एस बी	tech	
+cover	कवर	tech	
+guard	गार्ड	tech	
+screen guard	स्क्रीन गार्ड	tech	
+tempered glass	टेम्पर्ड ग्लास|टेंपर्ड ग्लास|टेम्पर ग्लास	tech	
+card	कार्ड	tech	
+memory	मेमोरी|मेमरी|मैमोरी	tech	
+memory card	मेमोरीकार्ड|मेमोरी कार्ड|मेमरी कार्ड	tech	
+sd card	एसडी कार्ड|एस डी कार्ड	tech	
+storage	स्टोरेज	tech	
+ram	रैम|रेम	tech	
+rom	रोम	tech	AMBIGUOUS: रोम is also Rome and Hindi रोम (body hair)
+gb	जीबी|जी बी	tech	
+mb	एमबी|एम बी	tech	
+kb	केबी|के बी	tech	
+gigabyte	गीगाबाइट|गिगाबाइट	tech	
+headphone	हेडफोन|हेडफ़ोन|हेड फोन	tech	
+headphones	हेडफोन्स|हेडफ़ोन्स	tech	
+earphone	ईयरफोन|इयरफोन|ईयरफ़ोन|ईअरफोन	tech	
+earphones	ईयरफोन्स|इयरफोन्स|ईयरफ़ोन्स	tech	
+earbuds	ईयरबड्स|इयरबड्स	tech	
+headset	हेडसेट	tech	
+mic	माइक|माईक	tech	
+microphone	माइक्रोफोन|माइक्रोफ़ोन	tech	
+smartwatch	स्मार्टवॉच|स्मार्ट वॉच|स्मार्ट वाच	tech	
+gadget	गैजेट|गेजेट	tech	
+device	डिवाइस|डिवाईस	tech	
+repair	रिपेयर|रिपेअर	tech	
+repairing	रिपेयरिंग|रिपेअरिंग	tech	
+warranty	वारंटी|वॉरंटी|वारन्टी	tech	
+computer	कंप्यूटर|कम्प्यूटर|कंप्यूटरों|कम्प्यूटरों	tech	
+laptop	लैपटॉप|लैपटाप|लेपटॉप|लैपटॉपों	tech	
+desktop	डेस्कटॉप|डेस्कटाप	tech	
+pc	पीसी|पी सी	tech	
+cpu	सीपीयू|सी पी यू	tech	
+monitor	मॉनिटर|मानिटर	tech	
+keyboard	कीबोर्ड|की बोर्ड	tech	
+mouse	माउस	tech	
+tab	टैब|टेब	tech	
+tablet	टैबलेट|टेबलेट	tech	
+processor	प्रोसेसर|प्रॉसेसर	tech	
+chip	चिप	tech	
+hard disk	हार्डडिस्क|हार्ड डिस्क	tech	
+pen drive	पेनड्राइव|पेन ड्राइव	tech	
+cd	सीडी|सी डी	tech	AMBIGUOUS: सीडी is a common nukta-less spelling of सीढ़ी (stairs)
+dvd	डीवीडी|डी वी डी	tech	
+printer	प्रिंटर|प्रिन्टर	tech	
+print	प्रिंट|प्रिन्ट	tech	
+printout	प्रिंटआउट|प्रिंट आउट	tech	
+photocopy	फोटोकॉपी|फ़ोटोकॉपी|फोटोकापी|फोटो कॉपी	tech	
+software	सॉफ्टवेयर|सॉफ़्टवेयर|साफ्टवेयर|सोफ्टवेयर	tech	
+hardware	हार्डवेयर|हार्डवेअर	tech	
+system	सिस्टम	tech	
+operating system	ऑपरेटिंग सिस्टम|आपरेटिंग सिस्टम	tech	
+program	प्रोग्राम	tech	
+programming	प्रोग्रामिंग	tech	
+coding	कोडिंग	tech	
+code	कोड|कोडों	tech	
+developer	डेवलपर|डिवेलपर|डेवेलपर	tech	
+file	फाइल|फ़ाइल|फाईल|फाइलों	tech	
+files	फाइल्स|फ़ाइल्स	tech	
+folder	फोल्डर|फ़ोल्डर	tech	
+document	डॉक्यूमेंट|डाक्यूमेंट|डॉक्युमेंट	tech	
+documents	डॉक्यूमेंट्स|डाक्यूमेंट्स|डॉक्युमेंट्स	tech	
+pdf	पीडीएफ|पी डी एफ	tech	
+it	आईटी|आई टी	tech	information technology (IT sector, IT company)
+ai	एआई|ए आई	tech	
+robot	रोबोट|रोबॉट	tech	
+digital	डिजिटल|डिजीटल	tech	
+electronic	इलेक्ट्रॉनिक|इलेक्ट्रानिक|इलेक्ट्रोनिक	tech	
+electronics	इलेक्ट्रॉनिक्स|इलेक्ट्रानिक्स	tech	
+machine	मशीन|मशीनों	tech	fully naturalised loanword
+tv	टीवी|टी वी	tech	
+television	टेलीविजन|टेलीविज़न|टेलिविजन	tech	
+smart tv	स्मार्ट टीवी|स्मार्ट टी वी	tech	
+led	एलईडी|एल ई डी	tech	
+lcd	एलसीडी|एल सी डी	tech	
+hd	एचडी|एच डी	tech	
+four k	फोरके|4के|फोर के	tech	spoken form of 4K; mixed style writes numbers as words
+remote	रिमोट	tech	
+set	सेट	tech	
+top	टॉप	tech	
+box	बॉक्स|बाक्स	tech	
+set top box	सेट टॉप बॉक्स|सेटटॉप बॉक्स|सेट टॉप बाक्स	tech	
+dish	डिश	tech	
+dth	डीटीएच|डी टी एच	tech	
+cable	केबल|केबिल	tech	
+channel	चैनल|चेनल|चैनलों	tech	
+channels	चैनल्स|चेनल्स	tech	
+antenna	एंटीना|एंटेना|ऐन्टीना	tech	
+radio	रेडियो|रेडिओ	tech	
+fm	एफएम|एफ एम	tech	
+sound	साउंड|साउन्ड	tech	
+home theatre	होम थिएटर|होम थियेटर	tech	
+dj	डीजे|डी जे	tech	the wedding sound system or the person
+ac	एसी|ए सी	tech	AMBIGUOUS: एसी is a frequent misspelling of Hindi ऐसी (such); convert only in appliance context
+air conditioner	एयर कंडीशनर|एयर कंडिशनर|एयर कन्डीशनर	tech	
+cooler	कूलर|कुलर	tech	
+fan	फैन|फेन	tech	
+ceiling	सीलिंग	tech	
+exhaust	एग्जॉस्ट|एग्जास्ट|एग्ज़ॉस्ट	tech	
+heater	हीटर	tech	
+geyser	गीजर|गीज़र|गीसर	tech	
+fridge	फ्रिज|फ्रिज़	tech	फ्रीज left out on purpose: it is also freeze
+refrigerator	रेफ्रिजरेटर|रेफ़्रिजरेटर|रेफ्रीजरेटर	tech	
+freezer	फ्रीजर|फ्रीज़र	tech	
+washing	वॉशिंग|वाशिंग	tech	
+washing machine	वॉशिंग मशीन|वाशिंग मशीन|वासिंग मशीन	tech	
+dryer	ड्रायर|ड्राइअर	tech	
+trimmer	ट्रिमर	tech	
+mixer	मिक्सर	tech	
+grinder	ग्राइंडर	tech	
+mixer grinder	मिक्सर ग्राइंडर	tech	
+mixie	मिक्सी	tech	Indian English for a mixer grinder
+juicer	जूसर|ज्यूसर	tech	
+oven	ओवन	tech	
+microwave	माइक्रोवेव|माइक्रोवेब	tech	
+toaster	टोस्टर	tech	
+induction	इंडक्शन|इन्डक्शन	tech	induction cooktop
+chimney	चिमनी	tech	
+purifier	प्यूरीफायर|प्यूरिफायर	tech	
+ro	आरओ|आर ओ	tech	RO water purifier
+vacuum cleaner	वैक्यूम क्लीनर|वेक्यूम क्लीनर	tech	
+iron	आयरन	tech	Hindi speakers usually say प्रेस for the clothes iron
+press	प्रेस	tech	the clothes iron as usually said; also the news press (same Latin word)
+motor	मोटर	tech	
+inverter	इन्वर्टर|इनवर्टर	tech	
+ups	यूपीएस|यू पी एस	tech	
+stabilizer	स्टेबलाइजर|स्टेबलाइज़र|स्टैबलाइजर	tech	
+generator	जनरेटर|जेनरेटर	tech	
+solar	सोलर	tech	
+panel	पैनल|पेनल	tech	
+emergency light	इमरजेंसी लाइट|इमर्जेंसी लाइट	tech	
+bulb	बल्ब|बलब|बल्बों	tech	
+tube light	ट्यूबलाइट|टूबलाइट|ट्यूब लाइट	tech	
+light	लाइट|लाईट	tech	also means the power supply ('light chali gayi')
+power	पावर|पॉवर	tech	
+power cut	पावर कट|पॉवर कट	tech	
+switch	स्विच|स्वीच|स्विचों	tech	
+switchboard	स्विचबोर्ड|स्विच बोर्ड	tech	
+board	बोर्ड	tech	
+socket	सॉकेट|साकेट	tech	
+plug	प्लग	tech	
+adapter	एडॉप्टर|अडॉप्टर|एडाप्टर|अडैप्टर	tech	
+extension	एक्सटेंशन|एक्सटेंसन	tech	
+wire	वायर|वायरों	tech	
+wiring	वायरिंग	tech	
+fuse	फ्यूज|फ्यूज़	tech	
+mcb	एमसीबी|एम सी बी	tech	
+earthing	अर्थिंग	tech	
+circuit	सर्किट|सरकिट	tech	
+short circuit	शॉर्ट सर्किट|शार्ट सर्किट	tech	
+current	करंट|करेंट	tech	electric current
+voltage	वोल्टेज	tech	
+volt	वोल्ट	tech	
+watt	वॉट	tech	वाट left out on purpose: it is also a regional word for path or waiting (वाट देखना)
+meter	मीटर|मीटरों	tech	electricity meter; also the length unit, one spelling
+electric	इलेक्ट्रिक|इलैक्ट्रिक	tech	
+electrical	इलेक्ट्रिकल|इलैक्ट्रिकल	tech	
+electricity	इलेक्ट्रिसिटी|इलेक्ट्रीसिटी	tech	
+electrician	इलेक्ट्रीशियन|इलेक्ट्रिशियन	tech	

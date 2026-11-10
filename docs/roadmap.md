@@ -45,7 +45,7 @@ Every later claim ("beats Shruti", "2 bits costs this much") is a number from th
 
 ## Phase 3: Track B, akshar from Whistle
 
-**Status (2026-11-08):** akshar v2 beats Shruti's mean WER on the full test sets, 21.32 against 21.78, trained on about 3,000 h streamed from Drive (D28). It leads on Monsoon, FLEURS, Lahaja and MUCS and is level on LibriSpeech; Svarah is 1.22 behind, the one set that keeps it from the release bar. akshar v1 trained on dataset transcripts (D27) was released as AksharSTT v1. Details in [akshar.md](akshar.md).
+**Status (2026-11-10):** done. akshar v3 and v4 both beat Shruti on every test set at 20.78 mean WER against 21.78; v4 (from v3's averaged weights, on the planned stream shares of D31, the repaired transcripts of D29 and the English-word lexicon of D32) leads on Indian English (Svarah 21.41 against 22.45) and writes English words in Latin; v3 leads on accented Hindi. akshar-lite v4 scores 21.71. akshar v1 trained on dataset transcripts (D27) was released as AksharSTT v1. Details in [akshar.md](akshar.md).
 
 - **Reproduce Shruti's recipe:**
   - Devanagari pieces in word-start and word-internal forms, with rows initialised from the mean of the byte pieces they replace.
@@ -114,6 +114,8 @@ This phase renders the model's `mixed` transcript as `roman`, `devanagari` or `m
 - **Exit (proposed):** each style's WER on the reference set is within 1 point of the script-agnostic WER, so rendering adds at most about one error per hundred words.
 
 ## Phase 6: Release
+
+**Status (2026-11-10):** the model release is done ahead of the apps: AksharSTT v4 and Lite v4 are on Hugging Face with cards, NOTICE and records (D33), and the harness and ledger are public. The text layer resources join when Phase 5 ships.
 
 - Model card with harness numbers.
 - NOTICE crediting Whistle, every dataset, every teacher model whose outputs went into training, and every text resource shipped in the text layer. Some text resources, such as Dakshina, are share-alike.

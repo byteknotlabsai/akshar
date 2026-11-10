@@ -52,3 +52,15 @@ def test_fixed_token_lengths_drop_what_does_not_fit(tmp_path):
     buckets, groups = plan(clips, 24.0, 320, tokens=[32, 64, 64, 64])
     assert [b.tokens for b in buckets] == [32, 64, 64, 64]
     assert [len(g) for g in groups] == [1, 1, 0, 0]  # b has 40 tokens, more than its bucket's 32
+
+
+def test_pool_draws_follow_the_shares_not_the_hours():
+    from akshar.train.distill import draw_repeats
+
+    # NPTEL holds 30 h for a 10% share, IndicVoices 20 h for 22%, Rural Women 1.5 h for 6%: weights 1 : 3.3 : 12.
+    hours = {"nptel_en": 30.0, "indicvoices_hi": 20.0, "rural_women_hi": 1.5}
+    shares = {"nptel_en": 0.10, "indicvoices_hi": 0.22, "rural_women_hi": 0.06}
+    assert draw_repeats(hours, shares) == {"nptel_en": 1, "indicvoices_hi": 3, "rural_women_hi": 12}
+    assert draw_repeats({"a": 0.01, "b": 10.0}, {"a": 0.5, "b": 0.5}) == {"a": 16, "b": 1}  # a sliver is capped
+    assert draw_repeats(hours, {}) == {"nptel_en": 1, "indicvoices_hi": 1, "rural_women_hi": 1}  # no shares file
+    assert draw_repeats({"a": 1.0, "zero": 0.0}, {"a": 1.0}) == {"a": 1, "zero": 1}

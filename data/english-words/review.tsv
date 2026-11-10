@@ -1,0 +1,1815 @@
+english	devanagari	category	reason
+mobile	मोबाइलों	tech	inflected Hindi form; the base spelling is listed
+phone	फोनों	tech	inflected Hindi form; the base spelling is listed
+smartphone	स्मार्ट फोन	tech	spaced spelling: not a token
+cellphone	सेल फोन	tech	spaced spelling: not a token
+touch phone	टच फोन	tech	spaced spelling: not a token
+touch phone	टच फ़ोन	tech	spaced spelling: not a token
+feature phone	फीचर फोन	tech	spaced spelling: not a token
+feature phone	फ़ीचर फ़ोन	tech	spaced spelling: not a token
+landline	लैंड लाइन	tech	spaced spelling: not a token
+sim	सिमों	tech	inflected Hindi form; the base spelling is listed
+sim card	सिम कार्ड	tech	spaced spelling: not a token
+top up	टॉप अप	tech	spaced spelling: not a token
+talktime	टॉक टाइम	tech	spaced spelling: not a token
+plan	प्लैन	tech	blocklist: folded form blocked
+plan	प्लानों	tech	inflected Hindi form; the base spelling is listed
+pack	पैकों	tech	inflected Hindi form; the base spelling is listed
+prepaid	प्री पेड	tech	spaced spelling: not a token
+postpaid	पोस्ट पेड	tech	spaced spelling: not a token
+customer care	कस्टमर केयर	tech	spaced spelling: not a token
+customer care	कस्टमर केअर	tech	spaced spelling: not a token
+helpline	हेल्प लाइन	tech	spaced spelling: not a token
+signal	सिग्नलों	tech	inflected Hindi form; the base spelling is listed
+tower	टावरों	tech	inflected Hindi form; the base spelling is listed
+four g	फोर जी	tech	spaced spelling: not a token
+five g	फाइव जी	tech	spaced spelling: not a token
+three g	थ्री जी	tech	spaced spelling: not a token
+call	कॉलों	tech	inflected Hindi form; the base spelling is listed
+missed call	मिस्ड कॉल	tech	spaced spelling: not a token
+missed call	मिस्ड काल	tech	spaced spelling: not a token
+miss call	मिस कॉल	tech	spaced spelling: not a token
+miss call	मिस काल	tech	spaced spelling: not a token
+video call	वीडियो कॉल	tech	spaced spelling: not a token
+video call	विडियो कॉल	tech	spaced spelling: not a token
+video call	वीडियो काल	tech	spaced spelling: not a token
+number	नंबरों	tech	inflected Hindi form; the base spelling is listed
+dnd	डी एन डी	tech	spaced spelling: not a token
+ringtone	रिंग टोन	tech	spaced spelling: not a token
+caller tune	कॉलर ट्यून	tech	spaced spelling: not a token
+caller tune	कालर ट्यून	tech	spaced spelling: not a token
+speaker	स्पीकरों	tech	inflected Hindi form; the base spelling is listed
+loudspeaker	लाउड स्पीकर	tech	spaced spelling: not a token
+airplane mode	एयरप्लेन मोड	tech	spaced spelling: not a token
+airplane mode	एअरप्लेन मोड	tech	spaced spelling: not a token
+aeroplane mode	एरोप्लेन मोड	tech	spaced spelling: not a token
+aeroplane mode	एयरोप्लेन मोड	tech	spaced spelling: not a token
+flight mode	फ्लाइट मोड	tech	spaced spelling: not a token
+flight mode	फ़्लाइट मोड	tech	spaced spelling: not a token
+switch off	स्विच ऑफ	tech	spaced spelling: not a token
+switch off	स्विच आफ	tech	spaced spelling: not a token
+switch on	स्विच ऑन	tech	spaced spelling: not a token
+off	ऑफ	tech	annotators gloss it as of (290x)
+off	ऑफ़	tech	annotators gloss it as of (235x)
+std	एस टी डी	tech	spaced spelling: not a token
+message	मैसेजों	tech	inflected Hindi form; the base spelling is listed
+sms	एस एम एस	tech	spaced spelling: not a token
+group	ग्रुपों	tech	inflected Hindi form; the base spelling is listed
+add	ऐड|एड	tech	agent: AMBIGUOUS: ऐड/एड is also ad (advertisement); 'group mein add karo' is add
+seen	सीन	tech	agent: AMBIGUOUS: सीन is more often scene ('kya scene hai')
+dp	डी पी	tech	spaced spelling: not a token
+block	ब्लाक	tech	annotators gloss it as black (30x)
+net	नेट	tech	blocklist: ENGLISH_HOMOPHONE: net dominates; neat
+online	ऑन लाइन	tech	spaced spelling: not a token
+wifi	वाई फाई	tech	spaced spelling: not a token
+hotspot	हॉट स्पॉट	tech	spaced spelling: not a token
+website	वेब साइट	tech	spaced spelling: not a token
+site	साइट	tech	blocklist: ENGLISH_HOMOPHONE: site dominates
+site	साईट	tech	blocklist: folded form blocked
+home page	होम पेज	tech	spaced spelling: not a token
+email	ई मेल	tech	spaced spelling: not a token
+mail	मेल	tech	agent: AMBIGUOUS: मेल is also Hindi (match, harmony; मेल खाना, मेल जोल)
+account	अकाउंटों	tech	inflected Hindi form; the base spelling is listed
+id	आई डी	tech	spaced spelling: not a token
+username	यूजर नेम	tech	spaced spelling: not a token
+login	लॉग इन	tech	spaced spelling: not a token
+logout	लॉग आउट	tech	spaced spelling: not a token
+sign in	साइन इन	tech	spaced spelling: not a token
+sign up	साइन अप	tech	spaced spelling: not a token
+otp	ओ टी पी	tech	spaced spelling: not a token
+net banking	नेट बैंकिंग	tech	spaced spelling: not a token
+upi	यू पी आई	tech	spaced spelling: not a token
+qr	क्यू आर	tech	spaced spelling: not a token
+qr code	क्यूआर कोड	tech	spaced spelling: not a token
+qr code	क्यू आर कोड	tech	spaced spelling: not a token
+cyber cafe	साइबर कैफे	tech	spaced spelling: not a token
+cyber cafe	साइबर कैफ़े	tech	spaced spelling: not a token
+virus	वायरस	tech	annotators gloss it as wires (16x)
+social media	सोशल मीडिया	tech	spaced spelling: not a token
+post	पोस्टों	tech	inflected Hindi form; the base spelling is listed
+reel	रील	tech	blocklist: ENGLISH_HOMOPHONE: reel dominates; real
+reel	रीलों	tech	inflected Hindi form; the base spelling is listed
+like	लाइक	tech	blocklist: HINDI_WORD: frequent slip for लायक (worthy); like dominates
+like	लाईक	tech	blocklist: folded form blocked
+hashtag	हैश टैग	tech	spaced spelling: not a token
+live	लाइव	tech	blocklist: ENGLISH_HOMOPHONE: live dominates
+live	लाईव	tech	blocklist: folded form blocked
+web series	वेब सीरीज	tech	spaced spelling: not a token
+web series	वेब सीरीज़	tech	spaced spelling: not a token
+ott	ओ टी टी	tech	spaced spelling: not a token
+ads	ऐड्स|एड्स	tech	agent: AMBIGUOUS: एड्स is also the disease AIDS
+apk	ए पी के	tech	spaced spelling: not a token
+uninstall	अन इंस्टॉल	tech	spaced spelling: not a token
+home	होम	tech	agent: AMBIGUOUS: होम is also Hindi (fire offering, हवन)
+mode	मोड	tech	agent: AMBIGUOUS: मोड is a common nukta-less spelling of Hindi मोड़ (turn, bend)
+cut	कट	tech	blocklist: HINDI_WORD: was cut (कटना); cut also common
+save	सेव	tech	agent: AMBIGUOUS: सेव is also the snack sev and a common spelling of सेब (apple)
+factory reset	फैक्ट्री रीसेट	tech	spaced spelling: not a token
+factory reset	फैक्टरी रीसेट	tech	spaced spelling: not a token
+backup	बैक अप	tech	spaced spelling: not a token
+fingerprint	फिंगर प्रिंट	tech	spaced spelling: not a token
+screenshot	स्क्रीन शॉट	tech	spaced spelling: not a token
+screenshots	स्क्रीन शॉट्स	tech	spaced spelling: not a token
+game	गेमों	tech	inflected Hindi form; the base spelling is listed
+gps	जी पी एस	tech	spaced spelling: not a token
+pair	पेयर	tech	blocklist: ENGLISH_HOMOPHONE: pair dominates
+camera	कैमरे	tech	inflected Hindi form; the base spelling is listed
+camera	कैमरों	tech	inflected Hindi form; the base spelling is listed
+flashlight	फ्लैश लाइट	tech	spaced spelling: not a token
+megapixel	मेगा पिक्सल	tech	spaced spelling: not a token
+webcam	वेब कैम	tech	spaced spelling: not a token
+cctv	सी सी टी वी	tech	spaced spelling: not a token
+touchscreen	टच स्क्रीन	tech	spaced spelling: not a token
+keypad	की पैड	tech	spaced spelling: not a token
+button	बटनों	tech	inflected Hindi form; the base spelling is listed
+battery	बैटरियों	tech	inflected Hindi form; the base spelling is listed
+cell	सेल	tech	agent: AMBIGUOUS: सेल is also sale
+charger	चार्जरों	tech	inflected Hindi form; the base spelling is listed
+fast charging	फास्ट चार्जिंग	tech	spaced spelling: not a token
+fast charging	फ़ास्ट चार्जिंग	tech	spaced spelling: not a token
+power bank	पावर बैंक	tech	spaced spelling: not a token
+power bank	पॉवर बैंक	tech	spaced spelling: not a token
+type c	टाइप सी	tech	spaced spelling: not a token
+usb	यू एस बी	tech	spaced spelling: not a token
+screen guard	स्क्रीन गार्ड	tech	spaced spelling: not a token
+tempered glass	टेम्पर्ड ग्लास	tech	spaced spelling: not a token
+tempered glass	टेंपर्ड ग्लास	tech	spaced spelling: not a token
+tempered glass	टेम्पर ग्लास	tech	spaced spelling: not a token
+memory card	मेमोरी कार्ड	tech	spaced spelling: not a token
+memory card	मेमरी कार्ड	tech	spaced spelling: not a token
+sd card	एसडी कार्ड	tech	spaced spelling: not a token
+sd card	एस डी कार्ड	tech	spaced spelling: not a token
+rom	रोम	tech	agent: AMBIGUOUS: रोम is also Rome and Hindi रोम (body hair)
+gb	जी बी	tech	spaced spelling: not a token
+mb	एम बी	tech	spaced spelling: not a token
+kb	के बी	tech	spaced spelling: not a token
+headphone	हेड फोन	tech	spaced spelling: not a token
+smartwatch	स्मार्ट वॉच	tech	spaced spelling: not a token
+smartwatch	स्मार्ट वाच	tech	spaced spelling: not a token
+computer	कंप्यूटरों	tech	inflected Hindi form; the base spelling is listed
+computer	कम्प्यूटरों	tech	inflected Hindi form; the base spelling is listed
+laptop	लैपटॉपों	tech	inflected Hindi form; the base spelling is listed
+pc	पी सी	tech	spaced spelling: not a token
+cpu	सी पी यू	tech	spaced spelling: not a token
+keyboard	की बोर्ड	tech	spaced spelling: not a token
+hard disk	हार्ड डिस्क	tech	spaced spelling: not a token
+pen drive	पेन ड्राइव	tech	spaced spelling: not a token
+cd	सीडी|सी डी	tech	agent: AMBIGUOUS: सीडी is a common nukta-less spelling of सीढ़ी (stairs)
+dvd	डी वी डी	tech	spaced spelling: not a token
+printout	प्रिंट आउट	tech	spaced spelling: not a token
+photocopy	फोटो कॉपी	tech	spaced spelling: not a token
+operating system	ऑपरेटिंग सिस्टम	tech	spaced spelling: not a token
+operating system	आपरेटिंग सिस्टम	tech	spaced spelling: not a token
+code	कोडों	tech	inflected Hindi form; the base spelling is listed
+file	फाइल	tech	blocklist: ENGLISH_HOMOPHONE: file dominates
+file	फ़ाइल	tech	blocklist: ENGLISH_HOMOPHONE: file dominates
+file	फाईल	tech	blocklist: folded form blocked
+file	फाइलों	tech	inflected Hindi form; the base spelling is listed
+pdf	पी डी एफ	tech	spaced spelling: not a token
+it	आई टी	tech	spaced spelling: not a token
+ai	ए आई	tech	spaced spelling: not a token
+machine	मशीनों	tech	inflected Hindi form; the base spelling is listed
+tv	टी वी	tech	spaced spelling: not a token
+smart tv	स्मार्ट टीवी	tech	spaced spelling: not a token
+smart tv	स्मार्ट टी वी	tech	spaced spelling: not a token
+led	एल ई डी	tech	spaced spelling: not a token
+lcd	एल सी डी	tech	spaced spelling: not a token
+hd	एच डी	tech	spaced spelling: not a token
+four k	फोर के	tech	spaced spelling: not a token
+set	सेट	tech	blocklist: ENGLISH_HOMOPHONE: set dominates; slip for सेठ (merchant)
+set top box	सेट टॉप बॉक्स	tech	spaced spelling: not a token
+set top box	सेटटॉप बॉक्स	tech	spaced spelling: not a token
+set top box	सेट टॉप बाक्स	tech	spaced spelling: not a token
+dth	डी टी एच	tech	spaced spelling: not a token
+channel	चैनलों	tech	inflected Hindi form; the base spelling is listed
+fm	एफ एम	tech	spaced spelling: not a token
+home theatre	होम थिएटर	tech	spaced spelling: not a token
+home theatre	होम थियेटर	tech	spaced spelling: not a token
+dj	डी जे	tech	spaced spelling: not a token
+ac	एसी|ए सी	tech	agent: AMBIGUOUS: एसी is a frequent misspelling of Hindi ऐसी (such); convert only in appliance context
+air conditioner	एयर कंडीशनर	tech	spaced spelling: not a token
+air conditioner	एयर कंडिशनर	tech	spaced spelling: not a token
+air conditioner	एयर कन्डीशनर	tech	spaced spelling: not a token
+washing machine	वॉशिंग मशीन	tech	spaced spelling: not a token
+washing machine	वाशिंग मशीन	tech	spaced spelling: not a token
+washing machine	वासिंग मशीन	tech	spaced spelling: not a token
+mixer grinder	मिक्सर ग्राइंडर	tech	spaced spelling: not a token
+mixie	मिक्सी	tech	annotators gloss it as mixi (19x)
+ro	आर ओ	tech	spaced spelling: not a token
+vacuum cleaner	वैक्यूम क्लीनर	tech	spaced spelling: not a token
+vacuum cleaner	वेक्यूम क्लीनर	tech	spaced spelling: not a token
+ups	यू पी एस	tech	spaced spelling: not a token
+emergency light	इमरजेंसी लाइट	tech	spaced spelling: not a token
+emergency light	इमर्जेंसी लाइट	tech	spaced spelling: not a token
+bulb	बल्बों	tech	inflected Hindi form; the base spelling is listed
+tube light	ट्यूब लाइट	tech	spaced spelling: not a token
+light	लाइट	tech	blocklist: ENGLISH_HOMOPHONE: light dominates
+light	लाईट	tech	blocklist: folded form blocked
+power cut	पावर कट	tech	spaced spelling: not a token
+power cut	पॉवर कट	tech	spaced spelling: not a token
+switch	स्विचों	tech	inflected Hindi form; the base spelling is listed
+switchboard	स्विच बोर्ड	tech	spaced spelling: not a token
+wire	वायरों	tech	inflected Hindi form; the base spelling is listed
+mcb	एम सी बी	tech	spaced spelling: not a token
+short circuit	शॉर्ट सर्किट	tech	spaced spelling: not a token
+short circuit	शार्ट सर्किट	tech	spaced spelling: not a token
+watt	वॉट	tech	blocklist: ENGLISH_HOMOPHONE: what dominates; watt
+meter	मीटरों	tech	inflected Hindi form; the base spelling is listed
+table	टेबलों	object	inflected Hindi form; the base spelling is listed
+chair	चेयरों	object	inflected Hindi form; the base spelling is listed
+sofa	सोफे	object	inflected Hindi form; the base spelling is listed
+sofa	सोफ़े	object	inflected Hindi form; the base spelling is listed
+bed	बेड	object	blocklist: ENGLISH_HOMOPHONE: bed dominates
+bed	बेडों	object	inflected Hindi form; the base spelling is listed
+bedsheet	बेड शीट	object	spaced spelling: not a token
+bedsheet	बेडशीटें	object	inflected Hindi form; the base spelling is listed
+cushion	कुशनों	object	inflected Hindi form; the base spelling is listed
+dressing table	ड्रेसिंग टेबल	object	spaced spelling: not a token
+dressing table	ड्रेसिंग टेबिल	object	spaced spelling: not a token
+dining table	डाइनिंग टेबल	object	spaced spelling: not a token
+dining table	डायनिंग टेबल	object	spaced spelling: not a token
+showpiece	शो पीस	object	spaced spelling: not a token
+wall clock	वॉल क्लॉक	object	spaced spelling: not a token
+wall clock	वाल क्लॉक	object	spaced spelling: not a token
+wall clock	वॉल क्लाक	object	spaced spelling: not a token
+photo frame	फोटो फ्रेम	object	spaced spelling: not a token
+photo frame	फ़ोटो फ्रेम	object	spaced spelling: not a token
+locker	लाकर	object	fixes: Hindi "having brought" (लाना); locker is लॉकर
+room	रूमों	object	inflected Hindi form; the base spelling is listed
+bedroom	बेड रूम	object	spaced spelling: not a token
+bathroom	बाथ रूम	object	spaced spelling: not a token
+drawing room	ड्राइंग रूम	object	spaced spelling: not a token
+drawing room	ड्रॉइंग रूम	object	spaced spelling: not a token
+floor	फ्लोर|फ़्लोर	object	agent: AMBIGUOUS: फ्लोर is also flour
+gate	गेट	object	blocklist: ENGLISH_HOMOPHONE: gate dominates; get in phrases (गेट टुगेदर)
+door	डोर	object	agent: AMBIGUOUS: डोर is Hindi for string or thread
+flat	फ्लैटों	object	inflected Hindi form; the base spelling is listed
+wash basin	वॉश बेसिन	object	spaced spelling: not a token
+sink	सिंक	object	agent: AMBIGUOUS: सिंक is also sync
+paint	पेंट|पेन्ट	object	agent: AMBIGUOUS: पेंट is also written for pant
+mug	मग	object	blocklist: ENGLISH_HOMOPHONE: mug dominates; also Hindi मग (path)
+light	लाइट	object	blocklist: ENGLISH_HOMOPHONE: light dominates
+light	लाईट	object	blocklist: folded form blocked
+bulb	बल्बों	object	inflected Hindi form; the base spelling is listed
+tube light	ट्यूब लाइट	object	spaced spelling: not a token
+extension board	एक्सटेंशन बोर्ड	object	spaced spelling: not a token
+extension board	एक्सटेंसन बोर्ड	object	spaced spelling: not a token
+cooler	कूलरों	object	inflected Hindi form; the base spelling is listed
+fridge	फ्रिज|फ्रीज|फ़्रिज	object	agent: AMBIGUOUS: फ्रीज is also freeze
+washing machine	वाशिंग मशीन	object	spaced spelling: not a token
+washing machine	वॉशिंग मशीन	object	spaced spelling: not a token
+machine	मशीनें	object	inflected Hindi form; the base spelling is listed
+machine	मशीनों	object	inflected Hindi form; the base spelling is listed
+water purifier	वाटर प्यूरीफायर	object	spaced spelling: not a token
+water purifier	वॉटर प्यूरीफायर	object	spaced spelling: not a token
+water purifier	वाटर प्यूरिफायर	object	spaced spelling: not a token
+wire	वायरों	object	inflected Hindi form; the base spelling is listed
+cell	सेल	object	agent: AMBIGUOUS: सेल is also sale
+water bottle	वाटर बॉटल	object	spaced spelling: not a token
+water bottle	वॉटर बॉटल	object	spaced spelling: not a token
+glass	ग्लासों	object	inflected Hindi form; the base spelling is listed
+plate	प्लेटें	object	inflected Hindi form; the base spelling is listed
+plate	प्लेटों	object	inflected Hindi form; the base spelling is listed
+cup	कप	object	blocklist: ENGLISH_HOMOPHONE: cup dominates
+cup	कपों	object	inflected Hindi form; the base spelling is listed
+dinner set	डिनर सेट	object	spaced spelling: not a token
+jug	जग	object	agent: AMBIGUOUS: जग is also Hindi for world
+jar	जार	object	agent: AMBIGUOUS: जार also occurs in Hindi (जार जार रोना)
+lunch box	लंच बॉक्स	object	spaced spelling: not a token
+lunch box	लंच बाक्स	object	spaced spelling: not a token
+match box	मैच बॉक्स	object	spaced spelling: not a token
+pressure cooker	प्रेशर कुकर	object	spaced spelling: not a token
+pressure cooker	प्रैशर कुकर	object	spaced spelling: not a token
+mixie	मिक्सी	object	annotators gloss it as mixi (19x)
+pan	पैन	object	blocklist: ENGLISH_HOMOPHONE: pan (PAN card, frying pan) and pen both common
+non stick	नॉन स्टिक	object	spaced spelling: not a token
+non stick	नान स्टिक	object	spaced spelling: not a token
+face wash	फेस वॉश	object	spaced spelling: not a token
+face wash	फेस वाश	object	spaced spelling: not a token
+hand wash	हैंड वॉश	object	spaced spelling: not a token
+hand wash	हैंड वाश	object	spaced spelling: not a token
+scent	सेंट	object	agent: AMBIGUOUS: सेंट is also cent and saint
+toothbrush	टूथ ब्रश	object	spaced spelling: not a token
+toothpaste	टूथ पेस्ट	object	spaced spelling: not a token
+hair dryer	हेयर ड्रायर	object	spaced spelling: not a token
+hair dryer	हेयर ड्राइयर	object	spaced spelling: not a token
+gel	जेल	object	agent: AMBIGUOUS: जेल is also jail
+nail cutter	नेल कटर	object	spaced spelling: not a token
+nail polish	नेल पॉलिश	object	spaced spelling: not a token
+nail polish	नेल पालिश	object	spaced spelling: not a token
+nail paint	नेल पेंट	object	spaced spelling: not a token
+makeup	मेक अप	object	spaced spelling: not a token
+sanitary pad	सैनिटरी पैड	object	spaced spelling: not a token
+sanitary pad	सेनेटरी पैड	object	spaced spelling: not a token
+pad	पैड	object	blocklist: folded form blocked
+bag	बैगों	object	inflected Hindi form; the base spelling is listed
+handbag	हैंड बैग	object	spaced spelling: not a token
+suitcase	सूट केस	object	spaced spelling: not a token
+chain	चेन|चैन	object	agent: AMBIGUOUS: चैन is also Hindi for peace or relief
+sunglasses	सन ग्लासेस	object	spaced spelling: not a token
+raincoat	रेन कोट	object	spaced spelling: not a token
+keychain	की चेन	object	spaced spelling: not a token
+key	की	object	agent: AMBIGUOUS: की is the Hindi postposition (of); never map without context
+id card	आईडी कार्ड	object	spaced spelling: not a token
+id card	आई डी कार्ड	object	spaced spelling: not a token
+card	कार्डों	object	inflected Hindi form; the base spelling is listed
+visiting card	विजिटिंग कार्ड	object	spaced spelling: not a token
+greeting card	ग्रीटिंग कार्ड	object	spaced spelling: not a token
+ticket	टिकटें	object	inflected Hindi form; the base spelling is listed
+ticket	टिकटों	object	inflected Hindi form; the base spelling is listed
+note	नोट	object	blocklist: ENGLISH_HOMOPHONE: note dominates
+note	नोटों	object	inflected Hindi form; the base spelling is listed
+rubber band	रबर बैंड	object	spaced spelling: not a token
+rubber band	रबड़ बैंड	object	spaced spelling: not a token
+safety pin	सेफ्टी पिन	object	spaced spelling: not a token
+safety pin	सेफ़्टी पिन	object	spaced spelling: not a token
+button	बटनों	object	inflected Hindi form; the base spelling is listed
+zip	जिप	object	annotators gloss it as jeep (11x)
+collar	कॉलर	object	annotators gloss it as colour (27x)
+cigarette	सिगरेटें	object	inflected Hindi form; the base spelling is listed
+teddy bear	टेडी बियर	object	spaced spelling: not a token
+boot	बूटों	object	inflected Hindi form; the base spelling is listed
+heels	हील	object	blocklist: ENGLISH_HOMOPHONE: heel dominates; heal
+sandal	सैंडलें	object	inflected Hindi form; the base spelling is listed
+slipper	स्लिपर|स्लीपर	object	agent: AMBIGUOUS: स्लीपर is also sleeper (train class)
+shirt	शर्टें	object	inflected Hindi form; the base spelling is listed
+shirt	शर्टों	object	inflected Hindi form; the base spelling is listed
+t shirt	टीशर्ट	object	annotators gloss it as t-shirt (156x)
+t shirt	टी शर्ट	object	spaced spelling: not a token
+t shirt	टी शर्ट	object	spaced spelling: not a token
+pant	पैंट	object	blocklist: ENGLISH_HOMOPHONE: pant dominates; paint
+pant	पैन्ट	object	blocklist: folded form blocked
+pant	पैंटें	object	inflected Hindi form; the base spelling is listed
+half pant	हाफ पैंट	object	spaced spelling: not a token
+half pant	हाफ़ पैंट	object	spaced spelling: not a token
+tracksuit	ट्रैक सूट	object	spaced spelling: not a token
+sweater	स्वेटरों	object	inflected Hindi form; the base spelling is listed
+coat	कोट	object	blocklist: ENGLISH_HOMOPHONE: coat dominates; also Hindi कोट (fort)
+vest	वेस्ट	object	agent: AMBIGUOUS: वेस्ट is also west and waste
+tie	टाई	object	blocklist: ENGLISH_HOMOPHONE: tie dominates; Thai
+suit	सूट	object	blocklist: ENGLISH_HOMOPHONE: suit dominates
+dress	ड्रेसें	object	inflected Hindi form; the base spelling is listed
+full sleeve	फुल स्लीव	object	spaced spelling: not a token
+full sleeve	फुल स्लीव्स	object	spaced spelling: not a token
+full sleeve	फ़ुल स्लीव	object	spaced spelling: not a token
+half sleeve	हाफ स्लीव	object	spaced spelling: not a token
+half sleeve	हाफ स्लीव्स	object	spaced spelling: not a token
+half sleeve	हाफ़ स्लीव	object	spaced spelling: not a token
+lace	लेस	object	agent: AMBIGUOUS: लेस is also less
+cake	केकों	object	inflected Hindi form; the base spelling is listed
+black forest	ब्लैक फॉरेस्ट	object	spaced spelling: not a token
+black forest	ब्लैक फ़ॉरेस्ट	object	spaced spelling: not a token
+biscuit	बिस्कुटों	object	inflected Hindi form; the base spelling is listed
+bun	बन	object	agent: AMBIGUOUS: बन is also Hindi (become; forest)
+cheese	चीज़|चीज	object	agent: AMBIGUOUS: चीज़ is Hindi for thing
+jam	जैम|जेम	object	agent: AMBIGUOUS: close to जाम (traffic jam); जेम is also gem
+toffee	टॉफियां	object	inflected Hindi form; the base spelling is listed
+chewing gum	च्युइंग गम	object	spaced spelling: not a token
+ice cream	आइस क्रीम	object	spaced spelling: not a token
+dessert	डेज़र्ट|डेजर्ट	object	agent: AMBIGUOUS: also desert
+french fries	फ्रेंच फ्राइज़	object	spaced spelling: not a token
+french fries	फ्रेंच फ्राइज	object	spaced spelling: not a token
+french fries	फ्रेंच फ्राई	object	spaced spelling: not a token
+snacks	स्नैक्स|स्नेक्स	object	agent: AMBIGUOUS: स्नेक्स is also snakes
+fried rice	फ्राइड राइस	object	spaced spelling: not a token
+fried rice	फ्राइड राईस	object	spaced spelling: not a token
+spring roll	स्प्रिंग रोल	object	spaced spelling: not a token
+roll	रोल	object	agent: AMBIGUOUS: रोल is also role
+soup	सूप	object	agent: AMBIGUOUS: सूप is also the Hindi winnowing basket
+chicken	चिकन	object	agent: AMBIGUOUS: चिकन is also chikan embroidery
+curry	करी	object	agent: AMBIGUOUS: करी is also a Hindi verb form (did)
+non veg	नॉन वेज	object	spaced spelling: not a token
+fast food	फास्ट फूड	object	spaced spelling: not a token
+fast food	फ़ास्ट फ़ूड	object	spaced spelling: not a token
+junk food	जंक फूड	object	spaced spelling: not a token
+junk food	जंक फ़ूड	object	spaced spelling: not a token
+breakfast	ब्रेक फास्ट	object	spaced spelling: not a token
+butterscotch	बटर स्कॉच	object	spaced spelling: not a token
+dry fruits	ड्राई फ्रूट्स	object	spaced spelling: not a token
+dry fruits	ड्राई फ्रूट	object	spaced spelling: not a token
+baby corn	बेबी कॉर्न	object	spaced spelling: not a token
+sweet corn	स्वीट कॉर्न	object	spaced spelling: not a token
+cornflakes	कॉर्न फ्लेक्स	object	spaced spelling: not a token
+soya	सोया	object	agent: AMBIGUOUS: सोया is also Hindi (slept)
+soya chunks	सोया चंक्स	object	spaced spelling: not a token
+chilli	चिली|चिल्ली	object	agent: AMBIGUOUS: चिली is also Chile
+chilli potato	चिली पोटैटो	object	spaced spelling: not a token
+chilli potato	चिल्ली पोटेटो	object	spaced spelling: not a token
+chilli potato	चिली पोटेटो	object	spaced spelling: not a token
+baking powder	बेकिंग पाउडर	object	spaced spelling: not a token
+baking soda	बेकिंग सोडा	object	spaced spelling: not a token
+cold coffee	कोल्ड कॉफी	object	spaced spelling: not a token
+cold coffee	कोल्ड कॉफ़ी	object	spaced spelling: not a token
+green tea	ग्रीन टी	object	spaced spelling: not a token
+cold drink	कोल्ड ड्रिंक	object	spaced spelling: not a token
+cold drink	कोल्ड ड्रिंक्स	object	spaced spelling: not a token
+soft drink	सॉफ्ट ड्रिंक	object	spaced spelling: not a token
+soft drink	सॉफ़्ट ड्रिंक	object	spaced spelling: not a token
+soft drink	साफ्ट ड्रिंक	object	spaced spelling: not a token
+drink	ड्रिंक्स	object	annotators gloss it as drinks (52x)
+milkshake	मिल्क शेक	object	spaced spelling: not a token
+mineral water	मिनरल वाटर	object	spaced spelling: not a token
+mineral water	मिनरल वॉटर	object	spaced spelling: not a token
+beer	बियर|बीयर	object	agent: AMBIGUOUS: बियर is also bear (teddy bear)
+rum	रम	object	agent: AMBIGUOUS: रम is also Hindi (रम जाना, to be absorbed)
+car	कारें	object	inflected Hindi form; the base spelling is listed
+car	कारों	object	inflected Hindi form; the base spelling is listed
+motorcycle	मोटर साइकिल	object	spaced spelling: not a token
+bus	बस|बसें|बसों	object	agent: AMBIGUOUS: बस is also Hindi for just or enough
+truck	ट्रकों	object	inflected Hindi form; the base spelling is listed
+van	वैन	object	blocklist: folded form blocked
+train	ट्रेनें	object	inflected Hindi form; the base spelling is listed
+train	ट्रेनों	object	inflected Hindi form; the base spelling is listed
+plane	प्लेन	object	agent: AMBIGUOUS: प्लेन is also plain
+boat	बोट	object	agent: AMBIGUOUS: बोट is also a dialect spelling of vote (वोट)
+tyre	टायरों	object	inflected Hindi form; the base spelling is listed
+brake	ब्रेक	object	agent: AMBIGUOUS: ब्रेक is also break
+seat	सीटें	object	inflected Hindi form; the base spelling is listed
+seat	सीटों	object	inflected Hindi form; the base spelling is listed
+number plate	नंबर प्लेट	object	spaced spelling: not a token
+number plate	नम्बर प्लेट	object	spaced spelling: not a token
+headlight	हेड लाइट	object	spaced spelling: not a token
+spare parts	स्पेयर पार्ट्स	object	spaced spelling: not a token
+spare parts	स्पेयर पार्ट	object	spaced spelling: not a token
+carrier	कैरियर	object	agent: AMBIGUOUS: कैरियर is also career
+cover	कवरों	object	inflected Hindi form; the base spelling is listed
+pen	पेन|पेनों	object	agent: AMBIGUOUS: पेन is also said for pain
+paper	पेपरों	object	inflected Hindi form; the base spelling is listed
+copy	कॉपियां	object	inflected Hindi form; the base spelling is listed
+copy	कॉपियों	object	inflected Hindi form; the base spelling is listed
+notebook	नोट बुक	object	spaced spelling: not a token
+register	रजिस्टरों	object	inflected Hindi form; the base spelling is listed
+file	फाइल	object	blocklist: ENGLISH_HOMOPHONE: file dominates
+file	फ़ाइल	object	blocklist: ENGLISH_HOMOPHONE: file dominates
+file	फाइलें	object	inflected Hindi form; the base spelling is listed
+file	फाइलों	object	inflected Hindi form; the base spelling is listed
+cello tape	सेलो टेप	object	spaced spelling: not a token
+sketch pen	स्केच पेन	object	spaced spelling: not a token
+blackboard	ब्लैक बोर्ड	object	spaced spelling: not a token
+chalk	चॉक|चाक	object	agent: AMBIGUOUS: चाक is also Hindi for a potter's wheel
+diary	डायरियां	object	inflected Hindi form; the base spelling is listed
+geometry box	ज्योमेट्री बॉक्स	object	spaced spelling: not a token
+geometry box	जियोमेट्री बॉक्स	object	spaced spelling: not a token
+printout	प्रिंट आउट	object	spaced spelling: not a token
+form	फॉर्म|फार्म	object	agent: AMBIGUOUS: फार्म is also farm
+bill	बिल	object	agent: AMBIGUOUS: बिल is also Hindi for burrow
+screwdriver	स्क्रू ड्राइवर	object	spaced spelling: not a token
+nut	नट	object	agent: AMBIGUOUS: नट is also Hindi for acrobat
+tool kit	टूल किट	object	spaced spelling: not a token
+grease	ग्रीस	object	agent: AMBIGUOUS: ग्रीस is also Greece
+inch tape	इंच टेप	object	spaced spelling: not a token
+packet	पैकेटों	object	inflected Hindi form; the base spelling is listed
+sheet	शीट	object	blocklist: ENGLISH_HOMOPHONE: sheet dominates
+tin	टिन	object	blocklist: folded form blocked
+ball	बॉल	object	blocklist: ENGLISH_HOMOPHONE: ball dominates
+bat	बैट	object	blocklist: folded form blocked
+shuttlecock	शटल कॉक	object	spaced spelling: not a token
+net	नेट	object	blocklist: ENGLISH_HOMOPHONE: net dominates; neat
+stumps	स्टंप	object	annotators gloss it as stump (27x)
+school	स्कूलों	institution	inflected Hindi form; the base spelling is listed
+college	कॉलेजों	institution	inflected Hindi form; the base spelling is listed
+university	यूनिवर्सिटियों	institution	inflected Hindi form; the base spelling is listed
+class	क्लासों	institution	inflected Hindi form; the base spelling is listed
+class	क्लासें	institution	inflected Hindi form; the base spelling is listed
+classroom	क्लास रूम	institution	spaced spelling: not a token
+teacher	टीचरों	institution	inflected Hindi form; the base spelling is listed
+student	स्टूडेंटों	institution	inflected Hindi form; the base spelling is listed
+principal	प्रिंसिपल	institution	blocklist: ENGLISH_HOMOPHONE: principal dominates (school)
+principal	प्रिन्सिपल	institution	blocklist: folded form blocked
+principal	प्रिंसीपल	institution	blocklist: folded form blocked
+exam	एग्जामों	institution	inflected Hindi form; the base spelling is listed
+test	टेस्ट	institution	blocklist: ENGLISH_HOMOPHONE: test and taste both common
+test	टेस्टों	institution	inflected Hindi form; the base spelling is listed
+paper	पेपरों	institution	inflected Hindi form; the base spelling is listed
+marks	मार्क्स	institution	annotators gloss it as mask (16x)
+degree	डिग्रियां	institution	inflected Hindi form; the base spelling is listed
+degree	डिग्रियों	institution	inflected Hindi form; the base spelling is listed
+course	कोर्स	institution	blocklist: ENGLISH_HOMOPHONE: course dominates
+course	कोर्सों	institution	inflected Hindi form; the base spelling is listed
+homework	होम वर्क	institution	spaced spelling: not a token
+project	प्रोजेक्टों	institution	inflected Hindi form; the base spelling is listed
+assignment	असाइनमेंटों	institution	inflected Hindi form; the base spelling is listed
+lecture	लेक्चरों	institution	inflected Hindi form; the base spelling is listed
+batch	बैचों	institution	inflected Hindi form; the base spelling is listed
+subject	सब्जेक्टों	institution	inflected Hindi form; the base spelling is listed
+maths	मैथ	institution	annotators gloss it as math (16x)
+hindi	हिंदी	institution	agent: AMBIGUOUS: हिंदी is the ordinary Hindi name of the language; keep Devanagari unless the subject is said in English
+board	बोर्डों	institution	inflected Hindi form; the base spelling is listed
+copy	कॉपियां	institution	inflected Hindi form; the base spelling is listed
+copy	कॉपियों	institution	inflected Hindi form; the base spelling is listed
+pen	पेन	institution	agent: AMBIGUOUS: पेन is also how pain is written
+pencil	पेंसिलों	institution	inflected Hindi form; the base spelling is listed
+bag	बैगों	institution	inflected Hindi form; the base spelling is listed
+period	पीरियडों	institution	inflected Hindi form; the base spelling is listed
+chapter	चैप्टरों	institution	inflected Hindi form; the base spelling is listed
+pass	पास	institution	agent: AMBIGUOUS: पास is also Hindi (near, with)
+fail	फेल	institution	blocklist: ENGLISH_HOMOPHONE: fail dominates
+fail	फ़ेल	institution	blocklist: folded form blocked
+rank	रैंक	institution	annotators gloss it as rack (16x)
+cutoff	कट ऑफ	institution	spaced spelling: not a token
+practical	प्रैक्टिकलों	institution	inflected Hindi form; the base spelling is listed
+lab	लैबों	institution	inflected Hindi form; the base spelling is listed
+sir	सर	institution	agent: AMBIGUOUS: सर is also Hindi (head, a variant of सिर)
+maam	मैम	institution	annotators gloss it as mam (54x)
+master	मास्टरों	institution	inflected Hindi form; the base spelling is listed
+phd	पी एच डी	institution	spaced spelling: not a token
+certificate	सर्टिफिकेटों	institution	inflected Hindi form; the base spelling is listed
+marksheet	मार्क शीट	institution	spaced spelling: not a token
+roll number	रोल नंबर	institution	spaced spelling: not a token
+roll number	रोल नम्बर	institution	spaced spelling: not a token
+professor	प्रोफेसरों	institution	inflected Hindi form; the base spelling is listed
+department	डिपार्टमेंटों	institution	inflected Hindi form; the base spelling is listed
+senior	सीनियरों	institution	inflected Hindi form; the base spelling is listed
+junior	जूनियरों	institution	inflected Hindi form; the base spelling is listed
+note	नोट	institution	blocklist: ENGLISH_HOMOPHONE: note dominates
+note	नोटों	institution	inflected Hindi form; the base spelling is listed
+office	ऑफिसों	institution	inflected Hindi form; the base spelling is listed
+company	कंपनियों	institution	inflected Hindi form; the base spelling is listed
+company	कंपनियां	institution	inflected Hindi form; the base spelling is listed
+job	जॉबों	institution	inflected Hindi form; the base spelling is listed
+salary	सैलरी	institution	blocklist: ENGLISH_HOMOPHONE: salary dominates
+salary	सेलरी	institution	blocklist: ENGLISH_HOMOPHONE: salary dominates
+boss	बॉस|बास	institution	agent: AMBIGUOUS: बास is also Hindi (smell)
+manager	मैनेजरों	institution	inflected Hindi form; the base spelling is listed
+team	टीमों	institution	inflected Hindi form; the base spelling is listed
+team	टीमें	institution	inflected Hindi form; the base spelling is listed
+meeting	मीटिंगों	institution	inflected Hindi form; the base spelling is listed
+target	टारगेटों	institution	inflected Hindi form; the base spelling is listed
+client	क्लाइंटों	institution	inflected Hindi form; the base spelling is listed
+customer	कस्टमरों	institution	inflected Hindi form; the base spelling is listed
+worker	वर्करों	institution	inflected Hindi form; the base spelling is listed
+labour	लेबरों	institution	inflected Hindi form; the base spelling is listed
+shift	शिफ्टों	institution	inflected Hindi form; the base spelling is listed
+report	रिपोर्टों	institution	inflected Hindi form; the base spelling is listed
+file	फाइल	institution	blocklist: ENGLISH_HOMOPHONE: file dominates
+file	फ़ाइल	institution	blocklist: ENGLISH_HOMOPHONE: file dominates
+file	फाइलें	institution	inflected Hindi form; the base spelling is listed
+file	फाइलों	institution	inflected Hindi form; the base spelling is listed
+document	डॉक्यूमेंटों	institution	inflected Hindi form; the base spelling is listed
+officer	ऑफिसरों	institution	inflected Hindi form; the base spelling is listed
+engineer	इंजीनियरों	institution	inflected Hindi form; the base spelling is listed
+partner	पार्टनरों	institution	inflected Hindi form; the base spelling is listed
+factory	फैक्ट्रियों	institution	inflected Hindi form; the base spelling is listed
+order	ऑर्डरों	institution	inflected Hindi form; the base spelling is listed
+dealer	डीलरों	institution	inflected Hindi form; the base spelling is listed
+agent	एजेंटों	institution	inflected Hindi form; the base spelling is listed
+sale	सेल	institution	agent: AMBIGUOUS: सेल is also how cell is written
+share	शेयरों	institution	inflected Hindi form; the base spelling is listed
+market	मार्केटों	institution	inflected Hindi form; the base spelling is listed
+post	पोस्टों	institution	inflected Hindi form; the base spelling is listed
+part time	पार्ट टाइम	institution	spaced spelling: not a token
+full time	फुल टाइम	institution	spaced spelling: not a token
+leave	लीव	institution	blocklist: ENGLISH_HOMOPHONE: leave dominates
+bank	बैंकों	institution	inflected Hindi form; the base spelling is listed
+account	अकाउंटों	institution	inflected Hindi form; the base spelling is listed
+branch	ब्रांचों	institution	inflected Hindi form; the base spelling is listed
+cheque	चेक|चैक	institution	agent: AMBIGUOUS: चेक is also check (verify)
+card	कार्डों	institution	inflected Hindi form; the base spelling is listed
+debit card	डेबिट कार्ड	institution	spaced spelling: not a token
+credit card	क्रेडिट कार्ड	institution	spaced spelling: not a token
+loan	लोन	institution	blocklist: ENGLISH_HOMOPHONE: loan dominates
+loan	लोनों	institution	inflected Hindi form; the base spelling is listed
+payment	पेमेंटों	institution	inflected Hindi form; the base spelling is listed
+bill	बिल|बिलों	institution	agent: AMBIGUOUS: बिल is also Hindi (burrow, hole)
+income tax	इनकम टैक्स	institution	spaced spelling: not a token
+policy	पॉलिसियों	institution	inflected Hindi form; the base spelling is listed
+scheme	स्कीमों	institution	inflected Hindi form; the base spelling is listed
+scheme	स्कीमें	institution	inflected Hindi form; the base spelling is listed
+pan card	पैन कार्ड	institution	spaced spelling: not a token
+ration	राशन	institution	annotators leave it in Devanagari: glossed 14, unglossed 161; glosses [['ration', 14]]
+form	फॉर्म|फार्म|फॉर्मों	institution	agent: AMBIGUOUS: फार्म is also how farm is written
+fund	फंडों	institution	inflected Hindi form; the base spelling is listed
+rate	रेटों	institution	inflected Hindi form; the base spelling is listed
+minister	मिनिस्टरों	institution	inflected Hindi form; the base spelling is listed
+chief minister	चीफ मिनिस्टर	institution	spaced spelling: not a token
+prime minister	प्राइम मिनिस्टर	institution	spaced spelling: not a token
+mp	एमपी	institution	agent: AMBIGUOUS: एमपी is also Madhya Pradesh
+election	इलेक्शनों	institution	inflected Hindi form; the base spelling is listed
+vote	वोट	institution	annotators gloss it as boat (16x)
+vote	वोटों	institution	inflected Hindi form; the base spelling is listed
+voter	वोटरों	institution	inflected Hindi form; the base spelling is listed
+party	पार्टियों	institution	inflected Hindi form; the base spelling is listed
+party	पार्टियां	institution	inflected Hindi form; the base spelling is listed
+leader	लीडरों	institution	inflected Hindi form; the base spelling is listed
+ward	वार्डों	institution	inflected Hindi form; the base spelling is listed
+post office	पोस्ट ऑफिस	institution	spaced spelling: not a token
+post office	पोस्ट आफिस	institution	spaced spelling: not a token
+letter	लेटरों	institution	inflected Hindi form; the base spelling is listed
+court	कोर्ट	institution	blocklist: ENGLISH_HOMOPHONE: court dominates
+court	कोर्टों	institution	inflected Hindi form; the base spelling is listed
+high court	हाई कोर्ट	institution	spaced spelling: not a token
+case	केसों	institution	inflected Hindi form; the base spelling is listed
+advocate	एडवोकेटों	institution	inflected Hindi form; the base spelling is listed
+judge	जजों	institution	inflected Hindi form; the base spelling is listed
+bail	बेल	institution	agent: AMBIGUOUS: बेल is also Hindi (vine, bael fruit)
+jail	जेल	institution	blocklist: ENGLISH_HOMOPHONE: jail dominates; gel
+police station	पुलिस स्टेशन	institution	spaced spelling: not a token
+driving licence	ड्राइविंग लाइसेंस	institution	spaced spelling: not a token
+register	रजिस्टरों	institution	inflected Hindi form; the base spelling is listed
+counter	काउंटरों	institution	inflected Hindi form; the base spelling is listed
+centre	सेंटर	institution	annotators gloss it as center (720x)
+centre	सेन्टर	institution	annotators gloss it as center (24x)
+centre	सेंटरों	institution	inflected Hindi form; the base spelling is listed
+road	रोडों	institution	inflected Hindi form; the base spelling is listed
+jam	जाम	institution	agent: AMBIGUOUS: जाम is also Hindi (a drinking cup)
+petrol pump	पेट्रोल पंप	institution	spaced spelling: not a token
+rally	रैलियों	institution	inflected Hindi form; the base spelling is listed
+ticket	टिकटों	institution	inflected Hindi form; the base spelling is listed
+ticket	टिकटें	institution	inflected Hindi form; the base spelling is listed
+seat	सीटों	institution	inflected Hindi form; the base spelling is listed
+seat	सीटें	institution	inflected Hindi form; the base spelling is listed
+berth	बर्थ	institution	agent: AMBIGUOUS: बर्थ is also how birth is written (बर्थ सर्टिफिकेट)
+coach	कोचों	institution	inflected Hindi form; the base spelling is listed
+station	स्टेशनों	institution	inflected Hindi form; the base spelling is listed
+flight	फ्लाइटों	institution	inflected Hindi form; the base spelling is listed
+bus	बस	institution	agent: AMBIGUOUS: बस is also Hindi (enough, only)
+bus stand	बस स्टैंड	institution	spaced spelling: not a token
+driver	ड्राइवरों	institution	inflected Hindi form; the base spelling is listed
+train	ट्रेनों	institution	inflected Hindi form; the base spelling is listed
+train	ट्रेनें	institution	inflected Hindi form; the base spelling is listed
+passenger	पैसेंजरों	institution	inflected Hindi form; the base spelling is listed
+ac	ए सी	institution	spaced spelling: not a token
+check in	चेक इन	institution	spaced spelling: not a token
+late	लेट	institution	agent: AMBIGUOUS: लेट is also Hindi (lie down, as in लेट जाओ)
+guest house	गेस्ट हाउस	institution	spaced spelling: not a token
+route	रूट	institution	blocklist: ENGLISH_HOMOPHONE: route and root both common
+bike	बाइकों	institution	inflected Hindi form; the base spelling is listed
+car	कारों	institution	inflected Hindi form; the base spelling is listed
+truck	ट्रकों	institution	inflected Hindi form; the base spelling is listed
+plane	प्लेन	institution	agent: AMBIGUOUS: प्लेन is also how plain is written
+fare	फेयर	institution	agent: AMBIGUOUS: फेयर is also how fair is written
+pin code	पिन कोड	institution	spaced spelling: not a token
+beach	बीच	institution	agent: AMBIGUOUS: बीच is also Hindi (middle, between)
+hospital	हॉस्पिटलों	institution	inflected Hindi form; the base spelling is listed
+doctor	डॉक्टरों	institution	inflected Hindi form; the base spelling is listed
+doctor	डाक्टरों	institution	inflected Hindi form; the base spelling is listed
+nurse	नर्सों	institution	inflected Hindi form; the base spelling is listed
+patient	पेशेंटों	institution	inflected Hindi form; the base spelling is listed
+tablet	टैबलेटों	institution	inflected Hindi form; the base spelling is listed
+x ray	एक्स रे	institution	spaced spelling: not a token
+checkup	चेक अप	institution	spaced spelling: not a token
+blood pressure	ब्लड प्रेशर	institution	spaced spelling: not a token
+heart attack	हार्ट अटैक	institution	spaced spelling: not a token
+virus	वायरस	institution	annotators gloss it as wires (16x)
+bed	बेड	institution	blocklist: ENGLISH_HOMOPHONE: bed dominates
+bed	बेडों	institution	inflected Hindi form; the base spelling is listed
+weight	वेट	institution	agent: AMBIGUOUS: वेट is also how wait is written
+shop	शॉप|शाप	institution	agent: AMBIGUOUS: शाप is also Hindi (curse)
+mall	मॉल|माल	institution	agent: AMBIGUOUS: माल is also Hindi (goods, stuff)
+store	स्टोरों	institution	inflected Hindi form; the base spelling is listed
+showroom	शो रूम	institution	spaced spelling: not a token
+salon	सलून	institution	annotators gloss it as saloon (172x)
+hotel	होटलों	institution	inflected Hindi form; the base spelling is listed
+bar	बार	institution	agent: AMBIGUOUS: बार is also Hindi (time, occurrence)
+theatre	थिएटर	institution	annotators gloss it as theater (45x)
+film	फिल्मों	institution	inflected Hindi form; the base spelling is listed
+film	फिल्में	institution	inflected Hindi form; the base spelling is listed
+park	पार्कों	institution	inflected Hindi form; the base spelling is listed
+zoo	ज़ू|जू	institution	agent: AMBIGUOUS: जू is also a spelling of Hindi जूँ (louse)
+building	बिल्डिंगों	institution	inflected Hindi form; the base spelling is listed
+hall	हॉल|हाल	institution	agent: AMBIGUOUS: हाल is also Hindi (condition, as in क्या हाल है)
+packet	पैकेटों	institution	inflected Hindi form; the base spelling is listed
+uncle	अंकलों	institution	inflected Hindi form; the base spelling is listed
+aunty	आंटियों	institution	inflected Hindi form; the base spelling is listed
+aunty	आंटियां	institution	inflected Hindi form; the base spelling is listed
+best friend	बेस्ट फ्रेंड	institution	spaced spelling: not a token
+in laws	इन लॉज़	institution	spaced spelling: not a token
+in laws	इन लॉज	institution	spaced spelling: not a token
+love marriage	लव मैरिज	institution	spaced spelling: not a token
+birthday	बर्थ डे	institution	spaced spelling: not a token
+member	मेंबरों	institution	inflected Hindi form; the base spelling is listed
+group	ग्रुपों	institution	inflected Hindi form; the base spelling is listed
+maid	मेड	institution	agent: AMBIGUOUS: मेड is also how made is written
+channel	चैनलों	institution	inflected Hindi form; the base spelling is listed
+flat	फ्लैटों	institution	inflected Hindi form; the base spelling is listed
+block	ब्लाक	institution	annotators gloss it as black (30x)
+room	रूमों	institution	inflected Hindi form; the base spelling is listed
+gate	गेट	institution	blocklist: ENGLISH_HOMOPHONE: gate dominates; get in phrases (गेट टुगेदर)
+event	इवेंटों	institution	inflected Hindi form; the base spelling is listed
+programme	प्रोग्राम	institution	annotators gloss it as program (468x)
+programme	प्रोग्रामों	institution	inflected Hindi form; the base spelling is listed
+youtube	यू ट्यूब	brand	spaced spelling: not a token
+facebook	फेस बुक	brand	spaced spelling: not a token
+fb	एफ बी	abbreviation	spaced spelling: not a token
+fb	एफ बी	abbreviation	spaced spelling: not a token
+snapchat	स्नैप चैट	brand	spaced spelling: not a token
+gmail	जी मेल	brand	spaced spelling: not a token
+google chrome	गूगल क्रोम	brand	spaced spelling: not a token
+google chrome	गुगल क्रोम	brand	spaced spelling: not a token
+google maps	गूगल मैप्स	brand	spaced spelling: not a token
+google maps	गूगल मैप	brand	spaced spelling: not a token
+google maps	गुगल मैप	brand	spaced spelling: not a token
+google meet	गूगल मीट	brand	spaced spelling: not a token
+google meet	गुगल मीट	brand	spaced spelling: not a token
+google drive	गूगल ड्राइव	brand	spaced spelling: not a token
+google drive	गुगल ड्राइव	brand	spaced spelling: not a token
+google translate	गूगल ट्रांसलेट	brand	spaced spelling: not a token
+google translate	गुगल ट्रांसलेट	brand	spaced spelling: not a token
+play store	प्ले स्टोर	brand	spaced spelling: not a token
+naukri dot com	नौकरी डॉट कॉम|नौकरी डॉटकॉम	brand	agent: AMBIGUOUS: नौकरी alone is the Hindi word for job; map only the full phrase
+chatgpt	चैट जीपीटी	brand	spaced spelling: not a token
+chatgpt	चैट जी पी टी	brand	spaced spelling: not a token
+tiktok	टिक टॉक	brand	spaced spelling: not a token
+tiktok	टिक टोक	brand	spaced spelling: not a token
+sharechat	शेयर चैट	brand	spaced spelling: not a token
+truecaller	ट्रू कॉलर	brand	spaced spelling: not a token
+mx player	एमएक्स प्लेयर	brand	spaced spelling: not a token
+mx player	एम एक्स प्लेयर	brand	spaced spelling: not a token
+jiosaavn	जियोसावन|जियो सावन	brand	agent: AMBIGUOUS: सावन alone is the Hindi month
+pubg	पब जी	brand	spaced spelling: not a token
+bgmi	बी जी एम आई	abbreviation	spaced spelling: not a token
+bgmi	बी जी एम आई	abbreviation	spaced spelling: not a token
+free fire	फ्री फायर	brand	spaced spelling: not a token
+free fire	फ्री फ़ायर	brand	spaced spelling: not a token
+ludo king	लूडो किंग	brand	spaced spelling: not a token
+ludo king	लुडो किंग	brand	spaced spelling: not a token
+candy crush	कैंडी क्रश	brand	spaced spelling: not a token
+candy crush	कैंडी क्रेश	brand	spaced spelling: not a token
+dream11	ड्रीम इलेवन	brand	spaced spelling: not a token
+ios	आई ओ एस	abbreviation	spaced spelling: not a token
+ios	आई ओ एस	abbreviation	spaced spelling: not a token
+iphone	आई फोन	brand	spaced spelling: not a token
+ipad	आई पैड	brand	spaced spelling: not a token
+redmi	रेड मी	brand	spaced spelling: not a token
+mi	एम आई	brand	spaced spelling: not a token
+mi	एम आई	brand	spaced spelling: not a token
+realme	रियल मी	brand	spaced spelling: not a token
+oneplus	वन प्लस	brand	spaced spelling: not a token
+hp	एच पी	abbreviation	spaced spelling: not a token
+hp	एच पी	abbreviation	spaced spelling: not a token
+lg	एल जी	abbreviation	spaced spelling: not a token
+lg	एल जी	abbreviation	spaced spelling: not a token
+sony	सोनी	brand	agent: AMBIGUOUS: सोनी is also a given name and surname
+boat	बोट	brand	blocklist: ENGLISH_HOMOPHONE: boat dominates; slip for वोट
+jio	जियो|जिओ	brand	agent: AMBIGUOUS: जियो is also the Hindi imperative live
+jio phone	जियो फोन	brand	spaced spelling: not a token
+jio phone	जियो फ़ोन	brand	spaced spelling: not a token
+jiocinema	जियो सिनेमा	brand	spaced spelling: not a token
+jiomart	जियो मार्ट	brand	spaced spelling: not a token
+vi	वीआई|वी आई	brand	agent: AMBIGUOUS: वी alone is the letter v, not listed
+bsnl	बी एस एन एल	abbreviation	spaced spelling: not a token
+bsnl	बी एस एन एल	abbreviation	spaced spelling: not a token
+tata sky	टाटा स्काई	brand	spaced spelling: not a token
+tata sky	टाटा स्काय	brand	spaced spelling: not a token
+dish tv	डिश टीवी	brand	spaced spelling: not a token
+dish tv	डिश टी वी	brand	spaced spelling: not a token
+paytm	पे टी एम	brand	spaced spelling: not a token
+phonepe	फोनपे|फ़ोनपे|फोन पे|फ़ोन पे	brand	agent: AMBIGUOUS: spaced फोन पे is also Hindi on the phone
+google pay	गूगल पे	brand	spaced spelling: not a token
+google pay	गुगल पे	brand	spaced spelling: not a token
+gpay	जीपे|जी पे	brand	agent: AMBIGUOUS: spaced जी पे can be the honorific जी plus पे
+bhim	भीम	brand	agent: AMBIGUOUS: भीम is also the Mahabharata hero and a given name
+upi	यू पी आई	abbreviation	spaced spelling: not a token
+upi	यू पी आई	abbreviation	spaced spelling: not a token
+amazon pay	अमेज़न पे	brand	spaced spelling: not a token
+amazon pay	अमेजन पे	brand	spaced spelling: not a token
+paypal	पे पाल	brand	spaced spelling: not a token
+groww	ग्रो	brand	agent: AMBIGUOUS: also english grow
+mastercard	मास्टर कार्ड	brand	spaced spelling: not a token
+rupay	रुपे|रूपे	brand	agent: AMBIGUOUS: रुपे can be a misspelling of रुपए (rupees)
+aadhaar	आधार	brand	agent: AMBIGUOUS: आधार is the Hindi word for basis
+amazon prime	अमेज़न प्राइम	brand	spaced spelling: not a token
+amazon prime	अमेजन प्राइम	brand	spaced spelling: not a token
+prime video	प्राइम वीडियो	brand	spaced spelling: not a token
+prime video	प्राइम विडियो	brand	spaced spelling: not a token
+flipkart	फ्लिप कार्ट	brand	spaced spelling: not a token
+olx	ओ एल एक्स	abbreviation	spaced spelling: not a token
+olx	ओ एल एक्स	abbreviation	spaced spelling: not a token
+dmart	डी मार्ट	brand	spaced spelling: not a token
+dmart	डी मार्ट	brand	spaced spelling: not a token
+big bazaar	बिग बाज़ार	brand	spaced spelling: not a token
+big bazaar	बिग बाजार	brand	spaced spelling: not a token
+bigbasket	बिग बास्केट	brand	spaced spelling: not a token
+blinkit	ब्लिंक इट	brand	spaced spelling: not a token
+ola	ओला	brand	agent: AMBIGUOUS: ओला is the Hindi word for hailstone
+uber	उबर|ऊबर	brand	agent: AMBIGUOUS: उबर is also a form of Hindi उबरना (recover)
+hotstar	हॉट स्टार	brand	spaced spelling: not a token
+sonyliv	सोनी लिव	brand	spaced spelling: not a token
+zee5	ज़ी फाइव	brand	spaced spelling: not a token
+zee5	जी फाइव	brand	spaced spelling: not a token
+zee	ज़ी	brand	agent: AMBIGUOUS: never map जी without nukta, it is the Hindi honorific
+zee tv	ज़ी टीवी	brand	spaced spelling: not a token
+zee tv	जी टीवी	brand	spaced spelling: not a token
+zee tv	ज़ी टी वी	brand	spaced spelling: not a token
+zee news	ज़ी न्यूज़	brand	spaced spelling: not a token
+zee news	जी न्यूज़	brand	spaced spelling: not a token
+zee news	ज़ी न्यूज	brand	spaced spelling: not a token
+zee news	जी न्यूज	brand	spaced spelling: not a token
+star plus	स्टार प्लस	brand	spaced spelling: not a token
+star sports	स्टार स्पोर्ट्स	brand	spaced spelling: not a token
+colors	कलर्स	brand	annotators gloss it as colours (113x)
+sab tv	सब टीवी|सब टी वी	brand	agent: AMBIGUOUS: सब alone is Hindi for all; map only with टीवी
+dd	डी डी	abbreviation	spaced spelling: not a token
+dd	डी डी	abbreviation	spaced spelling: not a token
+doordarshan	दूरदर्शन	brand	agent: AMBIGUOUS: Hindi word (television); the mixed style may keep Devanagari
+aaj tak	आजतक|आज तक	brand	agent: AMBIGUOUS: आज तक is the Hindi phrase until today; only आजतक is safe
+ndtv	एन डी टी वी	abbreviation	spaced spelling: not a token
+ndtv	एन डी टी वी	abbreviation	spaced spelling: not a token
+abp	ए बी पी	abbreviation	spaced spelling: not a token
+abp	ए बी पी	abbreviation	spaced spelling: not a token
+abp news	एबीपी न्यूज़	brand	spaced spelling: not a token
+abp news	एबीपी न्यूज	brand	spaced spelling: not a token
+bbc	बी बी सी	abbreviation	spaced spelling: not a token
+bbc	बी बी सी	abbreviation	spaced spelling: not a token
+cartoon network	कार्टून नेटवर्क	brand	spaced spelling: not a token
+t series	टी सीरीज़	brand	spaced spelling: not a token
+t series	टी सीरीज़	brand	spaced spelling: not a token
+t series	टी सीरीज	brand	spaced spelling: not a token
+t series	टी सीरीज	brand	spaced spelling: not a token
+bigg boss	बिग बॉस	brand	spaced spelling: not a token
+bigg boss	बिग बोस	brand	spaced spelling: not a token
+kbc	के बी सी	abbreviation	spaced spelling: not a token
+kbc	के बी सी	abbreviation	spaced spelling: not a token
+fm	एफ एम	abbreviation	spaced spelling: not a token
+fm	एफ एम	abbreviation	spaced spelling: not a token
+ipl	आई पी एल	abbreviation	spaced spelling: not a token
+ipl	आई पी एल	abbreviation	spaced spelling: not a token
+bcci	बी सी सी आई	abbreviation	spaced spelling: not a token
+bcci	बी सी सी आई	abbreviation	spaced spelling: not a token
+icc	आई सी सी	abbreviation	spaced spelling: not a token
+icc	आई सी सी	abbreviation	spaced spelling: not a token
+wwe	डब्ल्यू डब्ल्यू ई	abbreviation	spaced spelling: not a token
+wwe	डब्ल्यू डब्ल्यू ई	abbreviation	spaced spelling: not a token
+maruti	मारुति|मारुती	brand	agent: AMBIGUOUS: मारुति is also a name of Hanuman
+wagonr	वैगन आर	brand	spaced spelling: not a token
+tata	टाटा	brand	agent: AMBIGUOUS: टाटा is also goodbye (टाटा बाय बाय)
+thar	थार	brand	agent: AMBIGUOUS: also the Thar desert
+xuv	एक्स यू वी	abbreviation	spaced spelling: not a token
+xuv	एक्स यू वी	abbreviation	spaced spelling: not a token
+suv	एस यू वी	abbreviation	spaced spelling: not a token
+suv	एस यू वी	abbreviation	spaced spelling: not a token
+tvs	टी वी एस	abbreviation	spaced spelling: not a token
+tvs	टी वी एस	abbreviation	spaced spelling: not a token
+royal enfield	रॉयल एनफील्ड	brand	spaced spelling: not a token
+royal enfield	रॉयल इनफील्ड	brand	spaced spelling: not a token
+royal enfield	रॉयल एनफ़ील्ड	brand	spaced spelling: not a token
+ktm	के टी एम	abbreviation	spaced spelling: not a token
+ktm	के टी एम	abbreviation	spaced spelling: not a token
+kia	किआ	brand	agent: AMBIGUOUS: never map किया, the Hindi verb did
+bmw	बी एम डब्ल्यू	abbreviation	spaced spelling: not a token
+bmw	बी एम डब्ल्यू	abbreviation	spaced spelling: not a token
+jcb	जे सी बी	abbreviation	spaced spelling: not a token
+jcb	जे सी बी	abbreviation	spaced spelling: not a token
+mrf	एम आर एफ	abbreviation	spaced spelling: not a token
+mrf	एम आर एफ	abbreviation	spaced spelling: not a token
+indian oil	इंडियन ऑयल	brand	spaced spelling: not a token
+indian oil	इंडियन आयल	brand	spaced spelling: not a token
+indian oil	इंडियन ऑइल	brand	spaced spelling: not a token
+hp gas	एचपी गैस	brand	spaced spelling: not a token
+hp gas	एच पी गैस	brand	spaced spelling: not a token
+usha	उषा	brand	agent: AMBIGUOUS: उषा is the Hindi word for dawn and a given name
+asian paints	एशियन पेंट्स	brand	spaced spelling: not a token
+asian paints	एशियन पेन्ट्स	brand	spaced spelling: not a token
+tcs	टी सी एस	abbreviation	spaced spelling: not a token
+tcs	टी सी एस	abbreviation	spaced spelling: not a token
+hcl	एच सी एल	abbreviation	spaced spelling: not a token
+hcl	एच सी एल	abbreviation	spaced spelling: not a token
+itc	आई टी सी	abbreviation	spaced spelling: not a token
+itc	आई टी सी	abbreviation	spaced spelling: not a token
+ongc	ओ एन जी सी	abbreviation	spaced spelling: not a token
+ongc	ओ एन जी सी	abbreviation	spaced spelling: not a token
+drdo	डी आर डी ओ	abbreviation	spaced spelling: not a token
+drdo	डी आर डी ओ	abbreviation	spaced spelling: not a token
+imf	आई एम एफ	abbreviation	spaced spelling: not a token
+imf	आई एम एफ	abbreviation	spaced spelling: not a token
+who	डब्ल्यू एच ओ	abbreviation	spaced spelling: not a token
+who	डब्ल्यू एच ओ	abbreviation	spaced spelling: not a token
+un	यू एन	abbreviation	spaced spelling: not a token
+un	यू एन	abbreviation	spaced spelling: not a token
+air india	एयर इंडिया	brand	spaced spelling: not a token
+air india	एअर इंडिया	brand	spaced spelling: not a token
+spicejet	स्पाइस जेट	brand	spaced spelling: not a token
+makemytrip	मेक माय ट्रिप	brand	spaced spelling: not a token
+makemytrip	मेक माई ट्रिप	brand	spaced spelling: not a token
+redbus	रेड बस	brand	spaced spelling: not a token
+irctc	आई आर सी टी सी	abbreviation	spaced spelling: not a token
+irctc	आई आर सी टी सी	abbreviation	spaced spelling: not a token
+delhi metro	दिल्ली मेट्रो	brand	spaced spelling: not a token
+dmrc	डी एम आर सी	abbreviation	spaced spelling: not a token
+dmrc	डी एम आर सी	abbreviation	spaced spelling: not a token
+physics wallah	फिजिक्स वाला	brand	spaced spelling: not a token
+physics wallah	फिज़िक्स वाला	brand	spaced spelling: not a token
+physics wallah	फिजिक्स वल्लाह	brand	spaced spelling: not a token
+coca cola	कोका कोला	brand	spaced spelling: not a token
+coca cola	कोका कोला	brand	spaced spelling: not a token
+thums up	थम्स अप	brand	spaced spelling: not a token
+thums up	थम्प्स अप	brand	spaced spelling: not a token
+mountain dew	माउंटेन ड्यू	brand	spaced spelling: not a token
+mountain dew	माउन्टेन ड्यू	brand	spaced spelling: not a token
+7up	सेवन अप	brand	spaced spelling: not a token
+red bull	रेड बुल	brand	spaced spelling: not a token
+glucon d	ग्लूकोन डी	brand	spaced spelling: not a token
+glucon d	ग्लूकॉन डी	brand	spaced spelling: not a token
+tata tea	टाटा टी	brand	spaced spelling: not a token
+red label	रेड लेबल	brand	spaced spelling: not a token
+parle g	पारले जी	brand	spaced spelling: not a token
+parle g	पार्ले जी	brand	spaced spelling: not a token
+good day	गुड डे	brand	spaced spelling: not a token
+dark fantasy	डार्क फैंटेसी	brand	spaced spelling: not a token
+dark fantasy	डार्क फ़ैंटेसी	brand	spaced spelling: not a token
+kurkure	कुरकुरे	brand	agent: AMBIGUOUS: कुरकुरे is also the Hindi adjective crunchy
+mother dairy	मदर डेयरी	brand	spaced spelling: not a token
+mother dairy	मदर डेरी	brand	spaced spelling: not a token
+dairy milk	डेयरी मिल्क	brand	spaced spelling: not a token
+dairy milk	डेरी मिल्क	brand	spaced spelling: not a token
+kitkat	किट कैट	brand	spaced spelling: not a token
+kinder joy	किंडर जॉय	brand	spaced spelling: not a token
+kwality walls	क्वालिटी वॉल्स	brand	spaced spelling: not a token
+kwality walls	क्वालिटी वाल्स	brand	spaced spelling: not a token
+pizza hut	पिज़्ज़ा हट	brand	spaced spelling: not a token
+pizza hut	पिज्जा हट	brand	spaced spelling: not a token
+kfc	के एफ सी	abbreviation	spaced spelling: not a token
+kfc	के एफ सी	abbreviation	spaced spelling: not a token
+cafe coffee day	कैफे कॉफी डे	brand	spaced spelling: not a token
+cafe coffee day	कैफ़े कॉफ़ी डे	brand	spaced spelling: not a token
+ccd	सी सी डी	abbreviation	spaced spelling: not a token
+ccd	सी सी डी	abbreviation	spaced spelling: not a token
+patanjali	पतंजलि	brand	agent: AMBIGUOUS: पतंजलि is also the ancient sage; Hindi name
+himalaya	हिमालया	brand	agent: AMBIGUOUS: हिमालय (no final ा) is the mountain range, not listed
+closeup	क्लोज़अप|क्लोजअप|क्लोज़ अप	brand	agent: AMBIGUOUS: also english close up
+santoor	संतूर	brand	agent: AMBIGUOUS: संतूर is also the musical instrument
+surf excel	सर्फ एक्सेल	brand	spaced spelling: not a token
+surf excel	सर्फ़ एक्सेल	brand	spaced spelling: not a token
+ariel	एरियल	brand	agent: AMBIGUOUS: एरियल is also english aerial (antenna)
+rin	रिन	brand	agent: AMBIGUOUS: रिन is a common spelling of Hindi ऋण (loan)
+goodknight	गुडनाइट|गुड नाइट	brand	agent: AMBIGUOUS: गुड नाइट is also the greeting good night
+fair and lovely	फेयर एंड लवली	brand	spaced spelling: not a token
+fair and lovely	फेयर ऐंड लवली	brand	spaced spelling: not a token
+fair and lovely	फेयर एन्ड लवली	brand	spaced spelling: not a token
+clinic plus	क्लिनिक प्लस	brand	spaced spelling: not a token
+head and shoulders	हेड एंड शोल्डर्स	brand	spaced spelling: not a token
+head and shoulders	हेड एन्ड शोल्डर्स	brand	spaced spelling: not a token
+zandu balm	झंडू बाम	brand	spaced spelling: not a token
+zandu balm	ज़ंडू बाम	brand	spaced spelling: not a token
+band aid	बैंड एड	brand	spaced spelling: not a token
+mdh	एम डी एच	abbreviation	spaced spelling: not a token
+mdh	एम डी एच	abbreviation	spaced spelling: not a token
+tata salt	टाटा सॉल्ट	brand	spaced spelling: not a token
+peter england	पीटर इंग्लैंड	brand	spaced spelling: not a token
+zara	ज़ारा|जारा	brand	agent: AMBIGUOUS: close to Hindi ज़रा (a little)
+h and m	एच एंड एम	brand	spaced spelling: not a token
+h and m	एच एन्ड एम	brand	spaced spelling: not a token
+jockey	जोकी	brand	annotators leave it in Devanagari: glossed 4, unglossed 249; glosses [['jockey', 4]]
+ray ban	रे बैन	brand	spaced spelling: not a token
+sbi	एस बी आई	abbreviation	spaced spelling: not a token
+sbi	एस बी आई	abbreviation	spaced spelling: not a token
+hdfc	एच डी एफ सी	abbreviation	spaced spelling: not a token
+hdfc	एच डी एफ सी	abbreviation	spaced spelling: not a token
+icici	आई सी आई सी आई	abbreviation	spaced spelling: not a token
+icici	आई सी आई सी आई	abbreviation	spaced spelling: not a token
+pnb	पी एन बी	abbreviation	spaced spelling: not a token
+pnb	पी एन बी	abbreviation	spaced spelling: not a token
+bank of baroda	बैंक ऑफ बड़ौदा	brand	spaced spelling: not a token
+bank of baroda	बैंक ऑफ़ बड़ौदा	brand	spaced spelling: not a token
+bob	बी ओ बी	abbreviation	spaced spelling: not a token
+bob	बी ओ बी	abbreviation	spaced spelling: not a token
+idbi	आई डी बी आई	abbreviation	spaced spelling: not a token
+idbi	आई डी बी आई	abbreviation	spaced spelling: not a token
+yes bank	यस बैंक	brand	spaced spelling: not a token
+yes bank	येस बैंक	brand	spaced spelling: not a token
+union bank	यूनियन बैंक	brand	spaced spelling: not a token
+bajaj finance	बजाज फाइनेंस	brand	spaced spelling: not a token
+bajaj finance	बजाज फ़ाइनेंस	brand	spaced spelling: not a token
+atm	ए टी एम	abbreviation	spaced spelling: not a token
+atm	ए टी एम	abbreviation	spaced spelling: not a token
+otp	ओ टी पी	abbreviation	spaced spelling: not a token
+otp	ओ टी पी	abbreviation	spaced spelling: not a token
+mpin	एम पिन	abbreviation	spaced spelling: not a token
+cvv	सी वी वी	abbreviation	spaced spelling: not a token
+cvv	सी वी वी	abbreviation	spaced spelling: not a token
+kyc	के वाई सी	abbreviation	spaced spelling: not a token
+kyc	के वाई सी	abbreviation	spaced spelling: not a token
+pan	पैन	abbreviation	blocklist: ENGLISH_HOMOPHONE: pan (PAN card, frying pan) and pen both common
+id	आई डी	abbreviation	spaced spelling: not a token
+id	आई डी	abbreviation	spaced spelling: not a token
+neft	एन ई एफ टी	abbreviation	spaced spelling: not a token
+neft	एन ई एफ टी	abbreviation	spaced spelling: not a token
+rtgs	आर टी जी एस	abbreviation	spaced spelling: not a token
+rtgs	आर टी जी एस	abbreviation	spaced spelling: not a token
+imps	आई एम पी एस	abbreviation	spaced spelling: not a token
+imps	आई एम पी एस	abbreviation	spaced spelling: not a token
+ifsc	आई एफ एस सी	abbreviation	spaced spelling: not a token
+ifsc	आई एफ एस सी	abbreviation	spaced spelling: not a token
+emi	ई एम आई	abbreviation	spaced spelling: not a token
+emi	ई एम आई	abbreviation	spaced spelling: not a token
+gst	जी एस टी	abbreviation	spaced spelling: not a token
+gst	जी एस टी	abbreviation	spaced spelling: not a token
+tds	टी डी एस	abbreviation	spaced spelling: not a token
+tds	टी डी एस	abbreviation	spaced spelling: not a token
+itr	आई टी आर	abbreviation	spaced spelling: not a token
+itr	आई टी आर	abbreviation	spaced spelling: not a token
+gdp	जी डी पी	abbreviation	spaced spelling: not a token
+gdp	जी डी पी	abbreviation	spaced spelling: not a token
+mrp	एम आर पी	abbreviation	spaced spelling: not a token
+mrp	एम आर पी	abbreviation	spaced spelling: not a token
+pf	पी एफ	abbreviation	spaced spelling: not a token
+pf	पी एफ	abbreviation	spaced spelling: not a token
+epf	ई पी एफ	abbreviation	spaced spelling: not a token
+epf	ई पी एफ	abbreviation	spaced spelling: not a token
+epfo	ई पी एफ ओ	abbreviation	spaced spelling: not a token
+epfo	ई पी एफ ओ	abbreviation	spaced spelling: not a token
+esic	ई एस आई सी	abbreviation	spaced spelling: not a token
+esic	ई एस आई सी	abbreviation	spaced spelling: not a token
+nps	एन पी एस	abbreviation	spaced spelling: not a token
+nps	एन पी एस	abbreviation	spaced spelling: not a token
+ppf	पी पी एफ	abbreviation	spaced spelling: not a token
+ppf	पी पी एफ	abbreviation	spaced spelling: not a token
+kvp	के वी पी	abbreviation	spaced spelling: not a token
+kvp	के वी पी	abbreviation	spaced spelling: not a token
+nsc	एन एस सी	abbreviation	spaced spelling: not a token
+nsc	एन एस सी	abbreviation	spaced spelling: not a token
+fd	एफ डी	abbreviation	spaced spelling: not a token
+fd	एफ डी	abbreviation	spaced spelling: not a token
+rd	आर डी	abbreviation	spaced spelling: not a token
+rd	आर डी	abbreviation	spaced spelling: not a token
+sip	एस आई पी	abbreviation	spaced spelling: not a token
+sip	एस आई पी	abbreviation	spaced spelling: not a token
+ipo	आई पी ओ	abbreviation	spaced spelling: not a token
+ipo	आई पी ओ	abbreviation	spaced spelling: not a token
+lic	एल आई सी	abbreviation	spaced spelling: not a token
+lic	एल आई सी	abbreviation	spaced spelling: not a token
+rbi	आर बी आई	abbreviation	spaced spelling: not a token
+rbi	आर बी आई	abbreviation	spaced spelling: not a token
+nse	एन एस ई	abbreviation	spaced spelling: not a token
+nse	एन एस ई	abbreviation	spaced spelling: not a token
+bse	बी एस ई	abbreviation	spaced spelling: not a token
+bse	बी एस ई	abbreviation	spaced spelling: not a token
+nri	एन आर आई	abbreviation	spaced spelling: not a token
+nri	एन आर आई	abbreviation	spaced spelling: not a token
+pmay	पी एम ए वाई	abbreviation	spaced spelling: not a token
+pmay	पी एम ए वाई	abbreviation	spaced spelling: not a token
+ayushman	आयुष्मान	brand	agent: AMBIGUOUS: आयुष्मान is a Hindi word (long-lived) and a given name
+jan dhan	जन धन|जनधन	brand	agent: AMBIGUOUS: Hindi words (people's wealth); the mixed style may keep Devanagari
+dbt	डी बी टी	abbreviation	spaced spelling: not a token
+dbt	डी बी टी	abbreviation	spaced spelling: not a token
+bpl	बी पी एल	abbreviation	spaced spelling: not a token
+bpl	बी पी एल	abbreviation	spaced spelling: not a token
+apl	ए पी एल	abbreviation	spaced spelling: not a token
+apl	ए पी एल	abbreviation	spaced spelling: not a token
+ews	ई डब्ल्यू एस	abbreviation	spaced spelling: not a token
+ews	ई डब्ल्यू एस	abbreviation	spaced spelling: not a token
+obc	ओ बी सी	abbreviation	spaced spelling: not a token
+obc	ओ बी सी	abbreviation	spaced spelling: not a token
+sc	एस सी	abbreviation	spaced spelling: not a token
+sc	एस सी	abbreviation	spaced spelling: not a token
+st	एस टी	abbreviation	spaced spelling: not a token
+st	एस टी	abbreviation	spaced spelling: not a token
+lpg	एल पी जी	abbreviation	spaced spelling: not a token
+lpg	एल पी जी	abbreviation	spaced spelling: not a token
+cng	सी एन जी	abbreviation	spaced spelling: not a token
+cng	सी एन जी	abbreviation	spaced spelling: not a token
+ev	ई वी	abbreviation	spaced spelling: not a token
+ev	ई वी	abbreviation	spaced spelling: not a token
+uidai	यू आई डी ए आई	abbreviation	spaced spelling: not a token
+uidai	यू आई डी ए आई	abbreviation	spaced spelling: not a token
+gps	जी पी एस	abbreviation	spaced spelling: not a token
+gps	जी पी एस	abbreviation	spaced spelling: not a token
+tv	टी वी	abbreviation	spaced spelling: not a token
+tv	टी वी	abbreviation	spaced spelling: not a token
+ac	एसी|ए.सी|ए सी	abbreviation	agent: AMBIGUOUS: एसी is a common misspelling of Hindi ऐसी (such)
+led	एल ई डी	abbreviation	spaced spelling: not a token
+led	एल ई डी	abbreviation	spaced spelling: not a token
+lcd	एल सी डी	abbreviation	spaced spelling: not a token
+lcd	एल सी डी	abbreviation	spaced spelling: not a token
+cctv	सी सी टी वी	abbreviation	spaced spelling: not a token
+cctv	सी सी टी वी	abbreviation	spaced spelling: not a token
+pdf	पी डी एफ	abbreviation	spaced spelling: not a token
+pdf	पी डी एफ	abbreviation	spaced spelling: not a token
+sms	एस एम एस	abbreviation	spaced spelling: not a token
+sms	एस एम एस	abbreviation	spaced spelling: not a token
+mms	एम एम एस	abbreviation	spaced spelling: not a token
+mms	एम एम एस	abbreviation	spaced spelling: not a token
+dj	डी जे	abbreviation	spaced spelling: not a token
+dj	डी जे	abbreviation	spaced spelling: not a token
+hd	एच डी	abbreviation	spaced spelling: not a token
+hd	एच डी	abbreviation	spaced spelling: not a token
+2g	टू जी	abbreviation	spaced spelling: not a token
+3g	थ्री जी	abbreviation	spaced spelling: not a token
+4g	फोर जी	abbreviation	spaced spelling: not a token
+4g	फ़ोर जी	abbreviation	spaced spelling: not a token
+5g	फाइव जी	abbreviation	spaced spelling: not a token
+5g	फ़ाइव जी	abbreviation	spaced spelling: not a token
+usb	यू एस बी	abbreviation	spaced spelling: not a token
+usb	यू एस बी	abbreviation	spaced spelling: not a token
+cd	सीडी	abbreviation	annotators leave it in Devanagari: glossed 2, unglossed 142; glosses [['cd', 2]]
+cd	सी डी	abbreviation	spaced spelling: not a token
+cd	सी डी	abbreviation	spaced spelling: not a token
+dvd	डी वी डी	abbreviation	spaced spelling: not a token
+dvd	डी वी डी	abbreviation	spaced spelling: not a token
+pc	पी सी	abbreviation	spaced spelling: not a token
+pc	पी सी	abbreviation	spaced spelling: not a token
+it	आई टी	abbreviation	spaced spelling: not a token
+it	आई टी	abbreviation	spaced spelling: not a token
+ai	ए आई	abbreviation	spaced spelling: not a token
+ai	ए आई	abbreviation	spaced spelling: not a token
+qr	क्यू आर	abbreviation	spaced spelling: not a token
+qr	क्यू आर	abbreviation	spaced spelling: not a token
+ups	यू पी एस	abbreviation	spaced spelling: not a token
+ups	यू पी एस	abbreviation	spaced spelling: not a token
+ott	ओ टी टी	abbreviation	spaced spelling: not a token
+ott	ओ टी टी	abbreviation	spaced spelling: not a token
+dp	डी पी	abbreviation	spaced spelling: not a token
+dp	डी पी	abbreviation	spaced spelling: not a token
+ppt	पी पी टी	abbreviation	spaced spelling: not a token
+ppt	पी पी टी	abbreviation	spaced spelling: not a token
+cv	सी वी	abbreviation	spaced spelling: not a token
+cv	सी वी	abbreviation	spaced spelling: not a token
+vip	वी आई पी	abbreviation	spaced spelling: not a token
+vip	वी आई पी	abbreviation	spaced spelling: not a token
+gk	जी के	abbreviation	spaced spelling: not a token
+gk	जी के	abbreviation	spaced spelling: not a token
+iq	आई क्यू	abbreviation	spaced spelling: not a token
+iq	आई क्यू	abbreviation	spaced spelling: not a token
+pt	पी टी	abbreviation	spaced spelling: not a token
+pt	पी टी	abbreviation	spaced spelling: not a token
+ptm	पी टी एम	abbreviation	spaced spelling: not a token
+ptm	पी टी एम	abbreviation	spaced spelling: not a token
+hr	एच आर	abbreviation	spaced spelling: not a token
+hr	एच आर	abbreviation	spaced spelling: not a token
+ceo	सी ई ओ	abbreviation	spaced spelling: not a token
+ceo	सी ई ओ	abbreviation	spaced spelling: not a token
+md	एम डी	abbreviation	spaced spelling: not a token
+md	एम डी	abbreviation	spaced spelling: not a token
+gm	जी एम	abbreviation	spaced spelling: not a token
+gm	जी एम	abbreviation	spaced spelling: not a token
+pa	पी ए	abbreviation	spaced spelling: not a token
+pa	पी ए	abbreviation	spaced spelling: not a token
+ca	सी ए	abbreviation	spaced spelling: not a token
+ca	सी ए	abbreviation	spaced spelling: not a token
+mba	एम बी ए	abbreviation	spaced spelling: not a token
+mba	एम बी ए	abbreviation	spaced spelling: not a token
+bba	बी बी ए	abbreviation	spaced spelling: not a token
+bba	बी बी ए	abbreviation	spaced spelling: not a token
+bsc	बी एस सी	abbreviation	spaced spelling: not a token
+bsc	बी एस सी	abbreviation	spaced spelling: not a token
+msc	एम एस सी	abbreviation	spaced spelling: not a token
+msc	एम एस सी	abbreviation	spaced spelling: not a token
+ba	बी ए	abbreviation	spaced spelling: not a token
+ba	बी ए	abbreviation	spaced spelling: not a token
+ma	एम ए	abbreviation	spaced spelling: not a token
+ma	एम ए	abbreviation	spaced spelling: not a token
+bcom	बी कॉम	abbreviation	spaced spelling: not a token
+bcom	बी कॉम	abbreviation	spaced spelling: not a token
+mcom	एम कॉम	abbreviation	spaced spelling: not a token
+mcom	एम कॉम	abbreviation	spaced spelling: not a token
+bca	बी सी ए	abbreviation	spaced spelling: not a token
+bca	बी सी ए	abbreviation	spaced spelling: not a token
+mca	एम सी ए	abbreviation	spaced spelling: not a token
+mca	एम सी ए	abbreviation	spaced spelling: not a token
+bed	बी एड	abbreviation	spaced spelling: not a token
+bed	बी एड	abbreviation	spaced spelling: not a token
+llb	एल एल बी	abbreviation	spaced spelling: not a token
+llb	एल एल बी	abbreviation	spaced spelling: not a token
+phd	पी एच डी	abbreviation	spaced spelling: not a token
+phd	पी एच डी	abbreviation	spaced spelling: not a token
+mbbs	एम बी बी एस	abbreviation	spaced spelling: not a token
+mbbs	एम बी बी एस	abbreviation	spaced spelling: not a token
+bams	बी ए एम एस	abbreviation	spaced spelling: not a token
+bams	बी ए एम एस	abbreviation	spaced spelling: not a token
+bds	बी डी एस	abbreviation	spaced spelling: not a token
+bds	बी डी एस	abbreviation	spaced spelling: not a token
+btech	बी टेक	abbreviation	spaced spelling: not a token
+btech	बी टेक	abbreviation	spaced spelling: not a token
+mtech	एम टेक	abbreviation	spaced spelling: not a token
+mtech	एम टेक	abbreviation	spaced spelling: not a token
+iti	आई टी आई	abbreviation	spaced spelling: not a token
+iti	आई टी आई	abbreviation	spaced spelling: not a token
+cbse	सी बी एस ई	abbreviation	spaced spelling: not a token
+cbse	सी बी एस ई	abbreviation	spaced spelling: not a token
+icse	आई सी एस ई	abbreviation	spaced spelling: not a token
+icse	आई सी एस ई	abbreviation	spaced spelling: not a token
+ncert	एन सी ई आर टी	abbreviation	spaced spelling: not a token
+ncert	एन सी ई आर टी	abbreviation	spaced spelling: not a token
+nios	एन आई ओ एस	abbreviation	spaced spelling: not a token
+nios	एन आई ओ एस	abbreviation	spaced spelling: not a token
+upsc	यू पी एस सी	abbreviation	spaced spelling: not a token
+upsc	यू पी एस सी	abbreviation	spaced spelling: not a token
+ssc	एस एस सी	abbreviation	spaced spelling: not a token
+ssc	एस एस सी	abbreviation	spaced spelling: not a token
+cgl	सी जी एल	abbreviation	spaced spelling: not a token
+cgl	सी जी एल	abbreviation	spaced spelling: not a token
+rrb	आर आर बी	abbreviation	spaced spelling: not a token
+rrb	आर आर बी	abbreviation	spaced spelling: not a token
+ibps	आई बी पी एस	abbreviation	spaced spelling: not a token
+ibps	आई बी पी एस	abbreviation	spaced spelling: not a token
+neet	नीट	abbreviation	agent: AMBIGUOUS: नीट is also english neat
+jee	जे ई ई	abbreviation	spaced spelling: not a token
+jee	जे ई ई	abbreviation	spaced spelling: not a token
+cuet	सी यू ई टी	abbreviation	spaced spelling: not a token
+cuet	सी यू ई टी	abbreviation	spaced spelling: not a token
+ctet	सी टेट	abbreviation	spaced spelling: not a token
+ugc	यू जी सी	abbreviation	spaced spelling: not a token
+ugc	यू जी सी	abbreviation	spaced spelling: not a token
+nda	एन डी ए	abbreviation	spaced spelling: not a token
+nda	एन डी ए	abbreviation	spaced spelling: not a token
+cds	सी डी एस	abbreviation	spaced spelling: not a token
+cds	सी डी एस	abbreviation	spaced spelling: not a token
+ncc	एन सी सी	abbreviation	spaced spelling: not a token
+ncc	एन सी सी	abbreviation	spaced spelling: not a token
+nss	एन एस एस	abbreviation	spaced spelling: not a token
+nss	एन एस एस	abbreviation	spaced spelling: not a token
+iit	आई आई टी	abbreviation	spaced spelling: not a token
+iit	आई आई टी	abbreviation	spaced spelling: not a token
+iim	आई आई एम	abbreviation	spaced spelling: not a token
+iim	आई आई एम	abbreviation	spaced spelling: not a token
+nit	एन आई टी	abbreviation	spaced spelling: not a token
+nit	एन आई टी	abbreviation	spaced spelling: not a token
+du	डी यू	abbreviation	spaced spelling: not a token
+du	डी यू	abbreviation	spaced spelling: not a token
+jnu	जे एन यू	abbreviation	spaced spelling: not a token
+jnu	जे एन यू	abbreviation	spaced spelling: not a token
+bhu	बी एच यू	abbreviation	spaced spelling: not a token
+bhu	बी एच यू	abbreviation	spaced spelling: not a token
+amu	ए एम यू	abbreviation	spaced spelling: not a token
+amu	ए एम यू	abbreviation	spaced spelling: not a token
+dav	डी ए वी	abbreviation	spaced spelling: not a token
+dav	डी ए वी	abbreviation	spaced spelling: not a token
+dps	डी पी एस	abbreviation	spaced spelling: not a token
+dps	डी पी एस	abbreviation	spaced spelling: not a token
+ias	आई ए एस	abbreviation	spaced spelling: not a token
+ias	आई ए एस	abbreviation	spaced spelling: not a token
+ips	आई पी एस	abbreviation	spaced spelling: not a token
+ips	आई पी एस	abbreviation	spaced spelling: not a token
+ifs	आई एफ एस	abbreviation	spaced spelling: not a token
+ifs	आई एफ एस	abbreviation	spaced spelling: not a token
+pcs	पी सी एस	abbreviation	spaced spelling: not a token
+pcs	पी सी एस	abbreviation	spaced spelling: not a token
+psu	पी एस यू	abbreviation	spaced spelling: not a token
+psu	पी एस यू	abbreviation	spaced spelling: not a token
+mnc	एम एन सी	abbreviation	spaced spelling: not a token
+mnc	एम एन सी	abbreviation	spaced spelling: not a token
+ngo	एन जी ओ	abbreviation	spaced spelling: not a token
+ngo	एन जी ओ	abbreviation	spaced spelling: not a token
+rto	आर टी ओ	abbreviation	spaced spelling: not a token
+rto	आर टी ओ	abbreviation	spaced spelling: not a token
+pwd	पी डब्ल्यू डी	abbreviation	spaced spelling: not a token
+pwd	पी डब्ल्यू डी	abbreviation	spaced spelling: not a token
+nhai	एन एच ए आई	abbreviation	spaced spelling: not a token
+nhai	एन एच ए आई	abbreviation	spaced spelling: not a token
+fssai	एफ एस एस ए आई	abbreviation	spaced spelling: not a token
+fssai	एफ एस एस ए आई	abbreviation	spaced spelling: not a token
+isi	आई एस आई	abbreviation	spaced spelling: not a token
+isi	आई एस आई	abbreviation	spaced spelling: not a token
+icmr	आई सी एम आर	abbreviation	spaced spelling: not a token
+icmr	आई सी एम आर	abbreviation	spaced spelling: not a token
+dda	डी डी ए	abbreviation	spaced spelling: not a token
+dda	डी डी ए	abbreviation	spaced spelling: not a token
+mcd	एमसीडी|एम.सी.डी|एम सी डी	abbreviation	agent: AMBIGUOUS: municipal corporation of delhi; also slang for mcdonalds
+pm	पीएम|पी.एम|पी एम	abbreviation	agent: AMBIGUOUS: prime minister and p.m. (time); both written pm
+pmo	पी एम ओ	abbreviation	spaced spelling: not a token
+pmo	पी एम ओ	abbreviation	spaced spelling: not a token
+cm	सी एम	abbreviation	spaced spelling: not a token
+cm	सी एम	abbreviation	spaced spelling: not a token
+mla	एम एल ए	abbreviation	spaced spelling: not a token
+mla	एम एल ए	abbreviation	spaced spelling: not a token
+mp	एमपी|एम.पी|एम पी	abbreviation	agent: AMBIGUOUS: member of parliament and Madhya Pradesh; both written mp
+dm	डीएम|डी.एम|डी एम	abbreviation	agent: AMBIGUOUS: district magistrate and direct message
+sdm	एस डी एम	abbreviation	spaced spelling: not a token
+sdm	एस डी एम	abbreviation	spaced spelling: not a token
+sdo	एस डी ओ	abbreviation	spaced spelling: not a token
+sdo	एस डी ओ	abbreviation	spaced spelling: not a token
+bdo	बी डी ओ	abbreviation	spaced spelling: not a token
+bdo	बी डी ओ	abbreviation	spaced spelling: not a token
+dc	डी सी	abbreviation	spaced spelling: not a token
+dc	डी सी	abbreviation	spaced spelling: not a token
+sp	एसपी|एस.पी|एस पी	abbreviation	agent: AMBIGUOUS: superintendent of police and samajwadi party (सपा stays Hindi)
+ssp	एस एस पी	abbreviation	spaced spelling: not a token
+ssp	एस एस पी	abbreviation	spaced spelling: not a token
+dsp	डी एस पी	abbreviation	spaced spelling: not a token
+dsp	डी एस पी	abbreviation	spaced spelling: not a token
+dgp	डी जी पी	abbreviation	spaced spelling: not a token
+dgp	डी जी पी	abbreviation	spaced spelling: not a token
+dig	डी आई जी	abbreviation	spaced spelling: not a token
+dig	डी आई जी	abbreviation	spaced spelling: not a token
+ig	आई जी	abbreviation	spaced spelling: not a token
+ig	आई जी	abbreviation	spaced spelling: not a token
+si	एस आई	abbreviation	spaced spelling: not a token
+si	एस आई	abbreviation	spaced spelling: not a token
+asi	ए एस आई	abbreviation	spaced spelling: not a token
+asi	ए एस आई	abbreviation	spaced spelling: not a token
+sho	एस एच ओ	abbreviation	spaced spelling: not a token
+sho	एस एच ओ	abbreviation	spaced spelling: not a token
+fir	एफ आई आर	abbreviation	spaced spelling: not a token
+fir	एफ आई आर	abbreviation	spaced spelling: not a token
+ipc	आई पी सी	abbreviation	spaced spelling: not a token
+ipc	आई पी सी	abbreviation	spaced spelling: not a token
+crpc	सी आर पी सी	abbreviation	spaced spelling: not a token
+crpc	सी आर पी सी	abbreviation	spaced spelling: not a token
+rti	आर टी आई	abbreviation	spaced spelling: not a token
+rti	आर टी आई	abbreviation	spaced spelling: not a token
+pil	पी आई एल	abbreviation	spaced spelling: not a token
+pil	पी आई एल	abbreviation	spaced spelling: not a token
+cji	सी जे आई	abbreviation	spaced spelling: not a token
+cji	सी जे आई	abbreviation	spaced spelling: not a token
+evm	ई वी एम	abbreviation	spaced spelling: not a token
+evm	ई वी एम	abbreviation	spaced spelling: not a token
+cbi	सी बी आई	abbreviation	spaced spelling: not a token
+cbi	सी बी आई	abbreviation	spaced spelling: not a token
+ed	ई डी	abbreviation	spaced spelling: not a token
+ed	ई डी	abbreviation	spaced spelling: not a token
+nia	एन आई ए	abbreviation	spaced spelling: not a token
+nia	एन आई ए	abbreviation	spaced spelling: not a token
+ncb	एन सी बी	abbreviation	spaced spelling: not a token
+ncb	एन सी बी	abbreviation	spaced spelling: not a token
+crpf	सी आर पी एफ	abbreviation	spaced spelling: not a token
+crpf	सी आर पी एफ	abbreviation	spaced spelling: not a token
+bsf	बी एस एफ	abbreviation	spaced spelling: not a token
+bsf	बी एस एफ	abbreviation	spaced spelling: not a token
+cisf	सी आई एस एफ	abbreviation	spaced spelling: not a token
+cisf	सी आई एस एफ	abbreviation	spaced spelling: not a token
+itbp	आई टी बी पी	abbreviation	spaced spelling: not a token
+itbp	आई टी बी पी	abbreviation	spaced spelling: not a token
+nsg	एन एस जी	abbreviation	spaced spelling: not a token
+nsg	एन एस जी	abbreviation	spaced spelling: not a token
+ndrf	एन डी आर एफ	abbreviation	spaced spelling: not a token
+ndrf	एन डी आर एफ	abbreviation	spaced spelling: not a token
+rpf	आर पी एफ	abbreviation	spaced spelling: not a token
+rpf	आर पी एफ	abbreviation	spaced spelling: not a token
+grp	जी आर पी	abbreviation	spaced spelling: not a token
+grp	जी आर पी	abbreviation	spaced spelling: not a token
+tte	टी टी ई	abbreviation	spaced spelling: not a token
+tte	टी टी ई	abbreviation	spaced spelling: not a token
+tc	टी सी	abbreviation	spaced spelling: not a token
+tc	टी सी	abbreviation	spaced spelling: not a token
+vc	वी सी	abbreviation	spaced spelling: not a token
+vc	वी सी	abbreviation	spaced spelling: not a token
+bjp	बी जे पी	abbreviation	spaced spelling: not a token
+bjp	बी जे पी	abbreviation	spaced spelling: not a token
+bsp	बी एस पी	abbreviation	spaced spelling: not a token
+bsp	बी एस पी	abbreviation	spaced spelling: not a token
+rjd	आर जे डी	abbreviation	spaced spelling: not a token
+rjd	आर जे डी	abbreviation	spaced spelling: not a token
+jdu	जे डी यू	abbreviation	spaced spelling: not a token
+jdu	जे डी यू	abbreviation	spaced spelling: not a token
+tmc	टी एम सी	abbreviation	spaced spelling: not a token
+tmc	टी एम सी	abbreviation	spaced spelling: not a token
+upa	यू पी ए	abbreviation	spaced spelling: not a token
+upa	यू पी ए	abbreviation	spaced spelling: not a token
+rss	आर एस एस	abbreviation	spaced spelling: not a token
+rss	आर एस एस	abbreviation	spaced spelling: not a token
+abvp	ए बी वी पी	abbreviation	spaced spelling: not a token
+abvp	ए बी वी पी	abbreviation	spaced spelling: not a token
+nsui	एन एस यू आई	abbreviation	spaced spelling: not a token
+nsui	एन एस यू आई	abbreviation	spaced spelling: not a token
+icu	आई सी यू	abbreviation	spaced spelling: not a token
+icu	आई सी यू	abbreviation	spaced spelling: not a token
+opd	ओ पी डी	abbreviation	spaced spelling: not a token
+opd	ओ पी डी	abbreviation	spaced spelling: not a token
+ot	ओ टी	abbreviation	spaced spelling: not a token
+ot	ओ टी	abbreviation	spaced spelling: not a token
+ecg	ई सी जी	abbreviation	spaced spelling: not a token
+ecg	ई सी जी	abbreviation	spaced spelling: not a token
+mri	एम आर आई	abbreviation	spaced spelling: not a token
+mri	एम आर आई	abbreviation	spaced spelling: not a token
+ct scan	सीटी स्कैन|सी.टी स्कैन|सी टी स्कैन	abbreviation	agent: AMBIGUOUS: सीटी alone is the Hindi word for whistle; map only with स्कैन
+x ray	एक्स रे	abbreviation	spaced spelling: not a token
+x ray	एक्स रे	abbreviation	spaced spelling: not a token
+bp	बी पी	abbreviation	spaced spelling: not a token
+bp	बी पी	abbreviation	spaced spelling: not a token
+hiv	एच आई वी	abbreviation	spaced spelling: not a token
+hiv	एच आई वी	abbreviation	spaced spelling: not a token
+tb	टी बी	abbreviation	spaced spelling: not a token
+tb	टी बी	abbreviation	spaced spelling: not a token
+dna	डी एन ए	abbreviation	spaced spelling: not a token
+dna	डी एन ए	abbreviation	spaced spelling: not a token
+ors	ओ आर एस	abbreviation	spaced spelling: not a token
+ors	ओ आर एस	abbreviation	spaced spelling: not a token
+anm	ए एन एम	abbreviation	spaced spelling: not a token
+anm	ए एन एम	abbreviation	spaced spelling: not a token
+ok	ओ के	abbreviation	spaced spelling: not a token
+ok	ओ के	abbreviation	spaced spelling: not a token
+hi	हाय|हाई	abbreviation	agent: greeting. AMBIGUOUS: हाय is also a Hindi exclamation; हाई is also english high
+bye	बाय	abbreviation	blocklist: ENGLISH_HOMOPHONE: bye dominates; by and buy also occur
+bye bye	बाय बाय	abbreviation	spaced spelling: not a token
+bye bye	बाय बाय	abbreviation	spaced spelling: not a token
+usa	यू एस ए	place_world	spaced spelling: not a token
+us	यूएस|यू एस	place_world	agent: AMBIGUOUS: abbreviation spoken letter by letter; Latin us is also the English pronoun
+united states	यूनाइटेड स्टेट्स|संयुक्त राज्य अमेरिका	place_world	agent: HINDI_NAME: संयुक्त राज्य अमेरिका
+north america	नॉर्थ अमेरिका|उत्तरी अमेरिका|उत्तर अमेरिका	place_world	agent: HINDI_NAME: उत्तरी अमेरिका
+south america	दक्षिण अमेरिका|साउथ अमेरिका	place_world	agent: HINDI_NAME: दक्षिण अमेरिका
+latin america	लैटिन अमेरिका	place_world	spaced spelling: not a token
+latin america	लातिन अमेरिका	place_world	spaced spelling: not a token
+west indies	वेस्ट इंडीज	place_world	spaced spelling: not a token
+west indies	वेस्ट इंडीज़	place_world	spaced spelling: not a token
+bermuda triangle	बरमूडा ट्रायंगल|बरमूडा त्रिकोण	place_world	agent: HINDI_NAME: बरमूडा त्रिकोण
+chile	चिली	place_world	agent: AMBIGUOUS: चिली is also chilli (चिली पनीर)
+peru	पेरू	place_world	agent: AMBIGUOUS: पेरू is also guava in Marathi and some regional Hindi
+colombia	कोलंबिया|कोलम्बिया	place_world	agent: AMBIGUOUS: same Devanagari as columbia (university, british columbia, district of columbia)
+costa rica	कोस्टा रिका	place_world	spaced spelling: not a token
+rio de janeiro	रियो डी जनेरियो	place_world	spaced spelling: not a token
+rio de janeiro	रियो डि जेनेरो	place_world	spaced spelling: not a token
+rio de janeiro	रियो डी जेनेरियो	place_world	spaced spelling: not a token
+sao paulo	साओ पाउलो	place_world	spaced spelling: not a token
+sao paulo	साओ पॉलो	place_world	spaced spelling: not a token
+buenos aires	ब्यूनस आयर्स	place_world	spaced spelling: not a token
+buenos aires	ब्यूनस आयरस	place_world	spaced spelling: not a token
+buenos aires	ब्यूनोस आयर्स	place_world	spaced spelling: not a token
+new york	न्यू यॉर्क	place_world	spaced spelling: not a token
+new york	न्यू यार्क	place_world	spaced spelling: not a token
+new jersey	न्यू जर्सी	place_world	spaced spelling: not a token
+washington dc	वॉशिंगटन डीसी|वाशिंगटन डीसी|वॉशिंगटन डी सी	place_world	agent: AMBIGUOUS: dc is spoken letter by letter
+los angeles	लॉस एंजेलिस	place_world	spaced spelling: not a token
+los angeles	लॉस एंजिलिस	place_world	spaced spelling: not a token
+los angeles	लॉस एंजेल्स	place_world	spaced spelling: not a token
+los angeles	लॉस एंजेलेस	place_world	spaced spelling: not a token
+san francisco	सैन फ्रांसिस्को	place_world	spaced spelling: not a token
+san francisco	सैन फ़्रांसिस्को	place_world	spaced spelling: not a token
+san francisco	सान फ्रांसिस्को	place_world	spaced spelling: not a token
+silicon valley	सिलिकॉन वैली	place_world	spaced spelling: not a token
+silicon valley	सिलिकन वैली	place_world	spaced spelling: not a token
+silicon valley	सिलिकॉन वेली	place_world	spaced spelling: not a token
+bay area	बे एरिया	place_world	spaced spelling: not a token
+san diego	सैन डिएगो	place_world	spaced spelling: not a token
+san diego	सैन डियागो	place_world	spaced spelling: not a token
+san diego	सान डिएगो	place_world	spaced spelling: not a token
+las vegas	लास वेगास	place_world	spaced spelling: not a token
+las vegas	लास वेगस	place_world	spaced spelling: not a token
+las vegas	लॉस वेगास	place_world	spaced spelling: not a token
+hawaii	हवाई	place_world	agent: AMBIGUOUS: हवाई is also the common word for air or aerial (हवाई जहाज़, हवाई अड्डा)
+pearl harbor	पर्ल हार्बर	place_world	spaced spelling: not a token
+white house	व्हाइट हाउस	place_world	spaced spelling: not a token
+white house	वाइट हाउस	place_world	spaced spelling: not a token
+wall street	वॉल स्ट्रीट	place_world	spaced spelling: not a token
+wall street	वाल स्ट्रीट	place_world	spaced spelling: not a token
+times square	टाइम्स स्क्वायर	place_world	spaced spelling: not a token
+times square	टाइम्स स्क्वेयर	place_world	spaced spelling: not a token
+times square	टाइम्स स्क्वैर	place_world	spaced spelling: not a token
+statue of liberty	स्टैच्यू ऑफ लिबर्टी	place_world	spaced spelling: not a token
+statue of liberty	स्टेच्यू ऑफ लिबर्टी	place_world	spaced spelling: not a token
+statue of liberty	स्टैचू ऑफ लिबर्टी	place_world	spaced spelling: not a token
+statue of liberty	स्टैच्यू ऑफ़ लिबर्टी	place_world	spaced spelling: not a token
+grand canyon	ग्रैंड कैन्यन	place_world	spaced spelling: not a token
+grand canyon	ग्रांड कैनियन	place_world	spaced spelling: not a token
+grand canyon	ग्रैंड कैनियन	place_world	spaced spelling: not a token
+surrey	सरे|सर्रे	place_world	agent: AMBIGUOUS: सरे also occurs in Hindi सरे आम (openly)
+british columbia	ब्रिटिश कोलंबिया	place_world	spaced spelling: not a token
+british columbia	ब्रिटिश कोलम्बिया	place_world	spaced spelling: not a token
+uk	यूके|यू के	place_world	agent: AMBIGUOUS: abbreviation spoken letter by letter; के in यू के is also the Hindi postposition के
+united kingdom	यूनाइटेड किंगडम	place_world	spaced spelling: not a token
+britain	ब्रिटेन|बर्तानिया|ब्रितानिया	place_world	agent: HINDI_NAME: बर्तानिया and ब्रितानिया (older Hindustani names)
+great britain	ग्रेट ब्रिटेन	place_world	spaced spelling: not a token
+wales	वेल्स	place_world	agent: AMBIGUOUS: वेल्स is also English whales or wells
+northern ireland	नॉर्दर्न आयरलैंड|उत्तरी आयरलैंड	place_world	agent: HINDI_NAME: उत्तरी आयरलैंड
+big ben	बिग बेन	place_world	spaced spelling: not a token
+buckingham palace	बकिंघम पैलेस	place_world	spaced spelling: not a token
+buckingham palace	बकिंगहम पैलेस	place_world	spaced spelling: not a token
+downing street	डाउनिंग स्ट्रीट	place_world	spaced spelling: not a token
+leeds	लीड्स	place_world	agent: AMBIGUOUS: लीड्स is also English leads (sales leads)
+eiffel tower	एफिल टॉवर	place_world	spaced spelling: not a token
+eiffel tower	एफिल टावर	place_world	spaced spelling: not a token
+eiffel tower	एफ़िल टॉवर	place_world	spaced spelling: not a token
+eiffel tower	आइफल टावर	place_world	spaced spelling: not a token
+cannes	कान|कान्स	place_world	agent: AMBIGUOUS: कान is also the Hindi word for ear; convert only in the film festival sense
+rome	रोम	place_world	agent: AMBIGUOUS: रोम is also Hindi for body hair or pores (रोम रोम)
+milan	मिलान	place_world	agent: AMBIGUOUS: मिलान is also the Hindi word for matching or comparison (मिलान करना)
+pisa	पीसा|पिसा	place_world	agent: AMBIGUOUS: पीसा is also the past form of पीसना (ground), as in पीसा हुआ
+czech republic	चेक गणराज्य|चेक रिपब्लिक|चेक गणतंत्र	place_world	agent: AMBIGUOUS: चेक alone is also cheque or check; match the full name only
+hungary	हंगरी	place_world	agent: AMBIGUOUS: हंगरी is also English hungry in Hinglish speech
+greece	यूनान|ग्रीस	place_world	agent: HINDI_NAME: यूनान
+russia	रूस|रशिया	place_world	agent: HINDI_NAME: रूस
+saint petersburg	सेंट पीटर्सबर्ग	place_world	spaced spelling: not a token
+saint petersburg	सैंट पीटर्सबर्ग	place_world	spaced spelling: not a token
+soviet union	सोवियत संघ|सोवियत यूनियन	place_world	agent: HINDI_NAME: सोवियत संघ
+ussr	यू एस एस आर	place_world	spaced spelling: not a token
+central asia	मध्य एशिया|सेंट्रल एशिया	place_world	agent: HINDI_NAME: मध्य एशिया
+middle east	मिडिल ईस्ट|मिडल ईस्ट|मध्य पूर्व	place_world	agent: HINDI_NAME: मध्य पूर्व
+west asia	पश्चिम एशिया|पश्चिमी एशिया|वेस्ट एशिया	place_world	agent: HINDI_NAME: पश्चिम एशिया
+gulf	गल्फ|खाड़ी	place_world	agent: AMBIGUOUS: Hindi name खाड़ी is also the common word for any bay
+arab	अरब	place_world	agent: AMBIGUOUS: अरब is also the Hindi number word for a hundred crore (billion)
+uae	यू ए ई	place_world	spaced spelling: not a token
+united arab emirates	संयुक्त अरब अमीरात|यूनाइटेड अरब एमिरेट्स	place_world	agent: HINDI_NAME: संयुक्त अरब अमीरात
+burj khalifa	बुर्ज खलीफा	place_world	spaced spelling: not a token
+burj khalifa	बुर्ज ख़लीफ़ा	place_world	spaced spelling: not a token
+burj khalifa	बुर्ज ख़लीफा	place_world	spaced spelling: not a token
+abu dhabi	अबू धाबी	place_world	spaced spelling: not a token
+abu dhabi	अबु धाबी	place_world	spaced spelling: not a token
+saudi arabia	सऊदी अरब	place_world	spaced spelling: not a token
+saudi arabia	साउदी अरब	place_world	spaced spelling: not a token
+saudi arabia	सउदी अरब	place_world	spaced spelling: not a token
+saudi arabia	सऊदी अरेबिया	place_world	spaced spelling: not a token
+mecca	मक्का	place_world	agent: AMBIGUOUS: मक्का is also maize (corn)
+qatar	क़तर|कतर	place_world	agent: AMBIGUOUS: कतर is also the stem of कतरना (to snip), as in पर कतर दिए
+doha	दोहा	place_world	agent: AMBIGUOUS: दोहा is also a Hindi couplet (कबीर के दोहे)
+yemen	यमन	place_world	agent: AMBIGUOUS: यमन is also a raga (राग यमन)
+persia	फारस|फ़ारस|पर्शिया	place_world	agent: HINDI_NAME: फारस
+damascus	दमिश्क|डमस्कस|दमास्कस	place_world	agent: HINDI_NAME: दमिश्क
+jerusalem	यरूशलम|येरुशलम|जेरूसलम|यरुशलम	place_world	agent: HINDI_NAME: यरूशलम
+tel aviv	तेल अवीव	place_world	agent: AMBIGUOUS: तेल alone means oil; match the two-word name only
+west bank	वेस्ट बैंक	place_world	agent: AMBIGUOUS: बैंक alone is bank; match the two-word name only
+palestine	फिलिस्तीन|फ़िलिस्तीन|फलस्तीन|पैलेस्टाइन	place_world	agent: HINDI_NAME: फिलिस्तीन
+turkey	तुर्की|तुर्किये|टर्की	place_world	agent: AMBIGUOUS: Hindi name तुर्की also means Turkish (language, people); टर्की is also the bird
+egypt	मिस्र|इजिप्ट|इजिप्त	place_world	agent: HINDI_NAME: मिस्र
+cairo	काहिरा|कैरो	place_world	agent: HINDI_NAME: काहिरा
+suez canal	स्वेज नहर|स्वेज़ नहर|स्वेज कैनाल	place_world	agent: HINDI_NAME: स्वेज नहर
+south africa	साउथ अफ्रीका|दक्षिण अफ्रीका|साउथ अफ़्रीका|दक्षिण अफ़्रीका	place_world	agent: HINDI_NAME: दक्षिण अफ्रीका
+cape town	केप टाउन	place_world	spaced spelling: not a token
+sahara	सहारा	place_world	agent: AMBIGUOUS: सहारा is also the common word for support (and the Sahara company)
+nile	नील	place_world	agent: AMBIGUOUS: नील is also indigo or blue, and the first name Neel
+south asia	दक्षिण एशिया|साउथ एशिया	place_world	agent: HINDI_NAME: दक्षिण एशिया
+nankana sahib	ननकाना साहिब	place_world	spaced spelling: not a token
+chittagong	चटगांव|चटगाँव|चिटगांव	place_world	agent: HINDI_NAME: चटगांव
+pokhara	पोखरा	place_world	agent: AMBIGUOUS: पोखरा is also a regional word for pond (पोखर)
+mount everest	माउंट एवरेस्ट|एवरेस्ट पर्वत	place_world	agent: HINDI_NAME: एवरेस्ट पर्वत
+kailash mansarovar	कैलाश मानसरोवर	place_world	spaced spelling: not a token
+kailash mansarovar	कैलाश मान सरोवर	place_world	spaced spelling: not a token
+sri lanka	श्री लंका	place_world	spaced spelling: not a token
+lanka	लंका	place_world	agent: AMBIGUOUS: also Ravana's Lanka in the Ramayana, where Devanagari may be preferred
+male	माले	place_world	agent: AMBIGUOUS: माले is also the CPI(ML) party in Bihar politics; Latin male is also the English word
+southeast asia	दक्षिण पूर्व एशिया|दक्षिणपूर्व एशिया|साउथ ईस्ट एशिया	place_world	agent: HINDI_NAME: दक्षिण पूर्व एशिया
+china	चीन|चाइना	place_world	agent: HINDI_NAME: चीन
+hong kong	हॉन्ग कॉन्ग	place_world	spaced spelling: not a token
+hong kong	हांग कांग	place_world	spaced spelling: not a token
+great wall of china	चीन की दीवार|चीन की महान दीवार|ग्रेट वॉल ऑफ चाइना	place_world	agent: HINDI_NAME: चीन की दीवार
+south china sea	दक्षिण चीन सागर|साउथ चाइना सी	place_world	agent: HINDI_NAME: दक्षिण चीन सागर
+south korea	दक्षिण कोरिया|साउथ कोरिया	place_world	agent: HINDI_NAME: दक्षिण कोरिया
+north korea	उत्तर कोरिया|नॉर्थ कोरिया	place_world	agent: HINDI_NAME: उत्तर कोरिया
+seoul	सियोल|सोल	place_world	agent: AMBIGUOUS: सोल is also English soul or sole
+kuala lumpur	कुआला लंपुर	place_world	spaced spelling: not a token
+bali	बाली	place_world	agent: AMBIGUOUS: बाली is also an earring and the Ramayana king Bali
+angkor wat	अंगकोर वाट	place_world	spaced spelling: not a token
+new zealand	न्यू ज़ीलैंड	place_world	spaced spelling: not a token
+new zealand	न्यू जीलैंड	place_world	spaced spelling: not a token
+christchurch	क्राइस्ट चर्च	place_world	spaced spelling: not a token
+pacific ocean	प्रशांत महासागर|पैसिफिक महासागर|पैसिफिक ओशन	place_world	agent: HINDI_NAME: प्रशांत महासागर (प्रशांत alone is a common first name)
+atlantic ocean	अटलांटिक महासागर|अटलांटिक ओशन	place_world	agent: HINDI_NAME: अटलांटिक महासागर
+indian ocean	हिंद महासागर|हिन्द महासागर|इंडियन ओशन	place_world	agent: HINDI_NAME: हिंद महासागर
+arabian sea	अरब सागर|अरेबियन सी	place_world	agent: HINDI_NAME: अरब सागर
+bay of bengal	बंगाल की खाड़ी|बे ऑफ बंगाल	place_world	agent: HINDI_NAME: बंगाल की खाड़ी
+mediterranean sea	भूमध्य सागर|भूमध्यसागर|मेडिटेरेनियन सी	place_world	agent: HINDI_NAME: भूमध्य सागर
+red sea	लाल सागर|रेड सी	place_world	agent: HINDI_NAME: लाल सागर
+black sea	काला सागर|ब्लैक सी	place_world	agent: HINDI_NAME: काला सागर
+dead sea	मृत सागर|डेड सी	place_world	agent: HINDI_NAME: मृत सागर
+persian gulf	फारस की खाड़ी|फ़ारस की खाड़ी|पर्शियन गल्फ	place_world	agent: HINDI_NAME: फारस की खाड़ी
+north pole	उत्तरी ध्रुव|नॉर्थ पोल	place_world	agent: HINDI_NAME: उत्तरी ध्रुव
+south pole	दक्षिणी ध्रुव|साउथ पोल	place_world	agent: HINDI_NAME: दक्षिणी ध्रुव
+andhra pradesh	आंध्र प्रदेश	place_india	spaced spelling: not a token
+andhra pradesh	आन्ध्र प्रदेश	place_india	spaced spelling: not a token
+arunachal pradesh	अरुणाचल प्रदेश	place_india	spaced spelling: not a token
+himachal pradesh	हिमाचल प्रदेश	place_india	spaced spelling: not a token
+madhya pradesh	मध्य प्रदेश	place_india	spaced spelling: not a token
+tamil nadu	तमिल नाडु	place_india	spaced spelling: not a token
+uttar pradesh	उत्तर प्रदेश	place_india	spaced spelling: not a token
+west bengal	पश्चिम बंगाल	place_india	spaced spelling: not a token
+west bengal	वेस्ट बंगाल	place_india	spaced spelling: not a token
+dadra	दादरा	place_india	agent: AMBIGUOUS: also dadra, a light-classical song form and taal; UT is dadra and nagar haveli and daman and diu
+nagar haveli	नगर हवेली	place_india	spaced spelling: not a token
+daman	दमन	place_india	agent: AMBIGUOUS: also the Hindi word for repression (दमन)
+new delhi	नई दिल्ली	place_india	spaced spelling: not a token
+new delhi	न्यू दिल्ली	place_india	spaced spelling: not a token
+new delhi	नयी दिल्ली	place_india	spaced spelling: not a token
+amaravati	अमरावती	place_india	agent: AMBIGUOUS: same Devanagari as amravati (maharashtra city); also Indra's heavenly city
+gandhinagar	गांधी नगर	place_india	spaced spelling: not a token
+port blair	पोर्ट ब्लेयर	place_india	spaced spelling: not a token
+port blair	श्री विजयपुरम	place_india	spaced spelling: not a token
+dharamshala	धर्मशाला|धरमशाला	place_india	agent: AMBIGUOUS: also the Hindi word for a pilgrims' rest house
+up	यू पी	place_india	spaced spelling: not a token
+mp	एमपी|एम पी	place_india	agent: AMBIGUOUS: also MP, member of parliament
+hp	एचपी	place_india	agent: AMBIGUOUS: also the hp brand and horsepower
+jk	जेके|जे के	place_india	agent: AMBIGUOUS: also jk brands (jk tyre, jk cement)
+ncr	एन सी आर	place_india	spaced spelling: not a token
+greater noida	ग्रेटर नोएडा	place_india	spaced spelling: not a token
+greater noida	ग्रेटर नोयडा	place_india	spaced spelling: not a token
+muzaffarnagar	मुजफ्फर नगर	place_india	spaced spelling: not a token
+lakhimpur	लखीमपुर खीरी	place_india	spaced spelling: not a token
+rae bareli	राय बरेली	place_india	spaced spelling: not a token
+basti	बस्ती	place_india	agent: AMBIGUOUS: also the Hindi word for a settlement or slum
+banda	बांदा|बाँदा	place_india	agent: AMBIGUOUS: close to बंदा (a man, a guy); check vowel length
+sambhal	संभल|सम्भल	place_india	agent: AMBIGUOUS: also the imperative संभल (steady yourself, be careful)
+fatehpur sikri	फतेहपुर सीकरी	place_india	spaced spelling: not a token
+fatehpur sikri	फ़तेहपुर सीकरी	place_india	spaced spelling: not a token
+taj mahal	ताज महल	place_india	spaced spelling: not a token
+gaya	गया	place_india	agent: AMBIGUOUS: also the very common verb form गया (went)
+bodh gaya	बोध गया	place_india	spaced spelling: not a token
+arrah	आरा	place_india	agent: AMBIGUOUS: also the Hindi word for a saw (आरा)
+bihar sharif	बिहार शरीफ	place_india	spaced spelling: not a token
+vaishali	वैशाली	place_india	agent: AMBIGUOUS: also a common woman's name; also a ghaziabad neighbourhood
+puri	पुरी	place_india	agent: AMBIGUOUS: often confused with पूरी (whole; the fried bread); also a surname
+bardhaman	बर्धमान|बर्दवान|वर्धमान	place_india	agent: ALSO: burdwan; AMBIGUOUS: वर्धमान is also Mahavira's name and means growing
+sagar	सागर	place_india	agent: AMBIGUOUS: also the Hindi word for sea; also a common given name
+guna	गुना	place_india	agent: AMBIGUOUS: also गुना meaning times or -fold (दो गुना)
+panna	पन्ना	place_india	agent: AMBIGUOUS: also the Hindi words for page and emerald
+dhar	धार	place_india	agent: AMBIGUOUS: also the Hindi word for an edge or a stream (धार)
+kanha	कान्हा	place_india	agent: AMBIGUOUS: also a pet name of krishna and a given name
+durg	दुर्ग	place_india	agent: AMBIGUOUS: also the Hindi word for fort
+raigarh	रायगढ़	place_india	agent: AMBIGUOUS: Hindi also writes raigad (maharashtra) as रायगढ़
+surat	सूरत	place_india	agent: AMBIGUOUS: also the Hindi word for face or appearance
+anand	आणंद	place_india	agent: AMBIGUOUS: often written आनंद, the Hindi word for joy and a common given name; only आणंद listed
+bhuj	भुज	place_india	agent: AMBIGUOUS: also the Sanskrit word for arm (भुज, as in भुजा)
+statue of unity	स्टैच्यू ऑफ यूनिटी	place_india	spaced spelling: not a token
+statue of unity	स्टेच्यू ऑफ यूनिटी	place_india	spaced spelling: not a token
+gir	गिर	place_india	agent: AMBIGUOUS: also the verb stem गिर (fall), as in गिर गया
+aurangabad	छत्रपति संभाजीनगर	place_india	spaced spelling: not a token
+thane	ठाणे|ठाने|थाने	place_india	agent: AMBIGUOUS: थाने is also the oblique form of थाना (police station)
+kalyan	कल्याण	place_india	agent: AMBIGUOUS: also the Hindi word for welfare or well-being
+amravati	अमरावती	place_india	agent: AMBIGUOUS: same Devanagari as amaravati (andhra pradesh capital)
+jalna	जालना	place_india	agent: AMBIGUOUS: close to जलना (to burn); check vowel length
+navi mumbai	नवी मुंबई	place_india	spaced spelling: not a token
+navi mumbai	नवी मुम्बई	place_india	spaced spelling: not a token
+pimpri chinchwad	पिंपरी चिंचवड़	place_india	spaced spelling: not a token
+pimpri chinchwad	पिंपरी चिंचवड	place_india	spaced spelling: not a token
+kota	कोटा	place_india	agent: AMBIGUOUS: also the Hindi word for quota
+mount abu	माउंट आबू	place_india	spaced spelling: not a token
+sawai madhopur	सवाई माधोपुर	place_india	spaced spelling: not a token
+bundi	बूंदी|बूँदी	place_india	agent: AMBIGUOUS: also बूंदी, the sweet (boondi)
+khatu shyam	खाटू श्याम	place_india	spaced spelling: not a token
+pali	पाली	place_india	agent: AMBIGUOUS: also the pali language and पाली (a work shift)
+hawa mahal	हवा महल	place_india	spaced spelling: not a token
+anandpur sahib	आनंदपुर साहिब	place_india	spaced spelling: not a token
+golden temple	गोल्डन टेंपल	place_india	spaced spelling: not a token
+golden temple	गोल्डन टेम्पल	place_india	spaced spelling: not a token
+harmandir sahib	हरमंदिर साहिब	place_india	spaced spelling: not a token
+harmandir sahib	हरिमंदिर साहिब	place_india	spaced spelling: not a token
+attari	अटारी	place_india	agent: AMBIGUOUS: also the Hindi word for an attic or upper room
+jallianwala bagh	जलियांवाला बाग	place_india	spaced spelling: not a token
+jallianwala bagh	जलियाँवाला बाग	place_india	spaced spelling: not a token
+yamunanagar	यमुना नगर	place_india	spaced spelling: not a token
+mandi	मंडी	place_india	agent: AMBIGUOUS: also the Hindi word for market (and for a slump)
+jwalamukhi	ज्वालामुखी	place_india	agent: AMBIGUOUS: also the Hindi word for volcano
+jim corbett	जिम कॉर्बेट	place_india	spaced spelling: not a token
+jim corbett	जिम कार्बेट	place_india	spaced spelling: not a token
+char dham	चार धाम	place_india	spaced spelling: not a token
+vaishno devi	वैष्णो देवी	place_india	spaced spelling: not a token
+katra	कटरा	place_india	agent: AMBIGUOUS: also कटरा, a market lane in many old-city names
+dal lake	डल झील	place_india	spaced spelling: not a token
+dal lake	डल लेक	place_india	spaced spelling: not a token
+poonch	पुंछ|पुंच	place_india	agent: AMBIGUOUS: close to पूंछ (tail) and पूछ (ask)
+thrissur	त्रिशूर	place_india	agent: AMBIGUOUS: close to त्रिशूल (trident)
+vasco da gama	वास्को|वास्को डी गामा|वास्को द गामा	place_india	agent: AMBIGUOUS: also the portuguese explorer's name
+connaught place	कनॉट प्लेस	place_india	spaced spelling: not a token
+connaught place	कनाट प्लेस	place_india	spaced spelling: not a token
+chandni chowk	चांदनी चौक	place_india	spaced spelling: not a token
+chandni chowk	चाँदनी चौक	place_india	spaced spelling: not a token
+karol bagh	करोल बाग	place_india	spaced spelling: not a token
+lajpat nagar	लाजपत नगर	place_india	spaced spelling: not a token
+saket	साकेत	place_india	agent: AMBIGUOUS: also a common given name
+rohini	रोहिणी|रोहिनी	place_india	agent: AMBIGUOUS: also a common woman's name and a nakshatra
+laxmi nagar	लक्ष्मी नगर	place_india	spaced spelling: not a token
+hauz khas	हौज खास	place_india	spaced spelling: not a token
+hauz khas	हौज़ ख़ास	place_india	spaced spelling: not a token
+nehru place	नेहरू प्लेस	place_india	spaced spelling: not a token
+anand vihar	आनंद विहार	place_india	spaced spelling: not a token
+lal qila	लाल किला	place_india	spaced spelling: not a token
+lal qila	लाल क़िला	place_india	spaced spelling: not a token
+india gate	इंडिया गेट	place_india	spaced spelling: not a token
+qutub minar	कुतुब मीनार	place_india	spaced spelling: not a token
+qutub minar	क़ुतुब मीनार	place_india	spaced spelling: not a token
+jewar	जेवर	place_india	agent: AMBIGUOUS: also the Hindi word for jewellery (ज़ेवर); noida airport site
+andheri	अंधेरी|अँधेरी	place_india	agent: AMBIGUOUS: also अंधेरी (dark, feminine)
+marine drive	मरीन ड्राइव	place_india	spaced spelling: not a token
+gateway of india	गेटवे ऑफ इंडिया	place_india	spaced spelling: not a token
+electronic city	इलेक्ट्रॉनिक सिटी	place_india	spaced spelling: not a token
+electronic city	इलेक्ट्रोनिक सिटी	place_india	spaced spelling: not a token
+indiranagar	इंदिरा नगर	place_india	spaced spelling: not a token
+hitech city	हाईटेक सिटी	place_india	spaced spelling: not a token
+hitech city	हाइटेक सिटी	place_india	spaced spelling: not a token
+hitech city	हाई टेक सिटी	place_india	spaced spelling: not a token
+banjara hills	बंजारा हिल्स	place_india	spaced spelling: not a token
+charminar	चार मीनार	place_india	spaced spelling: not a token
+salt lake	साल्ट लेक	place_india	spaced spelling: not a token
+salt lake	सॉल्ट लेक	place_india	spaced spelling: not a token
+krishna	कृष्णा	place_india	agent: AMBIGUOUS: also the god krishna (कृष्ण) and a common given name
+beas	ब्यास	place_india	agent: AMBIGUOUS: also the sage vyasa (व्यास, ब्यास) and a surname
+terai	तराई	place_india	agent: AMBIGUOUS: also the common noun तराई (foothill lowland)
+march	मार्च	time	agent: AMBIGUOUS: मार्च is also the standard Hindi month name
+may	मे	time	agent: AMBIGUOUS: मे is a very common misspelling of में (in)
+june	जून	time	agent: AMBIGUOUS: जून is also the standard Hindi month name
+july	जुलाई	time	agent: AMBIGUOUS: जुलाई is also the standard Hindi month name
+hour	आवर	time	blocklist: ENGLISH_HOMOPHONE: hour and our both common
+week	वीक	time	agent: AMBIGUOUS: वीक is both week and weak
+leave	लीव	time	blocklist: ENGLISH_HOMOPHONE: leave dominates
+late	लेट	time	agent: AMBIGUOUS: लेट is also Hindi 'lie down' (लेट जाओ, लेटना)
+summer	समर	time	agent: AMBIGUOUS: समर is also Hindi 'battle' (समर भूमि) and a given name
+break	ब्रेक	time	agent: AMBIGUOUS: ब्रेक is both break and brake
+good morning	गुड मॉर्निंग	time	spaced spelling: not a token
+good morning	गुड मोर्निंग	time	spaced spelling: not a token
+good morning	गुड मार्निंग	time	spaced spelling: not a token
+good night	गुड नाइट|गुड नाईट	time	agent: AMBIGUOUS: गुड नाइट is also the brand goodknight
+good evening	गुड इवनिंग	time	spaced spelling: not a token
+good evening	गुड ईवनिंग	time	spaced spelling: not a token
+new year	न्यू ईयर	time	spaced spelling: not a token
+new year	न्यू इयर	time	spaced spelling: not a token
+kg	के जी	measure	spaced spelling: not a token
+gram	ग्राम	measure	agent: AMBIGUOUS: ग्राम is also Hindi 'village' (ग्राम पंचायत)
+litre	लीटर	measure	annotators gloss it as liter (16x)
+metre	मीटर	measure	agent: AMBIGUOUS: मीटर is both metre (unit) and meter (device: बिजली का मीटर)
+kilometre	किलोमीटर	measure	annotators gloss it as kilometer (39x)
+km	के एम	measure	spaced spelling: not a token
+cm	सी एम	measure	spaced spelling: not a token
+mm	एम एम	measure	spaced spelling: not a token
+feet	फीट	measure	blocklist: ENGLISH_HOMOPHONE: feet dominates; fit
+feet	फ़ीट	measure	blocklist: folded form blocked
+foot	फुट	measure	agent: AMBIGUOUS: फुट is often written for Hindi फूट (split, burst: फूट पड़ा)
+piece	पीस	measure	agent: AMBIGUOUS: पीस is also Hindi 'grind' (पीस लो, पीसना)
+xl	एक्स एल	measure	spaced spelling: not a token
+full	फुल	measure	agent: AMBIGUOUS: फुल is a common misspelling of Hindi फूल (flower) and the stem of फुलाना
+weight	वेट	measure	agent: AMBIGUOUS: वेट is both weight and wait
+per	पर	measure	agent: AMBIGUOUS: पर is the Hindi postposition 'on' and conjunction 'but'
+one	वन	measure	agent: AMBIGUOUS: वन is also Hindi 'forest' (वन विभाग)
+two	टू	measure	agent: AMBIGUOUS: टू is also English to and too
+four	फोर|फ़ोर	measure	agent: AMBIGUOUS: फोर is also English for (फोर यू)
+seven	सेवन	measure	agent: AMBIGUOUS: सेवन is also Hindi 'consumption, intake' (शराब का सेवन)
+eight	एट	measure	agent: AMBIGUOUS: एट is also English at (एट लीस्ट)
+ten	टेन	measure	blocklist: NUMBER: ten; slip for टेंशन (tension)
+red	रेड	colour	agent: AMBIGUOUS: रेड is also raid (police raid: रेड पड़ी)
+light	लाइट	colour	blocklist: ENGLISH_HOMOPHONE: light dominates
+light	लाईट	colour	blocklist: folded form blocked
+shade	शेड	colour	agent: AMBIGUOUS: शेड is both shade and shed (टीन शेड)
+fair	फेयर	colour	agent: AMBIGUOUS: फेयर is both fair and fare (bus fare)
+plain	प्लेन	colour	agent: AMBIGUOUS: प्लेन is both plain and plane (aeroplane)
+right	राइट|राईट	direction	agent: AMBIGUOUS: राइट is both right and write
+centre	सेंटर	direction	annotators gloss it as center (720x)
+centre	सेन्टर	direction	annotators gloss it as center (24x)
+u turn	यू टर्न	direction	spaced spelling: not a token
+west	वेस्ट	direction	agent: AMBIGUOUS: वेस्ट is west, waste and vest
+up	अप	direction	blocklist: HINDI_WORD: frequent slip for आप (you); also up
+way	वे	direction	agent: AMBIGUOUS: वे is the Hindi pronoun 'they, those'
+end	एंड|एन्ड	direction	agent: AMBIGUOUS: एंड is both end and and
+no	नो	common	agent: AMBIGUOUS: नो is a common spelling of Hindi नौ (nine) and is also English know
+thank you	थैंक यू	common	spaced spelling: not a token
+thank you	थेंक यू	common	spaced spelling: not a token
+thank you	थैंक यु	common	spaced spelling: not a token
+thank you so much	थैंक यू सो मच	common	spaced spelling: not a token
+thank you so much	थैंक्यू सो मच	common	spaced spelling: not a token
+hi	हाय|हाई	common	agent: AMBIGUOUS: हाय is a Hindi interjection (हाय राम) and हाई is also high
+hey	हे	common	agent: AMBIGUOUS: हे is the Hindi vocative (हे भगवान) and a frequent misspelling of है
+bye	बाय	common	agent: AMBIGUOUS: बाय is both bye and by (बाय रोड)
+excuse me	एक्सक्यूज मी	common	spaced spelling: not a token
+excuse me	एक्सक्यूज़ मी	common	spaced spelling: not a token
+good	गुड	common	agent: AMBIGUOUS: गुड is a common spelling of Hindi गुड़ (jaggery)
+good luck	गुड लक	common	spaced spelling: not a token
+all the best	ऑल द बेस्ट	common	spaced spelling: not a token
+all the best	आल द बेस्ट	common	spaced spelling: not a token
+take care	टेक केयर	common	spaced spelling: not a token
+no problem	नो प्रॉब्लम	common	spaced spelling: not a token
+no problem	नो प्रोब्लम	common	spaced spelling: not a token
+by the way	बाय द वे	common	spaced spelling: not a token
+of course	ऑफ कोर्स	common	spaced spelling: not a token
+of course	ओफ कोर्स	common	spaced spelling: not a token
+in fact	इन फैक्ट	common	spaced spelling: not a token
+at least	एट लीस्ट	common	spaced spelling: not a token
+you know	यू नो	common	spaced spelling: not a token
+i mean	आई मीन	common	spaced spelling: not a token
+much	मच	common	agent: AMBIGUOUS: मच is also the Hindi stem of मचना/मचाना (मच गया)
+more	मोर	common	agent: AMBIGUOUS: मोर is also Hindi 'peacock'
+but	बट	common	blocklist: HINDI_WORD: twist; banyan (बट वृक्ष)
+so	सो	common	agent: AMBIGUOUS: सो is also Hindi 'sleep' (सो जाओ) and the Hindi conjunction 'so, therefore'
+and	एंड|एन्ड	common	agent: AMBIGUOUS: एंड is both and and end
+like	लाइक	common	agent: AMBIGUOUS: लाइक is often confused with Hindi लायक (worthy, able)
+mean	मीन	common	agent: AMBIGUOUS: मीन is also Hindi 'fish' and Pisces (मीन राशि)
+fourth	फोर्थ	common	blocklist: NUMBER: fourth dominates; forth
+fourth	फ़ोर्थ	common	blocklist: NUMBER: fourth dominates; forth
+age	एज	common	agent: AMBIGUOUS: एज is age, as (एज यूजुअल) and edge
+set	सेट	common	blocklist: ENGLISH_HOMOPHONE: set dominates; slip for सेठ (merchant)
+plan	प्लैन	common	blocklist: folded form blocked
+bore	बोर	common	blocklist: ENGLISH_HOMOPHONE: bore dominates
+weak	वीक	common	agent: AMBIGUOUS: वीक is both weak and week
+fake	फेक	common	agent: AMBIGUOUS: फेक is a common spelling of Hindi फेंक (throw: फेक दो)
+bad	बैड	common	blocklist: folded form blocked
+check	चेक	common	agent: AMBIGUOUS: चेक is both check and cheque
+save	सेव	common	agent: AMBIGUOUS: सेव is also Hindi for apple (सेब/सेव) and the namkeen sev
+accept	एक्सेप्ट	common	blocklist: ENGLISH_HOMOPHONE: accept dominates
+accept	ऐक्सेप्ट	common	blocklist: folded form blocked
+pay	पे	common	agent: AMBIGUOUS: पे is the colloquial Hindi postposition 'on' (पर: टेबल पे)
+waste	वेस्ट	common	agent: AMBIGUOUS: वेस्ट is waste, west and vest
+sale	सेल	common	agent: AMBIGUOUS: सेल is sale, sell and cell
+sell	सेल	common	agent: AMBIGUOUS: सेल is sell, sale and cell
+cost	कॉस्ट	common	blocklist: ENGLISH_HOMOPHONE: cost dominates
+cost	कोस्ट	common	blocklist: ENGLISH_HOMOPHONE: coast dominates; slip for कॉस्ट (cost)
+queue	क्यू	common	agent: AMBIGUOUS: क्यू is a frequent spelling of Hindi क्यों (why) and the letter q
+lose	लूज|लूज़	common	agent: AMBIGUOUS: लूज़ is both lose and loose
+loose	लूज|लूज़	common	agent: AMBIGUOUS: लूज़ is both loose and lose
+workout	वर्क आउट	common	spaced spelling: not a token
+fit	फिट	common	blocklist: ENGLISH_HOMOPHONE: fit dominates; feet
+fit	फ़िट	common	blocklist: folded form blocked
+bowled	बोल्ड	common	agent: AMBIGUOUS: बोल्ड is both bowled and bold
+goal	गोल	common	agent: AMBIGUOUS: गोल is also Hindi 'round' (गोल गोल)
+wish	विश	common	agent: AMBIGUOUS: विश sounds like Hindi विष (poison) and is sometimes written for it
+fun	फन	common	agent: AMBIGUOUS: फन is also Hindi 'snake hood' (फन फैलाना)
+role	रोल	common	agent: AMBIGUOUS: रोल is both role and roll (roll number, egg roll)
+scene	सीन	common	agent: AMBIGUOUS: सीन is both scene and seen
+pain	पेन	common	agent: AMBIGUOUS: पेन is both pain and pen
+meet	मीट	common	agent: AMBIGUOUS: मीट is both meet and meat
+wait	वेट	common	agent: AMBIGUOUS: वेट is both wait and weight
+taste	टेस्ट	common	agent: AMBIGUOUS: टेस्ट is both taste and test
+look	लुक	common	blocklist: HINDI_WORD: hide (लुकना); look dominates in Hinglish
+face	फेस	common	blocklist: ENGLISH_HOMOPHONE: face dominates; phase common in news
+pick	पिक	common	blocklist: ENGLISH_HOMOPHONE: pick and pic both common
+man	मैन	common	agent: AMBIGUOUS: मैन is a frequent misspelling of मैं (I)
+people	पीपल	common	agent: AMBIGUOUS: पीपल is also Hindi 'peepal tree'
+main	मेन	common	agent: AMBIGUOUS: मेन is both main and men, and a frequent misspelling of में (in)
+low	लो	common	agent: AMBIGUOUS: लो is also Hindi 'take' (ले लो)
+high	हाई	common	agent: AMBIGUOUS: हाई is both high and hi
+same	सेम	common	agent: AMBIGUOUS: सेम is also Hindi for a flat bean (सेम की फली)
+effect	इफेक्ट	common	blocklist: ENGLISH_HOMOPHONE: effect dominates
+effect	इफ़ेक्ट	common	blocklist: folded form blocked
+base	बेस	common	agent: AMBIGUOUS: बेस is both base and bass
+four g	फोरजी	tech	conflict: फोरजी also -> ['4g']
+five g	फाइवजी	tech	conflict: फाइवजी also -> ['5g']
+three g	थ्रीजी	tech	conflict: थ्रीजी also -> ['3g']
+cap	कैप	object	learned lexicon writes cab; kept the learned spelling
+licence	लाइसेंस	institution	learned lexicon writes license; kept the learned spelling
+licence	लाइसेन्स	institution	learned lexicon writes license; kept the learned spelling
+3g	थ्रीजी	abbreviation	conflict: थ्रीजी also -> ['three g']
+4g	फोरजी	abbreviation	conflict: फोरजी also -> ['four g']
+5g	फाइवजी	abbreviation	conflict: फाइवजी also -> ['five g']
+ok	ओके	abbreviation	learned lexicon writes okay; kept the learned spelling

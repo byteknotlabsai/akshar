@@ -53,4 +53,8 @@ Shrutilipi (Hindi), AI4Bharat, from All India Radio news bulletins
 Vaani, transcribed part (Hindi), ARTPARK and the Indian Institute of Science
   CC-BY-4.0, https://huggingface.co/datasets/ARTPARK-IISc/Vaani-transcription-part
 
+Common Voice Scripted Speech 26.0, South Asian English, and Common Voice 27.0 Hindi, Mozilla Foundation and its
+contributors (the "MDC Curators")
+  CC0-1.0, obtained under the Mozilla Data Collective terms, https://datacollective.mozillafoundation.org/
+
 This repository does not distribute model weights or datasets.

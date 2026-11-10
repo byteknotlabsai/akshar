@@ -1,0 +1,400 @@
+devanagari	reason
+अप	HINDI_WORD: frequent slip for आप (you); also up
+अब	HINDI_WORD: now
+अरब	NUMBER: billion (10^9); also Arab
+अवर	HINDI_WORD: lower/junior (अवर सचिव)
+आ	HINDI_WORD: come (imperative)
+आइज़	ENGLISH_HOMOPHONE: eyes dominates
+आइस	ENGLISH_HOMOPHONE: ice dominates
+आई	HINDI_WORD: came (feminine); also letter i
+आना	NUMBER: come (आना); anna (old coin, 1/16 rupee)
+आप	HINDI_WORD: you (formal); app is usually ऐप
+आम	HINDI_WORD: mango; common/ordinary
+आय	HINDI_WORD: income
+आर	HINDI_WORD: this side (आर-पार); also letter r
+आवर	ENGLISH_HOMOPHONE: hour and our both common
+आस	HINDI_WORD: hope
+इन	HINDI_WORD: these (oblique)
+इफेक्ट	ENGLISH_HOMOPHONE: effect dominates
+इस	HINDI_WORD: this (oblique)
+ई	HINDI_WORD: dialect this (Bhojpuri/Awadhi); also letter e
+ईयर	ENGLISH_HOMOPHONE: year dominates
+उन	HINDI_WORD: them/those (oblique)
+उप	HINDI_WORD: sub-/deputy prefix (उप मुख्यमंत्री)
+उस	HINDI_WORD: that (oblique)
+ए	HINDI_WORD: vocative hey; also letter a and article a
+एंड	ENGLISH_HOMOPHONE: and and end both common
+एक्स	ENGLISH_HOMOPHONE: letter x dominates; ex- (एक्स बॉयफ्रेंड)
+एक्सेप्ट	ENGLISH_HOMOPHONE: accept dominates
+एज	ENGLISH_HOMOPHONE: age and edge both common
+एट	NUMBER: eight vs at vs ate
+एन	ENGLISH_HOMOPHONE: letter n and article an both common
+एन्ड	ENGLISH_HOMOPHONE: and and end both common
+ऐ	HINDI_WORD: vocative hey
+ऐज	ENGLISH_HOMOPHONE: as dominates
+ऐट	NUMBER: at dominates; eight
+ऐश	HINDI_WORD: luxury/enjoyment
+ओ	HINDI_WORD: vocative O/oh; also letter o
+ओर	HINDI_WORD: side/direction
+और	HINDI_WORD: and
+कट	HINDI_WORD: was cut (कटना); cut also common
+कप	ENGLISH_HOMOPHONE: cup dominates
+कब	HINDI_WORD: when? (question word)
+कम	HINDI_WORD: less
+कर	HINDI_WORD: do
+करोड	NUMBER: ten million (nukta-less); keep Devanagari
+करोड़	NUMBER: ten million; keep Devanagari
+कल	HINDI_WORD: tomorrow/yesterday
+का	HINDI_WORD: of (masculine)
+काम	HINDI_WORD: work
+काल	HINDI_WORD: time/era/death
+काश	HINDI_WORD: if only
+कि	HINDI_WORD: that (conjunction)
+किन	HINDI_WORD: which (oblique plural)
+की	HINDI_WORD: of (feminine); did (की)
+कुल	HINDI_WORD: total; family/clan
+के	HINDI_WORD: of (oblique); also letter k
+कॉस्ट	ENGLISH_HOMOPHONE: cost dominates
+को	HINDI_WORD: to (dative marker)
+कोई	HINDI_WORD: someone/any
+कोट	ENGLISH_HOMOPHONE: coat dominates; also Hindi कोट (fort)
+कोटा	ENGLISH_HOMOPHONE: quota and Kota (city) both common
+कोन	HINDI_WORD: slip for कौन (who); angle (कोण)
+कोर	HINDI_WORD: edge/border (कोर-कसर); core also common
+कोर्ट	ENGLISH_HOMOPHONE: court dominates
+कोर्स	ENGLISH_HOMOPHONE: course dominates
+कोस	NUMBER: kos (distance, about 3 km); slip for कोर्स
+कोस्ट	ENGLISH_HOMOPHONE: coast dominates; slip for कॉस्ट (cost)
+कौन	HINDI_WORD: who
+क्यू	ENGLISH_HOMOPHONE: letter q dominates (क्यूआर); queue, cue
+गज	NUMBER: yard (measure); elephant (गज)
+गज़	NUMBER: yard (measure)
+गम	HINDI_WORD: sorrow (slip for ग़म)
+गली	HINDI_WORD: lane
+ग़म	HINDI_WORD: sorrow
+गाना	HINDI_WORD: song; sing
+गाय	HINDI_WORD: cow
+गाल	HINDI_WORD: cheek
+गाली	HINDI_WORD: abuse/swear word
+गुड	HINDI_WORD: slip for गुड़ (jaggery); good dominates in Hinglish
+गुड़	HINDI_WORD: jaggery
+गेट	ENGLISH_HOMOPHONE: gate dominates; get in phrases (गेट टुगेदर)
+गोद	HINDI_WORD: lap; adoption
+गोल	HINDI_WORD: round; goal is both
+ग्राम	NUMBER: village (ग्राम, very common) vs gram unit
+ग्रास	HINDI_WORD: morsel/mouthful
+चार	NUMBER: four (Hindi number) vs char
+चीज	HINDI_WORD: thing (nukta-less)
+चीज़	HINDI_WORD: thing
+चेक	ENGLISH_HOMOPHONE: check dominates; cheque common in banking
+चैक	ENGLISH_HOMOPHONE: check dominates; cheque
+चैन	HINDI_WORD: peace/rest
+छूट	HINDI_WORD: discount/exemption; be left
+जब	HINDI_WORD: when
+जय	HINDI_WORD: victory/hail; also a name
+जाम	HINDI_WORD: goblet/drink (जाम); traffic jam is English jam
+जार	HINDI_WORD: paramour; jar also common
+जाली	HINDI_WORD: fake; mesh
+जिन	HINDI_WORD: who/which (oblique plural); jinn
+जी	HINDI_WORD: honorific/yes; also letter g
+जू	HINDI_WORD: slip for जूँ (louse); zoo dominates in Hinglish
+जूँ	HINDI_WORD: louse
+जून	HINDI_WORD: meal time (दो जून की रोटी); month June
+जेल	ENGLISH_HOMOPHONE: jail dominates; gel
+जो	HINDI_WORD: who/which (relative)
+टन	NUMBER: ton vs tonne; also bell sound (टन)
+टाई	ENGLISH_HOMOPHONE: tie dominates; Thai
+टियर	ENGLISH_HOMOPHONE: tier (टियर-2 शहर) dominates
+टी	ENGLISH_HOMOPHONE: letter t (टी-20) and tea both common
+टीन	ENGLISH_HOMOPHONE: tin (canister, roof sheet) dominates; teen
+टु	NUMBER: to dominates; two
+टू	NUMBER: two vs to vs too
+टेक	ENGLISH_HOMOPHONE: take and tech both common
+टेन	NUMBER: ten; slip for टेंशन (tension)
+टेल	ENGLISH_HOMOPHONE: no dominant one
+टेस्ट	ENGLISH_HOMOPHONE: test and taste both common
+डाई	ENGLISH_HOMOPHONE: dye (hair dye) dominates; die
+डाल	HINDI_WORD: put (डालना); branch
+डाली	HINDI_WORD: branch; put (feminine)
+डी	ENGLISH_HOMOPHONE: letter d dominates; the is usually written द
+डू	ENGLISH_HOMOPHONE: do dominates
+डोर	HINDI_WORD: string/thread
+तन	HINDI_WORD: body
+तब	HINDI_WORD: then
+ताई	HINDI_WORD: aunt (father's elder brother's wife)
+तार	HINDI_WORD: wire; telegram
+ताल	HINDI_WORD: rhythm; lake
+तीन	NUMBER: three (Hindi number) vs teen
+तीर	HINDI_WORD: arrow; river bank
+तू	HINDI_WORD: you (intimate)
+तेल	HINDI_WORD: oil
+तो	HINDI_WORD: so/then
+थे	HINDI_WORD: were
+दम	HINDI_WORD: breath/strength
+दर्जन	NUMBER: dozen (naturalised); keep Devanagari
+दल	HINDI_WORD: party/team
+दस	NUMBER: ten (Hindi number)
+दाई	HINDI_WORD: midwife/nurse
+दादी	HINDI_WORD: paternal grandmother
+दाम	HINDI_WORD: price
+दाल	HINDI_WORD: lentils
+दिन	HINDI_WORD: day
+दिल	HINDI_WORD: heart
+दी	HINDI_WORD: gave (feminine); elder sister
+दूर	HINDI_WORD: far
+दे	HINDI_WORD: give
+देन	HINDI_WORD: contribution/gift (देन)
+देयर	ENGLISH_HOMOPHONE: there dominates
+देर	HINDI_WORD: delay
+दैन	ENGLISH_HOMOPHONE: than dominates
+न	HINDI_WORD: not; also letter n
+नई	HINDI_WORD: new (feminine)
+नल	HINDI_WORD: tap/pipe
+ना	HINDI_WORD: no; tag particle
+नाइट	ENGLISH_HOMOPHONE: night dominates
+नाई	HINDI_WORD: barber
+नाक	HINDI_WORD: nose
+नाना	HINDI_WORD: maternal grandfather
+नानी	HINDI_WORD: maternal grandmother
+नाम	HINDI_WORD: name (native Hindi word)
+नाव	HINDI_WORD: boat
+नीट	ENGLISH_HOMOPHONE: NEET exam dominates; neat
+नील	HINDI_WORD: indigo/blue; also number 10^13
+ने	HINDI_WORD: ergative marker
+नेक	HINDI_WORD: good/virtuous
+नेट	ENGLISH_HOMOPHONE: net dominates; neat
+नॉट	ENGLISH_HOMOPHONE: not dominates
+नो	NUMBER: no vs नौ (nine) misspelt in number readings; know
+नोट	ENGLISH_HOMOPHONE: note dominates
+नौ	NUMBER: nine (Hindi number)
+पर	HINDI_WORD: on; but
+पल	HINDI_WORD: moment
+पाई	HINDI_WORD: got (feminine); pie (old coin)
+पान	HINDI_WORD: betel leaf
+पार	HINDI_WORD: across
+पाव	NUMBER: quarter (kg/litre); pav bread
+पास	HINDI_WORD: near/have; pass also common
+पिक	ENGLISH_HOMOPHONE: pick and pic both common
+पिता	HINDI_WORD: father
+पी	HINDI_WORD: drank (पीना); also letter p
+पीक	HINDI_WORD: betel spit; peak also common
+पीस	ENGLISH_HOMOPHONE: piece dominates
+पुल	HINDI_WORD: bridge
+पे	HINDI_WORD: colloquial पर (on); pay also written पे
+पेंट	ENGLISH_HOMOPHONE: paint dominates; pant
+पेट	HINDI_WORD: stomach
+पेड	HINDI_WORD: slip for पेड़ (tree)
+पेड़	HINDI_WORD: tree
+पेन	ENGLISH_HOMOPHONE: pen dominates; pain
+पेयर	ENGLISH_HOMOPHONE: pair dominates
+पैंट	ENGLISH_HOMOPHONE: pant dominates; paint
+पैन	ENGLISH_HOMOPHONE: pan (PAN card, frying pan) and pen both common
+पैर	HINDI_WORD: foot/leg
+पोल	HINDI_WORD: exposed secret (पोल खुलना); pole, poll
+पौन	NUMBER: three-quarters
+प्रिंसिपल	ENGLISH_HOMOPHONE: principal dominates (school)
+प्लेन	ENGLISH_HOMOPHONE: plane and plain both common
+फल	HINDI_WORD: fruit/result
+फ़ाइल	ENGLISH_HOMOPHONE: file dominates
+फ़ुट	NUMBER: foot (measure)
+फ़ॉर	NUMBER: for dominates; four
+फ़ोर	NUMBER: four vs for
+फ़ोर्थ	NUMBER: fourth dominates; forth
+फाइल	ENGLISH_HOMOPHONE: file dominates
+फिट	ENGLISH_HOMOPHONE: fit dominates; feet
+फिर	HINDI_WORD: then/again
+फीट	ENGLISH_HOMOPHONE: feet dominates; fit
+फुट	NUMBER: foot (measure); split (फूट)
+फुल	HINDI_WORD: slip for फूल (flower); full also common
+फूट	HINDI_WORD: discord/split (फूट डालो)
+फूल	HINDI_WORD: flower
+फेल	ENGLISH_HOMOPHONE: fail dominates
+फेस	ENGLISH_HOMOPHONE: face dominates; phase common in news
+फॉर	NUMBER: for dominates; four
+फोर	NUMBER: four vs for
+फोर्थ	NUMBER: fourth dominates; forth
+बट	HINDI_WORD: twist; banyan (बट वृक्ष)
+बड़ी	HINDI_WORD: big (feminine)
+बडी	HINDI_WORD: slip for बड़ी (big, feminine)
+बन	HINDI_WORD: become (बन गया); forest
+बम	ENGLISH_HOMOPHONE: bomb dominates
+बरी	HINDI_WORD: acquitted
+बस	HINDI_WORD: just/enough; bus also common
+बाइट	ENGLISH_HOMOPHONE: byte and bite both occur
+बाई	HINDI_WORD: maid/lady (बाई)
+बात	HINDI_WORD: matter/talk
+बाद	HINDI_WORD: after
+बाय	ENGLISH_HOMOPHONE: bye dominates; by and buy also occur
+बार	HINDI_WORD: time/occasion (दो बार); bar also common
+बाल	HINDI_WORD: hair; child (बाल)
+बिन	HINDI_WORD: without
+बिल	HINDI_WORD: burrow; bill dominates in speech
+बी	ENGLISH_HOMOPHONE: letter b dominates (बी.ए., बी टीम); be, bee; also slip for भी
+बीस	NUMBER: twenty (Hindi number) vs bees
+बू	HINDI_WORD: smell
+बेट	ENGLISH_HOMOPHONE: bet dominates
+बेटा	HINDI_WORD: son
+बेटी	HINDI_WORD: daughter
+बेड	ENGLISH_HOMOPHONE: bed dominates
+बेल	HINDI_WORD: vine; bael fruit
+बेस	ENGLISH_HOMOPHONE: base dominates
+बैंड	ENGLISH_HOMOPHONE: band dominates
+बॉल	ENGLISH_HOMOPHONE: ball dominates
+बो	HINDI_WORD: sow (बोना)
+बोट	ENGLISH_HOMOPHONE: boat dominates; slip for वोट
+बोर	ENGLISH_HOMOPHONE: bore dominates
+बोल	HINDI_WORD: speak; words of a song
+बोल्ड	ENGLISH_HOMOPHONE: bold and bowled (cricket) both common
+ब्रेक	ENGLISH_HOMOPHONE: break dominates; brake common in driving talk
+भी	HINDI_WORD: also
+मई	HINDI_WORD: month May (standard Hindi month name); keep Devanagari
+मग	ENGLISH_HOMOPHONE: mug dominates; also Hindi मग (path)
+मगर	HINDI_WORD: but; crocodile
+मच	HINDI_WORD: erupt/stir (मच गया)
+मन	HINDI_WORD: mind/heart; also maund (old weight)
+माई	HINDI_WORD: mother (माई)
+मान	HINDI_WORD: respect; accept (मान लो)
+मामा	HINDI_WORD: maternal uncle
+मार	HINDI_WORD: hit/kill
+माल	HINDI_WORD: goods/stuff
+माली	HINDI_WORD: gardener
+मास	HINDI_WORD: month; meat
+मिल	HINDI_WORD: meet/get (मिल गया)
+मिली	HINDI_WORD: met/got (feminine); millilitre abbreviation
+मी	HINDI_WORD: Marathi I; slip for में (in); me in Hinglish
+मीट	ENGLISH_HOMOPHONE: meet and meat both common
+मील	NUMBER: mile (naturalised मील) dominates; meal
+मे	HINDI_WORD: common slip for में (in)
+में	HINDI_WORD: in
+मेन	ENGLISH_HOMOPHONE: main dominates; men
+मेरी	HINDI_WORD: my (feminine)
+मेरे	HINDI_WORD: my (oblique/plural)
+मेल	HINDI_WORD: harmony/union (मेल-जोल); mail also common
+मै	HINDI_WORD: common slip for मैं (I)
+मैं	HINDI_WORD: I
+मैन	ENGLISH_HOMOPHONE: man and main both common
+मोड	HINDI_WORD: slip for मोड़ (turn)
+मोड़	HINDI_WORD: turn/bend
+मोर	HINDI_WORD: peacock
+या	HINDI_WORD: or
+यू	ENGLISH_HOMOPHONE: letter u (यू.पी.) and you both common
+ये	HINDI_WORD: this/these
+राइट	ENGLISH_HOMOPHONE: right dominates; write rare
+राइस	ENGLISH_HOMOPHONE: rice dominates
+राई	HINDI_WORD: mustard seed
+राईट	ENGLISH_HOMOPHONE: right dominates; write rare
+राम	HINDI_WORD: Lord Ram/name; RAM (memory)
+राय	HINDI_WORD: opinion
+रीड	ENGLISH_HOMOPHONE: read dominates; reed rare
+रील	ENGLISH_HOMOPHONE: reel dominates; real
+रुट	ENGLISH_HOMOPHONE: route and root both common
+रूट	ENGLISH_HOMOPHONE: route and root both common
+रूप	HINDI_WORD: form/beauty
+रेड	ENGLISH_HOMOPHONE: raid (छापा) and red both common; read (past)
+रो	HINDI_WORD: cry
+रोज	HINDI_WORD: daily (nukta-less)
+रोज़	HINDI_WORD: daily
+रोम	HINDI_WORD: body hair; Rome
+रोल	ENGLISH_HOMOPHONE: role dominates; roll
+लग	HINDI_WORD: seem/attach (लग रहा)
+लाइक	HINDI_WORD: frequent slip for लायक (worthy); like dominates
+लाइट	ENGLISH_HOMOPHONE: light dominates
+लाइव	ENGLISH_HOMOPHONE: live dominates
+लाई	HINDI_WORD: brought (feminine)
+लाख	NUMBER: hundred thousand; keep Devanagari
+लायक	HINDI_WORD: worthy/capable
+लिव	ENGLISH_HOMOPHONE: live (लिव-इन) dominates
+लीड	ENGLISH_HOMOPHONE: lead (verb/noun) dominates; one spelling but noun/verb/metal senses
+लीव	ENGLISH_HOMOPHONE: leave dominates
+लुक	HINDI_WORD: hide (लुकना); look dominates in Hinglish
+लू	HINDI_WORD: heatwave
+लूज	ENGLISH_HOMOPHONE: loose and lose both common
+लूज़	ENGLISH_HOMOPHONE: loose and lose both common
+लूट	HINDI_WORD: plunder (native Hindi word)
+ले	HINDI_WORD: take
+लेट	ENGLISH_HOMOPHONE: late dominates; let
+लेड	ENGLISH_HOMOPHONE: led (LED) and lead (metal) both occur
+लेस	ENGLISH_HOMOPHONE: less dominates; lace
+लो	HINDI_WORD: take (imperative)
+लोक	HINDI_WORD: people/world (लोक सभा)
+लोग	HINDI_WORD: people
+लोन	ENGLISH_HOMOPHONE: loan dominates
+वन	HINDI_WORD: forest; English one also written वन
+वर	HINDI_WORD: groom; boon
+वाइस	ENGLISH_HOMOPHONE: vice (vice president) dominates
+वाई	ENGLISH_HOMOPHONE: letter y, why and wi (वाई-फाई); no dominant one
+वाट	HINDI_WORD: wait (वाट जोहना, वाट लगना); watt
+वार	HINDI_WORD: attack; weekday (सोमवार)
+वाली	HINDI_WORD: feminine agentive (the one who)
+वी	ENGLISH_HOMOPHONE: letter v dominates; we
+वुड	ENGLISH_HOMOPHONE: no dominant one
+वे	HINDI_WORD: they/those
+वेट	ENGLISH_HOMOPHONE: wait and weight both common
+वेन	ENGLISH_HOMOPHONE: when dominates
+वेल	ENGLISH_HOMOPHONE: well dominates
+वेस्ट	ENGLISH_HOMOPHONE: waste and west both common
+वॉट	ENGLISH_HOMOPHONE: what dominates; watt
+वो	HINDI_WORD: that/he/she
+शक	HINDI_WORD: doubt/suspicion
+शीट	ENGLISH_HOMOPHONE: sheet dominates
+शेर	HINDI_WORD: lion; couplet
+शोर	HINDI_WORD: noise
+सच	HINDI_WORD: truth/true
+सन	HINDI_WORD: year (सन 2020); jute
+सन्	HINDI_WORD: year (with halant)
+सब	HINDI_WORD: all
+सर	HINDI_WORD: head; sir also very common
+साइट	ENGLISH_HOMOPHONE: site dominates
+सात	NUMBER: seven (Hindi number) vs sat
+सारी	HINDI_WORD: all (feminine); saree
+सिर	HINDI_WORD: head
+सी	HINDI_WORD: -like (feminine of सा, छोटी सी); also letter c
+सील	ENGLISH_HOMOPHONE: seal dominates; also Hindi सील (damp)
+सुन	HINDI_WORD: listen
+सूट	ENGLISH_HOMOPHONE: suit dominates
+सूप	HINDI_WORD: winnowing basket; soup also common
+से	HINDI_WORD: from/with/than
+सेंट	ENGLISH_HOMOPHONE: scent (perfume) dominates; saint, cent, sent
+सेट	ENGLISH_HOMOPHONE: set dominates; slip for सेठ (merchant)
+सेम	HINDI_WORD: broad beans
+सेर	NUMBER: seer (old weight unit, about 1 kg)
+सेल	ENGLISH_HOMOPHONE: sale and cell both common; sell less so
+सेलरी	ENGLISH_HOMOPHONE: salary dominates
+सेवन	NUMBER: seven vs Hindi सेवन (consumption)
+सैलरी	ENGLISH_HOMOPHONE: salary dominates
+सो	HINDI_WORD: sleep; also Hindi conjunction so
+सोर्स	ENGLISH_HOMOPHONE: source dominates
+सोल	ENGLISH_HOMOPHONE: soul dominates; sole
+सौ	NUMBER: hundred (Hindi number)
+हक	HINDI_WORD: right/claim (slip for हक़)
+हज़ार	NUMBER: thousand; keep Devanagari
+हजार	NUMBER: thousand (nukta-less); keep Devanagari
+हट	HINDI_WORD: move aside (हट जा)
+हम	HINDI_WORD: we
+हर	HINDI_WORD: every
+हाई	ENGLISH_HOMOPHONE: high dominates (हाई कोर्ट, हाई स्कूल); hi greeting common
+हाय	HINDI_WORD: alas; also greeting hi
+हायर	ENGLISH_HOMOPHONE: higher and hire both common
+हाल	HINDI_WORD: condition (हाल-चाल)
+हियर	ENGLISH_HOMOPHONE: no dominant one
+हिल	HINDI_WORD: move/shake (हिलना); hill also common
+ही	HINDI_WORD: only (emphatic particle)
+हील	ENGLISH_HOMOPHONE: heel dominates; heal
+हूँ	HINDI_WORD: am
+हूं	HINDI_WORD: am (anusvara spelling)
+हे	HINDI_WORD: vocative O; common slip for है (is)
+हेयर	ENGLISH_HOMOPHONE: hair dominates
+है	HINDI_WORD: is
+हैं	HINDI_WORD: are
+हो	HINDI_WORD: be/are/happen
+होम	HINDI_WORD: fire ritual (हवन)
+होल	ENGLISH_HOMOPHONE: hole and whole both occur
+होली	HINDI_WORD: Holi festival
+ऐसी	FIXES: Hindi "such" (feminine); AC is एसी
+पिए	FIXES: Hindi "drank" / colloquial "for"
+बेच	FIXES: Hindi "sell" (बेचना); batch is बैच
+मारकर	FIXES: Hindi "having hit" (मारना); marker is मार्कर
+लाकर	FIXES: Hindi "having brought" (लाना); locker is लॉकर
+शौक	FIXES: Hindi "hobby, liking"
+शौक़	FIXES: Hindi "hobby, liking"
+सेव	FIXES: Hindi sev (namkeen) and apple; too ambiguous

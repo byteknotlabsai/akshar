@@ -1,0 +1,387 @@
+english	devanagari	category	note
+america	अमेरिका|अमरीका|अमेरीका|अमरिका	place_world	
+usa	यूएसए|यू एस ए	place_world	AMBIGUOUS: abbreviation spoken letter by letter
+us	यूएस|यू एस	place_world	AMBIGUOUS: abbreviation spoken letter by letter; Latin us is also the English pronoun
+united states	यूनाइटेड स्टेट्स|संयुक्त राज्य अमेरिका	place_world	HINDI_NAME: संयुक्त राज्य अमेरिका
+north america	नॉर्थ अमेरिका|उत्तरी अमेरिका|उत्तर अमेरिका	place_world	HINDI_NAME: उत्तरी अमेरिका
+south america	दक्षिण अमेरिका|साउथ अमेरिका	place_world	HINDI_NAME: दक्षिण अमेरिका
+latin america	लैटिन अमेरिका|लातिन अमेरिका	place_world	
+canada	कनाडा|कैनेडा	place_world	
+mexico	मैक्सिको|मेक्सिको	place_world	
+cuba	क्यूबा	place_world	
+jamaica	जमैका	place_world	
+caribbean	कैरेबियन|कैरिबियन|कैरीबियन	place_world	
+west indies	वेस्टइंडीज|वेस्ट इंडीज|वेस्ट इंडीज़|वेस्टइंडीज़	place_world	
+barbados	बारबाडोस|बारबेडोस	place_world	
+trinidad	त्रिनिदाद|ट्रिनिडाड	place_world	
+antigua	एंटीगा|एंटीगुआ	place_world	
+guyana	गुयाना|गयाना	place_world	
+bermuda triangle	बरमूडा ट्रायंगल|बरमूडा त्रिकोण	place_world	HINDI_NAME: बरमूडा त्रिकोण
+brazil	ब्राज़ील|ब्राजील	place_world	
+argentina	अर्जेंटीना|अर्जेन्टीना|अर्जेंटिना	place_world	
+chile	चिली	place_world	AMBIGUOUS: चिली is also chilli (चिली पनीर)
+peru	पेरू	place_world	AMBIGUOUS: पेरू is also guava in Marathi and some regional Hindi
+colombia	कोलंबिया|कोलम्बिया	place_world	AMBIGUOUS: same Devanagari as columbia (university, british columbia, district of columbia)
+venezuela	वेनेजुएला|वेनेज़ुएला	place_world	
+panama	पनामा	place_world	
+costa rica	कोस्टा रिका|कोस्टारिका	place_world	
+amazon	अमेज़न|अमेजन|अमेज़ॉन	place_world	
+rio	रियो	place_world	
+rio de janeiro	रियो डी जनेरियो|रियो डि जेनेरो|रियो डी जेनेरियो	place_world	
+sao paulo	साओ पाउलो|साओ पॉलो	place_world	
+buenos aires	ब्यूनस आयर्स|ब्यूनस आयरस|ब्यूनोस आयर्स	place_world	
+new york	न्यूयॉर्क|न्यू यॉर्क|न्यूयार्क|न्यू यार्क	place_world	
+manhattan	मैनहट्टन|मैनहैटन|मैनहटन	place_world	
+brooklyn	ब्रुकलिन|ब्रूकलिन	place_world	
+new jersey	न्यू जर्सी|न्यूजर्सी	place_world	
+washington	वॉशिंगटन|वाशिंगटन|वाशिंग्टन	place_world	
+washington dc	वॉशिंगटन डीसी|वाशिंगटन डीसी|वॉशिंगटन डी सी	place_world	AMBIGUOUS: dc is spoken letter by letter
+virginia	वर्जीनिया|वर्जिनिया	place_world	
+boston	बोस्टन	place_world	
+philadelphia	फिलाडेल्फिया|फ़िलाडेल्फ़िया	place_world	
+chicago	शिकागो	place_world	
+detroit	डेट्रॉयट|डेट्रायट|डेट्रोइट	place_world	
+atlanta	अटलांटा	place_world	
+georgia	जॉर्जिया|जार्जिया	place_world	
+florida	फ्लोरिडा|फ़्लोरिडा	place_world	
+miami	मियामी|मायामी	place_world	
+orlando	ऑरलैंडो|ओरलैंडो	place_world	
+texas	टेक्सास	place_world	
+houston	ह्यूस्टन|ह्यूसटन|हयूस्टन	place_world	
+dallas	डलास|डैलस	place_world	
+austin	ऑस्टिन|आस्टिन	place_world	
+california	कैलिफोर्निया|कैलिफ़ोर्निया|कैलीफोर्निया	place_world	
+los angeles	लॉस एंजेलिस|लॉस एंजिलिस|लॉस एंजेल्स|लॉस एंजेलेस	place_world	
+hollywood	हॉलीवुड|हालीवुड|हॉलिवुड	place_world	
+san francisco	सैन फ्रांसिस्को|सैन फ़्रांसिस्को|सान फ्रांसिस्को|सैनफ्रांसिस्को	place_world	
+silicon valley	सिलिकॉन वैली|सिलिकन वैली|सिलिकॉन वेली	place_world	
+bay area	बे एरिया	place_world	
+san diego	सैन डिएगो|सैन डियागो|सान डिएगो	place_world	
+seattle	सिएटल|सीएटल|सियाटल	place_world	
+las vegas	लास वेगास|लास वेगस|लॉस वेगास	place_world	
+hawaii	हवाई	place_world	AMBIGUOUS: हवाई is also the common word for air or aerial (हवाई जहाज़, हवाई अड्डा)
+alaska	अलास्का	place_world	
+pearl harbor	पर्ल हार्बर	place_world	
+white house	व्हाइट हाउस|वाइट हाउस|व्हाइटहाउस	place_world	
+pentagon	पेंटागन|पेंटागॉन	place_world	
+wall street	वॉल स्ट्रीट|वाल स्ट्रीट	place_world	
+times square	टाइम्स स्क्वायर|टाइम्स स्क्वेयर|टाइम्स स्क्वैर	place_world	
+statue of liberty	स्टैच्यू ऑफ लिबर्टी|स्टेच्यू ऑफ लिबर्टी|स्टैचू ऑफ लिबर्टी|स्टैच्यू ऑफ़ लिबर्टी	place_world	
+grand canyon	ग्रैंड कैन्यन|ग्रांड कैनियन|ग्रैंड कैनियन	place_world	
+niagara	नियाग्रा|नायग्रा	place_world	
+disneyland	डिज़्नीलैंड|डिज्नीलैंड|डिज़नीलैंड	place_world	
+toronto	टोरंटो|टोरोंटो|टोरन्टो	place_world	
+vancouver	वैंकूवर|वेंकूवर|वैंकुवर	place_world	
+montreal	मॉन्ट्रियल|मांट्रियल|मॉन्ट्रिअल	place_world	
+ottawa	ओटावा|ऑटवा	place_world	
+brampton	ब्रैम्पटन|ब्रैंपटन|ब्रेम्पटन	place_world	
+mississauga	मिसिसॉगा|मिसीसॉगा|मिसिसागा	place_world	
+surrey	सरे|सर्रे	place_world	AMBIGUOUS: सरे also occurs in Hindi सरे आम (openly)
+calgary	कैलगरी|कैलगेरी	place_world	
+edmonton	एडमॉन्टन|एडमंटन	place_world	
+ontario	ओंटारियो|ओन्टारियो	place_world	
+british columbia	ब्रिटिश कोलंबिया|ब्रिटिश कोलम्बिया	place_world	
+quebec	क्यूबेक	place_world	
+uk	यूके|यू के	place_world	AMBIGUOUS: abbreviation spoken letter by letter; के in यू के is also the Hindi postposition के
+united kingdom	यूनाइटेड किंगडम	place_world	
+britain	ब्रिटेन|बर्तानिया|ब्रितानिया	place_world	HINDI_NAME: बर्तानिया and ब्रितानिया (older Hindustani names)
+great britain	ग्रेट ब्रिटेन	place_world	
+england	इंग्लैंड|इंगलैंड|इंग्लैण्ड|इंगलैण्ड	place_world	
+scotland	स्कॉटलैंड|स्काटलैंड	place_world	
+wales	वेल्स	place_world	AMBIGUOUS: वेल्स is also English whales or wells
+ireland	आयरलैंड|आयरलैण्ड	place_world	
+northern ireland	नॉर्दर्न आयरलैंड|उत्तरी आयरलैंड	place_world	HINDI_NAME: उत्तरी आयरलैंड
+london	लंदन|लन्दन	place_world	
+southall	साउथहॉल|साउथॉल|साउथहाल	place_world	
+wembley	वेम्बली|वेंबली	place_world	
+heathrow	हीथ्रो	place_world	
+thames	टेम्स|थेम्स	place_world	
+big ben	बिग बेन	place_world	
+buckingham palace	बकिंघम पैलेस|बकिंगहम पैलेस	place_world	
+downing street	डाउनिंग स्ट्रीट	place_world	
+lords	लॉर्ड्स|लार्ड्स	place_world	
+oval	ओवल	place_world	
+manchester	मैनचेस्टर|मेनचेस्टर	place_world	
+liverpool	लिवरपूल	place_world	
+birmingham	बर्मिंघम|बर्मिंगहम	place_world	
+leicester	लेस्टर|लीसेस्टर	place_world	
+leeds	लीड्स	place_world	AMBIGUOUS: लीड्स is also English leads (sales leads)
+oxford	ऑक्सफोर्ड|ऑक्सफ़ोर्ड|आक्सफोर्ड	place_world	
+cambridge	कैंब्रिज|कैम्ब्रिज	place_world	
+glasgow	ग्लासगो	place_world	
+edinburgh	एडिनबर्ग|एडिनबरा|एडिंबर्ग	place_world	
+cardiff	कार्डिफ	place_world	
+belfast	बेलफास्ट	place_world	
+dublin	डबलिन	place_world	
+europe	यूरोप|योरोप|यूरप|योरप	place_world	
+france	फ्रांस|फ़्रांस	place_world	
+paris	पेरिस|पैरिस	place_world	
+eiffel tower	एफिल टॉवर|एफिल टावर|एफ़िल टॉवर|आइफल टावर	place_world	
+cannes	कान|कान्स	place_world	AMBIGUOUS: कान is also the Hindi word for ear; convert only in the film festival sense
+germany	जर्मनी	place_world	
+berlin	बर्लिन	place_world	
+munich	म्यूनिख|म्यूनिक	place_world	
+frankfurt	फ्रैंकफर्ट|फ्रेंकफर्ट|फ़्रैंकफ़र्ट	place_world	
+italy	इटली	place_world	
+rome	रोम	place_world	AMBIGUOUS: रोम is also Hindi for body hair or pores (रोम रोम)
+milan	मिलान	place_world	AMBIGUOUS: मिलान is also the Hindi word for matching or comparison (मिलान करना)
+venice	वेनिस	place_world	
+pisa	पीसा|पिसा	place_world	AMBIGUOUS: पीसा is also the past form of पीसना (ground), as in पीसा हुआ
+vatican	वेटिकन|वैटिकन	place_world	
+spain	स्पेन	place_world	
+madrid	मैड्रिड|मेड्रिड	place_world	
+barcelona	बार्सिलोना|बार्सीलोना|बार्सेलोना	place_world	
+portugal	पुर्तगाल|पोर्तुगाल	place_world	
+lisbon	लिस्बन|लिसबन	place_world	
+netherlands	नीदरलैंड|नीदरलैंड्स|नेदरलैंड|नीदरलैण्ड	place_world	
+holland	हॉलैंड|हालैंड	place_world	
+amsterdam	एम्स्टर्डम|एम्सटर्डम|ऐम्स्टर्डम|एम्सटरडम	place_world	
+hague	हेग	place_world	
+belgium	बेल्जियम	place_world	
+brussels	ब्रसेल्स|ब्रुसेल्स|ब्रसल्स	place_world	
+switzerland	स्विट्जरलैंड|स्विट्ज़रलैंड|स्विटजरलैंड|स्विट्जरलैण्ड	place_world	
+zurich	ज्यूरिख|ज़्यूरिख|ज्यूरिक	place_world	
+geneva	जिनेवा|जेनेवा	place_world	
+davos	दावोस	place_world	
+alps	आल्प्स|एल्प्स	place_world	
+austria	ऑस्ट्रिया|आस्ट्रिया	place_world	
+vienna	वियना|विएना	place_world	
+scandinavia	स्कैंडिनेविया|स्कैंडेनेविया	place_world	
+sweden	स्वीडन	place_world	
+stockholm	स्टॉकहोम|स्टाकहोम	place_world	
+norway	नॉर्वे|नार्वे	place_world	
+oslo	ओस्लो	place_world	
+denmark	डेनमार्क	place_world	
+copenhagen	कोपेनहेगन|कोपनहेगन	place_world	
+finland	फिनलैंड|फ़िनलैंड	place_world	
+helsinki	हेलसिंकी|हेल्सिंकी	place_world	
+iceland	आइसलैंड|आईसलैंड	place_world	
+greenland	ग्रीनलैंड	place_world	
+poland	पोलैंड	place_world	
+warsaw	वारसॉ|वारसा|वॉरसॉ	place_world	
+czech republic	चेक गणराज्य|चेक रिपब्लिक|चेक गणतंत्र	place_world	AMBIGUOUS: चेक alone is also cheque or check; match the full name only
+prague	प्राग	place_world	
+hungary	हंगरी	place_world	AMBIGUOUS: हंगरी is also English hungry in Hinglish speech
+budapest	बुडापेस्ट	place_world	
+romania	रोमानिया|रूमानिया	place_world	
+croatia	क्रोएशिया|क्रोशिया	place_world	
+serbia	सर्बिया	place_world	
+greece	यूनान|ग्रीस	place_world	HINDI_NAME: यूनान
+athens	एथेंस|एथेन्स	place_world	
+cyprus	साइप्रस	place_world	
+ukraine	यूक्रेन|युक्रेन	place_world	
+kyiv	कीव|कीएव|कीयेव	place_world	
+kharkiv	खारकीव|खारकिव|ख़ारकीव	place_world	
+crimea	क्रीमिया|क्राइमिया	place_world	
+russia	रूस|रशिया	place_world	HINDI_NAME: रूस
+moscow	मॉस्को|मास्को	place_world	
+kremlin	क्रेमलिन	place_world	
+saint petersburg	सेंट पीटर्सबर्ग|सैंट पीटर्सबर्ग	place_world	
+siberia	साइबेरिया	place_world	
+soviet union	सोवियत संघ|सोवियत यूनियन	place_world	HINDI_NAME: सोवियत संघ
+ussr	यूएसएसआर|यू एस एस आर	place_world	AMBIGUOUS: abbreviation spoken letter by letter
+belarus	बेलारूस	place_world	
+armenia	आर्मेनिया|अर्मेनिया	place_world	
+azerbaijan	अज़रबैजान|अजरबैजान|अजरबेजान	place_world	
+central asia	मध्य एशिया|सेंट्रल एशिया	place_world	HINDI_NAME: मध्य एशिया
+kazakhstan	कजाकिस्तान|कज़ाकिस्तान|कज़ाख़स्तान|कजाखस्तान	place_world	
+uzbekistan	उज्बेकिस्तान|उज़्बेकिस्तान	place_world	
+tashkent	ताशकंद|ताशकन्द	place_world	
+tajikistan	ताजिकिस्तान	place_world	
+kyrgyzstan	किर्गिस्तान|किर्गिज़स्तान|किर्गिजस्तान	place_world	
+turkmenistan	तुर्कमेनिस्तान	place_world	
+mongolia	मंगोलिया	place_world	
+middle east	मिडिल ईस्ट|मिडल ईस्ट|मध्य पूर्व	place_world	HINDI_NAME: मध्य पूर्व
+west asia	पश्चिम एशिया|पश्चिमी एशिया|वेस्ट एशिया	place_world	HINDI_NAME: पश्चिम एशिया
+gulf	गल्फ|खाड़ी	place_world	AMBIGUOUS: Hindi name खाड़ी is also the common word for any bay
+arab	अरब	place_world	AMBIGUOUS: अरब is also the Hindi number word for a hundred crore (billion)
+arabia	अरेबिया|अरबिया	place_world	
+uae	यूएई|यू ए ई	place_world	AMBIGUOUS: abbreviation spoken letter by letter
+united arab emirates	संयुक्त अरब अमीरात|यूनाइटेड अरब एमिरेट्स	place_world	HINDI_NAME: संयुक्त अरब अमीरात
+emirates	अमीरात|एमिरेट्स	place_world	
+dubai	दुबई|दुबाई	place_world	
+burj khalifa	बुर्ज खलीफा|बुर्ज ख़लीफ़ा|बुर्ज ख़लीफा	place_world	
+abu dhabi	अबू धाबी|अबूधाबी|अबु धाबी	place_world	
+sharjah	शारजाह|शारजा	place_world	
+saudi arabia	सऊदी अरब|साउदी अरब|सउदी अरब|सऊदी अरेबिया	place_world	
+saudi	सऊदी|साउदी|सउदी	place_world	
+riyadh	रियाद|रियाध	place_world	
+jeddah	जेद्दा|जेद्दाह|जद्दा	place_world	
+mecca	मक्का	place_world	AMBIGUOUS: मक्का is also maize (corn)
+medina	मदीना	place_world	
+qatar	क़तर|कतर	place_world	AMBIGUOUS: कतर is also the stem of कतरना (to snip), as in पर कतर दिए
+doha	दोहा	place_world	AMBIGUOUS: दोहा is also a Hindi couplet (कबीर के दोहे)
+kuwait	कुवैत|कुवेत	place_world	
+bahrain	बहरीन|बहरैन	place_world	
+oman	ओमान	place_world	
+muscat	मस्कट|मसकट	place_world	
+yemen	यमन	place_world	AMBIGUOUS: यमन is also a raga (राग यमन)
+iran	ईरान|इरान	place_world	
+tehran	तेहरान	place_world	
+chabahar	चाबहार|चाबाहार	place_world	
+persia	फारस|फ़ारस|पर्शिया	place_world	HINDI_NAME: फारस
+iraq	इराक|इराक़|ईराक	place_world	
+baghdad	बगदाद|बग़दाद	place_world	
+karbala	करबला|कर्बला	place_world	
+syria	सीरिया	place_world	
+damascus	दमिश्क|डमस्कस|दमास्कस	place_world	HINDI_NAME: दमिश्क
+jordan	जॉर्डन|जार्डन	place_world	
+lebanon	लेबनान|लेबनॉन	place_world	
+beirut	बेरूत	place_world	
+israel	इज़राइल|इजराइल|इसराइल|इस्राइल	place_world	
+jerusalem	यरूशलम|येरुशलम|जेरूसलम|यरुशलम	place_world	HINDI_NAME: यरूशलम
+tel aviv	तेल अवीव	place_world	AMBIGUOUS: तेल alone means oil; match the two-word name only
+gaza	गाज़ा|गाजा	place_world	
+west bank	वेस्ट बैंक	place_world	AMBIGUOUS: बैंक alone is bank; match the two-word name only
+palestine	फिलिस्तीन|फ़िलिस्तीन|फलस्तीन|पैलेस्टाइन	place_world	HINDI_NAME: फिलिस्तीन
+turkey	तुर्की|तुर्किये|टर्की	place_world	AMBIGUOUS: Hindi name तुर्की also means Turkish (language, people); टर्की is also the bird
+istanbul	इस्तांबुल|इस्तानबुल|इस्तांबूल	place_world	
+ankara	अंकारा	place_world	
+egypt	मिस्र|इजिप्ट|इजिप्त	place_world	HINDI_NAME: मिस्र
+cairo	काहिरा|कैरो	place_world	HINDI_NAME: काहिरा
+suez canal	स्वेज नहर|स्वेज़ नहर|स्वेज कैनाल	place_world	HINDI_NAME: स्वेज नहर
+mesopotamia	मेसोपोटामिया	place_world	
+africa	अफ्रीका|अफ़्रीका|अफ्रिका	place_world	
+south africa	साउथ अफ्रीका|दक्षिण अफ्रीका|साउथ अफ़्रीका|दक्षिण अफ़्रीका	place_world	HINDI_NAME: दक्षिण अफ्रीका
+johannesburg	जोहान्सबर्ग|जोहानिसबर्ग|जोहांसबर्ग	place_world	
+cape town	केपटाउन|केप टाउन	place_world	
+durban	डरबन	place_world	
+pretoria	प्रिटोरिया	place_world	
+nigeria	नाइजीरिया|नाईजीरिया|नाइजेरिया	place_world	
+lagos	लागोस	place_world	
+kenya	केन्या|कीनिया	place_world	
+nairobi	नैरोबी	place_world	
+tanzania	तंजानिया|तंज़ानिया	place_world	
+uganda	युगांडा|यूगांडा|उगांडा	place_world	
+ethiopia	इथियोपिया|इथोपिया	place_world	
+sudan	सूडान	place_world	
+somalia	सोमालिया	place_world	
+zimbabwe	ज़िम्बाब्वे|जिम्बाब्वे|जिंबाब्वे	place_world	
+zambia	ज़ाम्बिया|जाम्बिया|ज़ांबिया	place_world	
+ghana	घाना	place_world	
+morocco	मोरक्को|मोरोक्को	place_world	
+algeria	अल्जीरिया|अलजीरिया	place_world	
+libya	लीबिया|लिबिया	place_world	
+madagascar	मेडागास्कर|मैडागास्कर	place_world	
+sahara	सहारा	place_world	AMBIGUOUS: सहारा is also the common word for support (and the Sahara company)
+nile	नील	place_world	AMBIGUOUS: नील is also indigo or blue, and the first name Neel
+kilimanjaro	किलिमंजारो|किलीमंजारो	place_world	
+south asia	दक्षिण एशिया|साउथ एशिया	place_world	HINDI_NAME: दक्षिण एशिया
+pakistan	पाकिस्तान|पाकिस्थान	place_world	
+lahore	लाहौर|लाहोर	place_world	
+karachi	कराची	place_world	
+islamabad	इस्लामाबाद	place_world	
+rawalpindi	रावलपिंडी	place_world	
+peshawar	पेशावर	place_world	
+multan	मुल्तान|मुलतान	place_world	
+quetta	क्वेटा	place_world	
+sialkot	सियालकोट	place_world	
+balochistan	बलूचिस्तान|बलोचिस्तान	place_world	
+sindh	सिंध|सिन्ध	place_world	
+khyber	खैबर|ख़ैबर	place_world	
+kartarpur	करतारपुर	place_world	
+nankana sahib	ननकाना साहिब	place_world	
+balakot	बालाकोट	place_world	
+abbottabad	एबटाबाद|ऐबटाबाद	place_world	
+gwadar	ग्वादर	place_world	
+afghanistan	अफगानिस्तान|अफ़ग़ानिस्तान|अफगानिस्थान	place_world	
+kabul	काबुल	place_world	
+kandahar	कंधार|कांधार|कंदहार	place_world	
+bangladesh	बांग्लादेश|बंगलादेश|बाँग्लादेश|बांगलादेश	place_world	
+dhaka	ढाका	place_world	
+chittagong	चटगांव|चटगाँव|चिटगांव	place_world	HINDI_NAME: चटगांव
+nepal	नेपाल	place_world	
+kathmandu	काठमांडू|काठमांडु|काठमाण्डू	place_world	
+pokhara	पोखरा	place_world	AMBIGUOUS: पोखरा is also a regional word for pond (पोखर)
+lumbini	लुंबिनी|लुम्बिनी	place_world	
+janakpur	जनकपुर	place_world	
+everest	एवरेस्ट|एवेरेस्ट	place_world	
+mount everest	माउंट एवरेस्ट|एवरेस्ट पर्वत	place_world	HINDI_NAME: एवरेस्ट पर्वत
+kailash mansarovar	कैलाश मानसरोवर|कैलाश मान सरोवर	place_world	
+tibet	तिब्बत	place_world	
+lhasa	ल्हासा	place_world	
+bhutan	भूटान	place_world	
+thimphu	थिम्पू|थिंपू|थिम्फू	place_world	
+doklam	डोकलाम|डोकलम	place_world	
+sri lanka	श्रीलंका|श्री लंका	place_world	
+lanka	लंका	place_world	AMBIGUOUS: also Ravana's Lanka in the Ramayana, where Devanagari may be preferred
+colombo	कोलंबो|कोलम्बो	place_world	
+jaffna	जाफना|जाफ़ना	place_world	
+maldives	मालदीव|मालद्वीप|मालदीव्स	place_world	
+male	माले	place_world	AMBIGUOUS: माले is also the CPI(ML) party in Bihar politics; Latin male is also the English word
+myanmar	म्यांमार|म्यानमार	place_world	
+burma	बर्मा	place_world	
+rangoon	रंगून	place_world	
+yangon	यांगून|यंगून	place_world	
+asia	एशिया	place_world	
+southeast asia	दक्षिण पूर्व एशिया|दक्षिणपूर्व एशिया|साउथ ईस्ट एशिया	place_world	HINDI_NAME: दक्षिण पूर्व एशिया
+china	चीन|चाइना	place_world	HINDI_NAME: चीन
+beijing	बीजिंग|पेइचिंग	place_world	
+shanghai	शंघाई	place_world	
+wuhan	वुहान	place_world	
+hong kong	हांगकांग|हॉन्गकॉन्ग|हॉन्ग कॉन्ग|हांग कांग	place_world	
+taiwan	ताइवान	place_world	
+taipei	ताइपे|ताइपेई	place_world	
+great wall of china	चीन की दीवार|चीन की महान दीवार|ग्रेट वॉल ऑफ चाइना	place_world	HINDI_NAME: चीन की दीवार
+south china sea	दक्षिण चीन सागर|साउथ चाइना सी	place_world	HINDI_NAME: दक्षिण चीन सागर
+japan	जापान	place_world	
+tokyo	टोक्यो|टोकियो|तोक्यो	place_world	
+osaka	ओसाका	place_world	
+hiroshima	हिरोशिमा	place_world	
+nagasaki	नागासाकी	place_world	
+fukushima	फुकुशिमा|फ़ुकुशिमा	place_world	
+korea	कोरिया	place_world	
+south korea	दक्षिण कोरिया|साउथ कोरिया	place_world	HINDI_NAME: दक्षिण कोरिया
+north korea	उत्तर कोरिया|नॉर्थ कोरिया	place_world	HINDI_NAME: उत्तर कोरिया
+seoul	सियोल|सोल	place_world	AMBIGUOUS: सोल is also English soul or sole
+pyongyang	प्योंगयांग|प्योंगयाँग	place_world	
+singapore	सिंगापुर|सिंगापोर	place_world	
+malaysia	मलेशिया|मलयेशिया	place_world	
+kuala lumpur	कुआलालंपुर|क्वालालंपुर|कुआलालम्पुर|कुआला लंपुर	place_world	
+thailand	थाईलैंड|थाइलैंड|थाईलैण्ड	place_world	
+bangkok	बैंकॉक|बैंकाक|बैंकोक	place_world	
+pattaya	पटाया|पट्टाया	place_world	
+phuket	फुकेत|फुकेट|फ़ुकेट	place_world	
+indonesia	इंडोनेशिया	place_world	
+jakarta	जकार्ता	place_world	
+bali	बाली	place_world	AMBIGUOUS: बाली is also an earring and the Ramayana king Bali
+vietnam	वियतनाम|वियेतनाम|विएतनाम	place_world	
+hanoi	हनोई	place_world	
+cambodia	कंबोडिया|कम्बोडिया	place_world	
+angkor wat	अंगकोर वाट|अंकोरवाट|अंगकोरवाट	place_world	
+laos	लाओस	place_world	
+philippines	फिलीपींस|फिलीपीन्स|फ़िलीपींस|फिलिपींस	place_world	
+manila	मनीला|मनिला	place_world	
+australia	ऑस्ट्रेलिया|आस्ट्रेलिया	place_world	
+sydney	सिडनी	place_world	
+melbourne	मेलबर्न|मेलबोर्न|मेल्बर्न	place_world	
+perth	पर्थ	place_world	
+brisbane	ब्रिस्बेन|ब्रिसबेन	place_world	
+adelaide	एडिलेड|एडीलेड|एडलेड	place_world	
+canberra	कैनबरा|केनबरा	place_world	
+hobart	होबार्ट	place_world	
+queensland	क्वींसलैंड|क्वीन्सलैंड	place_world	
+new zealand	न्यूज़ीलैंड|न्यूजीलैंड|न्यू ज़ीलैंड|न्यू जीलैंड	place_world	
+auckland	ऑकलैंड|आकलैंड	place_world	
+wellington	वेलिंगटन|वेलिंग्टन	place_world	
+christchurch	क्राइस्टचर्च|क्राइस्ट चर्च	place_world	
+fiji	फिजी|फ़िजी	place_world	
+mauritius	मॉरीशस|मॉरिशस|मारीशस	place_world	
+seychelles	सेशेल्स|सेशल्स	place_world	
+pacific	पैसिफिक|पेसिफिक	place_world	
+pacific ocean	प्रशांत महासागर|पैसिफिक महासागर|पैसिफिक ओशन	place_world	HINDI_NAME: प्रशांत महासागर (प्रशांत alone is a common first name)
+atlantic	अटलांटिक	place_world	
+atlantic ocean	अटलांटिक महासागर|अटलांटिक ओशन	place_world	HINDI_NAME: अटलांटिक महासागर
+indian ocean	हिंद महासागर|हिन्द महासागर|इंडियन ओशन	place_world	HINDI_NAME: हिंद महासागर
+arabian sea	अरब सागर|अरेबियन सी	place_world	HINDI_NAME: अरब सागर
+bay of bengal	बंगाल की खाड़ी|बे ऑफ बंगाल	place_world	HINDI_NAME: बंगाल की खाड़ी
+mediterranean sea	भूमध्य सागर|भूमध्यसागर|मेडिटेरेनियन सी	place_world	HINDI_NAME: भूमध्य सागर
+red sea	लाल सागर|रेड सी	place_world	HINDI_NAME: लाल सागर
+black sea	काला सागर|ब्लैक सी	place_world	HINDI_NAME: काला सागर
+dead sea	मृत सागर|डेड सी	place_world	HINDI_NAME: मृत सागर
+persian gulf	फारस की खाड़ी|फ़ारस की खाड़ी|पर्शियन गल्फ	place_world	HINDI_NAME: फारस की खाड़ी
+hormuz	होर्मुज|होर्मुज़|हॉर्मुज़	place_world	
+arctic	आर्कटिक	place_world	
+antarctica	अंटार्कटिका|अन्टार्कटिका|अंटार्कटिक	place_world	
+north pole	उत्तरी ध्रुव|नॉर्थ पोल	place_world	HINDI_NAME: उत्तरी ध्रुव
+south pole	दक्षिणी ध्रुव|साउथ पोल	place_world	HINDI_NAME: दक्षिणी ध्रुव

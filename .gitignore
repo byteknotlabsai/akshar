@@ -28,3 +28,7 @@ Thumbs.db
 
 # Local editor and preview settings with machine paths
 .claude/launch.json
+
+# The curated English-word list is small text and belongs in the repo (D32).
+!data/english-words/
+!data/english-words/**

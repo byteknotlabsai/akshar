@@ -1,0 +1,634 @@
+english	devanagari	category	note
+monday	मंडे|मन्डे	time	
+tuesday	ट्यूजडे|ट्यूज़डे|ट्यूसडे	time	
+wednesday	वेडनेसडे|वेनसडे|वेडनसडे|वेन्सडे	time	
+thursday	थर्सडे|थर्स्डे|थरसडे	time	
+friday	फ्राइडे|फ्राईडे|फ्रायडे	time	
+saturday	सैटरडे|सेटरडे|सटरडे	time	
+sunday	संडे|सन्डे	time	
+january	जैनुअरी|जनुअरी|जेनुअरी	time	
+february	फेब्रुअरी|फेब्रुवरी|फैब्रुअरी	time	
+march	मार्च	time	AMBIGUOUS: मार्च is also the standard Hindi month name
+april	एप्रिल|एप्रील	time	
+may	मे	time	AMBIGUOUS: मे is a very common misspelling of में (in)
+june	जून	time	AMBIGUOUS: जून is also the standard Hindi month name
+july	जुलाई	time	AMBIGUOUS: जुलाई is also the standard Hindi month name
+august	ऑगस्ट|आगस्ट|ओगस्ट	time	
+september	सेप्टेंबर|सेप्टेम्बर|सैप्टेंबर	time	
+october	ऑक्टोबर|ओक्टोबर	time	
+november	नोवेंबर|नोवेम्बर	time	
+december	डिसेंबर|डिसेम्बर	time	
+time	टाइम|टाईम|टायम	time	
+timing	टाइमिंग|टाईमिंग	time	
+timepass	टाइमपास	time	
+second	सेकंड|सेकेंड|सेकण्ड|सेकेण्ड	time	
+seconds	सेकंड्स|सेकेंड्स	time	
+minute	मिनट|मिनिट	time	
+minutes	मिनट्स|मिनिट्स	time	
+hour	आवर|ऑवर	time	
+hours	आवर्स|ऑवर्स	time	
+week	वीक	time	AMBIGUOUS: वीक is both week and weak
+weekend	वीकेंड|वीकएंड|वीकेन्ड	time	
+weekly	वीकली	time	
+monthly	मंथली|मन्थली	time	
+yearly	ईयरली|इयरली	time	
+daily	डेली	time	
+date	डेट	time	
+deadline	डेडलाइन|डेडलाईन	time	
+schedule	शेड्यूल|शेड्युल|शिड्यूल	time	
+routine	रूटीन|रुटीन	time	
+shift	शिफ्ट|शिफ़्ट	time	
+holiday	हॉलिडे|होलिडे|हॉलीडे	time	
+leave	लीव	time	
+late	लेट	time	AMBIGUOUS: लेट is also Hindi 'lie down' (लेट जाओ, लेटना)
+early	अर्ली	time	
+fast	फास्ट|फ़ास्ट	time	
+slow	स्लो	time	
+quick	क्विक	time	
+delay	डिले	time	
+urgent	अर्जेंट|अर्जेन्ट	time	
+future	फ्यूचर	time	
+past	पास्ट	time	
+present	प्रेजेंट|प्रेज़ेंट	time	
+season	सीजन|सीज़न	time	
+summer	समर	time	AMBIGUOUS: समर is also Hindi 'battle' (समर भूमि) and a given name
+winter	विंटर|विन्टर	time	
+break	ब्रेक	time	AMBIGUOUS: ब्रेक is both break and brake
+good morning	गुड मॉर्निंग|गुड मोर्निंग|गुड मार्निंग	time	
+good night	गुड नाइट|गुड नाईट	time	AMBIGUOUS: गुड नाइट is also the brand goodknight
+good evening	गुड इवनिंग|गुड ईवनिंग	time	
+new year	न्यू ईयर|न्यू इयर	time	
+recently	रीसेंटली|रिसेंटली	time	
+latest	लेटेस्ट	time	
+kilo	किलो	measure	
+kg	केजी|के जी	measure	
+gram	ग्राम	measure	AMBIGUOUS: ग्राम is also Hindi 'village' (ग्राम पंचायत)
+kilogram	किलोग्राम	measure	
+litre	लीटर|लिटर	measure	
+metre	मीटर	measure	AMBIGUOUS: मीटर is both metre (unit) and meter (device: बिजली का मीटर)
+kilometre	किलोमीटर|किलोमिटर	measure	
+km	केएम|के एम	measure	
+centimetre	सेंटीमीटर|सेन्टीमीटर|सेंटिमीटर	measure	
+cm	सीएम|सी एम	measure	
+mm	एमएम|एम एम	measure	
+feet	फीट|फ़ीट	measure	
+foot	फुट	measure	AMBIGUOUS: फुट is often written for Hindi फूट (split, burst: फूट पड़ा)
+inch	इंच	measure	
+percent	परसेंट|पर्सेंट|परसेन्ट|पर्सेन्ट	measure	
+percentage	परसेंटेज|पर्सेंटेज|परसेन्टेज	measure	
+degree	डिग्री	measure	
+temperature	टेंपरेचर|टेम्परेचर|टेंप्रेचर|टेम्प्रेचर	measure	
+dozen	डजन|डज़न	measure	
+piece	पीस	measure	AMBIGUOUS: पीस is also Hindi 'grind' (पीस लो, पीसना)
+packet	पैकेट|पेकेट	measure	
+size	साइज|साइज़|साईज	measure	
+small	स्मॉल|स्मोल	measure	
+medium	मीडियम|मिडियम	measure	
+large	लार्ज	measure	
+xl	एक्सएल|एक्स एल	measure	
+big	बिग	measure	
+half	हाफ	measure	
+double	डबल	measure	
+single	सिंगल	measure	
+extra	एक्स्ट्रा|एक्सट्रा	measure	
+full	फुल	measure	AMBIGUOUS: फुल is a common misspelling of Hindi फूल (flower) and the stem of फुलाना
+quarter	क्वार्टर	measure	
+distance	डिस्टेंस|डिस्टेन्स	measure	
+weight	वेट	measure	AMBIGUOUS: वेट is both weight and wait
+height	हाइट|हाईट	measure	
+area	एरिया	measure	
+unit	यूनिट	measure	
+total	टोटल	measure	
+average	एवरेज|ऐवरेज	measure	
+maximum	मैक्सिमम	measure	
+minimum	मिनिमम|मिनीमम	measure	
+number	नंबर|नम्बर	measure	
+count	काउंट	measure	
+quantity	क्वांटिटी|क्वान्टिटी	measure	
+speed	स्पीड	measure	
+level	लेवल|लेवेल	measure	
+heavy	हैवी|हेवी	measure	
+plus	प्लस	measure	
+minus	माइनस	measure	
+per	पर	measure	AMBIGUOUS: पर is the Hindi postposition 'on' and conjunction 'but'
+zero	जीरो|ज़ीरो	measure	
+one	वन	measure	AMBIGUOUS: वन is also Hindi 'forest' (वन विभाग)
+two	टू	measure	AMBIGUOUS: टू is also English to and too
+three	थ्री	measure	
+four	फोर|फ़ोर	measure	AMBIGUOUS: फोर is also English for (फोर यू)
+five	फाइव|फ़ाइव|फाईव	measure	
+six	सिक्स	measure	
+seven	सेवन	measure	AMBIGUOUS: सेवन is also Hindi 'consumption, intake' (शराब का सेवन)
+eight	एट	measure	AMBIGUOUS: एट is also English at (एट लीस्ट)
+nine	नाइन	measure	
+ten	टेन	measure	
+eleven	इलेवन|इलेवेन	measure	
+twelve	ट्वेल्व	measure	
+thirteen	थर्टीन	measure	
+fourteen	फोर्टीन|फ़ोर्टीन	measure	
+fifteen	फिफ्टीन|फ़िफ्टीन	measure	
+sixteen	सिक्सटीन	measure	
+seventeen	सेवनटीन|सेवेंटीन	measure	
+eighteen	एटीन	measure	
+nineteen	नाइनटीन	measure	
+twenty	ट्वेंटी|ट्वेन्टी	measure	
+thirty	थर्टी	measure	
+forty	फोर्टी|फ़ोर्टी	measure	
+fifty	फिफ्टी|फ़िफ्टी	measure	
+sixty	सिक्सटी	measure	
+seventy	सेवेंटी|सेवंटी|सेवन्टी	measure	
+eighty	एटी	measure	
+ninety	नाइंटी|नाइन्टी	measure	
+hundred	हंड्रेड|हन्ड्रेड	measure	
+thousand	थाउजेंड|थाउज़ेंड|थाउजंड	measure	
+million	मिलियन	measure	
+billion	बिलियन	measure	
+colour	कलर	colour	
+red	रेड	colour	AMBIGUOUS: रेड is also raid (police raid: रेड पड़ी)
+blue	ब्लू	colour	
+green	ग्रीन	colour	
+yellow	येलो|यलो	colour	
+white	व्हाइट|वाइट|व्हाईट	colour	
+black	ब्लैक|ब्लेक	colour	
+pink	पिंक	colour	
+orange	ऑरेंज|ओरेंज|ऑरेन्ज	colour	
+purple	पर्पल|परपल	colour	
+grey	ग्रे	colour	
+brown	ब्राउन	colour	
+golden	गोल्डन	colour	
+gold	गोल्ड	colour	
+silver	सिल्वर|सिलवर	colour	
+maroon	मैरून|मरून	colour	
+cream	क्रीम	colour	
+light	लाइट|लाईट	colour	
+dark	डार्क	colour	
+shade	शेड	colour	AMBIGUOUS: शेड is both shade and shed (टीन शेड)
+fair	फेयर	colour	AMBIGUOUS: फेयर is both fair and fare (bus fare)
+plain	प्लेन	colour	AMBIGUOUS: प्लेन is both plain and plane (aeroplane)
+matching	मैचिंग|मेचिंग	colour	
+left	लेफ्ट	direction	
+right	राइट|राईट	direction	AMBIGUOUS: राइट is both right and write
+straight	स्ट्रेट	direction	
+front	फ्रंट|फ्रन्ट	direction	
+back	बैक	direction	
+side	साइड|साईड	direction	
+top	टॉप	direction	
+bottom	बॉटम|बोटम	direction	
+corner	कॉर्नर|कोर्नर	direction	
+centre	सेंटर|सेन्टर	direction	
+middle	मिडिल|मिडल	direction	
+opposite	अपोजिट|ऑपोजिट|अपोज़िट|ऑपोज़िट	direction	
+cross	क्रॉस|क्रोस	direction	
+round	राउंड|राउन्ड	direction	
+square	स्क्वायर|स्क्वेयर	direction	
+circle	सर्कल|सर्किल	direction	
+line	लाइन|लाईन	direction	
+turn	टर्न	direction	
+u turn	यू टर्न|यूटर्न	direction	
+north	नॉर्थ|नोर्थ	direction	
+south	साउथ	direction	
+east	ईस्ट	direction	
+west	वेस्ट	direction	AMBIGUOUS: वेस्ट is west, waste and vest
+up	अप	direction	
+out	आउट	direction	
+under	अंडर|अन्डर	direction	
+direction	डायरेक्शन|डाइरेक्शन	direction	
+way	वे	direction	AMBIGUOUS: वे is the Hindi pronoun 'they, those'
+shortcut	शॉर्टकट|शार्टकट	direction	
+place	प्लेस	direction	
+position	पोजीशन|पोजिशन|पोज़िशन	direction	
+reverse	रिवर्स	direction	
+end	एंड|एन्ड	direction	AMBIGUOUS: एंड is both end and and
+ok	ओके|ओक्के|ओकै	common	
+yes	यस|येस	common	
+no	नो	common	AMBIGUOUS: नो is a common spelling of Hindi नौ (nine) and is also English know
+sorry	सॉरी|सोरी	common	
+please	प्लीज|प्लीज़	common	
+thanks	थैंक्स|थेंक्स	common	
+thank you	थैंक यू|थैंक्यू|थेंक यू|थैंक यु	common	
+thank you so much	थैंक यू सो मच|थैंक्यू सो मच	common	
+welcome	वेलकम	common	
+hello	हेलो|हैलो|हलो	common	
+hi	हाय|हाई	common	AMBIGUOUS: हाय is a Hindi interjection (हाय राम) and हाई is also high
+hey	हे	common	AMBIGUOUS: हे is the Hindi vocative (हे भगवान) and a frequent misspelling of है
+bye	बाय	common	AMBIGUOUS: बाय is both bye and by (बाय रोड)
+excuse me	एक्सक्यूज मी|एक्सक्यूज़ मी	common	
+good	गुड	common	AMBIGUOUS: गुड is a common spelling of Hindi गुड़ (jaggery)
+good luck	गुड लक	common	
+all the best	ऑल द बेस्ट|आल द बेस्ट	common	
+take care	टेक केयर	common	
+no problem	नो प्रॉब्लम|नो प्रोब्लम	common	
+by the way	बाय द वे	common	
+of course	ऑफ कोर्स|ऑफकोर्स|ओफ कोर्स	common	
+in fact	इन फैक्ट|इनफैक्ट	common	
+at least	एट लीस्ट|एटलीस्ट	common	
+you know	यू नो	common	
+i mean	आई मीन	common	
+congratulations	कांग्रेचुलेशन्स|कॉन्ग्रैचुलेशन्स|कांग्रेचुलेशन	common	
+actually	एक्चुअली|ऐक्चुअली|एक्चुली	common	
+basically	बेसिकली	common	
+obviously	ऑब्वियसली|ओबवियसली|ऑबवियसली	common	
+exactly	एग्जैक्टली|एग्जेक्टली|एग्ज़ैक्टली|एक्जेक्टली	common	
+totally	टोटली	common	
+simply	सिंपली|सिम्पली	common	
+finally	फाइनली|फ़ाइनली	common	
+suddenly	सडनली	common	
+already	ऑलरेडी|आलरेडी	common	
+anyway	एनीवे|एनिवे	common	
+otherwise	अदरवाइज|अदरवाइज़	common	
+really	रियली|रीयली	common	
+seriously	सीरियसली|सिरियसली	common	
+definitely	डेफिनेटली|डेफिनिटली	common	
+probably	प्रोबेबली|प्रॉबेबली	common	
+normally	नॉर्मली|नोर्मली	common	
+usually	यूजुअली|यूज़ुअली	common	
+specially	स्पेशली|स्पेशियली	common	
+directly	डायरेक्टली|डाइरेक्टली	common	
+properly	प्रॉपरली|प्रोपरली	common	
+also	ऑलसो|आलसो	common	
+only	ओनली	common	
+just	जस्ट	common	
+very	वेरी	common	
+much	मच	common	AMBIGUOUS: मच is also the Hindi stem of मचना/मचाना (मच गया)
+more	मोर	common	AMBIGUOUS: मोर is also Hindi 'peacock'
+all	ऑल	common	
+but	बट	common	
+so	सो	common	AMBIGUOUS: सो is also Hindi 'sleep' (सो जाओ) and the Hindi conjunction 'so, therefore'
+and	एंड|एन्ड	common	AMBIGUOUS: एंड is both and and end
+like	लाइक	common	AMBIGUOUS: लाइक is often confused with Hindi लायक (worthy, able)
+mean	मीन	common	AMBIGUOUS: मीन is also Hindi 'fish' and Pisces (मीन राशि)
+means	मीन्स	common	
+first	फर्स्ट|फ़र्स्ट	common	
+third	थर्ड	common	
+fourth	फोर्थ|फ़ोर्थ	common	
+fifth	फिफ्थ	common	
+tenth	टेंथ|टेन्थ	common	
+twelfth	ट्वेल्थ|ट्वेल्फ्थ	common	
+last	लास्ट	common	
+next	नेक्स्ट	common	
+previous	प्रीवियस|प्रिवियस	common	
+final	फाइनल|फ़ाइनल	common	
+regular	रेगुलर|रेग्युलर	common	
+life	लाइफ	common	
+weather	वेदर	common	
+age	एज	common	AMBIGUOUS: एज is age, as (एज यूजुअल) and edge
+over	ओवर	common	
+start	स्टार्ट	common	
+stop	स्टॉप|स्टोप	common	
+point	पॉइंट|पॉइन्ट|पॉईंट|पोइंट	common	
+set	सेट	common	
+design	डिजाइन|डिज़ाइन	common	
+matter	मैटर|मेटर	common	
+problem	प्रॉब्लम|प्रोब्लम|प्रॉब्लेम|प्राब्लम	common	
+tension	टेंशन|टेन्शन	common	
+issue	इशू|इश्यू|इस्यू	common	
+reason	रीजन|रीज़न	common	
+chance	चांस|चान्स	common	
+option	ऑप्शन|ओप्शन|आप्शन	common	
+choice	चॉइस|चॉयस|चोइस	common	
+idea	आइडिया|आईडिया|आयडिया	common	
+plan	प्लान|प्लैन	common	
+decision	डिसीजन|डिसीज़न|डिसिजन	common	
+decide	डिसाइड	common	
+confusion	कन्फ्यूजन|कंफ्यूजन|कन्फ्यूज़न|कंफ्यूज़न	common	
+confuse	कन्फ्यूज|कंफ्यूज|कन्फ्यूज़|कंफ्यूज़	common	
+doubt	डाउट	common	
+fact	फैक्ट|फेक्ट	common	
+example	एग्जांपल|एग्जाम्पल|एग्ज़ाम्पल|एक्जांपल	common	
+type	टाइप|टाईप	common	
+style	स्टाइल|स्टाईल	common	
+limit	लिमिट	common	
+range	रेंज|रेन्ज	common	
+power	पावर|पॉवर	common	
+pressure	प्रेशर|प्रैशर	common	
+control	कंट्रोल|कन्ट्रोल	common	
+support	सपोर्ट	common	
+help	हेल्प	common	
+care	केयर	common	
+trust	ट्रस्ट	common	
+respect	रिस्पेक्ट|रेस्पेक्ट	common	
+feeling	फीलिंग|फ़ीलिंग	common	
+feel	फील|फ़ील	common	
+mood	मूड	common	
+boring	बोरिंग	common	
+bore	बोर	common	
+interesting	इंटरेस्टिंग|इंट्रेस्टिंग|इन्टरेस्टिंग	common	
+important	इंपॉर्टेंट|इम्पॉर्टेंट|इंपोर्टेंट|इम्पोर्टेन्ट	common	
+serious	सीरियस|सिरियस	common	
+simple	सिंपल|सिम्पल	common	
+easy	ईजी|ईज़ी|इजी	common	
+difficult	डिफिकल्ट	common	
+hard	हार्ड	common	
+tough	टफ	common	
+soft	सॉफ्ट|सोफ्ट	common	
+strong	स्ट्रॉन्ग|स्ट्रांग|स्ट्रोंग	common	
+weak	वीक	common	AMBIGUOUS: वीक is both weak and week
+smart	स्मार्ट	common	
+cute	क्यूट	common	
+sweet	स्वीट	common	
+cool	कूल	common	
+chill	चिल	common	
+hot	हॉट	common	
+cold	कोल्ड	common	
+fresh	फ्रेश	common	
+pure	प्योर	common	
+real	रियल|रीयल	common	
+fake	फेक	common	AMBIGUOUS: फेक is a common spelling of Hindi फेंक (throw: फेक दो)
+true	ट्रू	common	
+wrong	रॉन्ग|रोंग|राँग	common	
+correct	करेक्ट|कोरेक्ट	common	
+perfect	परफेक्ट|परफ़ेक्ट	common	
+best	बेस्ट	common	
+better	बेटर	common	
+worst	वर्स्ट	common	
+nice	नाइस|नाईस	common	
+great	ग्रेट	common	
+fine	फाइन|फ़ाइन	common	
+bad	बैड	common	
+poor	पुअर|पूअर	common	
+rich	रिच	common	
+free	फ्री	common	
+busy	बिजी|बिज़ी	common	
+ready	रेडी	common	
+sure	श्योर|शुअर|स्योर	common	
+happy	हैप्पी|हेप्पी	common	
+sad	सैड	common	
+angry	एंग्री|ऐंग्री	common	
+upset	अपसेट	common	
+tired	टायर्ड	common	
+excited	एक्साइटेड|एक्साईटेड	common	
+nervous	नर्वस	common	
+confident	कॉन्फिडेंट|कॉन्फिडेन्ट|कांफिडेंट	common	
+confidence	कॉन्फिडेंस|कॉन्फिडेन्स|कांफिडेंस	common	
+comfortable	कंफर्टेबल|कम्फर्टेबल	common	
+famous	फेमस	common	
+popular	पॉपुलर|पापुलर	common	
+special	स्पेशल|स्पैशल	common	
+normal	नॉर्मल|नार्मल|नोर्मल	common	
+natural	नेचुरल|नैचुरल	common	
+nature	नेचर	common	
+personal	पर्सनल	common	
+private	प्राइवेट|प्राईवेट	common	
+public	पब्लिक	common	
+local	लोकल	common	
+national	नेशनल	common	
+international	इंटरनेशनल|इन्टरनेशनल|इंटरनैशनल	common	
+foreign	फॉरेन|फोरेन	common	
+modern	मॉडर्न|मोडर्न	common	
+traditional	ट्रेडिशनल	common	
+proper	प्रॉपर|प्रोपर	common	
+direct	डायरेक्ट|डाइरेक्ट	common	
+new	न्यू	common	
+cancel	कैंसिल|कैंसल|कैन्सल	common	
+confirm	कन्फर्म|कंफर्म|कनफर्म	common	
+book	बुक	common	
+order	ऑर्डर|आर्डर|ओर्डर	common	
+check	चेक	common	AMBIGUOUS: चेक is both check and cheque
+checking	चेकिंग	common	
+try	ट्राई|ट्राय	common	
+use	यूज|यूज़	common	
+useful	यूजफुल|यूज़फुल	common	
+fix	फिक्स|फ़िक्स	common	
+select	सिलेक्ट|सेलेक्ट	common	
+choose	चूज|चूज़	common	
+change	चेंज|चेन्ज	common	
+save	सेव	common	AMBIGUOUS: सेव is also Hindi for apple (सेब/सेव) and the namkeen sev
+delete	डिलीट	common	
+send	सेंड|सेन्ड	common	
+share	शेयर|शेअर	common	
+follow	फॉलो|फोलो	common	
+accept	एक्सेप्ट|ऐक्सेप्ट	common	
+reject	रिजेक्ट	common	
+apply	अप्लाई|अप्लाय	common	
+submit	सबमिट	common	
+join	ज्वाइन|जॉइन|ज्वॉइन|जोइन	common	
+enjoy	एंजॉय|इंजॉय|एन्जॉय|एंजाय	common	
+relax	रिलैक्स|रिलेक्स	common	
+celebrate	सेलिब्रेट	common	
+manage	मैनेज|मेनेज	common	
+handle	हैंडल|हेंडल	common	
+adjust	एडजस्ट|ऐडजस्ट|अडजस्ट	common	
+arrange	अरेंज|अरैंज	common	
+prepare	प्रिपेयर	common	
+preparation	प्रिपरेशन|प्रिपेरेशन	common	
+repeat	रिपीट	common	
+continue	कंटिन्यू|कन्टिन्यू|कंटीन्यू	common	
+complete	कंप्लीट|कम्प्लीट	common	
+finish	फिनिश|फ़िनिश	common	
+done	डन	common	
+improve	इंप्रूव|इम्प्रूव	common	
+increase	इंक्रीज|इंक्रीज़|इन्क्रीज	common	
+decrease	डिक्रीज|डिक्रीज़	common	
+reduce	रिड्यूस|रेड्यूस	common	
+return	रिटर्न	common	
+exchange	एक्सचेंज|एक्सचेन्ज	common	
+refund	रिफंड|रिफन्ड	common	
+charge	चार्ज	common	
+pay	पे	common	AMBIGUOUS: पे is the colloquial Hindi postposition 'on' (पर: टेबल पे)
+spend	स्पेंड|स्पेन्ड	common	
+waste	वेस्ट	common	AMBIGUOUS: वेस्ट is waste, west and vest
+deal	डील	common	
+offer	ऑफर|ऑफ़र|आफर|ओफर	common	
+discount	डिस्काउंट|डिस्काउन्ट	common	
+sale	सेल	common	AMBIGUOUS: सेल is sale, sell and cell
+sell	सेल	common	AMBIGUOUS: सेल is sell, sale and cell
+price	प्राइस|प्राईस	common	
+rate	रेट	common	
+cost	कॉस्ट|कोस्ट	common	
+costly	कॉस्टली|कोस्टली	common	
+cheap	चीप	common	
+expensive	एक्सपेंसिव|एक्सपेन्सिव	common	
+budget	बजट	common	
+profit	प्रॉफिट|प्रोफिट|प्रॉफ़िट	common	
+loss	लॉस|लोस	common	
+margin	मार्जिन	common	
+value	वैल्यू|वेल्यू	common	
+list	लिस्ट	common	
+queue	क्यू	common	AMBIGUOUS: क्यू is a frequent spelling of Hindi क्यों (why) and the letter q
+match	मैच	common	
+game	गेम	common	
+play	प्ले	common	
+win	विन	common	
+lose	लूज|लूज़	common	AMBIGUOUS: लूज़ is both lose and loose
+loose	लूज|लूज़	common	AMBIGUOUS: लूज़ is both loose and lose
+score	स्कोर	common	
+team	टीम	common	
+player	प्लेयर	common	
+captain	कैप्टन|कैप्टेन	common	
+coach	कोच	common	
+practice	प्रैक्टिस|प्रेक्टिस	common	
+exercise	एक्सरसाइज|एक्सरसाइज़|एक्सरसाईज	common	
+workout	वर्कआउट|वर्क आउट	common	
+diet	डाइट|डायट	common	
+fitness	फिटनेस|फ़िटनेस	common	
+fit	फिट|फ़िट	common	
+healthy	हेल्दी	common	
+body	बॉडी|बोडी	common	
+fat	फैट	common	
+sports	स्पोर्ट्स	common	
+run	रन	common	
+bowled	बोल्ड	common	AMBIGUOUS: बोल्ड is both bowled and bold
+catch	कैच	common	
+goal	गोल	common	AMBIGUOUS: गोल is also Hindi 'round' (गोल गोल)
+cheating	चीटिंग	common	
+challenge	चैलेंज|चेलेंज	common	
+super	सुपर	common	
+hit	हिट	common	
+awesome	ऑसम|ओसम	common	
+amazing	अमेजिंग|अमेज़िंग	common	
+excellent	एक्सीलेंट|एक्सेलेंट|एक्सलेंट	common	
+beautiful	ब्यूटीफुल	common	
+lucky	लकी	common	
+luck	लक	common	
+risk	रिस्क	common	
+safe	सेफ	common	
+attitude	एटीट्यूड|ऐटीट्यूड|एटिट्यूड	common	
+habit	हैबिट|हेबिट	common	
+character	कैरेक्टर|करैक्टर|कैरक्टर	common	
+emotional	इमोशनल	common	
+love	लव	common	
+relationship	रिलेशनशिप	common	
+promise	प्रॉमिस|प्रोमिस	common	
+surprise	सरप्राइज|सरप्राइज़|सप्राइज	common	
+wish	विश	common	AMBIGUOUS: विश sounds like Hindi विष (poison) and is sometimes written for it
+dream	ड्रीम	common	
+focus	फोकस|फ़ोकस	common	
+mind	माइंड	common	
+mistake	मिस्टेक	common	
+joke	जोक	common	
+fun	फन	common	AMBIGUOUS: फन is also Hindi 'snake hood' (फन फैलाना)
+funny	फनी	common	
+crazy	क्रेजी|क्रेज़ी	common	
+active	एक्टिव|ऐक्टिव	common	
+responsible	रिस्पॉन्सिबल|रेस्पॉन्सिबल	common	
+responsibility	रिस्पॉन्सिबिलिटी|रेस्पॉन्सिबिलिटी	common	
+professional	प्रोफेशनल|प्रोफ़ेशनल	common	
+overall	ओवरऑल|ओवरआल	common	
+tight	टाइट	common	
+basic	बेसिक	common	
+advance	एडवांस|एडवान्स|ऐडवांस	common	
+standard	स्टैंडर्ड|स्टेंडर्ड	common	
+quality	क्वालिटी|क्वॉलिटी	common	
+original	ओरिजिनल|ऑरिजिनल	common	
+duplicate	डुप्लीकेट|डुप्लिकेट	common	
+material	मटेरियल|मैटेरियल|मटीरियल	common	
+mix	मिक्स	common	
+package	पैकेज|पेकेज	common	
+stock	स्टॉक|स्टोक	common	
+available	अवेलेबल|अवेलबल	common	
+demand	डिमांड|डिमान्ड	common	
+supply	सप्लाई|सप्लाय	common	
+brand	ब्रांड|ब्रान्ड	common	
+sense	सेंस|सेन्स	common	
+knowledge	नॉलेज	common	
+tips	टिप्स	common	
+trick	ट्रिक	common	
+proof	प्रूफ	common	
+process	प्रोसेस|प्रॉसेस	common	
+method	मेथड	common	
+rules	रूल्स	common	
+role	रोल	common	AMBIGUOUS: रोल is both role and roll (roll number, egg roll)
+situation	सिचुएशन|सिचुवेशन	common	
+condition	कंडीशन|कन्डीशन	common	
+scene	सीन	common	AMBIGUOUS: सीन is both scene and seen
+drama	ड्रामा	common	
+action	एक्शन|ऐक्शन	common	
+review	रिव्यू|रिव्यु	common	
+feedback	फीडबैक	common	
+favourite	फेवरेट|फेवरिट|फ़ेवरेट	common	
+disturb	डिस्टर्ब	common	
+shock	शॉक	common	
+hurt	हर्ट	common	
+pain	पेन	common	AMBIGUOUS: पेन is both pain and pen
+rest	रेस्ट	common	
+understand	अंडरस्टैंड	common	
+understanding	अंडरस्टैंडिंग	common	
+explain	एक्सप्लेन	common	
+discuss	डिस्कस	common	
+agree	एग्री	common	
+permission	परमिशन	common	
+request	रिक्वेस्ट	common	
+inform	इनफॉर्म|इन्फॉर्म	common	
+information	इंफॉर्मेशन|इन्फॉर्मेशन|इनफार्मेशन	common	
+detail	डिटेल|डीटेल	common	
+details	डिटेल्स|डीटेल्स	common	
+meet	मीट	common	AMBIGUOUS: मीट is both meet and meat
+wait	वेट	common	AMBIGUOUS: वेट is both wait and weight
+skill	स्किल	common	
+talent	टैलेंट|टेलेंट	common	
+success	सक्सेस	common	
+successful	सक्सेसफुल	common	
+taste	टेस्ट	common	AMBIGUOUS: टेस्ट is both taste and test
+tasty	टेस्टी	common	
+topic	टॉपिक|टोपिक	common	
+solve	सॉल्व|सोल्व	common	
+solution	सॉल्यूशन|सोल्यूशन	common	
+development	डेवलपमेंट	common	
+avoid	अवॉइड|अवॉयड|अवोइड	common	
+ignore	इग्नोर	common	
+mention	मेंशन	common	
+suggestion	सजेशन	common	
+advice	एडवाइस|ऐडवाइस	common	
+need	नीड	common	
+guide	गाइड	common	
+replace	रिप्लेस	common	
+maintain	मेंटेन	common	
+look	लुक	common	
+face	फेस	common	
+visit	विजिट|विज़िट	common	
+drop	ड्रॉप	common	
+pick	पिक	common	
+pickup	पिकअप	common	
+drive	ड्राइव	common	
+ride	राइड	common	
+walk	वॉक	common	
+open	ओपन	common	
+close	क्लोज|क्लोज़	common	
+fight	फाइट|फाईट	common	
+move	मूव	common	
+settle	सेटल	common	
+dance	डांस|डान्स	common	
+song	सॉन्ग|सोंग	common	
+music	म्यूजिक|म्यूज़िक	common	
+bro	ब्रो	common	
+guys	गाइज|गाइज़	common	
+man	मैन	common	AMBIGUOUS: मैन is a frequent misspelling of मैं (I)
+people	पीपल	common	AMBIGUOUS: पीपल is also Hindi 'peepal tree'
+person	पर्सन	common	
+main	मेन	common	AMBIGUOUS: मेन is both main and men, and a frequent misspelling of में (in)
+major	मेजर	common	
+low	लो	common	AMBIGUOUS: लो is also Hindi 'take' (ले लो)
+high	हाई	common	AMBIGUOUS: हाई is both high and hi
+common	कॉमन|कोमन	common	
+general	जनरल	common	
+official	ऑफिशियल|ऑफ़िशियल	common	
+legal	लीगल	common	
+social	सोशल	common	
+different	डिफरेंट|डिफ्रेंट|डिफरेन्ट	common	
+difference	डिफरेंस|डिफ्रेंस	common	
+same	सेम	common	AMBIGUOUS: सेम is also Hindi for a flat bean (सेम की फली)
+similar	सिमिलर	common	
+compare	कंपेयर|कम्पेयर	common	
+clear	क्लियर|क्लीयर	common	
+clean	क्लीन	common	
+dirty	डर्टी	common	
+possible	पॉसिबल|पोसिबल	common	
+impossible	इंपॉसिबल|इम्पॉसिबल	common	
+effect	इफेक्ट|इफ़ेक्ट	common	
+benefit	बेनिफिट|बेनेफिट	common	
+advantage	एडवांटेज|ऐडवांटेज	common	
+facility	फैसिलिटी|फेसिलिटी	common	
+image	इमेज	common	
+discipline	डिसिप्लिन	common	
+motivation	मोटिवेशन	common	
+opportunity	अपॉर्चुनिटी|ऑपर्च्युनिटी|अपॉर्च्युनिटी	common	
+struggle	स्ट्रगल	common	
+effort	एफर्ट|एफ़र्ट	common	
+concept	कॉन्सेप्ट|कंसेप्ट	common	
+theory	थ्योरी|थियरी	common	
+sample	सैंपल|सैम्पल	common	
+category	कैटेगरी|केटेगरी	common	
+priority	प्रायोरिटी|प्रायरिटी	common	
+part	पार्ट	common	
+base	बेस	common	AMBIGUOUS: बेस is both base and bass
+guess	गेस	common	

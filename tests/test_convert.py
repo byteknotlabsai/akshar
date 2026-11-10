@@ -25,8 +25,48 @@ def test_vaani_examples():
     # [breathing] after है is a sound, not है's English spelling: Vaani spells words in braces.
     assert convert.to_mixed(VAANI[1], "vaani_hi", {}) == normalise(
         "इस चित्र में एक बड़े से जंगल की तस्वीर है जहां पे एक छोटा सा गुहा है सीढ़िया हैं")
-    assert convert.strip_markup("वहाँ [lip_rattle] गए", "vaani_hi") is None  # an unknown sound: not guessed
+    assert convert.strip_markup("वहाँ [lip_rattle] गए", "vaani_hi") == "वहाँ गए"  # every Vaani [bracket] is a sound
     assert convert.strip_markup("<noise> कुछ [unclear] </noise>", "vaani_hi") is None
+    assert convert.strip_markup("कुछ [intelligible] यहाँ", "vaani_hi") is None  # Vaani's spelling of unintelligible
+
+
+# The label audit of 2026-11-08 (D29): 9 of 10 Vaani rejections were good transcripts lost to markup parsing.
+@pytest.mark.parametrize("text, expected", [
+    ("<bird squawking> यह एक गोडाउन {godown} है </bird squawking>", "यह एक godown है"),  # a tag with a space
+    ("<noise> ये देखो [lip smacking] कई शारी {सारी} दुकाने </noise>", "ये देखो कई सारी दुकाने"),  # a correction
+    ("एक ने लाल टी शर्ट {T shirt} पहन रखी है", "एक ने लाल t shirt पहन रखी है"),  # a two-word gloss
+    ("टी_वी {T_V} और एटीएम {A_T_M} है", "tv और atm है"),  # letters joined by _ spell one word, as the token before
+    ("एस.बी.आई {SBI} बैंक {bank} का ए.टी.एम {ATM} है", "sbi bank का atm है"),  # an abbreviation written with dots
+    ("डॉन'ट {don't} ओवरलोड {overload}", "don't overload"),
+    ("साइड {said} में कैप {cap} और लाइटें {lights} रेस्टोरेंट {resturant}", "side में cap और lights restaurant"),
+    ("उसपे ब्लू कलर {blue colour} का है", "उसपे blue colour का है"),
+    ("रूम {room} की {key} और गूगल पे {google pay} से", "room key और google pay से"),  # glosses of function-like words
+    ("बच्चे {inhale} और बर्तन है {breathing} यहाँ", "बच्चे और बर्तन है यहाँ"),  # sounds written in the gloss braces
+    ("बैटल {battle} रोप {rop} का मेकअप {meckup}", "battle rope का makeup"),  # annotators' misspellings
+    ("कलर {color} और कलर {colour}", "colour और colour"),  # the lexicon's spelling wins over the gloss
+    ("चर्च [church] गए", "चर्च गए"),  # square brackets are sounds in Vaani, so the gloss is dropped
+    ("{godown} है", None),  # no Devanagari word before the gloss
+    ("बहुत {very long gloss} है", "very long gloss है"),  # a longer gloss spells the one token before it (ओलाप्लैक्स)
+])
+def test_vaani_markup_after_the_audit(text, expected):
+    lexicon = {"कलर": "colour", "साइड": "side", "कैप": "cab", "लाइट": "light", "रेस्टोरेंट": "restaurant"}
+    assert convert.strip_markup(text, "vaani_hi", lexicon) == expected
+
+
+@pytest.mark.parametrize("text, expected", [
+    ("सिलाई के लिए [horn] कपड़े चॉक [chalk] से", "सिलाई के लिए कपड़े chalk से"),  # a sound keeps the word before it
+    ("बेबी [baby] को म्यूजिक [music] पसंद है", "baby को music पसंद है"),  # glosses, although EVENTS has both words
+    ("डॉक्टर [Docter] से रेसिपी [receipe] केक [cack]", "doctor से recipe cake"),  # misspelt glosses
+    ("पाँच चार लाख [Lakh] रुपये पनीर [paneer] पिस्ता [Pistaa]", "पाँच चार लाख रुपये पनीर पिस्ता"),  # Hindi words
+    ("पैन [PAN] कार्ड [card <inhaling> नंबर [number]", None),  # an open bracket: still not guessed
+    ("और मोरक्कोनऑइल [moroccon oil] से", "और moroccon oil से"),  # a two-word gloss of one compound token
+    ("फोन [Phone] पे [Pay] या गूगल [google] पे [pay] से", "phone pay या google pay से"),
+    ("विशेष रूप से ओलाप्लैक्स [ola plex] का", "विशेष रूप से ola plex का"),
+    ("हमारे ब्यूटी पार्लर [ beauty parlour] में", "हमारे beauty parlour में"),
+    ("ठीक है <Persi stent-noise-end>", "ठीक है"),  # a broken tag with a space inside
+])
+def test_rural_women_glosses_after_the_audit(text, expected):
+    assert convert.strip_markup(text, "rural_women_hi") == expected
 
 
 @pytest.mark.parametrize("source, text, expected", [
@@ -39,7 +79,7 @@ def test_vaani_examples():
     ("rural_women_hi", "आर [R] सी [C] एच [H] आई [I] डी [D] सिक्स [Six] ज़ीरो [Zero]", "r c h i d six zero"),
     ("rural_women_hi", "बेबी [baby] को म्यूजिक [music] पसंद है", "baby को music पसंद है"),  # words, not sounds
     ("rural_women_hi", "<uh-huh> ई-रिक्सा [E-rickshaw] से <motorcycle>आई [I]", "e-rickshaw से i"),
-    ("rural_women_hi", "थैंक यू [thank you] <breathing>", None),  # which words does it spell?
+    ("rural_women_hi", "थैंक यू [thank you] <breathing>", "thank you"),  # a two-word gloss spells the two words before
     ("rural_women_hi", "<sneezing> [High] स्कूल [school]", None),  # no Devanagari word before the spelling
     ("rural_women_hi", "केवाईसी [KYC} करवाना", None),
     ("rural_women_hi", "<bird_squwak] ढेर सारे खिलौने <talking>", None),
@@ -229,6 +269,112 @@ def test_cli_learns_writes_and_reloads_the_lexicon(tmp_path, monkeypatch):
     rows = _rows(tmp_path / "train" / "iv01" / "labels-mix.jsonl")
     assert [r["teacher"] for r in rows[::6]] == ["मेरा mobile खो गया", "वो घर आई", "mobile"]
     assert {r["by"] for r in rows} == {"reference"}
+
+
+def test_lexicon_lookup_tolerates_spelling_variants():
+    lexicon = {"कन्फर्म": "confirm", "ड्राइवर": "driver", "परसेंट": "percent", "बॉक्स": "box", "हेलमेट": "helmet"}
+    assert convert.to_mixed("कन्फ़र्म ड्राईवर पर्सेन्ट बौक्स हैलमेट", "indicvoices_hi", lexicon) == \
+        "confirm driver percent box helmet"
+    assert convert.fold_devanagari("पर्सेन्ट") == convert.fold_devanagari("परसेंट")
+    assert convert.fold_devanagari("कन्फ़र्म") == convert.fold_devanagari("कन्फर्म")
+    # Two entries that fold together with different spellings are not guessed; the exact ones still work.
+    clash = {"ड्राइवर": "driver", "ड्राईवर": "drive"}
+    assert convert.to_mixed("ड्राइवर ड्राईवर ड्रा़इवर", "indicvoices_hi", clash) == "driver drive ड्रा़इवर"
+    assert convert.to_mixed("कन्फ़र्म", "indicvoices_hi", {}) == "कन्फ़र्म"
+
+
+def test_curated_entries_are_found_exactly_and_blocked_words_never(tmp_path):
+    # Learned entries fold (ड्राईवर finds ड्राइवर); curated ones do not (ऐसी, "such", must not find the curated एसी, ac).
+    path = tmp_path / "lexicon.json"
+    path.write_text(json.dumps({"words": {"ड्राइवर": ["driver", 12, 12], "एसी": ["ac", 0, 0], "बैच": ["batch", 0, 0],
+                                          "लाइट": ["light", 30, 31]}, "blocked": ["लाइट"]}, ensure_ascii=False),
+                    encoding="utf-8")
+    table = convert.load_lexicon_table(path)
+    assert convert.to_mixed("ड्राईवर एसी ऐसी बैच बेच लाइट", "indicvoices_hi", table) == "driver ac ऐसी batch बेच लाइट"
+    assert convert.Lexicon({"एसी": "ac"}).convert("ऐसी") == "ac"  # a plain dict still folds everything (the old way)
+    assert convert.load_lexicon(path) == {"ड्राइवर": "driver", "एसी": "ac", "बैच": "batch", "लाइट": "light"}
+
+
+def test_english_number_words_convert_with_any_lexicon():
+    # One number must not come out in two scripts (एटीन thousand): the number words join every non-empty lexicon.
+    assert convert.to_mixed("ये ट्वेन्टी थाउज़ेंड के बैग टेन पर्सेंट एटीन थाउज़ेंड सेकेंड थर्ड", "indicvoices_hi",
+                            {"बैग": "bag"}) == "ये twenty thousand के bag ten percent eighteen thousand second third"
+    assert convert.to_mixed("एटीन थाउज़ेंड", "rural_women_hi", {}) == normalise("एटीन थाउज़ेंड")  # empty: converts nothing
+
+
+def test_hindi_number_slips_are_repaired():
+    assert convert.to_mixed("चार ज़ीरो [zero]नो ज़ीरो [zero] पाँच पाँच नो सात", "rural_women_hi", {}) == \
+        "चार zero नौ zero पाँच पाँच नौ सात"
+    assert convert.to_mixed("यू नो मैं गया", "indicvoices_hi", {}) == "यू नो मैं गया"  # English "no" stays
+    assert convert.to_mixed("पता तेतीस नगरानगंज", "indicvoices_hi", {}) == "पता तैंतीस नगरानगंज"
+    assert convert.fix_hindi_numbers("नो नो दो".split()) == ["नौ", "नौ", "दो"]
+
+
+def test_read_english_sources_fold_accents():
+    assert convert.to_mixed("Mádl and Jenő in Castellón", "cv_en_sa", {}) == "madl and jeno in castellon"
+    assert convert.to_mixed("Søren", "cv_en_sa", {}) is None  # no plain letter for ø: not guessed
+    assert convert.to_mixed("Castellón", "indicvoices_hi", {}) is None  # only read English folds
+    # NPTEL's accented letters are mojibake for quotes and dots (PrimÕs, becomeÉ), so they stay rejected.
+    assert convert.to_mixed("PrimÕs algorithm", "nptel_en_b", {}) is None
+    assert convert.to_mixed("the Schrödinger equation", "nptel_en_b", {}) is None
+
+
+def test_nptel_rejects_what_has_no_single_spoken_form():
+    assert convert.to_mixed("Jayanta Chatterjee:Just to recap the 3 components", "nptel_en_b", {}) == \
+        "just to recap the three components"
+    assert convert.to_mixed("Student: so the answer", "nptel_en", {}) == "so the answer"
+    assert convert.to_mixed("Professor Shashi Shekhar Mishra: yes", "nptel_en", {}) == "yes"
+    assert convert.to_mixed("dipole induced dipole 1/r power 6", "nptel_en_b", {}) is None  # by or over?
+    assert convert.to_mixed("so dy/dx and V/I here", "nptel_en_b", {}) is None
+    assert convert.to_mixed("the input/output pair", "nptel_en_b", {}) == "the input output pair"
+    assert convert.to_mixed("(Refer Slide Time: 18:16) so we see", "nptel_en_b", {}) is None
+    assert convert.to_mixed("Refer Time 18:16", "nptel_en_b", {}) is None
+    assert convert.to_mixed("Lethman Paramam Dheyam Knowledge is supreme", "nptel_en_b", {}) is None
+    assert convert.to_mixed("the last term is going to be <g n u n>", "nptel_en_b", {}) is None  # maths, not a tag
+    assert convert.to_mixed("so we [laughter] go on <noise>", "nptel_en_b", {}) == "so we go on"
+    assert convert.to_mixed("445 inch", "nptel_en_b", {}) is None  # the tail of a number split at its decimal point
+    assert convert.to_mixed("5 ohm and if we assume", "nptel_en_b", {}) is None
+
+
+def test_nptel_indian_grouping_and_years():
+    assert convert.spell_english_numbers("1,05,000 and 2,50,000 and 30,77,000 and 1,00,00,000").split() == \
+        "one lakh five thousand and two lakh fifty thousand and thirty lakh seventy seven thousand and one crore".split()
+    assert convert.spell_english_numbers("250,000 or 10,000").split() == \
+        "two hundred fifty thousand or ten thousand".split()
+    assert convert.to_mixed("now 1,0,5000 rupees", "nptel_en_b", {}) is None  # a malformed grouping: not guessed
+    assert convert.spell_english_numbers("1, 2, 3").split() == "one , two , three".split()
+    assert convert.spell_english_numbers("in 1995 since 1900 by 1905 of 1750").split() == \
+        "in nineteen ninety five since nineteen hundred by nineteen oh five of seventeen fifty".split()
+    assert convert.spell_english_numbers("in 2005") == "in  two thousand five "
+    assert convert.to_mixed("about 1500 rupees", "nptel_en_b", {}) is None  # fifteen hundred or one thousand ...?
+    assert convert.to_mixed("in 2015 we", "nptel_en_b", {}) is None  # twenty fifteen or two thousand fifteen?
+    assert convert.to_mixed("about 2050 units and 1,995 items", "nptel_en_b", {}) == \
+        "about two thousand fifty units and one thousand nine hundred ninety five items"
+    assert convert.to_mixed("the 1995th", "nptel_en_b", {}) == \
+        "the one thousand nine hundred ninety fifth"
+
+
+def test_convert_rejects_numbers_split_across_nptel_segments(tmp_path, lexicon):
+    rows = [{"id": f"nptel_en_b/vid_x_{start}", "audio": f"clips/s/vid_x_{start}.flac", "duration": 3.0,
+             "text": text, "language": "en", "source": "nptel_en_b"} for start, text in
+            [("10.0", "the reactance will be 42"), ("12.5", "5 ohm and so on"), ("20.0", "W equal to 3"),
+             ("30.0", "fine, 4 volts")]]
+    _write(tmp_path / "train" / "nptel_en_b" / "manifest.jsonl", rows[::-1])  # order on disk does not matter
+    meta = convert.convert("nptel_en_b", {}, lexicon, labels_name="fixed")
+    assert [r["teacher"] for r in _rows(tmp_path / "train" / "nptel_en_b" / "labels-fixed.jsonl")] == \
+        ["fine four volts", "w equal to three"]  # 42 | 5 ohm is 42.5; 3 before "fine" is whole
+    assert meta["counts"] == {"reference": 2, "reference_rejected": 2, "skipped_unlabelled": 2, "split_number": 1}
+    assert not (tmp_path / "train" / "nptel_en_b" / "labels-mix.jsonl").exists()
+    assert json.loads((tmp_path / "train" / "nptel_en_b" / "labels-fixed.json").read_text(encoding="utf-8")) == meta
+
+
+def test_shruti_fallback_labels_get_the_hindi_number_fix(tmp_path, lexicon):
+    clips = [_clip("mucs_train", 0, "scripted")]
+    _write(tmp_path / "train" / "mucs_train" / "manifest.jsonl", clips)
+    _write(tmp_path / "train" / "mucs_train" / "labels-shruti.jsonl",
+           [{"id": "mucs_train/0", "teacher": "चार नो सात यू नो", "language": "hi"}])
+    convert.convert("mucs_train", {}, lexicon)
+    assert _rows(tmp_path / "train" / "mucs_train" / "labels-mix.jsonl")[0]["teacher"] == "चार नौ सात यू नो"
 
 
 def test_nptel_english_numbers_become_words():

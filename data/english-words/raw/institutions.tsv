@@ -1,0 +1,585 @@
+english	devanagari	category	note
+school	स्कूल|इस्कूल|स्कूलों	institution	
+college	कॉलेज|कालेज|कॉलेजों	institution	
+university	यूनिवर्सिटी|युनिवर्सिटी|यूनिवर्सिटियों	institution	
+class	क्लास|क्लासों|क्लासें	institution	
+classroom	क्लासरूम|क्लास रूम	institution	
+teacher	टीचर|टीचरों	institution	
+student	स्टूडेंट|स्टूडेन्ट|स्टुडेंट|स्टूडेंटों	institution	
+students	स्टूडेंट्स|स्टूडेन्ट्स|स्टुडेंट्स	institution	
+principal	प्रिंसिपल|प्रिन्सिपल|प्रिंसीपल	institution	
+exam	एग्जाम|एग्ज़ाम|इग्ज़ाम|एग्जामों	institution	
+test	टेस्ट|टेस्टों	institution	
+paper	पेपर|पेपरों	institution	
+result	रिजल्ट|रिज़ल्ट|रिसल्ट	institution	
+marks	मार्क्स	institution	
+percentage	परसेंटेज|पर्सेंटेज|परसेन्टेज	institution	
+percent	परसेंट|पर्सेंट|परसेन्ट	institution	
+degree	डिग्री|डिग्रियां|डिग्रियों	institution	
+course	कोर्स|कोर्सों	institution	
+admission	एडमिशन|ऐडमिशन|एडमीशन	institution	
+fees	फीस|फ़ीस	institution	
+scholarship	स्कॉलरशिप|स्कालरशिप	institution	
+tuition	ट्यूशन|टयूशन|टियूशन	institution	
+coaching	कोचिंग	institution	
+homework	होमवर्क|होम वर्क	institution	
+project	प्रोजेक्ट|प्रॉजेक्ट|प्रोजेक्टों	institution	
+assignment	असाइनमेंट|एसाइनमेंट|असाइनमेंटों	institution	
+lecture	लेक्चर|लेक्चरों	institution	
+library	लाइब्रेरी|लायब्रेरी|लाईब्रेरी	institution	
+hostel	हॉस्टल|होस्टल|हास्टल	institution	
+campus	कैंपस|कैम्पस	institution	
+batch	बैच|बैचों	institution	
+subject	सब्जेक्ट|सबजेक्ट|सब्जेक्टों	institution	
+maths	मैथ्स|मैथ	institution	
+science	साइंस|साइन्स	institution	
+english	इंग्लिश|इंगलिश|इंग्लिस	institution	
+hindi	हिंदी	institution	AMBIGUOUS: हिंदी is the ordinary Hindi name of the language; keep Devanagari unless the subject is said in English
+physics	फिजिक्स|फ़िज़िक्स|फिज़िक्स	institution	
+chemistry	केमिस्ट्री|कैमिस्ट्री	institution	
+biology	बायोलॉजी|बायलॉजी|बायोलोजी	institution	
+history	हिस्ट्री	institution	
+geography	जियोग्राफी|ज्योग्राफी	institution	
+economics	इकोनॉमिक्स|इकनॉमिक्स|इकोनोमिक्स	institution	
+commerce	कॉमर्स|कामर्स	institution	
+arts	आर्ट्स	institution	
+accounts	अकाउंट्स|एकाउंट्स	institution	
+board	बोर्ड|बोर्डों	institution	
+copy	कॉपी|कापी|कॉपियां|कॉपियों	institution	in Indian speech usually a school notebook; also a duplicate
+book	बुक	institution	
+pen	पेन	institution	AMBIGUOUS: पेन is also how pain is written
+pencil	पेंसिल|पेन्सिल|पेंसिलों	institution	
+rubber	रबर|रबड़	institution	means an eraser in Indian speech
+bag	बैग|बैगों	institution	
+uniform	यूनिफॉर्म|यूनिफार्म|यूनिफ़ॉर्म	institution	
+period	पीरियड|पीरियडों	institution	school period; also the menstrual sense
+semester	सेमेस्टर|समेस्टर	institution	
+syllabus	सिलेबस|सिलैबस	institution	
+chapter	चैप्टर|चैप्टरों	institution	
+question	क्वेश्चन|क्वेशचन|क्वेस्चन	institution	
+answer	आंसर|आन्सर	institution	
+pass	पास	institution	AMBIGUOUS: पास is also Hindi (near, with)
+fail	फेल|फ़ेल	institution	
+topper	टॉपर|टापर	institution	
+rank	रैंक|रेंक	institution	
+merit	मेरिट	institution	
+cutoff	कटऑफ|कट ऑफ	institution	
+entrance	एंट्रेंस|एन्ट्रेंस	institution	
+practical	प्रैक्टिकल|प्रेक्टिकल|प्रैक्टिकलों	institution	
+lab	लैब|लैबों	institution	
+attendance	अटेंडेंस|अटेन्डेंस	institution	
+sir	सर	institution	AMBIGUOUS: सर is also Hindi (head, a variant of सिर)
+madam	मैडम	institution	
+maam	मैम	institution	spoken ma'am
+miss	मिस	institution	teacher address; also the verb miss
+nursery	नर्सरी	institution	
+primary	प्राइमरी	institution	
+intermediate	इंटरमीडिएट|इंटरमीडियट	institution	
+inter	इंटर	institution	short for intermediate (class 12)
+graduation	ग्रेजुएशन|ग्रैजुएशन	institution	
+masters	मास्टर्स	institution	
+master	मास्टर|मास्टरों	institution	also a schoolteacher (master ji)
+phd	पीएचडी|पी एच डी	institution	
+diploma	डिप्लोमा	institution	
+certificate	सर्टिफिकेट|सर्टिफ़िकेट|सर्टिफिकेटों	institution	
+marksheet	मार्कशीट|मार्क शीट	institution	
+roll number	रोल नंबर|रोल नम्बर	institution	
+professor	प्रोफेसर|प्रोफ़ेसर|प्रोफेसरों	institution	
+management	मैनेजमेंट	institution	
+department	डिपार्टमेंट|डिपार्टमेंटों	institution	
+workshop	वर्कशॉप|वर्कशाप	institution	
+training	ट्रेनिंग	institution	
+internship	इंटर्नशिप	institution	
+senior	सीनियर|सीनियरों	institution	
+junior	जूनियर|जूनियरों	institution	
+placement	प्लेसमेंट	institution	
+competition	कंपटीशन|कॉम्पिटिशन|कम्पटीशन|कंपिटीशन	institution	
+note	नोट|नोटों	institution	also a currency note
+notes	नोट्स	institution	
+study	स्टडी	institution	
+parents	पेरेंट्स|पैरेंट्स	institution	
+reservation	रिजर्वेशन|रिज़र्वेशन	institution	train seat and the quota sense
+office	ऑफिस|ऑफ़िस|आफिस|ऑफिसों	institution	
+company	कंपनी|कम्पनी|कंपनियों|कंपनियां	institution	
+job	जॉब|जाब|जॉबों	institution	
+work	वर्क	institution	
+salary	सैलरी|सेलरी|सैलेरी	institution	
+boss	बॉस|बास	institution	AMBIGUOUS: बास is also Hindi (smell)
+manager	मैनेजर|मेनेजर|मैनेजरों	institution	
+staff	स्टाफ|स्टाफ़	institution	
+team	टीम|टीमों|टीमें	institution	
+meeting	मीटिंग|मीटिंगों	institution	
+interview	इंटरव्यू|इंटरवियू|इन्टरव्यू	institution	
+resume	रिज्यूम|रिज्यूमे|रिज़्यूमे|रेज़्यूमे	institution	
+promotion	प्रमोशन|प्रोमोशन	institution	
+target	टारगेट|टार्गेट|टारगेटों	institution	
+client	क्लाइंट|क्लाइंटों	institution	
+customer	कस्टमर|कस्टमरों	institution	
+business	बिज़नेस|बिजनेस|बिज़नस|बिजनस	institution	
+businessman	बिजनेसमैन|बिज़नेसमैन	institution	
+employee	एम्प्लॉई|एम्प्लॉयी|इम्प्लॉई	institution	
+worker	वर्कर|वर्करों	institution	
+labour	लेबर|लेबरों	institution	
+duty	ड्यूटी	institution	
+shift	शिफ्ट|शिफ़्ट|शिफ्टों	institution	work shift; also moving house
+joining	जॉइनिंग|ज्वाइनिंग|जोइनिंग	institution	
+join	जॉइन|ज्वाइन|जोइन|ज्वॉइन	institution	
+resign	रिजाइन|रिज़ाइन	institution	
+notice	नोटिस	institution	
+bonus	बोनस	institution	
+commission	कमीशन	institution	
+report	रिपोर्ट|रिपोर्टों	institution	
+presentation	प्रेजेंटेशन|प्रेज़ेंटेशन	institution	
+file	फाइल|फ़ाइल|फाइलें|फाइलों	institution	
+document	डॉक्यूमेंट|डाक्यूमेंट|डॉक्यूमेंटों	institution	
+documents	डॉक्यूमेंट्स|डाक्यूमेंट्स	institution	
+signature	सिग्नेचर	institution	
+sign	साइन	institution	
+stamp	स्टांप|स्टैंप|स्टैम्प	institution	
+cabin	केबिन|कैबिन	institution	
+reception	रिसेप्शन	institution	front desk; also a wedding reception
+peon	पियून|प्यून	institution	
+clerk	क्लर्क	institution	
+officer	ऑफिसर|आफिसर|ऑफिसरों	institution	
+in charge	इंचार्ज|इन्चार्ज	institution	
+head	हेड	institution	
+ceo	सीईओ	institution	
+hr	एचआर	institution	
+accountant	अकाउंटेंट|एकाउंटेंट	institution	
+engineer	इंजीनियर|इंजिनियर|इंजीनियरों	institution	
+contractor	कॉन्ट्रैक्टर|कांट्रेक्टर|कॉन्ट्रेक्टर	institution	
+contract	कॉन्ट्रैक्ट|कांट्रेक्ट|कॉन्ट्रेक्ट	institution	
+partner	पार्टनर|पार्टनरों	institution	
+owner	ओनर	institution	
+factory	फैक्ट्री|फैक्टरी|फैक्ट्रियों	institution	
+order	ऑर्डर|आर्डर|ऑर्डरों	institution	
+delivery	डिलीवरी|डिलिवरी	institution	also childbirth
+courier	कूरियर|कुरियर	institution	
+parcel	पार्सल	institution	
+dealer	डीलर|डीलरों	institution	
+agent	एजेंट|एजेंटों	institution	
+marketing	मार्केटिंग	institution	
+sales	सेल्स	institution	
+sale	सेल	institution	AMBIGUOUS: सेल is also how cell is written
+profit	प्रॉफिट|प्रोफिट	institution	
+loss	लॉस	institution	
+budget	बजट	institution	
+share	शेयर|शेयरों	institution	
+market	मार्केट|मार्किट|मार्केटों	institution	
+career	करियर|कैरियर	institution	
+experience	एक्सपीरियंस|एक्सपीरिएंस|एक्सपेरिएंस	institution	
+vacancy	वैकेंसी|वेकेंसी	institution	
+post	पोस्ट|पोस्टों	institution	
+private	प्राइवेट	institution	
+public	पब्लिक	institution	
+permanent	परमानेंट|पर्मानेंट	institution	
+part time	पार्ट टाइम	institution	
+full time	फुल टाइम	institution	
+transfer	ट्रांसफर|ट्रांसफ़र	institution	
+leave	लीव	institution	
+retire	रिटायर	institution	
+product	प्रोडक्ट|प्रॉडक्ट	institution	
+service	सर्विस	institution	
+director	डायरेक्टर|डाइरेक्टर	institution	
+bank	बैंक|बैंकों	institution	
+account	अकाउंट|एकाउंट|अकाउंटों	institution	
+branch	ब्रांच|ब्रांचों	institution	
+cheque	चेक|चैक	institution	AMBIGUOUS: चेक is also check (verify)
+card	कार्ड|कार्डों	institution	
+debit card	डेबिट कार्ड	institution	
+credit card	क्रेडिट कार्ड	institution	
+credit	क्रेडिट	institution	
+atm	एटीएम	institution	
+loan	लोन|लोनों	institution	
+emi	ईएमआई	institution	
+interest	इंटरेस्ट|इंट्रेस्ट|इन्टरेस्ट	institution	
+balance	बैलेंस|बेलेंस|बैलेन्स	institution	
+deposit	डिपॉजिट|डिपाजिट|डिपॉज़िट	institution	
+fd	एफडी	institution	
+withdrawal	विड्रॉल|विथड्रॉल	institution	
+payment	पेमेंट|पेमेंटों	institution	
+bill	बिल|बिलों	institution	AMBIGUOUS: बिल is also Hindi (burrow, hole)
+receipt	रिसीप्ट|रिसिप्ट	institution	
+invoice	इनवॉइस|इनवॉयस|इन्वॉइस	institution	
+tax	टैक्स|टेक्स	institution	
+gst	जीएसटी	institution	
+income tax	इनकम टैक्स	institution	
+income	इनकम	institution	
+insurance	इंश्योरेंस|इन्शुरेंस|इंशोरेंस|इंश्योरेन्स	institution	
+policy	पॉलिसी|पालिसी|पॉलिसियों	institution	
+premium	प्रीमियम	institution	
+claim	क्लेम	institution	
+pension	पेंशन|पेन्शन	institution	
+scheme	स्कीम|स्कीमों|स्कीमें	institution	
+cash	कैश	institution	
+cashier	कैशियर	institution	
+dollar	डॉलर|डालर	institution	
+passbook	पासबुक	institution	
+statement	स्टेटमेंट	institution	
+kyc	केवाईसी	institution	
+pan card	पैन कार्ड	institution	
+ration	राशन	institution	
+form	फॉर्म|फार्म|फॉर्मों	institution	AMBIGUOUS: फार्म is also how farm is written
+fund	फंड|फ़ंड|फंडों	institution	
+saving	सेविंग	institution	
+charge	चार्ज	institution	fee; also a battery charge
+fine	फाइन	institution	penalty; also the adjective fine
+penalty	पेनल्टी	institution	
+discount	डिस्काउंट	institution	
+offer	ऑफर|आफर|ऑफ़र	institution	
+price	प्राइस	institution	
+rate	रेट|रेटों	institution	
+mrp	एमआरपी	institution	
+total	टोटल	institution	
+amount	अमाउंट	institution	
+refund	रिफंड	institution	
+guarantee	गारंटी	institution	
+warranty	वारंटी	institution	
+instalment	इंस्टॉलमेंट|इंस्टालमेंट	institution	
+finance	फाइनेंस|फ़ाइनेंस	institution	
+property	प्रॉपर्टी|प्रोपर्टी	institution	
+id	आईडी|आइडी	institution	
+rent	रेंट	institution	
+government	गवर्नमेंट|गवर्मेंट|गौरमेंट|गवरमेंट	institution	
+minister	मिनिस्टर|मिनिस्टरों	institution	
+chief minister	चीफ मिनिस्टर	institution	
+cm	सीएम	institution	
+prime minister	प्राइम मिनिस्टर	institution	
+pm	पीएम	institution	prime minister; also the time pm
+mp	एमपी	institution	AMBIGUOUS: एमपी is also Madhya Pradesh
+mla	एमएलए	institution	
+election	इलेक्शन|इलेक्सन|इलेक्शनों	institution	
+vote	वोट|वोटों	institution	
+voter	वोटर|वोटरों	institution	
+voting	वोटिंग	institution	
+party	पार्टी|पार्टियों|पार्टियां	institution	political party and celebration both map to party
+leader	लीडर|लीडरों	institution	
+president	प्रेसिडेंट|प्रेसीडेंट	institution	
+collector	कलेक्टर|कलक्टर	institution	
+dm	डीएम	institution	
+ward	वार्ड|वार्डों	institution	municipal ward; also a hospital ward
+post office	पोस्ट ऑफिस|पोस्ट आफिस	institution	
+postman	पोस्टमैन	institution	
+letter	लेटर|लेटरों	institution	
+court	कोर्ट|कोर्टों	institution	
+high court	हाई कोर्ट|हाईकोर्ट	institution	
+case	केस|केसों	institution	
+lawyer	लॉयर	institution	
+advocate	एडवोकेट|एडवोकेटों	institution	
+judge	जज|जजों	institution	
+bail	बेल	institution	AMBIGUOUS: बेल is also Hindi (vine, bael fruit)
+jail	जेल	institution	long naturalised in Hindi
+police	पुलिस|पोलिस	institution	
+police station	पुलिस स्टेशन	institution	
+fir	एफआईआर	institution	
+complaint	कंप्लेंट|कम्प्लेंट|कंप्लेन	institution	often spoken as complain
+inspector	इंस्पेक्टर|इन्स्पेक्टर	institution	
+constable	कांस्टेबल|कॉन्स्टेबल	institution	
+army	आर्मी	institution	
+captain	कैप्टन|कैप्टेन	institution	
+border	बॉर्डर|बार्डर	institution	
+security	सिक्योरिटी|सिक्यूरिटी|सेक्युरिटी	institution	guard service; also a security deposit
+licence	लाइसेंस|लाइसेन्स	institution	
+driving licence	ड्राइविंग लाइसेंस	institution	
+passport	पासपोर्ट	institution	
+visa	वीज़ा|वीजा	institution	
+affidavit	एफिडेविट|एफ़िडेविट	institution	
+verification	वेरिफिकेशन|वेरिफ़िकेशन	institution	
+application	एप्लीकेशन|एप्लिकेशन|ऐप्लिकेशन	institution	written request; also a software app
+apply	अप्लाई|अप्लाय	institution	
+registration	रजिस्ट्रेशन|रेजिस्ट्रेशन	institution	
+register	रजिस्टर|रजिस्टरों	institution	
+counter	काउंटर|काउंटरों	institution	
+centre	सेंटर|सेन्टर|सेंटरों	institution	
+emergency	इमरजेंसी|एमरजेंसी	institution	
+ambulance	एम्बुलेंस|एंबुलेंस	institution	
+gas	गैस	institution	
+cylinder	सिलेंडर|सिलिंडर	institution	
+connection	कनेक्शन	institution	
+meter	मीटर	institution	
+road	रोड|रोडों	institution	
+bridge	ब्रिज	institution	
+flyover	फ्लाईओवर|फ्लाइओवर	institution	
+highway	हाईवे|हाइवे	institution	
+toll	टोल	institution	
+traffic	ट्रैफिक|ट्रैफ़िक|ट्राफिक	institution	
+signal	सिग्नल	institution	
+parking	पार्किंग	institution	
+jam	जाम	institution	AMBIGUOUS: जाम is also Hindi (a drinking cup)
+petrol	पेट्रोल	institution	
+diesel	डीजल|डीज़ल	institution	
+petrol pump	पेट्रोल पंप	institution	
+garage	गैराज|गेराज	institution	
+puncture	पंक्चर|पंचर	institution	
+helmet	हेलमेट	institution	
+corruption	करप्शन	institution	
+rule	रूल	institution	
+law	लॉ	institution	
+rally	रैली|रैलियों	institution	
+booth	बूथ	institution	
+accident	एक्सीडेंट|ऐक्सीडेंट|एक्सिडेंट	institution	
+murder	मर्डर	institution	
+crime	क्राइम	institution	
+fraud	फ्रॉड|फ्राड	institution	
+arrest	अरेस्ट	institution	
+pollution	पॉल्यूशन|पोल्यूशन	institution	
+ticket	टिकट|टिकिट|टिकटों|टिकटें	institution	
+booking	बुकिंग	institution	
+seat	सीट|सीटों|सीटें	institution	
+berth	बर्थ	institution	AMBIGUOUS: बर्थ is also how birth is written (बर्थ सर्टिफिकेट)
+coach	कोच|कोचों	institution	train coach; also a sports coach
+platform	प्लेटफॉर्म|प्लेटफार्म|प्लेटफ़ॉर्म	institution	
+station	स्टेशन|स्टेशनों	institution	
+railway	रेलवे	institution	
+metro	मेट्रो	institution	
+flight	फ्लाइट|फ्लाईट|फ्लाइटों	institution	
+airport	एयरपोर्ट|एअरपोर्ट	institution	
+bus	बस	institution	AMBIGUOUS: बस is also Hindi (enough, only)
+bus stand	बस स्टैंड	institution	
+stop	स्टॉप|स्टाप	institution	
+stand	स्टैंड|स्टेंड	institution	
+auto	ऑटो|आटो	institution	
+taxi	टैक्सी	institution	
+cab	कैब	institution	
+driver	ड्राइवर|ड्राईवर|ड्राइवरों	institution	
+conductor	कंडक्टर	institution	
+train	ट्रेन|ट्रैन|ट्रेनों|ट्रेनें	institution	
+express	एक्सप्रेस	institution	
+local	लोकल	institution	
+passenger	पैसेंजर|पैसेंजरों	institution	
+sleeper	स्लीपर	institution	
+ac	एसी|ए सी	institution	AC coach or room; also the air conditioner
+waiting	वेटिंग	institution	
+confirm	कन्फर्म|कंफर्म	institution	
+cancel	कैंसिल|कैंसल|कैन्सल	institution	
+pnr	पीएनआर	institution	
+tc	टीसी	institution	ticket checker; also a transfer certificate
+tte	टीटीई	institution	
+engine	इंजन|इंजिन	institution	
+luggage	लगेज	institution	
+suitcase	सूटकेस	institution	
+check in	चेक इन|चेकइन	institution	
+boarding	बोर्डिंग	institution	
+pilot	पायलट	institution	
+late	लेट	institution	AMBIGUOUS: लेट is also Hindi (lie down, as in लेट जाओ)
+guest house	गेस्ट हाउस|गेस्टहाउस	institution	
+guest	गेस्ट	institution	
+resort	रिसॉर्ट|रिज़ॉर्ट	institution	
+travel	ट्रैवल|ट्रेवल	institution	
+abroad	अब्रॉड	institution	
+foreign	फॉरेन|फ़ॉरेन	institution	
+route	रूट	institution	
+bike	बाइक|बाइकों	institution	
+scooter	स्कूटर	institution	
+car	कार|कारों	institution	
+truck	ट्रक|ट्रकों	institution	
+tempo	टेम्पो|टेंपो	institution	
+cycle	साइकिल|साइकल|सायकल	institution	
+plane	प्लेन	institution	AMBIGUOUS: प्लेन is also how plain is written
+fare	फेयर	institution	AMBIGUOUS: फेयर is also how fair is written
+address	एड्रेस|ऐड्रेस|अड्रेस	institution	
+pin code	पिन कोड|पिनकोड	institution	
+junction	जंक्शन	institution	
+tourist	टूरिस्ट	institution	
+beach	बीच	institution	AMBIGUOUS: बीच is also Hindi (middle, between)
+trip	ट्रिप	institution	
+tour	टूर	institution	
+picnic	पिकनिक	institution	
+holiday	हॉलिडे|हॉलीडे|हालीडे	institution	
+vacation	वेकेशन|वैकेशन	institution	
+hospital	हॉस्पिटल|हास्पिटल|हॉस्पिटलों	institution	
+clinic	क्लिनिक|क्लीनिक	institution	
+doctor	डॉक्टर|डाक्टर|डॉक्टरों|डाक्टरों	institution	
+nurse	नर्स|नर्सों	institution	
+patient	पेशेंट|पेशेन्ट|पेशेंटों	institution	
+medicine	मेडिसिन|मेडिसीन	institution	
+tablet	टैबलेट|टेबलेट|टैबलेटों	institution	medicine tablet; also the device
+capsule	कैप्सूल	institution	
+syrup	सिरप	institution	
+injection	इंजेक्शन|इन्जेक्शन|इंजक्शन	institution	
+drip	ड्रिप	institution	
+glucose	ग्लूकोज|ग्लूकोज़	institution	
+operation	ऑपरेशन|आपरेशन	institution	
+surgery	सर्जरी	institution	
+x ray	एक्स रे|एक्सरे	institution	
+scan	स्कैन	institution	
+mri	एमआरआई	institution	
+ultrasound	अल्ट्रासाउंड	institution	
+ecg	ईसीजी	institution	
+checkup	चेकअप|चेक अप	institution	
+blood	ब्लड	institution	
+blood pressure	ब्लड प्रेशर	institution	
+bp	बीपी	institution	
+pressure	प्रेशर	institution	
+sugar	शुगर	institution	the disease sense (diabetes); also the food
+diabetes	डायबिटीज|डायबिटीज़	institution	
+cancer	कैंसर|केंसर	institution	
+heart attack	हार्ट अटैक	institution	
+heart	हार्ट	institution	
+attack	अटैक	institution	
+stroke	स्ट्रोक	institution	
+pregnant	प्रेग्नेंट|प्रेगनेंट	institution	
+pregnancy	प्रेग्नेंसी|प्रेगनेंसी	institution	
+vaccine	वैक्सीन	institution	
+mask	मास्क	institution	
+sanitizer	सैनिटाइजर|सैनिटाइज़र|सेनेटाइजर	institution	
+corona	कोरोना	institution	
+covid	कोविड	institution	
+virus	वायरस	institution	
+infection	इंफेक्शन|इन्फेक्शन	institution	
+allergy	एलर्जी	institution	
+cold	कोल्ड	institution	a cold (illness); also cold drink
+thyroid	थायराइड|थाइरॉइड	institution	
+cholesterol	कोलेस्ट्रॉल|कोलेस्ट्रोल	institution	
+kidney	किडनी	institution	
+liver	लिवर|लीवर	institution	
+fracture	फ्रैक्चर|फ्रेक्चर	institution	
+plaster	प्लास्टर	institution	
+icu	आईसीयू	institution	
+bed	बेड|बेडों	institution	
+oxygen	ऑक्सीजन|आक्सीजन	institution	
+ventilator	वेंटिलेटर	institution	
+specialist	स्पेशलिस्ट	institution	
+treatment	ट्रीटमेंट	institution	
+medical	मेडिकल	institution	
+chemist	केमिस्ट	institution	
+dose	डोज़|डोज	institution	
+health	हेल्थ	institution	
+fitness	फिटनेस	institution	
+diet	डाइट	institution	
+weight	वेट	institution	AMBIGUOUS: वेट is also how wait is written
+appointment	अपॉइंटमेंट|अपॉइन्टमेंट|अपोइंटमेंट	institution	
+opd	ओपीडी	institution	
+admit	एडमिट	institution	
+discharge	डिस्चार्ज	institution	
+normal	नॉर्मल|नार्मल	institution	
+caesarean	सिजेरियन|सीजेरियन	institution	said and written as सिजेरियन
+depression	डिप्रेशन	institution	
+stress	स्ट्रेस	institution	
+tension	टेंशन|टेन्शन	institution	
+tb	टीबी	institution	
+dengue	डेंगू	institution	
+malaria	मलेरिया	institution	
+typhoid	टाइफाइड|टायफाइड	institution	
+vitamin	विटामिन	institution	
+positive	पॉजिटिव|पॉज़िटिव	institution	
+negative	नेगेटिव|निगेटिव	institution	
+lockdown	लॉकडाउन	institution	
+dentist	डेंटिस्ट	institution	
+shop	शॉप|शाप	institution	AMBIGUOUS: शाप is also Hindi (curse)
+shopping	शॉपिंग|शापिंग	institution	
+mall	मॉल|माल	institution	AMBIGUOUS: माल is also Hindi (goods, stuff)
+store	स्टोर|स्टोरों	institution	
+showroom	शोरूम|शो रूम	institution	
+bakery	बेकरी	institution	
+dairy	डेयरी|डेरी	institution	
+salon	सैलून|सलून	institution	
+parlour	पार्लर|पारलर	institution	
+beauty	ब्यूटी	institution	
+tailor	टेलर	institution	
+hotel	होटल|होटलों	institution	
+restaurant	रेस्टोरेंट|रेस्टोरेन्ट|रेस्तरां	institution	
+canteen	कैंटीन|कैन्टीन	institution	
+cafe	कैफे|कैफ़े	institution	
+bar	बार	institution	AMBIGUOUS: बार is also Hindi (time, occurrence)
+club	क्लब	institution	
+cinema	सिनेमा	institution	
+theatre	थिएटर|थियेटर	institution	
+movie	मूवी	institution	
+film	फिल्म|फ़िल्म|फिल्मों|फिल्में	institution	
+picture	पिक्चर	institution	also means a film
+show	शो	institution	
+park	पार्क|पार्कों	institution	
+garden	गार्डन	institution	
+zoo	ज़ू|जू	institution	AMBIGUOUS: जू is also a spelling of Hindi जूँ (louse)
+museum	म्यूजियम|म्यूज़ियम	institution	
+stadium	स्टेडियम	institution	
+ground	ग्राउंड	institution	
+gym	जिम	institution	
+church	चर्च	institution	
+building	बिल्डिंग|बिल्डिंगों	institution	
+hall	हॉल|हाल	institution	AMBIGUOUS: हाल is also Hindi (condition, as in क्या हाल है)
+toilet	टॉयलेट|टॉयलट|टायलेट	institution	
+washroom	वॉशरूम|वाशरूम	institution	
+lift	लिफ्ट|लिफ़्ट	institution	
+return	रिटर्न	institution	
+packet	पैकेट|पैकेटों	institution	
+photo	फोटो|फ़ोटो	institution	
+jewellery	ज्वेलरी	institution	
+furniture	फर्नीचर|फ़र्नीचर	institution	
+gift	गिफ्ट|गिफ़्ट	institution	
+family	फैमिली|फॅमिली|फेमिली	institution	
+husband	हसबैंड|हस्बैंड	institution	
+wife	वाइफ|वाईफ	institution	
+uncle	अंकल|अंकलों	institution	
+aunty	आंटी|आंटियों|आंटियां	institution	
+cousin	कज़िन|कजिन|कजन	institution	
+boyfriend	बॉयफ्रेंड|बॉयफ्रेन्ड	institution	
+girlfriend	गर्लफ्रेंड|गर्लफ्रेन्ड	institution	
+friend	फ्रेंड|फ्रेन्ड	institution	
+friends	फ्रेंड्स|फ्रेन्ड्स	institution	
+best friend	बेस्ट फ्रेंड	institution	
+neighbour	नेबर	institution	
+landlord	लैंडलॉर्ड|लैंडलार्ड	institution	
+mummy	मम्मी	institution	naturalised in Hindi
+mom	मॉम	institution	
+dad	डैड	institution	
+papa	पापा	institution	naturalised in Hindi; convert only if the corpus convention writes papa
+brother	ब्रदर	institution	
+sister	सिस्टर	institution	also a nurse
+baby	बेबी	institution	
+kids	किड्स	institution	
+in laws	इन लॉज़|इनलॉज़|इन लॉज	institution	
+couple	कपल	institution	
+married	मैरिड	institution	
+marriage	मैरिज	institution	
+love marriage	लव मैरिज	institution	
+divorce	डाइवोर्स|डिवोर्स	institution	
+engagement	इंगेजमेंट|एंगेजमेंट	institution	
+birthday	बर्थडे|बर्थ डे	institution	
+ladies	लेडीज़|लेडीज	institution	
+boy	बॉय	institution	
+girl	गर्ल	institution	
+mrs	मिसेज़|मिसेज	institution	
+member	मेंबर|मेम्बर|मेंबरों	institution	
+group	ग्रुप|ग्रुपों	institution	
+committee	कमेटी|कमिटी	institution	
+secretary	सेक्रेटरी|सेक्रेट्री	institution	
+colleague	कलीग|कुलीग	institution	
+pg	पीजी	institution	paying guest; also post graduation
+maid	मेड	institution	AMBIGUOUS: मेड is also how made is written
+servant	सर्वेंट	institution	
+cook	कुक	institution	
+watchman	वॉचमैन|वाचमैन	institution	
+guard	गार्ड	institution	
+plumber	प्लंबर|प्लम्बर	institution	
+electrician	इलेक्ट्रीशियन|इलेक्ट्रिशियन	institution	
+mechanic	मैकेनिक|मेकैनिक	institution	
+painter	पेंटर	institution	
+carpenter	कारपेंटर	institution	
+barber	बार्बर	institution	
+hero	हीरो	institution	
+heroine	हीरोइन	institution	film heroine; also the drug heroin
+actor	एक्टर|ऐक्टर	institution	
+star	स्टार	institution	
+fan	फैन	institution	admirer; also a ceiling fan
+reporter	रिपोर्टर	institution	
+media	मीडिया	institution	
+news	न्यूज़|न्यूज	institution	
+channel	चैनल|चैनलों	institution	
+camera	कैमरा	institution	
+flat	फ्लैट|फ्लैटों	institution	
+society	सोसाइटी|सोसायटी	institution	
+colony	कॉलोनी|कालोनी	institution	
+sector	सेक्टर	institution	
+block	ब्लॉक|ब्लाक	institution	
+tower	टावर|टॉवर	institution	
+floor	फ्लोर	institution	
+room	रूम|रूमों	institution	
+kitchen	किचन	institution	
+bathroom	बाथरूम	institution	
+balcony	बालकनी|बाल्कनी	institution	
+gate	गेट	institution	
+function	फंक्शन	institution	
+event	इवेंट|इवेंटों	institution	
+programme	प्रोग्राम|प्रोग्रामों	institution	event or TV programme; also a software program

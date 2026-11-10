@@ -1,0 +1,581 @@
+english	devanagari	category	note
+google	गूगल|गुगल	brand	
+whatsapp	व्हाट्सएप|व्हाट्सऐप|वाट्सएप|व्हाट्सअप|व्हाट्सप	brand	
+youtube	यूट्यूब|युट्यूब|यूटूब|यू ट्यूब|यूटयूब	brand	
+facebook	फेसबुक|फ़ेसबुक|फेस बुक	brand	
+fb	एफबी|एफ.बी|एफ बी	abbreviation	short for facebook
+instagram	इंस्टाग्राम|इन्स्टाग्राम|इंस्टग्राम|इंस्टाग्रम	brand	
+insta	इंस्टा|इन्स्टा	brand	short for instagram
+twitter	ट्विटर|ट्वीटर|ट्विट्टर	brand	
+telegram	टेलीग्राम|टेलिग्राम	brand	the app; also english telegram, same form
+snapchat	स्नैपचैट|स्नेपचैट|स्नैप चैट	brand	
+gmail	जीमेल|जी मेल	brand	
+chrome	क्रोम|क्रॉम	brand	
+google chrome	गूगल क्रोम|गुगल क्रोम	brand	
+android	एंड्रॉयड|एंड्रॉइड|एंड्राइड|एंड्रायड|एन्ड्रॉयड	brand	
+windows	विंडोज|विंडोज़|विन्डोज	brand	the OS; also english windows, same form
+microsoft	माइक्रोसॉफ्ट|माइक्रोसॉफ़्ट|माइक्रोसोफ्ट	brand	
+google maps	गूगल मैप्स|गूगल मैप|गुगल मैप	brand	often said in the singular गूगल मैप
+google meet	गूगल मीट|गुगल मीट	brand	
+google drive	गूगल ड्राइव|गुगल ड्राइव	brand	
+google translate	गूगल ट्रांसलेट|गुगल ट्रांसलेट	brand	
+play store	प्ले स्टोर|प्लेस्टोर	brand	
+zoom	ज़ूम|जूम	brand	the app; also english zoom, same form
+linkedin	लिंक्डइन|लिंकडइन|लिंक्डिन|लिंकडिन	brand	
+naukri dot com	नौकरी डॉट कॉम|नौकरी डॉटकॉम	brand	AMBIGUOUS: नौकरी alone is the Hindi word for job; map only the full phrase
+quora	क्वोरा|क्वॉरा	brand	कोरा not listed: it is a Hindi word (blank)
+wikipedia	विकिपीडिया|विकिपिडिया|विकीपीडिया	brand	
+chatgpt	चैटजीपीटी|चैट जीपीटी|चैट जी पी टी	brand	
+alexa	एलेक्सा|अलेक्सा|ऐलेक्सा	brand	
+tiktok	टिकटॉक|टिक टॉक|टिकटोक|टिक टोक	brand	
+sharechat	शेयरचैट|शेयर चैट	brand	
+truecaller	ट्रूकॉलर|ट्रू कॉलर|ट्रूकालर	brand	
+mx player	एमएक्स प्लेयर|एम एक्स प्लेयर	brand	
+spotify	स्पॉटिफाई|स्पोटिफाई|स्पॉटीफाई	brand	
+jiosaavn	जियोसावन|जियो सावन	brand	AMBIGUOUS: सावन alone is the Hindi month
+pubg	पबजी|पब्जी|पब जी	brand	
+bgmi	बीजीएमआई|बी.जी.एम.आई|बी जी एम आई	abbreviation	
+free fire	फ्री फायर|फ्रीफायर|फ्री फ़ायर	brand	
+ludo king	लूडो किंग|लुडो किंग	brand	
+candy crush	कैंडी क्रश|कैंडी क्रेश	brand	
+minecraft	माइनक्राफ्ट|माइनक्राफ़्ट	brand	
+dream11	ड्रीम इलेवन|ड्रीम11	brand	digits kept as in the brand name, like 4g
+ios	आईओएस|आई.ओ.एस|आई ओ एस	abbreviation	
+apple	एप्पल|ऐपल|एपल|ऐप्पल	brand	the company; also english apple, same form
+iphone	आईफोन|आईफ़ोन|आइफोन|आई फोन	brand	
+ipad	आईपैड|आइपैड|आई पैड	brand	
+samsung	सैमसंग|सैमसन्ग|सामसंग|सैमसुंग	brand	
+xiaomi	शाओमी|श्याओमी|शियोमी|जिओमी	brand	
+redmi	रेडमी|रेड मी	brand	
+mi	एमआई|एम.आई|एम आई	brand	the Xiaomi brand; also Mumbai Indians
+vivo	वीवो|विवो	brand	
+oppo	ओप्पो|ओपो	brand	
+realme	रियलमी|रियल मी|रीयलमी	brand	
+oneplus	वनप्लस|वन प्लस	brand	
+nokia	नोकिया	brand	
+motorola	मोटोरोला	brand	
+lenovo	लेनोवो|लिनोवो	brand	
+dell	डेल	brand	
+hp	एचपी|एच.पी|एच पी	abbreviation	the company; also horsepower, all written hp
+asus	आसुस|असुस|एसुस	brand	
+acer	एसर|ऐसर	brand	
+lg	एलजी|एल.जी|एल जी	abbreviation	
+sony	सोनी	brand	AMBIGUOUS: सोनी is also a given name and surname
+panasonic	पैनासोनिक|पेनासोनिक	brand	
+philips	फिलिप्स|फ़िलिप्स	brand	
+boat	बोट	brand	the audio brand; also english boat, same form
+jio	जियो|जिओ	brand	AMBIGUOUS: जियो is also the Hindi imperative live
+jio phone	जियो फोन|जियोफोन|जियो फ़ोन	brand	
+jiocinema	जियो सिनेमा|जियोसिनेमा	brand	
+jiomart	जियोमार्ट|जियो मार्ट	brand	
+airtel	एयरटेल|एअरटेल|एरटेल	brand	
+vodafone	वोडाफोन|वोडाफ़ोन	brand	
+vi	वीआई|वी आई	brand	AMBIGUOUS: वी alone is the letter v, not listed
+idea	आइडिया|आईडिया	brand	the telecom; also english idea, same form
+bsnl	बीएसएनएल|बी.एस.एन.एल|बी एस एन एल	abbreviation	
+tata sky	टाटा स्काई|टाटा स्काय	brand	
+dish tv	डिश टीवी|डिश टी वी	brand	
+paytm	पेटीएम|पे टी एम|पेटियम|पेटीयम	brand	
+phonepe	फोनपे|फ़ोनपे|फोन पे|फ़ोन पे	brand	AMBIGUOUS: spaced फोन पे is also Hindi on the phone
+google pay	गूगल पे|गुगल पे	brand	
+gpay	जीपे|जी पे	brand	AMBIGUOUS: spaced जी पे can be the honorific जी plus पे
+bhim	भीम	brand	AMBIGUOUS: भीम is also the Mahabharata hero and a given name
+upi	यूपीआई|यू.पी.आई|यू पी आई	abbreviation	
+amazon pay	अमेज़न पे|अमेजन पे	brand	
+paypal	पेपाल|पे पाल|पेपल	brand	
+groww	ग्रो	brand	AMBIGUOUS: also english grow
+zerodha	ज़ेरोधा|जेरोधा	brand	
+visa	वीज़ा|वीजा	brand	the card; also english visa, same form
+mastercard	मास्टरकार्ड|मास्टर कार्ड	brand	
+rupay	रुपे|रूपे	brand	AMBIGUOUS: रुपे can be a misspelling of रुपए (rupees)
+aadhaar	आधार	brand	AMBIGUOUS: आधार is the Hindi word for basis
+amazon	अमेज़न|अमेजन|अमेज़ॉन|अमेजॉन|ऐमज़ॉन	brand	
+amazon prime	अमेज़न प्राइम|अमेजन प्राइम	brand	
+prime video	प्राइम वीडियो|प्राइम विडियो	brand	
+flipkart	फ्लिपकार्ट|फ़्लिपकार्ट|फ्लिप कार्ट	brand	
+meesho	मीशो|मिशो	brand	
+myntra	मिंत्रा|मिन्त्रा|मिंट्रा	brand	
+ajio	अजियो|एजियो|अजिओ	brand	
+nykaa	नायका|नाइका	brand	नायिका not listed: it is the Hindi word for heroine
+olx	ओएलएक्स|ओ.एल.एक्स|ओ एल एक्स	abbreviation	
+dmart	डीमार्ट|डी मार्ट|डी-मार्ट	brand	
+big bazaar	बिग बाज़ार|बिग बाजार	brand	
+reliance	रिलायंस|रिलाइंस|रिलायन्स	brand	
+bigbasket	बिगबास्केट|बिग बास्केट	brand	
+blinkit	ब्लिंकिट|ब्लिंकइट|ब्लिंक इट	brand	
+zepto	ज़ेप्टो|जेप्टो	brand	
+lenskart	लेंसकार्ट|लेन्सकार्ट	brand	
+tanishq	तनिष्क	brand	
+ola	ओला	brand	AMBIGUOUS: ओला is the Hindi word for hailstone
+uber	उबर|ऊबर	brand	AMBIGUOUS: उबर is also a form of Hindi उबरना (recover)
+rapido	रैपिडो|रेपिडो|रापिडो	brand	
+zomato	ज़ोमैटो|जोमैटो|ज़ोमाटो|जोमाटो	brand	
+swiggy	स्विगी|स्विग्गी	brand	
+netflix	नेटफ्लिक्स|नेटफ़्लिक्स|नेटफलिक्स	brand	
+hotstar	हॉटस्टार|हॉट स्टार|होटस्टार	brand	
+disney	डिज़्नी|डिज्नी|डिजनी	brand	
+sonyliv	सोनीलिव|सोनी लिव	brand	
+zee5	ज़ी फाइव|जी फाइव|ज़ी5	brand	digit kept as in the brand name, like 4g
+zee	ज़ी	brand	AMBIGUOUS: never map जी without nukta, it is the Hindi honorific
+zee tv	ज़ी टीवी|जी टीवी|ज़ी टी वी	brand	
+zee news	ज़ी न्यूज़|जी न्यूज़|ज़ी न्यूज|जी न्यूज	brand	
+star plus	स्टार प्लस|स्टारप्लस	brand	
+star sports	स्टार स्पोर्ट्स	brand	
+colors	कलर्स	brand	the channel; also english colors, same form
+sab tv	सब टीवी|सब टी वी	brand	AMBIGUOUS: सब alone is Hindi for all; map only with टीवी
+dd	डीडी|डी.डी|डी डी	abbreviation	doordarshan
+doordarshan	दूरदर्शन	brand	AMBIGUOUS: Hindi word (television); the mixed style may keep Devanagari
+aaj tak	आजतक|आज तक	brand	AMBIGUOUS: आज तक is the Hindi phrase until today; only आजतक is safe
+ndtv	एनडीटीवी|एन.डी.टी.वी|एन डी टी वी	abbreviation	
+abp	एबीपी|ए.बी.पी|ए बी पी	abbreviation	
+abp news	एबीपी न्यूज़|एबीपी न्यूज	brand	
+bbc	बीबीसी|बी.बी.सी|बी बी सी	abbreviation	
+discovery	डिस्कवरी	brand	the channel; also english discovery, same form
+cartoon network	कार्टून नेटवर्क	brand	
+t series	टी सीरीज़|टी-सीरीज़|टी सीरीज|टी-सीरीज	brand	
+bigg boss	बिग बॉस|बिग बोस	brand	
+kbc	केबीसी|के.बी.सी|के बी सी	abbreviation	
+fm	एफएम|एफ.एम|एफ एम	abbreviation	
+ipl	आईपीएल|आई.पी.एल|आई पी एल	abbreviation	
+bcci	बीसीसीआई|बी.सी.सी.आई|बी सी सी आई	abbreviation	
+icc	आईसीसी|आई.सी.सी|आई सी सी	abbreviation	
+fifa	फीफा|फ़ीफ़ा	brand	
+olympics	ओलंपिक|ओलिंपिक|ओलम्पिक|ओलंपिक्स	brand	Hindi usually says ओलंपिक; Latin form olympics
+wwe	डब्ल्यूडब्ल्यूई|डब्ल्यू.डब्ल्यू.ई|डब्ल्यू डब्ल्यू ई|डबल्यूडबल्यूई	abbreviation	
+maruti	मारुति|मारुती	brand	AMBIGUOUS: मारुति is also a name of Hanuman
+suzuki	सुज़ुकी|सुजुकी|सुज़ूकी	brand	
+alto	ऑल्टो|आल्टो|अल्टो	brand	
+swift	स्विफ्ट|स्विफ़्ट	brand	
+wagonr	वैगनआर|वैगन आर|वेगनआर	brand	
+hyundai	ह्युंडई|हुंडई|हुंडाई|ह्यूंदै|हुन्डई	brand	
+tata	टाटा	brand	AMBIGUOUS: टाटा is also goodbye (टाटा बाय बाय)
+mahindra	महिंद्रा|महिन्द्रा	brand	
+scorpio	स्कॉर्पियो|स्कोर्पियो|स्कार्पियो	brand	
+bolero	बोलेरो|बलेरो	brand	
+thar	थार	brand	AMBIGUOUS: also the Thar desert
+xuv	एक्सयूवी|एक्स.यू.वी|एक्स यू वी	abbreviation	
+suv	एसयूवी|एस.यू.वी|एस यू वी	abbreviation	
+honda	होंडा|हौंडा|होन्डा	brand	
+activa	एक्टिवा|ऐक्टिवा|एक्टीवा	brand	
+hero	हीरो	brand	the bike maker; also english hero, same form
+splendor	स्प्लेंडर|स्पलेंडर	brand	
+bajaj	बजाज	brand	also a surname
+pulsar	पल्सर	brand	
+tvs	टीवीएस|टी.वी.एस|टी वी एस	abbreviation	
+scooty	स्कूटी	brand	often used for any scooter
+royal enfield	रॉयल एनफील्ड|रॉयल इनफील्ड|रॉयल एनफ़ील्ड	brand	
+bullet	बुलेट	brand	the Royal Enfield bike; also english bullet, same form
+yamaha	यामाहा|यमाहा	brand	
+ktm	केटीएम|के.टी.एम|के टी एम	abbreviation	
+kia	किआ	brand	AMBIGUOUS: never map किया, the Hindi verb did
+toyota	टोयोटा|टोयटा	brand	
+innova	इनोवा|इन्नोवा	brand	
+fortuner	फॉर्च्यूनर|फॉर्चूनर|फॉरच्यूनर	brand	
+bmw	बीएमडब्ल्यू|बी.एम.डब्ल्यू|बी एम डब्ल्यू|बीएमडबल्यू	abbreviation	
+audi	ऑडी|आउडी|ओडी	brand	
+mercedes	मर्सिडीज़|मर्सिडीज|मर्सडीज	brand	
+tesla	टेस्ला	brand	
+ford	फोर्ड|फ़ोर्ड	brand	
+jcb	जेसीबी|जे.सी.बी|जे सी बी	abbreviation	often used for any excavator
+mrf	एमआरएफ|एम.आर.एफ|एम आर एफ	abbreviation	
+indian oil	इंडियन ऑयल|इंडियन आयल|इंडियन ऑइल	brand	
+hp gas	एचपी गैस|एच पी गैस	brand	
+havells	हैवल्स|हेवल्स	brand	
+usha	उषा	brand	AMBIGUOUS: उषा is the Hindi word for dawn and a given name
+voltas	वोल्टास|वोल्टस	brand	
+whirlpool	व्हर्लपूल|वर्लपूल|व्हर्लपुल	brand	
+godrej	गोदरेज|गोदरेज़	brand	
+kent	केंट	brand	the water purifier
+prestige	प्रेस्टीज|प्रेस्टिज	brand	the cookware; also english prestige, same form
+hawkins	हॉकिन्स|हॉकिंस	brand	
+milton	मिल्टन	brand	
+cello	सेलो	brand	
+asian paints	एशियन पेंट्स|एशियन पेन्ट्स	brand	
+fevicol	फेविकोल|फ़ेविकोल|फेवीकोल	brand	
+xerox	ज़ेरॉक्स|जेरॉक्स|ज़ीरॉक्स|जीरॉक्स	brand	used for any photocopy
+adani	अडानी|अदानी	brand	also a surname
+ambani	अंबानी|अम्बानी	brand	surname, said for the family and Reliance
+infosys	इंफोसिस|इन्फोसिस|इनफ़ोसिस	brand	
+tcs	टीसीएस|टी.सी.एस|टी सी एस	abbreviation	
+wipro	विप्रो	brand	
+hcl	एचसीएल|एच.सी.एल|एच सी एल	abbreviation	
+itc	आईटीसी|आई.टी.सी|आई टी सी	abbreviation	
+ongc	ओएनजीसी|ओ.एन.जी.सी|ओ एन जी सी	abbreviation	
+isro	इसरो	abbreviation	spoken as a word
+drdo	डीआरडीओ|डी.आर.डी.ओ|डी आर डी ओ	abbreviation	
+nasa	नासा	abbreviation	spoken as a word
+imf	आईएमएफ|आई.एम.एफ|आई एम एफ	abbreviation	
+who	डब्ल्यूएचओ|डब्ल्यू.एच.ओ|डब्ल्यू एच ओ|डबल्यूएचओ	abbreviation	spoken as letters; Latin form collides with english who
+unicef	यूनिसेफ|युनिसेफ	abbreviation	spoken as a word
+un	यूएन|यू.एन|यू एन	abbreviation	
+air india	एयर इंडिया|एअर इंडिया	brand	
+indigo	इंडिगो	brand	the airline; also english indigo, same form
+spicejet	स्पाइसजेट|स्पाइस जेट	brand	
+vistara	विस्तारा	brand	
+oyo	ओयो	brand	
+makemytrip	मेकमायट्रिप|मेक माय ट्रिप|मेक माई ट्रिप	brand	
+goibibo	गोआइबिबो|गोइबिबो|गोआईबीबो	brand	
+redbus	रेडबस|रेड बस	brand	
+irctc	आईआरसीटीसी|आई.आर.सी.टी.सी|आई आर सी टी सी	abbreviation	
+delhi metro	दिल्ली मेट्रो	brand	
+dmrc	डीएमआरसी|डी.एम.आर.सी|डी एम आर सी	abbreviation	
+byjus	बायजूस|बायजू|बाइजूस|बायजूज़	brand	
+unacademy	अनएकेडमी|अनअकैडमी|अनएकैडमी	brand	
+physics wallah	फिजिक्स वाला|फिज़िक्स वाला|फिजिक्सवाला|फिजिक्स वल्लाह	brand	वाला alone is Hindi; map only the full phrase
+vedantu	वेदांतु	brand	
+allen	एलन|ऐलन	brand	the coaching institute; also a given name
+apollo	अपोलो	brand	the hospitals and pharmacy
+pepsi	पेप्सी	brand	
+coca cola	कोका कोला|कोकाकोला|कोका-कोला	brand	
+coke	कोक	brand	
+thums up	थम्स अप|थम्सअप|थम्प्स अप	brand	
+sprite	स्प्राइट	brand	
+limca	लिम्का|लिमका	brand	
+maaza	माज़ा|माजा	brand	
+frooti	फ्रूटी	brand	
+mountain dew	माउंटेन ड्यू|माउन्टेन ड्यू	brand	
+fanta	फैंटा|फेंटा	brand	
+7up	सेवन अप|सेवनअप	brand	digit kept as in the brand name, like 4g
+red bull	रेड बुल	brand	
+bisleri	बिसलेरी|बिसलेरि	brand	often used for any bottled water
+bournvita	बोर्नविटा|बॉर्नविटा|बोर्नवीटा	brand	
+horlicks	हॉर्लिक्स|हॉरलिक्स|होर्लिक्स	brand	
+complan	कॉम्प्लान|कॉम्प्लैन	brand	
+glucon d	ग्लूकोन डी|ग्लूकॉन डी	brand	
+nescafe	नेस्कैफे|नेसकैफे|नेस्कफे	brand	
+bru	ब्रू	brand	
+tata tea	टाटा टी	brand	
+red label	रेड लेबल	brand	
+maggi	मैगी|मैग्गी	brand	said मैगी; often used for any instant noodles
+parle	पारले|पार्ले	brand	
+parle g	पारले जी|पार्ले जी|पारलेजी	brand	never map जी alone
+britannia	ब्रिटानिया|ब्रिटेनिया	brand	
+good day	गुड डे	brand	the biscuit; also english good day, same form
+oreo	ओरियो|ओरिओ	brand	
+dark fantasy	डार्क फैंटेसी|डार्क फ़ैंटेसी	brand	
+lays	लेज़|लेज|लेयज़	brand	
+kurkure	कुरकुरे	brand	AMBIGUOUS: कुरकुरे is also the Hindi adjective crunchy
+haldiram	हल्दीराम|हल्दीराम्स	brand	
+bikaji	बीकाजी	brand	
+amul	अमूल	brand	
+mother dairy	मदर डेयरी|मदर डेरी	brand	
+nestle	नेस्ले|नेसले	brand	
+cadbury	कैडबरी|केडबरी|कैडबरीज	brand	
+dairy milk	डेयरी मिल्क|डेरी मिल्क	brand	
+kitkat	किटकैट|किट कैट	brand	
+perk	पर्क	brand	
+kinder joy	किंडर जॉय	brand	
+kwality walls	क्वालिटी वॉल्स|क्वालिटी वाल्स	brand	
+pizza hut	पिज़्ज़ा हट|पिज्जा हट	brand	
+dominos	डोमिनोज़|डोमिनोज|डॉमिनोज़|डोमिनोस	brand	
+kfc	केएफसी|के.एफ.सी|के एफ सी	abbreviation	
+mcdonalds	मैकडॉनल्ड्स|मैकडोनाल्ड्स|मैक्डोनाल्ड्स|मैकडोनल्ड	brand	
+subway	सबवे	brand	the restaurant; also english subway, same form
+starbucks	स्टारबक्स	brand	
+cafe coffee day	कैफे कॉफी डे|कैफ़े कॉफ़ी डे	brand	
+ccd	सीसीडी|सी.सी.डी|सी सी डी	abbreviation	cafe coffee day
+dabur	डाबर	brand	
+patanjali	पतंजलि	brand	AMBIGUOUS: पतंजलि is also the ancient sage; Hindi name
+himalaya	हिमालया	brand	AMBIGUOUS: हिमालय (no final ा) is the mountain range, not listed
+colgate	कोलगेट|कॉलगेट	brand	often used for any toothpaste
+pepsodent	पेप्सोडेंट|पेप्सोडेन्ट	brand	
+closeup	क्लोज़अप|क्लोजअप|क्लोज़ अप	brand	AMBIGUOUS: also english close up
+lux	लक्स	brand	
+lifebuoy	लाइफबॉय|लाइफ़बॉय|लाइफबोय	brand	
+dettol	डेटॉल|डिटॉल|डेटोल	brand	
+santoor	संतूर	brand	AMBIGUOUS: संतूर is also the musical instrument
+dove	डव	brand	
+surf	सर्फ|सर्फ़	brand	the detergent; also english surf, same form
+surf excel	सर्फ एक्सेल|सर्फ़ एक्सेल	brand	
+ariel	एरियल	brand	AMBIGUOUS: एरियल is also english aerial (antenna)
+tide	टाइड	brand	
+rin	रिन	brand	AMBIGUOUS: रिन is a common spelling of Hindi ऋण (loan)
+nirma	निरमा|निर्मा	brand	
+vim	विम	brand	
+harpic	हार्पिक	brand	
+lizol	लाइज़ोल|लाइजोल|लिजोल	brand	
+goodknight	गुडनाइट|गुड नाइट	brand	AMBIGUOUS: गुड नाइट is also the greeting good night
+ponds	पॉन्ड्स|पोंड्स	brand	
+fair and lovely	फेयर एंड लवली|फेयर ऐंड लवली|फेयर एन्ड लवली	brand	
+vaseline	वैसलीन|वेसलीन|वैज़लीन	brand	
+nivea	निविया|नीविया	brand	
+boroline	बोरोलीन|बोरोलिन	brand	
+parachute	पैराशूट	brand	the coconut oil; also english parachute, same form
+clinic plus	क्लिनिक प्लस	brand	
+head and shoulders	हेड एंड शोल्डर्स|हेड एन्ड शोल्डर्स	brand	
+sunsilk	सनसिल्क	brand	
+garnier	गार्नियर	brand	
+lakme	लैक्मे|लक्मे|लेक्मे	brand	
+gillette	जिलेट	brand	
+vicks	विक्स	brand	
+crocin	क्रोसिन|क्रॉसिन	brand	
+dolo	डोलो	brand	
+paracetamol	पैरासिटामोल|पेरासिटामोल|पैरासीटामोल	brand	generic drug name, not a brand
+digene	डाइजीन|डायजीन	brand	
+eno	ईनो|इनो	brand	
+hajmola	हाजमोला	brand	
+zandu	झंडू|ज़ंडू	brand	said झंडू
+zandu balm	झंडू बाम|ज़ंडू बाम	brand	
+iodex	आयोडेक्स	brand	
+band aid	बैंड एड|बैंडएड	brand	
+combiflam	कॉम्बिफ्लेम|कॉम्बिफ्लैम|कॉम्बीफ्लेम	brand	
+mdh	एमडीएच|एम.डी.एच|एम डी एच	abbreviation	
+everest	एवरेस्ट	brand	the spice brand; also the mountain, same form
+tata salt	टाटा सॉल्ट	brand	
+fortune	फॉर्च्यून|फॉर्चून	brand	the oil; also english fortune, same form
+saffola	सफोला|सफ़ोला	brand	
+bata	बाटा	brand	
+nike	नाइकी|नाइक|नायकी	brand	
+adidas	एडिडास|एडीडास|आदिदास	brand	
+puma	प्यूमा|पूमा	brand	
+reebok	रीबॉक|रिबॉक|रीबोक	brand	
+woodland	वुडलैंड	brand	
+relaxo	रिलैक्सो|रिलेक्सो	brand	
+titan	टाइटन	brand	
+fastrack	फास्ट्रैक|फास्टट्रैक|फ़ास्ट्रैक	brand	
+raymond	रेमंड|रेमण्ड|रेमन्ड	brand	
+peter england	पीटर इंग्लैंड	brand	
+levis	लेवाइस|लीवाइस|लेविस|लिवाइस	brand	
+zara	ज़ारा|जारा	brand	AMBIGUOUS: close to Hindi ज़रा (a little)
+h and m	एच एंड एम|एच एन्ड एम	brand	
+jockey	जॉकी|जोकी	brand	the innerwear; also english jockey, same form
+ray ban	रे बैन|रेबैन	brand	
+sbi	एसबीआई|एस.बी.आई|एस बी आई	abbreviation	
+hdfc	एचडीएफसी|एच.डी.एफ.सी|एच डी एफ सी	abbreviation	
+icici	आईसीआईसीआई|आई.सी.आई.सी.आई|आई सी आई सी आई	abbreviation	
+axis	एक्सिस	brand	the bank
+pnb	पीएनबी|पी.एन.बी|पी एन बी	abbreviation	
+bank of baroda	बैंक ऑफ बड़ौदा|बैंक ऑफ़ बड़ौदा	brand	
+bob	बीओबी|बी.ओ.बी|बी ओ बी	abbreviation	bank of baroda
+canara	केनरा|कैनरा	brand	the bank
+kotak	कोटक	brand	
+idbi	आईडीबीआई|आई.डी.बी.आई|आई डी बी आई	abbreviation	
+yes bank	यस बैंक|येस बैंक	brand	
+union bank	यूनियन बैंक	brand	
+bajaj finance	बजाज फाइनेंस|बजाज फ़ाइनेंस	brand	
+atm	एटीएम|ए.टी.एम|ए टी एम	abbreviation	
+sim	सिम	abbreviation	spoken as a word
+otp	ओटीपी|ओ.टी.पी|ओ टी पी	abbreviation	
+pin	पिन	abbreviation	spoken as a word; also english pin, same form
+mpin	एमपिन|एम पिन	abbreviation	
+cvv	सीवीवी|सी.वी.वी|सी वी वी	abbreviation	
+kyc	केवाईसी|के.वाई.सी|के वाई सी	abbreviation	
+pan	पैन	abbreviation	as in pan card; spoken as a word
+id	आईडी|आई.डी|आई डी	abbreviation	
+neft	एनईएफटी|एन.ई.एफ.टी|एन ई एफ टी	abbreviation	
+rtgs	आरटीजीएस|आर.टी.जी.एस|आर टी जी एस	abbreviation	
+imps	आईएमपीएस|आई.एम.पी.एस|आई एम पी एस	abbreviation	
+ifsc	आईएफएससी|आई.एफ.एस.सी|आई एफ एस सी	abbreviation	
+emi	ईएमआई|ई.एम.आई|ई एम आई	abbreviation	
+gst	जीएसटी|जी.एस.टी|जी एस टी	abbreviation	
+tds	टीडीएस|टी.डी.एस|टी डी एस	abbreviation	
+itr	आईटीआर|आई.टी.आर|आई टी आर	abbreviation	
+gdp	जीडीपी|जी.डी.पी|जी डी पी	abbreviation	
+mrp	एमआरपी|एम.आर.पी|एम आर पी	abbreviation	
+pf	पीएफ|पी.एफ|पी एफ	abbreviation	
+epf	ईपीएफ|ई.पी.एफ|ई पी एफ	abbreviation	
+epfo	ईपीएफओ|ई.पी.एफ.ओ|ई पी एफ ओ	abbreviation	
+esic	ईएसआईसी|ई.एस.आई.सी|ई एस आई सी	abbreviation	
+nps	एनपीएस|एन.पी.एस|एन पी एस	abbreviation	
+ppf	पीपीएफ|पी.पी.एफ|पी पी एफ	abbreviation	
+kvp	केवीपी|के.वी.पी|के वी पी	abbreviation	
+nsc	एनएससी|एन.एस.सी|एन एस सी	abbreviation	
+fd	एफडी|एफ.डी|एफ डी	abbreviation	
+rd	आरडी|आर.डी|आर डी	abbreviation	
+sip	एसआईपी|एस.आई.पी|एस आई पी	abbreviation	systematic investment plan; सिप not listed (english sip)
+ipo	आईपीओ|आई.पी.ओ|आई पी ओ	abbreviation	
+lic	एलआईसी|एल.आई.सी|एल आई सी	abbreviation	
+rbi	आरबीआई|आर.बी.आई|आर बी आई	abbreviation	
+sebi	सेबी	abbreviation	spoken as a word
+nse	एनएसई|एन.एस.ई|एन एस ई	abbreviation	
+bse	बीएसई|बी.एस.ई|बी एस ई	abbreviation	
+sensex	सेंसेक्स|सेनसेक्स	brand	
+nifty	निफ्टी|निफ़्टी	brand	
+nri	एनआरआई|एन.आर.आई|एन आर आई	abbreviation	
+pmay	पीएमएवाई|पी.एम.ए.वाई|पी एम ए वाई	abbreviation	
+ayushman	आयुष्मान	brand	AMBIGUOUS: आयुष्मान is a Hindi word (long-lived) and a given name
+jan dhan	जन धन|जनधन	brand	AMBIGUOUS: Hindi words (people's wealth); the mixed style may keep Devanagari
+nrega	नरेगा|एनआरईजीए	abbreviation	spoken as a word
+mnrega	मनरेगा|एमएनआरईजीए	abbreviation	spoken as a word
+dbt	डीबीटी|डी.बी.टी|डी बी टी	abbreviation	
+bpl	बीपीएल|बी.पी.एल|बी पी एल	abbreviation	
+apl	एपीएल|ए.पी.एल|ए पी एल	abbreviation	
+ews	ईडब्ल्यूएस|ई.डब्ल्यू.एस|ई डब्ल्यू एस	abbreviation	
+obc	ओबीसी|ओ.बी.सी|ओ बी सी	abbreviation	
+sc	एससी|एस.सी|एस सी	abbreviation	scheduled caste; also supreme court, both sc
+st	एसटी|एस.टी|एस टी	abbreviation	scheduled tribe
+lpg	एलपीजी|एल.पी.जी|एल पी जी	abbreviation	
+cng	सीएनजी|सी.एन.जी|सी एन जी	abbreviation	
+ev	ईवी|ई.वी|ई वी	abbreviation	
+uidai	यूआईडीएआई|यू.आई.डी.ए.आई|यू आई डी ए आई	abbreviation	
+gps	जीपीएस|जी.पी.एस|जी पी एस	abbreviation	
+tv	टीवी|टी.वी|टी वी	abbreviation	
+ac	एसी|ए.सी|ए सी	abbreviation	AMBIGUOUS: एसी is a common misspelling of Hindi ऐसी (such)
+led	एलईडी|एल.ई.डी|एल ई डी	abbreviation	
+lcd	एलसीडी|एल.सी.डी|एल सी डी	abbreviation	
+cctv	सीसीटीवी|सी.सी.टी.वी|सी सी टी वी	abbreviation	
+pdf	पीडीएफ|पी.डी.एफ|पी डी एफ	abbreviation	
+sms	एसएमएस|एस.एम.एस|एस एम एस	abbreviation	
+mms	एमएमएस|एम.एम.एस|एम एम एस	abbreviation	
+dj	डीजे|डी.जे|डी जे	abbreviation	
+hd	एचडी|एच.डी|एच डी	abbreviation	
+2g	टूजी|टू जी|2जी	abbreviation	digit kept as in 4g
+3g	थ्रीजी|थ्री जी|3जी	abbreviation	digit kept as in 4g
+4g	फोरजी|फोर जी|फ़ोर जी|4जी	abbreviation	
+5g	फाइवजी|फाइव जी|फ़ाइव जी|5जी	abbreviation	
+usb	यूएसबी|यू.एस.बी|यू एस बी	abbreviation	
+cd	सीडी|सी.डी|सी डी	abbreviation	
+dvd	डीवीडी|डी.वी.डी|डी वी डी	abbreviation	
+pc	पीसी|पी.सी|पी सी	abbreviation	
+it	आईटी|आई.टी|आई टी	abbreviation	information technology; Latin form collides with english it
+ai	एआई|ए.आई|ए आई	abbreviation	
+qr	क्यूआर|क्यू.आर|क्यू आर	abbreviation	as in qr code
+ups	यूपीएस|यू.पी.एस|यू पी एस	abbreviation	
+ott	ओटीटी|ओ.टी.टी|ओ टी टी	abbreviation	
+dp	डीपी|डी.पी|डी पी	abbreviation	display picture
+ppt	पीपीटी|पी.पी.टी|पी पी टी	abbreviation	
+cv	सीवी|सी.वी|सी वी	abbreviation	
+vip	वीआईपी|वी.आई.पी|वी आई पी	abbreviation	also the luggage brand, same form
+gk	जीके|जी.के|जी के	abbreviation	
+iq	आईक्यू|आई.क्यू|आई क्यू	abbreviation	
+pt	पीटी|पी.टी|पी टी	abbreviation	physical training
+ptm	पीटीएम|पी.टी.एम|पी टी एम	abbreviation	parent teacher meeting
+hr	एचआर|एच.आर|एच आर	abbreviation	
+ceo	सीईओ|सी.ई.ओ|सी ई ओ	abbreviation	
+md	एमडी|एम.डी|एम डी	abbreviation	managing director and doctor of medicine, both md
+gm	जीएम|जी.एम|जी एम	abbreviation	general manager
+pa	पीए|पी.ए|पी ए	abbreviation	personal assistant
+ca	सीए|सी.ए|सी ए	abbreviation	chartered accountant
+mba	एमबीए|एम.बी.ए|एम बी ए	abbreviation	
+bba	बीबीए|बी.बी.ए|बी बी ए	abbreviation	
+bsc	बीएससी|बी.एस.सी|बी एस सी	abbreviation	
+msc	एमएससी|एम.एस.सी|एम एस सी	abbreviation	
+ba	बीए|बी.ए|बी ए	abbreviation	
+ma	एमए|एम.ए|एम ए	abbreviation	
+bcom	बीकॉम|बी.कॉम|बी कॉम|बीकाम	abbreviation	
+mcom	एमकॉम|एम.कॉम|एम कॉम	abbreviation	
+bca	बीसीए|बी.सी.ए|बी सी ए	abbreviation	
+mca	एमसीए|एम.सी.ए|एम सी ए	abbreviation	
+bed	बीएड|बी.एड|बी एड	abbreviation	B.Ed; Latin form collides with english bed
+llb	एलएलबी|एल.एल.बी|एल एल बी	abbreviation	
+phd	पीएचडी|पी.एच.डी|पी एच डी	abbreviation	
+mbbs	एमबीबीएस|एम.बी.बी.एस|एम बी बी एस	abbreviation	
+bams	बीएएमएस|बी.ए.एम.एस|बी ए एम एस	abbreviation	
+bds	बीडीएस|बी.डी.एस|बी डी एस	abbreviation	
+btech	बीटेक|बी.टेक|बी टेक	abbreviation	
+mtech	एमटेक|एम.टेक|एम टेक	abbreviation	
+iti	आईटीआई|आई.टी.आई|आई टी आई	abbreviation	
+cbse	सीबीएसई|सी.बी.एस.ई|सी बी एस ई	abbreviation	
+icse	आईसीएसई|आई.सी.एस.ई|आई सी एस ई	abbreviation	
+ncert	एनसीईआरटी|एन.सी.ई.आर.टी|एन सी ई आर टी	abbreviation	
+nios	एनआईओएस|एन.आई.ओ.एस|एन आई ओ एस	abbreviation	
+upsc	यूपीएससी|यू.पी.एस.सी|यू पी एस सी	abbreviation	
+ssc	एसएससी|एस.एस.सी|एस एस सी	abbreviation	
+cgl	सीजीएल|सी.जी.एल|सी जी एल	abbreviation	
+rrb	आरआरबी|आर.आर.बी|आर आर बी	abbreviation	
+ibps	आईबीपीएस|आई.बी.पी.एस|आई बी पी एस	abbreviation	
+neet	नीट	abbreviation	AMBIGUOUS: नीट is also english neat
+jee	जेईई|जे.ई.ई|जे ई ई	abbreviation	never map जी, the Hindi honorific
+cuet	सीयूईटी|सी.यू.ई.टी|सी यू ई टी	abbreviation	
+ctet	सीटेट|सी टेट|सीटीईटी	abbreviation	
+ugc	यूजीसी|यू.जी.सी|यू जी सी	abbreviation	
+nda	एनडीए|एन.डी.ए|एन डी ए	abbreviation	defence academy and the political alliance, both nda
+cds	सीडीएस|सी.डी.एस|सी डी एस	abbreviation	
+ncc	एनसीसी|एन.सी.सी|एन सी सी	abbreviation	
+nss	एनएसएस|एन.एस.एस|एन एस एस	abbreviation	
+iit	आईआईटी|आई.आई.टी|आई आई टी	abbreviation	
+iim	आईआईएम|आई.आई.एम|आई आई एम	abbreviation	
+nit	एनआईटी|एन.आई.टी|एन आई टी	abbreviation	
+aiims	एम्स	abbreviation	spoken as एम्स
+ignou	इग्नू	abbreviation	spoken as a word
+du	डीयू|डी.यू|डी यू	abbreviation	
+jnu	जेएनयू|जे.एन.यू|जे एन यू	abbreviation	
+bhu	बीएचयू|बी.एच.यू|बी एच यू	abbreviation	
+amu	एएमयू|ए.एम.यू|ए एम यू	abbreviation	
+dav	डीएवी|डी.ए.वी|डी ए वी	abbreviation	the school chain
+dps	डीपीएस|डी.पी.एस|डी पी एस	abbreviation	the school chain
+ias	आईएएस|आई.ए.एस|आई ए एस	abbreviation	
+ips	आईपीएस|आई.पी.एस|आई पी एस	abbreviation	
+ifs	आईएफएस|आई.एफ.एस|आई एफ एस	abbreviation	
+pcs	पीसीएस|पी.सी.एस|पी सी एस	abbreviation	
+psu	पीएसयू|पी.एस.यू|पी एस यू	abbreviation	
+mnc	एमएनसी|एम.एन.सी|एम एन सी	abbreviation	
+ngo	एनजीओ|एन.जी.ओ|एन जी ओ	abbreviation	
+rto	आरटीओ|आर.टी.ओ|आर टी ओ	abbreviation	
+pwd	पीडब्ल्यूडी|पी.डब्ल्यू.डी|पी डब्ल्यू डी|पीडबल्यूडी	abbreviation	
+nhai	एनएचएआई|एन.एच.ए.आई|एन एच ए आई	abbreviation	
+fssai	एफएसएसएआई|एफ.एस.एस.ए.आई|एफ एस एस ए आई	abbreviation	
+isi	आईएसआई|आई.एस.आई|आई एस आई	abbreviation	ISI mark and Pakistan's ISI, both isi
+icmr	आईसीएमआर|आई.सी.एम.आर|आई सी एम आर	abbreviation	
+dda	डीडीए|डी.डी.ए|डी डी ए	abbreviation	
+mcd	एमसीडी|एम.सी.डी|एम सी डी	abbreviation	AMBIGUOUS: municipal corporation of delhi; also slang for mcdonalds
+pm	पीएम|पी.एम|पी एम	abbreviation	AMBIGUOUS: prime minister and p.m. (time); both written pm
+pmo	पीएमओ|पी.एम.ओ|पी एम ओ	abbreviation	
+cm	सीएम|सी.एम|सी एम	abbreviation	chief minister; centimetre is usually said सेंटीमीटर
+mla	एमएलए|एम.एल.ए|एम एल ए	abbreviation	
+mp	एमपी|एम.पी|एम पी	abbreviation	AMBIGUOUS: member of parliament and Madhya Pradesh; both written mp
+dm	डीएम|डी.एम|डी एम	abbreviation	AMBIGUOUS: district magistrate and direct message
+sdm	एसडीएम|एस.डी.एम|एस डी एम	abbreviation	
+sdo	एसडीओ|एस.डी.ओ|एस डी ओ	abbreviation	
+bdo	बीडीओ|बी.डी.ओ|बी डी ओ	abbreviation	
+dc	डीसी|डी.सी|डी सी	abbreviation	deputy commissioner and direct current, both dc
+sp	एसपी|एस.पी|एस पी	abbreviation	AMBIGUOUS: superintendent of police and samajwadi party (सपा stays Hindi)
+ssp	एसएसपी|एस.एस.पी|एस एस पी	abbreviation	
+dsp	डीएसपी|डी.एस.पी|डी एस पी	abbreviation	
+dgp	डीजीपी|डी.जी.पी|डी जी पी	abbreviation	
+dig	डीआईजी|डी.आई.जी|डी आई जी	abbreviation	Latin form collides with english dig
+ig	आईजी|आई.जी|आई जी	abbreviation	inspector general; also short for instagram
+si	एसआई|एस.आई|एस आई	abbreviation	sub inspector
+asi	एएसआई|ए.एस.आई|ए एस आई	abbreviation	assistant sub inspector and the archaeological survey
+sho	एसएचओ|एस.एच.ओ|एस एच ओ	abbreviation	
+fir	एफआईआर|एफ.आई.आर|एफ आई आर	abbreviation	
+ipc	आईपीसी|आई.पी.सी|आई पी सी	abbreviation	
+crpc	सीआरपीसी|सी.आर.पी.सी|सी आर पी सी	abbreviation	
+rti	आरटीआई|आर.टी.आई|आर टी आई	abbreviation	
+pil	पीआईएल|पी.आई.एल|पी आई एल	abbreviation	
+cji	सीजेआई|सी.जे.आई|सी जे आई	abbreviation	
+evm	ईवीएम|ई.वी.एम|ई वी एम	abbreviation	
+cbi	सीबीआई|सी.बी.आई|सी बी आई	abbreviation	
+ed	ईडी|ई.डी|ई डी	abbreviation	enforcement directorate
+nia	एनआईए|एन.आई.ए|एन आई ए	abbreviation	
+ncb	एनसीबी|एन.सी.बी|एन सी बी	abbreviation	
+crpf	सीआरपीएफ|सी.आर.पी.एफ|सी आर पी एफ	abbreviation	
+bsf	बीएसएफ|बी.एस.एफ|बी एस एफ	abbreviation	
+cisf	सीआईएसएफ|सी.आई.एस.एफ|सी आई एस एफ	abbreviation	
+itbp	आईटीबीपी|आई.टी.बी.पी|आई टी बी पी	abbreviation	
+nsg	एनएसजी|एन.एस.जी|एन एस जी	abbreviation	
+ndrf	एनडीआरएफ|एन.डी.आर.एफ|एन डी आर एफ	abbreviation	
+rpf	आरपीएफ|आर.पी.एफ|आर पी एफ	abbreviation	
+grp	जीआरपी|जी.आर.पी|जी आर पी	abbreviation	
+tte	टीटीई|टी.टी.ई|टी टी ई	abbreviation	
+tc	टीसी|टी.सी|टी सी	abbreviation	ticket collector and transfer certificate, both tc
+vc	वीसी|वी.सी|वी सी	abbreviation	vice chancellor and video call, both vc
+bjp	बीजेपी|बी.जे.पी|बी जे पी	abbreviation	भाजपा is the Hindi form; keep it in Devanagari
+bsp	बीएसपी|बी.एस.पी|बी एस पी	abbreviation	बसपा is the Hindi form; keep it in Devanagari
+rjd	आरजेडी|आर.जे.डी|आर जे डी	abbreviation	राजद is the Hindi form; keep it in Devanagari
+jdu	जेडीयू|जे.डी.यू|जे डी यू	abbreviation	
+tmc	टीएमसी|टी.एम.सी|टी एम सी	abbreviation	
+upa	यूपीए|यू.पी.ए|यू पी ए	abbreviation	
+rss	आरएसएस|आर.एस.एस|आर एस एस	abbreviation	
+abvp	एबीवीपी|ए.बी.वी.पी|ए बी वी पी	abbreviation	
+nsui	एनएसयूआई|एन.एस.यू.आई|एन एस यू आई	abbreviation	
+icu	आईसीयू|आई.सी.यू|आई सी यू	abbreviation	
+opd	ओपीडी|ओ.पी.डी|ओ पी डी	abbreviation	
+ot	ओटी|ओ.टी|ओ टी	abbreviation	operation theatre
+ecg	ईसीजी|ई.सी.जी|ई सी जी	abbreviation	
+mri	एमआरआई|एम.आर.आई|एम आर आई	abbreviation	
+ct scan	सीटी स्कैन|सी.टी स्कैन|सी टी स्कैन	abbreviation	AMBIGUOUS: सीटी alone is the Hindi word for whistle; map only with स्कैन
+x ray	एक्स रे|एक्सरे|एक्स-रे	abbreviation	
+bp	बीपी|बी.पी|बी पी	abbreviation	blood pressure
+hiv	एचआईवी|एच.आई.वी|एच आई वी	abbreviation	
+aids	एड्स	abbreviation	spoken as a word
+tb	टीबी|टी.बी|टी बी	abbreviation	tuberculosis
+covid	कोविड	abbreviation	spoken as a word
+dna	डीएनए|डी.एन.ए|डी एन ए	abbreviation	
+ors	ओआरएस|ओ.आर.एस|ओ आर एस	abbreviation	
+anm	एएनएम|ए.एन.एम|ए एन एम	abbreviation	auxiliary nurse midwife
+ok	ओके|ओ.के|ओ के|ओक्के|ओकै	abbreviation	said ok or okay; okay is a variant spelling, write ok
+hi	हाय|हाई	abbreviation	greeting. AMBIGUOUS: हाय is also a Hindi exclamation; हाई is also english high
+hello	हेलो|हैलो|हलो|हेल्लो	abbreviation	greeting, not an abbreviation
+bye	बाय	abbreviation	greeting. बाई not listed: it is a Hindi word (lady, maid)
+bye bye	बाय बाय|बाय-बाय|बायबाय	abbreviation	greeting, not an abbreviation

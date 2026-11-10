@@ -385,6 +385,87 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - Every shard a run streamed is logged with its source (`<pool>/fetched.jsonl`), and the run's record gives hours per source.
 - **Revisit if:** v2 does worse than v1 on a set whose share of the data fell, or on English.
 
+## D29 (2026-11-08): The converter is repaired from the label audit, and v4 trains on the repaired targets
+
+- **Decision:**
+  - A text-only audit of the training targets (about 1,000 lines over seven sources, read by Claude agents; inputs and results in `~/akshar-data/audit`) found that `akshar.data.convert` lost or mangled targets in ways a reader could see. The converter is repaired as follows, and the repaired targets are written beside the old ones as `labels-fixed.jsonl` (`--labels-name fixed`), so that a run reading `labels-mix.jsonl` is never disturbed.
+  - Vaani: every square bracket is a sound and is removed; tags may hold spaces (`<static noise>`); a gloss may hold several words (`{blue colour}`), letters joined by `_` (`ए_सी {A_C}` is ac), a Devanagari correction (`शारी {सारी}`), and may follow an abbreviation written with dots (`ए.टी.एम {ATM}`); a sound written in the braces (`{breathing}`) is dropped; the annotators' misspellings in `GLOSS_TYPOS` are corrected; the lexicon's spelling replaces a gloss only when the two are spellings of one word (`{color}` becomes colour, `{said}` side; `{cap}` stays cap beside the lexicon's cab, `{lights}` stays plural).
+  - Rural Women: its square brackets are glosses, apart from the few sounds in `RURAL_SOUNDS` (`[horn]`, `[clink]`); a Hindi word glossed in Latin keeps its Devanagari (`लाख [Lakh]`, `पनीर [paneer]`); misspelt glosses are corrected (`[Docter]`); a gloss of several words never spans a Hindi function word, so `और मोरक्कोनऑइल [moroccon oil]` replaces one token.
+  - Lexicon lookup: a word is also found under a folded spelling (no nukta, short for long i, e for ai, o for au, anusvara for a half nasal, no reph), so `कन्फ़र्म`, `ड्राईवर`, `पर्सेन्ट` and `बौक्स` convert; English number words (`एटीन`, `थाउज़ेंड`, `पर्सेंट`) convert with any non-empty lexicon, so one number is never split across scripts; the Hindi slips `नो` beside a number word (for `नौ`) and `तेतीस` are repaired, in converted references and in Shruti's fallback labels.
+  - English: Common Voice and LibriSpeech fold accented letters (`Castellón` is castellon) instead of losing the sentence. NPTEL drops the speaker label (`Jayanta Chatterjee:`); rejects a segment with a slash between short symbols (`1/r`), a slide-time tag, the sung motto, or a leading digit, and a segment that ends in a digit when the next segment of the video starts with one (a number split at its decimal point); reads Indian grouping (`1,05,000` is one lakh five thousand) and years after in, since, from and the like (`in 1995` is nineteen ninety five); leaves 1100-1999 elsewhere, 2010-2099 after such a word, malformed groupings (`1,0,5000`) and its mojibake (`PrimÕs`) to rejection.
+  - akshar v3, which started training the same evening before these repairs were tested, keeps the old targets. v4 streams the `labels-fixed` targets.
+- **Why:**
+  - Vaani lost 106,114 of 424,964 references (25%) to markup the stripper could not parse; 9 of 10 sampled rejections were complete transcripts. The repaired converter accepts 402,038: 83,191 recovered, 3 lost, 15,952 changed (mostly `color` to colour, and misspelt glosses).
+  - IndicVoices kept English words in Devanagari beside converted ones (`फ्री laptop स्कीम`); the folded lookup and the number words change 12,878 of 411,256 targets.
+  - NPTEL's accepted targets held about 300 speaker labels, 292 maths slashes, 56 misread Indian groupings, 869 numbers that are years, and numbers split across segments. The repairs cost it 4% of its lines (nptel_en_b: 364,029 to 349,505, of which 5,626 are split numbers) and change 810.
+  - Rural Women: 127 misspelt gloss tokens, `लाख` and `पनीर` in Latin, 17 brackets replacing the wrong word, `नो` for `नौ`. It now accepts 27,570 of 28,740 (33 recovered, 1 lost, 210 changed). Common Voice English recovers 77 sentences with accented names. Kathbath is unchanged.
+- **Consequences:**
+  - The eleven validation and fixed-data `labels-mix` files are untouched, so validation loss and the compile shapes stay comparable with v2 and v3.
+  - `tests/test_convert.py` holds the audit's examples; `docs/research/` is unchanged (no new source).
+  - Deferred, as style choices to test on dev first: the 750-word loanword list from the audit, `सर`/`बस`, foreign place names, ok/okay and etc/etcetera, plural glosses (`लाइटें {light}`), transcribers' matra slips, Kathbath's abbreviations (`डॉ`), and the 17 Rural Women brackets after the wrong word, which still replace it.
+- **Revisit if:** v4 does worse than v3 on a dev set whose source was re-converted, or the recovered Vaani lines prove to carry wrong words.
+
+## D30 (2026-11-09): akshar v3 trains on more Indian English, a fifth of it under the Hindi tag, and keeps a weight average
+
+- **Decision:**
+  - v3 starts from v2's weights and trains 110,000 more updates at a fresh learning rate of 2e-4 (cosine decay, no warm-up), with the same fixed data, validation clips and loss as v2 (4-bit QAT, datasets' transcripts where verbatim, distillation from Shruti at 0.5).
+  - The stream from Drive adds Indian-accented English: Common Voice Scripted Speech 26.0, South Asian English (CC0, Mozilla Data Collective; admitted under D26), a second disjoint quarter of NPTEL's English lectures (`nptel_en_b`), and Common Voice 27.0 Hindi. The pool share rises to 70% of batches. The planned stream shares were Common Voice English 13%, NPTEL English 10% + 12%, LibriSpeech-360 5%, IndicVoices 22%, Vaani 17%, Shrutilipi 7%, Rural Women 6%, Kathbath 5%, Common Voice Hindi 3%, so that English would be about 38% of batches and Indian-accented English about 31%.
+  - A fifth of each Indian English source's clips, chosen by a hash of the clip id, train under the `hi` tag with the same Latin target (`hi_tag_share` in `akshar.train.feed`), so that English spoken to the model in its default Hindi mode stays English.
+  - From 60% of the run the trainer keeps an exponential moving average of the weights (decay 0.9998) and exports it beside the final weights (`--ema`), so both can be scored.
+  - akshar-lite v3 is distilled from v3 with D24's recipe; a second candidate is distilled from the averaged weights.
+- **Why:**
+  - v2 beat Shruti on the mean but was 1.22 behind on Svarah, the only set more than 0.5 worse, and the owner found all models weak on their own Indian English. Shruti trained on Common Voice's Indian English, which v2 lacked.
+  - The owner's own clips were decoded under the page's default `hi` flag, where Shruti's report measured 25.8 against 21.1 WER on Svarah; the `hi`-tagged share addresses that mode.
+- **Consequences:**
+  - v3 beats Shruti on every test set (Svarah 21.90 against 22.45), the first akshar to pass the release bar: mean 20.85 against Shruti's 21.78 and v2's 21.32. Under the `hi` flag Svarah is 28.47 (v2 32.86; Shruti's own figure 25.8).
+  - The stream did not follow the planned shares. NPTEL's shards hold 26 to 32 hours each, a quarter of the 115-hour pool, and the feeder ranks sources by their absolute shortfall of hours in the pool, so the two NPTEL sources held about half the pool's hours throughout, Common Voice English a tenth, and the small Hindi sources starved: Kathbath was fetched twice, Common Voice Hindi once, Rural Women for 88 of 10,615 fetched hours. By fetched hours English was about 62% of the stream (about 53% of all batches), Hindi and Hinglish about 47%. Every Hindi set still improved.
+  - Before v4 the feeder must either stage NPTEL in shards of a few hours, rank sources by relative shortfall, or let the trainer weight pool batches by source; and the run record should state the realised shares.
+  - v3 saw about 3,670 distinct hours from the stream (IndicVoices 779, NPTEL English 771 + 820, Vaani 460, LibriSpeech-360 322, Shrutilipi 263, Common Voice English 158, Rural Women 78, Kathbath 14, Common Voice Hindi 5) plus the 230 fixed hours; about 10,600 hours passed through the pool, so streamed shards were seen about three times.
+  - Common Voice enters NOTICE and the data tables; data/LICENSES.md already carries it as `admit (D26)`.
+- **Revisit if:** v4 with the intended shares does worse on Svarah, or the `hi`-tagged English share hurts a Hindi set.
+
+## D31 (2026-11-09): The run draws from the stream by source share, not by the hours a shard happens to hold
+
+- **Decision:**
+  - `akshar.train.feed` writes its sources' shares to `<pool>/shares.json`, and `akshar.train.distill` lists each source's pool clips as many times as its share divided by its hours in the pool demands (relative to the least-weighted source, rounded, at most 16 times), so the hours drawn per source follow the shares whatever the shard sizes.
+  - The feeder picks the next shard from the source whose hours in the pool fall shortest of its share relative to that share, a source with nothing in the pool first, instead of by the absolute shortfall in hours.
+- **Why:** D30 found that NPTEL's 26 to 32 hour shards took half of v3's pool and that the absolute ranking never reached Kathbath or Common Voice Hindi, so v3 trained on about 53% English against the 38% planned. Restaging NPTEL in small shards would mean re-uploading about 1,600 h to Drive; weighting the draws fixes the mix for any shard size.
+- **Consequences:**
+  - v4 trains with the planned shares. The run's log states the repeats in use at every refresh, and the feeder's fetched.jsonl still records what came down.
+  - A source whose share is tiny for the hours it holds (a 30 h shard at 10%) is drawn from slowly, so its shards are seen partly before they leave the pool; the feeder's rotation brings them back.
+  - Tested in the suite (`tests/test_feed.py`, `tests/test_loader.py`) and in a two-step CPU run on the laptop with a two-source scratch pool.
+- **Revisit if:** v4's stream deviates from the planned shares by more than a few points (compare the log's repeats and fetched hours with the plan), or the repeats make the loader slow.
+
+## D32 (2026-11-09): A curated list of English words, brands and place names that akshar writes in Latin
+
+- **Decision:**
+  - The converter's lexicon grows from the 917 words learned from Shruti to about 5,100 Devanagari spellings of 2,900 English words: technology, everyday objects, institutions and services, brands and spoken abbreviations, time and measure words, common Hinglish words, and place names in and outside India, written by eight Claude Opus 5.5 agents and reviewed against the data (`data/english-words/`, built by `scripts/build_english_words.py`).
+  - A spelling converts only when it is safe: not on the agents' blocklist of Hindi look-alikes (पर, बस, सर, नो), not marked ambiguous, not a Hindi name that is a different word from the English one (चीन stays; दिल्ली becomes delhi), not an inflected Hindi form of a listed word (स्कूलों), and not a token that Vaani's and Rural Women's annotators leave in Devanagari at least 85% of the time. Place names convert to the name spoken (बनारस is banaras), never to a renamed official form.
+  - Curated spellings are looked up exactly; only the learned words are also found under folded spellings (D29), and a blocked list protects Hindi words from both lookups. The lexicon file carries the counts that tell the two apart and the blocked list (`akshar.data.convert.load_lexicon_table`).
+  - v4's Hindi targets (IndicVoices, Vaani, Kathbath, Rural Women, Common Voice Hindi) are re-converted with this lexicon, and the Shrutilipi targets, which are model transcripts, are rewritten token by token with it.
+- **Why:**
+  - The owner's own test of v3: Hindi is good, but English words inside Hindi speech and Indian-accented English are bad. The learned lexicon left most English words in Devanagari (the audit's lexicon gaps), so the model writes स्कूल beside school depending on the sentence, and the style the product promised (D11) was not what it learned.
+  - Mining the lexicon from Shruti's output only reproduces Shruti's habits; a curated list says what the product should write.
+  - The first merge showed why review against the data is needed: folded lookups turned ऐसी ("such") into ac 1,983 times and बेच ("sell") into batch, and the agents mapped बनारस to varanasi. Over 400,000 Hindi transcripts the final list converts 65,000 more tokens (about 1% of words, in 13% of lines), and the 700 most frequent conversions were read.
+- **Consequences:**
+  - FLEURS and Lahaja references keep loanwords and place names in Devanagari, so their WER may rise for v4; Monsoon's lattice scorer and MUCS accept Latin. The owner chose the product's behaviour over the table.
+  - Fixed-data and validation `labels-mix` files are untouched; the re-converted targets are `labels-fixed2.*` beside them.
+  - The list is a product asset as much as a training one: the text layer (Phase 5) can use it for the `devanagari` and `roman` styles.
+- **Revisit if:** v4 writes Hindi words in Latin (a blocklist gap), or FLEURS and Lahaja fall by more than about a point.
+
+## D33 (2026-11-10): akshar v4 is released as AksharSTT v4, with its final weights and Lite v4
+
+- **Decision:**
+  - The public name follows the internal version: akshar v4 is **AksharSTT v4** and akshar-lite v4 is **AksharSTT Lite v4**. The public line is v1 and v4; v0, v2 and v3 are called internal steps wherever they appear.
+  - v4's final weights ship, not the moving average. Both score 20.78 on the six full sets; the final weights are better on Svarah (21.41 against 21.48), MUCS and LibriSpeech, which matter most to the owner, and Lite v4 was made from them.
+  - Each variant has its own Hugging Face repo under byteknotlabs with the scored `.cact`, the record of its run, NOTICE, LICENSE and a card whose `model-index` carries the six scores; v4 also ships its full-precision weights. The cards are kept in `release/`.
+  - The launch is one sequence: GitHub, then the Hugging Face repos go public, then the demo server serves v4, then the website goes live, then the GitHub release.
+- **Why:**
+  - The website and the demo API had already shown "v2" with v2's numbers, so calling v4 "v2" in public would give one name two sets of weights. One name per set of weights keeps the API ids, the docs and the records in step.
+  - v4 meets the release bar (D13's harness; every set below Shruti on the same clips), and every training source is admitted in the ledger, with no `hold` row.
+- **Consequences:** the website (akshar.byteknotlabs.com) and the demo API offer v4, Lite v4, v1 and Shruti. The Common Voice terms are met by a "machine-generated" disclosure in each card.
+- **Revisit if:** a later version is released; it takes its internal number as its public name.
+
 ## Superseded from the earlier ChatGPT plan
 
 - The project name BharatSTT is now **akshar**.
