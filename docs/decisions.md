@@ -453,6 +453,19 @@ Each entry records what we decided, why, and what would make us revisit it. Add 
   - The list is a product asset as much as a training one: the text layer (Phase 5) can use it for the `devanagari` and `roman` styles.
 - **Revisit if:** v4 writes Hindi words in Latin (a blocklist gap), or FLEURS and Lahaja fall by more than about a point.
 
+## D33 (2026-11-10): akshar v4 is released as AksharSTT v4, with its final weights and Lite v4
+
+- **Decision:**
+  - The public name follows the internal version: akshar v4 is **AksharSTT v4** and akshar-lite v4 is **AksharSTT Lite v4**. The public line is v1 and v4; v0, v2 and v3 are called internal steps wherever they appear.
+  - v4's final weights ship, not the moving average. Both score 20.78 on the six full sets; the final weights are better on Svarah (21.41 against 21.48), MUCS and LibriSpeech, which matter most to the owner, and Lite v4 was made from them.
+  - Each variant has its own Hugging Face repo under byteknotlabs with the scored `.cact`, the record of its run, NOTICE, LICENSE and a card whose `model-index` carries the six scores; v4 also ships its full-precision weights. The cards are kept in `release/`.
+  - The launch is one sequence: GitHub, then the Hugging Face repos go public, then the demo server serves v4, then the website goes live, then the GitHub release.
+- **Why:**
+  - The website and the demo API had already shown "v2" with v2's numbers, so calling v4 "v2" in public would give one name two sets of weights. One name per set of weights keeps the API ids, the docs and the records in step.
+  - v4 meets the release bar (D13's harness; every set below Shruti on the same clips), and every training source is admitted in the ledger, with no `hold` row.
+- **Consequences:** the website (akshar.byteknotlabs.com) and the demo API offer v4, Lite v4, v1 and Shruti. The Common Voice terms are met by a "machine-generated" disclosure in each card.
+- **Revisit if:** a later version is released; it takes its internal number as its public name.
+
 ## Superseded from the earlier ChatGPT plan
 
 - The project name BharatSTT is now **akshar**.

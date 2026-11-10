@@ -1,12 +1,14 @@
 cff-version: 1.2.0
-message: "If you use akshar, please cite it as below."
-title: "akshar: offline speech-to-text for Hindi, English and Hinglish"
+message: "If you use AksharSTT, please cite it as below."
+title: "AksharSTT: offline speech-to-text for Hindi, English and Hinglish"
 type: software
 authors:
-  - name: "The akshar authors"
+  - name: "ByteKnot Labs"
 repository-code: "https://github.com/byteknotlabsai/akshar"
+url: "https://huggingface.co/byteknotlabs/AksharSTT-V4"
+version: "v4"
 license: Apache-2.0
-date-released: "2026-11-07"
+date-released: "2026-11-10"
 keywords:
   - speech recognition
   - Hindi

@@ -115,6 +115,8 @@ This phase renders the model's `mixed` transcript as `roman`, `devanagari` or `m
 
 ## Phase 6: Release
 
+**Status (2026-11-10):** the model release is done ahead of the apps: AksharSTT v4 and Lite v4 are on Hugging Face with cards, NOTICE and records (D33), and the harness and ledger are public. The text layer resources join when Phase 5 ships.
+
 - Model card with harness numbers.
 - NOTICE crediting Whistle, every dataset, every teacher model whose outputs went into training, and every text resource shipped in the text layer. Some text resources, such as Dakshina, are share-alike.
 - The licence ledger and the eval scripts, so anyone can reproduce the numbers.

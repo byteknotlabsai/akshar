@@ -338,7 +338,13 @@ On 7 November the owner released r1 as **AksharSTT v1**, before that bar is met:
 - **In this repo:** the card, NOTICE and records are kept in [release/AksharSTT-V1/](../release/AksharSTT-V1/).
 - **Not released:** v1 itself (run `m1-akshar-v1`), which was r1's starting point.
 
-akshar v2 and akshar-lite v2 are not released. Their weights and records are on Drive under `akshar/phase3-runs/v2-akshar` and `l3-akshar-lite-v2`. Publishing them is the owner's decision. Their NOTICE needs LibriSpeech train-clean-360 beside train-clean-100, as the repository's NOTICE now has.
+On 10 November the owner released v4 as **AksharSTT v4** and **AksharSTT Lite v4** (D33): [huggingface.co/byteknotlabs/AksharSTT-V4](https://huggingface.co/byteknotlabs/AksharSTT-V4) and [AksharSTT-Lite-V4](https://huggingface.co/byteknotlabs/AksharSTT-Lite-V4), Apache-2.0.
+- **AksharSTT v4:** akshar v4's final weights (run `v4-akshar`), the scored `.cact` (sha256 `076782372806…`), the full-precision weights, the run's record, NOTICE, LICENSE and the card. The averaged weights scored the same mean and are not released.
+- **AksharSTT Lite v4:** `l4-akshar-lite-v4`, made from those final weights, the scored `.cact` (sha256 `9a7bdf9be822…`), its record, NOTICE, LICENSE and the card.
+- **Cleaned:** the server paths were removed from the weights' metadata and the records.
+- **In this repo:** [release/AksharSTT-V4/](../release/AksharSTT-V4/) and [release/AksharSTT-Lite-V4/](../release/AksharSTT-Lite-V4/); the repo's [MODEL_CARD.md](../MODEL_CARD.md) is v4's card.
+
+The internal akshar v2 and akshar-lite v2 are not released. Their weights and records are on Drive under `akshar/phase3-runs/v2-akshar` and `l3-akshar-lite-v2`. Publishing them is the owner's decision. Their NOTICE needs LibriSpeech train-clean-360 beside train-clean-100, as the repository's NOTICE now has.
 
 ## Next
 

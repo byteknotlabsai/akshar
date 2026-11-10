@@ -1,23 +1,34 @@
-# akshar
+# AksharSTT
 
-**Offline speech-to-text for Hindi, English and Hinglish, small enough for phones and ordinary CPUs.**
+**Offline speech to text for Hindi, English and Hinglish. One 29.5 MB open model that runs on the device.**
+
+[Website](https://akshar.byteknotlabs.com) · [Live demo](https://akshar.byteknotlabs.com/#demo) · [AksharSTT v4 on Hugging Face](https://huggingface.co/byteknotlabs/AksharSTT-V4) · [AksharSTT Lite v4](https://huggingface.co/byteknotlabs/AksharSTT-Lite-V4) · [Model card](MODEL_CARD.md) · [How each version was made](docs/akshar.md)
 
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-AksharSTT--V4-yellow.svg)](https://huggingface.co/byteknotlabs/AksharSTT-V4)
+[![Website](https://img.shields.io/badge/try%20it-akshar.byteknotlabs.com-c93a22.svg)](https://akshar.byteknotlabs.com)
 
-akshar turns speech into text on the device itself, with no internet connection. The model file is 29.5 MB at 4 bits, or 20.4 MB for akshar-lite. It runs in the [needle engine](https://huggingface.co/Cactus-Compute/whistle), which embeds in Windows, macOS, Linux, Android, iOS and web apps. Hindi comes out in Devanagari and English words in Latin script, the way people write Hinglish:
+![India speaks Hinglish. AksharSTT writes it down.](docs/assets/aksharstt-v4.png)
+
+AksharSTT turns speech into text on the device itself, with no internet connection. The model file is 29.5 MB at 4 bits, or 20.4 MB for AksharSTT Lite. It runs in the [needle engine](https://huggingface.co/Cactus-Compute/whistle), which embeds in Windows, macOS, Linux, Android, iOS and web apps. Hindi comes out in Devanagari and English words in Latin script, the way people write Hinglish:
 
 ```text
-जैसे कि आप देख सकते हैं workspace में पाँच tabs हैं
+जैसे कि आप देख सकते हैं workspace में पांच tabs हैं
 ```
 
-**Status (2026-11-10):** akshar v4 beats [Shruti](https://huggingface.co/udgamlabs/Shruti), the open model it is measured against, on every test set: 20.78 average word error rate against Shruti's 21.78, with Indian-accented English (Svarah) at 21.41 against 22.45, and it writes English words, brands and place names in Latin letters from a curated list. It passes the release bar below. akshar-lite v4, at 20.4 MB, scores 21.71, below Shruti's mean. akshar v1 is published on Hugging Face as [AksharSTT v1](https://huggingface.co/byteknotlabs/AksharSTT-V1). See [Roadmap](#roadmap) for what comes next.
+This repository, akshar, holds everything behind the model: the training code, the data pipeline, the evaluation harness and the records of every version.
+
+## News
+
+- **10 Nov 2026: AksharSTT v4 and AksharSTT Lite v4** are released with open weights under Apache-2.0. v4 averages 20.78 word error rate over six public test sets against Shruti's 21.78, and is lower on every one of the six (same clips, same harness). Lite v4, at 20.4 MB, averages 21.71. Release notes: [GitHub release v4](https://github.com/byteknotlabsai/akshar/releases/tag/v4).
+- **7 Nov 2026: AksharSTT v1**, the first public version, on [Hugging Face](https://huggingface.co/byteknotlabs/AksharSTT-V1).
+
+The public versions are v1 and v4. v0, v2 and v3 were internal steps; their results are in the table below.
 
 ## Try it
 
-- **In your browser:** [akshar.byteknotlabs.com](https://akshar.byteknotlabs.com). Record a few seconds or drop in an audio file, and get the transcript with a timing for every word. Pick AksharSTT v1, akshar v0, akshar-lite v0 or Shruti, or run them all and compare. Your recording goes to our demo server to be transcribed.
-- **On your own machine:** download [AksharSTT v1](https://huggingface.co/byteknotlabs/AksharSTT-V1) from Hugging Face (`akshar-v1.cact`, 29.5 MB, Apache-2.0) and run it offline with the needle engine, as in [Quick start](#quick-start).
-
-akshar v4, akshar-lite v4 and the earlier v2 and v3 models are not published yet.
+- **In your browser:** [akshar.byteknotlabs.com](https://akshar.byteknotlabs.com). Record a few seconds or drop in an audio file, and get the transcript with a timing for every word. Pick AksharSTT v4, Lite v4, v1 or Shruti, or run them all and compare. Your recording goes to our demo server to be transcribed.
+- **On your own machine:** download [AksharSTT v4](https://huggingface.co/byteknotlabs/AksharSTT-V4) (`akshar-v4.cact`, 29.5 MB) or [AksharSTT Lite v4](https://huggingface.co/byteknotlabs/AksharSTT-Lite-V4) (`akshar-lite-v4.cact`, 20.4 MB) and run it offline with the needle engine, as in [Quick start](#quick-start).
 
 ## Results
 
@@ -26,15 +37,15 @@ Word error rate (%, lower is better) on the full test sets:
 | Model | File | Monsoon Hindi | FLEURS Hindi | Lahaja | MUCS Hinglish | Svarah | LibriSpeech clean | Silence | Mean |
 |---|---|---|---|---|---|---|---|---|---|
 | Shruti, 4-bit | 29.5 MB | 20.54 | 20.21 | 26.29 | 35.26 | 22.45 | 5.95 | 0 | 21.78 |
-| **akshar v4, averaged weights** | 29.5 MB | **19.35** | 18.41 | 25.40 | 34.18 | 21.48 | 5.86 | 0 | **20.78** |
-| akshar v4, final weights | 29.5 MB | 19.47 | 18.45 | 25.45 | **34.07** | **21.41** | **5.82** | 0 | 20.78 |
-| akshar v3, averaged weights | 29.5 MB | 19.70 | **18.27** | **24.87** | 34.09 | 21.85 | 5.88 | 0 | 20.78 |
-| akshar v3, final weights | 29.5 MB | 19.82 | 18.32 | 24.88 | 34.24 | 21.90 | 5.93 | 0 | 20.85 |
-| akshar v2 | 29.5 MB | 20.45 | 18.42 | 25.05 | 34.30 | 23.67 | 6.03 | 0 | 21.32 |
+| akshar v4, averaged weights | 29.5 MB | **19.35** | 18.41 | 25.40 | 34.18 | 21.48 | 5.86 | 0 | **20.78** |
+| **AksharSTT v4** (akshar v4, final weights) | 29.5 MB | 19.47 | 18.45 | 25.45 | **34.07** | **21.41** | **5.82** | 0 | **20.78** |
+| akshar v3, averaged weights (internal) | 29.5 MB | 19.70 | **18.27** | **24.87** | 34.09 | 21.85 | 5.88 | 0 | 20.78 |
+| akshar v3, final weights (internal) | 29.5 MB | 19.82 | 18.32 | 24.88 | 34.24 | 21.90 | 5.93 | 0 | 20.85 |
+| akshar v2 (internal) | 29.5 MB | 20.45 | 18.42 | 25.05 | 34.30 | 23.67 | 6.03 | 0 | 21.32 |
 | akshar v1, dataset transcripts (AksharSTT v1) | 29.5 MB | 21.78 | 19.37 | 26.49 | 34.41 | 24.68 | 6.92 | 0 | 22.28 |
-| akshar v1 | 29.5 MB | 22.07 | 19.83 | 26.89 | 34.46 | 24.42 | 7.01 | 0 | 22.45 |
-| akshar v0 | 29.5 MB | 23.53 | 20.92 | 27.70 | 34.75 | 24.81 | 6.98 | 0 | 23.11 |
-| **akshar-lite v4** | 20.4 MB | 21.55 | 19.14 | 25.78 | 34.85 | 22.43 | 6.50 | 0 | **21.71** |
+| akshar v1, teacher stage (internal) | 29.5 MB | 22.07 | 19.83 | 26.89 | 34.46 | 24.42 | 7.01 | 0 | 22.45 |
+| akshar v0 (internal) | 29.5 MB | 23.53 | 20.92 | 27.70 | 34.75 | 24.81 | 6.98 | 0 | 23.11 |
+| **AksharSTT Lite v4** (akshar-lite v4) | 20.4 MB | 21.55 | 19.14 | 25.78 | 34.85 | 22.43 | 6.50 | 0 | **21.71** |
 | akshar-lite v3 | 20.4 MB | 22.07 | 19.27 | 24.53 | 34.79 | 23.47 | 6.53 | 0 | 21.78 |
 | akshar-lite v3, from the averaged weights | 20.4 MB | 21.27 | 19.57 | 24.97 | 34.55 | 23.05 | 6.59 | 0 | 21.67 |
 | akshar-lite v2 | 20.4 MB | 22.45 | 19.73 | 25.06 | 34.63 | 25.07 | 6.74 | 0 | 22.28 |
@@ -60,12 +71,13 @@ How each version was made: [docs/akshar.md](docs/akshar.md).
 
 ## Models
 
-| Model | Precision | File | Use it for |
-|---|---|---|---|
-| akshar | 4-bit | 29.5 MB | The best accuracy |
-| akshar-lite | 2-bit, encoder 4-bit | 20.4 MB | Tight memory budgets; about one point of WER worse |
+| Model | Precision | File | Mean WER | Use it for | Download |
+|---|---|---|---|---|---|
+| AksharSTT v4 | 4-bit | 29.5 MB | 20.78 | The best accuracy | [byteknotlabs/AksharSTT-V4](https://huggingface.co/byteknotlabs/AksharSTT-V4) |
+| AksharSTT Lite v4 | 2-bit, encoder 4-bit | 20.4 MB | 21.71 | Tight memory budgets; about one point of WER worse | [byteknotlabs/AksharSTT-Lite-V4](https://huggingface.co/byteknotlabs/AksharSTT-Lite-V4) |
+| AksharSTT v1 | 4-bit | 29.5 MB | 22.28 | The first release | [byteknotlabs/AksharSTT-V1](https://huggingface.co/byteknotlabs/AksharSTT-V1) |
 
-AksharSTT v1 is on Hugging Face at [byteknotlabs/AksharSTT-V1](https://huggingface.co/byteknotlabs/AksharSTT-V1). This repository holds the code, never the weights. The model card is [MODEL_CARD.md](MODEL_CARD.md).
+This repository holds the code, never the weights. The model card is [MODEL_CARD.md](MODEL_CARD.md); the cards, NOTICE files and training records of each release are in [release/](release/).
 
 ## Quick start
 
@@ -78,13 +90,14 @@ uv sync
 export NEEDLE_TELEMETRY=0 DO_NOT_TRACK=1   # the needle package reports usage unless told not to
 ```
 
-Transcribe a file with a downloaded model:
+Transcribe a file with AksharSTT v4 from Hugging Face:
 
 ```python
+from huggingface_hub import hf_hub_download
 from needle import Whistle
 from akshar.eval import audio
 
-model = Whistle("models/akshar/akshar-v1.cact")
+model = Whistle(hf_hub_download("byteknotlabs/AksharSTT-V4", "akshar-v4.cact"))
 samples = audio.load("speech.wav")  # any WAV or FLAC, resampled to 16 kHz mono
 print(model.transcribe(samples, language="hi")["text"])  # "hi" for Hindi and Hinglish, "en" for English
 ```
@@ -119,25 +132,25 @@ The text layer is still to come ([roadmap](docs/roadmap.md), Phase 5). Reasons: 
 
 ## Training data
 
-akshar v3 and v4 learned from about 3,900 hours (v2 from about 3,000, v1 from about 530):
+AksharSTT v4 learned from about 3,900 hours, counting each clip of its run once (v2 from about 3,000, v1 from about 530):
 
 | Source | Hours | Licence |
 |---|---|---|
-| [NPTEL](https://huggingface.co/datasets/ai4bharat/NPTEL), English lectures | 1,644 | CC-BY-4.0 |
-| [IndicVoices](https://huggingface.co/datasets/ai4bharat/IndicVoices), Hindi | 779 | CC-BY-4.0 |
-| [Vaani](https://huggingface.co/datasets/ARTPARK-IISc/Vaani-transcription-part), transcribed Hindi | 460 | CC-BY-4.0 |
-| [LibriSpeech](https://www.openslr.org/12/), train-clean-100 and train-clean-360 | 344 | CC-BY-4.0 |
-| [Shrutilipi](https://huggingface.co/datasets/ai4bharat/Shrutilipi), Hindi (the part labelled so far) | 263 | CC-BY-4.0 |
+| [NPTEL](https://huggingface.co/datasets/ai4bharat/NPTEL), English lectures | 1,600 | CC-BY-4.0 |
+| [IndicVoices](https://huggingface.co/datasets/ai4bharat/IndicVoices), Hindi | 723 | CC-BY-4.0 |
+| [LibriSpeech](https://www.openslr.org/12/), train-clean-360 and part of train-clean-100 | 374 | CC-BY-4.0 |
+| [Vaani](https://huggingface.co/datasets/ARTPARK-IISc/Vaani-transcription-part), transcribed Hindi | 352 | CC-BY-4.0 |
+| [Shrutilipi](https://huggingface.co/datasets/ai4bharat/Shrutilipi), Hindi (263 h transcribed by Shruti, 83 h by the internal v2) | 346 | CC-BY-4.0 |
 | [Common Voice](https://datacollective.mozillafoundation.org/) Scripted Speech 26.0, South Asian English | 158 | CC0 |
+| [Kathbath](https://huggingface.co/datasets/ai4bharat/Kathbath), Hindi | 133 | CC-BY-4.0 |
 | [MUCS 2021](https://www.openslr.org/104/), Hindi-English | 92 | CC-BY-SA-4.0 |
-| [Rural Women ASR v2](https://huggingface.co/datasets/ai4bharat/Rural_Women_ASR_v2), Hindi | 78 | CC-BY-4.0 |
+| [Rural Women ASR v2](https://huggingface.co/datasets/ai4bharat/Rural_Women_ASR_v2), Hindi | 76 | CC-BY-4.0 |
 | [NPTEL](https://huggingface.co/datasets/ai4bharat/NPTEL), Hindi lectures | 60 | CC-BY-4.0 |
-| [Kathbath](https://huggingface.co/datasets/ai4bharat/Kathbath), Hindi | 14 (v2: 130) | CC-BY-4.0 |
-| [Common Voice](https://datacollective.mozillafoundation.org/) 27.0, Hindi | 5 | CC0 |
+| [Common Voice](https://datacollective.mozillafoundation.org/) 27.0, Hindi | 9 | CC0 |
 | [FLEURS](https://huggingface.co/datasets/google/fleurs), Hindi train | 3 | CC-BY-4.0 |
 | Silence and noise, generated | 2 | |
 
-Not used yet: the rest of Shrutilipi (about 1,100 h; about 500 h of it is labelled with akshar v2 and waits for v4), half of NPTEL's English lectures (about 1,700 h), and the repaired transcripts of D29. The small Hindi sources got less than planned in v3 because of the feeder's shard sizes (D30).
+v4 trained on the repaired transcripts of D29 and the English-word list of D32. The full per-source record of its run is [release/AksharSTT-V4/training/v4.json](release/AksharSTT-V4/training/v4.json).
 
 **Rules:**
 - No dataset is used without an entry in the licence ledger, [data/LICENSES.md](data/LICENSES.md). Every source is credited in [NOTICE](NOTICE).
@@ -153,7 +166,7 @@ Not used yet: the rest of Shrutilipi (about 1,100 h; about 500 h of it is labell
 | 3 | akshar from Whistle | Done: v3 and v4 beat Shruti on every test set ([akshar.md](docs/akshar.md)) |
 | 4 | Windows, Mac and phones | Next |
 | 5 | Output styles (the text layer) | Planned |
-| 6 | Release | Planned |
+| 6 | Release | AksharSTT v4 and Lite v4 released on 10 Nov 2026; apps follow Phases 4 and 5 |
 
 **The release bar:**
 - **akshar:** a lower mean WER than Shruti, with no test set more than 0.5 worse.
@@ -171,15 +184,16 @@ Next: Phase 4, the Windows, Mac and phone apps, and Phase 5, the text layer. Det
 | [akshar/serve/](akshar/serve/), [deploy/](deploy/) | The HTTP API and its deploy package |
 | [akshar/ui/](akshar/ui/) | The local page for trying models and browsing results |
 | [scripts/](scripts/) | GPU-server, deploy and daily Google Drive backup scripts |
-| [docs/](docs/) | Roadmap, decisions (D1 to D27), harness, results for each phase |
+| [docs/](docs/) | Roadmap, decisions (D1 to D33), harness, results for each phase |
 | [data/LICENSES.md](data/LICENSES.md) | The dataset licence ledger |
-| [MODEL_CARD.md](MODEL_CARD.md) | The model card for the Hugging Face release |
+| [MODEL_CARD.md](MODEL_CARD.md) | The model card of AksharSTT v4, as on Hugging Face |
+| [release/](release/) | The card, NOTICE and training records of each Hugging Face release |
 
 New to the code? Start with [docs/roadmap.md](docs/roadmap.md) and [docs/decisions.md](docs/decisions.md); [docs/setup-ubuntu.md](docs/setup-ubuntu.md) sets up a training machine.
 
 ## License
 
-The code is under the [Apache License 2.0](LICENSE). The model weights will be released under Apache-2.0 too, with every training dataset credited in [NOTICE](NOTICE) as its licence requires.
+The code is under the [Apache License 2.0](LICENSE). The model weights are released under Apache-2.0 too, with every training dataset credited in [NOTICE](NOTICE) as its licence requires.
 
 ## Credits
 
@@ -188,10 +202,12 @@ akshar builds on [Cactus Whistle](https://huggingface.co/Cactus-Compute/whistle)
 ## Citation
 
 ```bibtex
-@software{akshar2026,
-  title  = {akshar: offline speech-to-text for Hindi, English and Hinglish},
-  author = {{The akshar authors}},
-  year   = {2026},
-  url    = {https://github.com/byteknotlabsai/akshar}
+@software{aksharstt2026,
+  title   = {AksharSTT: offline speech-to-text for Hindi, English and Hinglish},
+  author  = {{ByteKnot Labs}},
+  year    = {2026},
+  version = {v4},
+  url     = {https://huggingface.co/byteknotlabs/AksharSTT-V4},
+  note    = {Code: https://github.com/byteknotlabsai/akshar}
 }
 ```
